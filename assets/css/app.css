@@ -1,0 +1,396 @@
+/***************************
+    Fonts
+***************************/
+/*
+Load any fonts that we need.
+Fonts can be found in the /assets/fonts/ folder.
+*/
+@font-face {
+    font-family: 'IcoMoon';
+    font-style: normal;
+    font-weight: 400;
+    src: local('IcoMoon'), local('IcoMoon'), url(../fonts/IcoMoon-Free.ttf) format('truetype');
+}
+
+
+/***************************
+  General
+***************************/
+* {
+    border-radius: 1px !important;  /* Override for now */
+}
+
+a {
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/***************************
+  Body
+***************************/
+body {
+
+}
+
+#parallax-wrapper {
+    margin-bottom: 75px; /* Footer Height */
+    width: 100%;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.75);
+    border-bottom: 1px solid #333333;
+}
+
+
+/***************************
+  Sidebar
+***************************/
+
+
+/***************************
+  Button Overrides
+***************************/
+
+
+/***************************
+  Block/Pull Quotes
+***************************/
+
+
+/***************************
+  Social Icons
+***************************/
+
+
+/***************************
+  Slider
+***************************/
+#slider {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+}
+
+.carousel-caption {
+    right: 20%;
+    left: 20%;
+    top: 20%;
+    padding-bottom: 30px;
+/*    background-color: rgba(0,0,0,0.75);*/
+    max-height: 50%;
+    height: auto;
+/*    border: 1px solid #000;*/
+}
+
+.carousel-caption h1{
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #fff;
+    border-top: 1px solid rgb(227,173,71);
+    border-bottom: 1px solid rgb(227,173,71);
+    padding: 15px;
+    line-height: 2em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px rgba(0,0,0,0.25);
+}
+
+.carousel-inner > .item {
+    height: 100%;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
+}
+
+.carousel-inner > .active {
+    opacity: 1;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    z-index: 15;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0.85);
+    border-radius: 10px;
+}
+
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: rgba(227,173,71,0.75); /* Primary Color */
+}
+
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right,
+.carousel-control .icon-next,
+.carousel-control .icon-prev {
+    position: absolute;
+    top: 43%;
+    z-index: 5;
+    display: inline-block;
+}
+
+
+
+
+
+/***************************
+  Navbar
+***************************/
+
+
+
+.affix {
+    top: 0;
+}
+
+.bottom-nav {
+    position:absolute;
+    bottom:0;
+    left:0;
+    margin-bottom:0;
+}
+
+.navbar-brand > .hidden {
+    display: none;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar.navbar-default {
+    width: 100%;
+    z-index: 999;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.small-nav {
+    padding: 5px 0;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: middle;
+}
+
+.navbar-brand > img {
+    max-height: 100%;
+    display: block;
+}
+
+.navbar-default .navbar-nav > li > a {
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-right: 12px;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #e3ad47 !important;
+}
+
+.navbar-default .navbar-nav > li > a:after {
+    content: "\e919";
+    font-family: 'IcoMoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    color: #e3ad47;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+/***************************
+  About
+***************************/
+#about {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    padding-top: 88px !important;
+    padding-bottom: 100px !important;
+
+}
+.about-icon {
+    text-align: center;
+    padding: 25px;
+}
+
+.about-header h2 {
+    font-weight: normal;
+    font-size: 4em;
+    color: #000000;
+    margin-bottom: 23px;
+    text-align: center;
+}
+
+
+
+.about-footer {
+    text-align: center;
+}
+
+/***************************
+  Menu
+***************************/
+#menu {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    border-bottom: 1px solid #aaa;
+}
+
+
+/***************************
+  Content
+***************************/
+
+#wrap-main-section {
+    background-color: rgba(0,0,0,0.75);
+    padding: 25px;
+    color: #fff;
+    border: 1px solid rgba(0,0,0,0.95);
+}
+
+.content-primary-wrapper {
+
+}
+
+#latest-posts {
+    height: auto;
+    background-position: 100% !important;
+}
+
+
+/***************************
+  Events
+***************************/
+#events {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+
+
+/***************************
+  Testimonials
+***************************/
+#testimonials {
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    background-position: 100% !important;
+}
+
+
+/***************************
+  Pre Footer
+***************************/
+#pre-footer{
+    width: 100%;
+    text-align: center;
+    padding: 25px 15px;
+    height: 250px;
+    border-top: 1px solid #aaa;
+}
+
+
+/***************************
+  Footer
+***************************/
+footer {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    z-index: -1;
+    background-color:#252525;
+}
+
+footer .well {
+    background-color: #252525;
+    color: #818181;
+    word-wrap: break-word;
+    border-bottom: none;
+}
+
+footer .well h3{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Lato';
+}
+
+footer .well ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+footer .well ul li {
+    padding-bottom: 15px;
+}
+
+footer .well a {
+    color: #818181 !important;
+}
+
+footer .well a:hover {
+    color: #ffffff !important;
+}
+
+footer .well > .textwidget p {
+    line-height: 2.5em;
+}
+
+.footer_social_icon {
+    margin-right: 15px;
+}
+
+#footer-copyright {
+    text-align: center;
+    color: #fff;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 1.25em;
+}
+
+/* EOF */

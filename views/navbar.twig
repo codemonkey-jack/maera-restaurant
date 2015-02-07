@@ -1,0 +1,41 @@
+{#<?php#}
+<nav class="navbar navbar-default navbar-inverse bottom-nav">
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {# {% include 'logo.twig' %} #}
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+			{% for item in menu.primary.get_items %}
+
+				{% if item.get_children %}
+
+					<li class="dropdown {{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.get_path }}">{{ item.title }} <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							{% for child in item.get_children %}
+								<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ child.get_path }}">{{ child.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+
+				{% else %}
+
+					<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ item.get_path }}">{{ item.title }}</a>
+
+				{% endif %}
+
+			{% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</nav>
