@@ -61,7 +61,6 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_register_style( 'animate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/vendor/animate.css' );
 			wp_enqueue_style( 'animate' );
 
-
 			// Javascript
 
 			// Load Bootstrap JS from the CDN for now.
@@ -78,8 +77,6 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 
 			wp_register_script( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/app.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'maera-res' );
-
-
 
 		}
 

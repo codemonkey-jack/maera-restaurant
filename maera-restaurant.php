@@ -104,7 +104,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				'footer'    => false,
 			) );
 
-
 		}
 
 
