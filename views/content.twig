@@ -1,8 +1,25 @@
-<article {{ function( 'post_class', 'col-md-3 frontpage_article' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
+<article {{ function( 'post_class', 'col-sm-12 col-md-4 frontpage_article' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
 	{% block content %}
-		{% do action('maera/in_article/top', post.ID) %}
-		{% include ['content-entry-'~post.ID~'-header.twig', 'content-entry-'~post.post_type~'-header.twig', 'content-entry-header.twig'] %}
-		{% include ['content-entry-'~post.ID~'-content.twig', 'content-entry-'~post.post_type~'-content.twig', 'content-entry-content.twig'] %}
-		{% include ['content-entry-'~post.ID~'-footer.twig', 'content-entry-'~post.post_type~'-footer.twig', 'content-entry-footer.twig'] %}
+	{% do action('maera/in_article/top', post.ID) %}
+
+		<div class="thumbnail">
+
+			{% if post.thumbnail %}
+				<div class="caption">
+					<h3>{{ post.title }}</h3>
+					<p>{{post.get_preview(10)}}</p>
+				</div>
+				<a class="featured_image" href="{{ post.link }}"><img class="animated flipInX" src="{{ post.get_thumbnail.get_src|resize(null, 300, 'center') }}" alt="{{ post.title }}"/></a>
+
+			{% else %}
+				<div class="caption">
+					<h3>{{ post.title }}</h3>
+					<p>{{post.get_preview(10)}}</p>
+				</div>
+				<a class="featured_image" href="{{ post.link }}"><img class="animated flipInX" src="{% do action('default_featured_image') %}" alt="{{ post.title }}"/></a>
+			{% endif %}
+
+		</div>
+
 	{% endblock %}
 </article>

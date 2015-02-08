@@ -1,5 +1,5 @@
 {#<?php#}
-<nav class="navbar navbar-default navbar-inverse bottom-nav">
+<nav class="navbar navbar-default navbar-inverse {% if theme_mods.show_slider_section == 1 %}bottom-nav{% else %}small-nav{% endif %}">
 
   <div class="container-fluid">
 
@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {# {% include 'logo.twig' %} #}
+      {% include 'logo.twig' %}
     </div>
 
     <div class="collapse navbar-collapse" id="navbar-collapse-1">

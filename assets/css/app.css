@@ -75,7 +75,6 @@ body {
     width: 100%;
     margin: 0 auto;
     height: 100%;
-    background: #222 url(../img/backgrounds/menu.png) no-repeat ;
     overflow: hidden;
 }
 
@@ -144,12 +143,10 @@ body {
     display: inline-block;
 }
 
+
 /***************************
   Navbar
 ***************************/
-
-
-
 .affix {
     top: 0;
 }
@@ -161,9 +158,16 @@ body {
     margin-bottom:0;
 }
 
-.navbar-brand > .hidden {
+.hide-brand {
+    opacity: 0;
     display: none;
 }
+
+.show-brand {
+    display: inline-block;
+    opacity: 1;
+}
+
 .navbar .navbar-collapse {
     text-align: center;
 }
@@ -183,6 +187,11 @@ body {
     display: inline-block;
     float: none;
     vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    padding: 0;
 }
 
 .navbar-brand > img {
@@ -197,12 +206,12 @@ body {
     font-size: 1.5em;
     font-style: italic;
     margin-right: 12px;
-    color: #fff !important;
+    color: #fff !important; /*Temp*/
     text-decoration: none;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-    color: #e3ad47 !important;
+    color: #e3ad47 !important; /*Temp*/
 }
 
 .navbar-default .navbar-nav > li > a:after {
@@ -220,6 +229,7 @@ body {
     margin-left: 25px;
 }
 
+
 /***************************
   About
 ***************************/
@@ -227,8 +237,8 @@ body {
     width: 100%;
     margin: 0 auto;
     height: auto;
-    padding-top: 88px !important;
-    padding-bottom: 100px !important;
+    padding-top: 88px;
+    padding-bottom: 100px;
 
 }
 .about-icon {
@@ -244,11 +254,10 @@ body {
     text-align: center;
 }
 
-
-
 .about-footer {
     text-align: center;
 }
+
 
 /***************************
   Menu
@@ -264,12 +273,8 @@ body {
 /***************************
   Content
 ***************************/
-
 #wrap-main-section {
-    background-color: rgba(0,0,0,0.75);
     padding: 25px;
-    color: #fff;
-    border: 1px solid rgba(0,0,0,0.95);
 }
 
 .content-primary-wrapper {
@@ -283,13 +288,39 @@ body {
 
 #latest-posts .frontpage_article {
     float: left;
-    height: 300px;
-    overflow:hidden;
+    margin: 15px 0;
+    text-align: center;
+    overflow: hidden;
 }
 
-#latest-posts .frontpage_article img{
-    width: 100%;
+.frontpage_article .thumbnail {
+    position: relative;
+    overflow: hidden;
 }
+
+.frontpage_article .caption {
+    position:absolute;
+    top: 0;
+    right: 0;
+    background:rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    display: none;
+    text-align: center;
+    color: #fff;
+    z-index:2;
+}
+
+.frontpage_article .caption h3 {
+    color: #fff;
+}
+
+#latest-posts .frontpage_article img {
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 /***************************
   Events
@@ -298,8 +329,6 @@ body {
     width: 100%;
     margin: 0 auto;
     height: auto;
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
 }
 
 
@@ -319,10 +348,8 @@ body {
 ***************************/
 #pre-footer{
     width: 100%;
-    text-align: center;
-    padding: 25px 15px;
-    height: 250px;
-    border-top: 1px solid #aaa;
+    margin: 0 auto;
+    height: auto;
 }
 
 

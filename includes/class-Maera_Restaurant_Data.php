@@ -32,6 +32,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		public function __construct() {
 
 			// Add actions.
+			add_action( 'default_featured_image', array( $this, 'res_default_featured_image' ) );
 
 			// Add filters.
 			add_filter( 'maera/timber/context', array( $this, 'maera_res_context' ) );
@@ -47,12 +48,26 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 				'post_type' => 'slide',
 			);
 
-			$context['slides'] = Timber::get_posts( $args );
+			$context['default_featured_image'] = TimberHelper::function_wrapper( 'res_default_featured_image' );
+			$context['slides']                 = Timber::get_posts( $args );
 
 			return $context;
 		}
 
 
+		/**
+		 * Echo a default featured image for posts that do not have them.
+		 * @return [type] [description]
+		 */
+		public static function res_default_featured_image() {
+
+			$res_featured_image     = new TimberImage( trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/img/backgrounds/testimonials.jpg' );
+			$featured_image_resized = TimberImageHelper::resize( $res_featured_image, null, 300, 'center', true );
+
+			// echo esc_html( $res_featured_image );
+			echo esc_html( $featured_image_resized );
+
+		}
 
 		/**
 		 * Retrieive a list of currencies to use.
