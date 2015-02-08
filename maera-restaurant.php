@@ -83,11 +83,15 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Customizer.php');
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Scripts.php');
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Structure.php');
+			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Data.php');
+			require_once( __DIR__ . '/includes/class-Maera_Restaurant_PostTypes.php');
 
 			// Instantiate additional classes.
 			$this->customizer    = new Maera_Restaurant_Customizer();
 			$this->scripts       = new Maera_Restaurant_Scripts();
 			$this->structure     = new Maera_Restaurant_Structure();
+			$this->data          = new Maera_Restaurant_Data();
+			$this->posttype      = new Maera_Restaurant_PostTypes();
 
 			// Add Actions
 			add_action( 'after_setup_theme', array( $this, 'required_plugins' ) );

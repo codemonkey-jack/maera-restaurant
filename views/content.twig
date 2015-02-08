@@ -1,4 +1,4 @@
-<article {{ function( 'post_class', 'col-md-3' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
+<article {{ function( 'post_class', 'col-md-3 frontpage_article' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
 	{% block content %}
 		{% do action('maera/in_article/top', post.ID) %}
 		{% include ['content-entry-'~post.ID~'-header.twig', 'content-entry-'~post.post_type~'-header.twig', 'content-entry-header.twig'] %}
