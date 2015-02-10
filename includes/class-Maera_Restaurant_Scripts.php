@@ -93,19 +93,10 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 
 		/**
 		 * Add admin area scripts.
-		 * We must ensure that certain metaboxes we add to the Restaurant plugin are required and validated.
 		 */
 		function admin_scripts() {
 
-			wp_register_style( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/admin.css' );
-			wp_enqueue_style( 'maera-res' );
-
-			// Load jQuery Validate from the CDN.
-			wp_register_script( 'jquery_validate', '//ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js', array('jquery'), time(), false );
-			wp_enqueue_script( 'jquery_validate' );
-
-			wp_register_script( 'maera_res_admin', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/admin.js', array('jquery'), time(), false );
-			wp_enqueue_script( 'maera_res_admin' );
+			return null;
 
 		}
 

@@ -141,27 +141,38 @@ body {
 /***************************
   Menu Widget
 ***************************/
-
 .widget_maera_res_menu_widget .widget-title{
- font-size: 72px;
+    font-size: 72px;
 }
+
 #menu-filter {
     list-style-type: none;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 #menu-filter li {
     display: inline;
     padding-right: 10px;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
 #menu-filter li a {
     color: #777;
     text-decoration: none;
+    font-size: 2em;
+    line-height: 1.5em;
 }
 
 #menu-filter li .current,
 #menu-filter li:hover {
     color: #084a9a;
+    text-decoration: underline;
+
 }
 
 #menu-wrapper {
@@ -173,8 +184,52 @@ body {
 
 }
 
+.menu_item_wrapper {
+  margin: 15px 0;
+  padding: 5px;
+  height: 125px;
+}
 
+.dish_name {
+    display: table-cell;
+    font-weight: 600;
+    width: 1%;
+    white-space: nowrap;
+    padding-right: 15px;
+}
 
+.price_dots {
+    display: table-cell;
+    width: 98%;
+    background: url("../img/price_dots.png") 0 16px repeat-x;
+}
+
+.price {
+    display: table-cell;
+    font-weight: 600;
+    width: 1%;
+    white-space: nowrap;
+    padding-left: 14px;
+}
+
+.menu_item_tags {
+/*    position: absolute;
+    bottom: 20px;
+    left: 20px;
+*/    background: #e68b1f;
+    padding: 4px 8px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    z-index: 9;
+    float: right;
+    font-size: 10px;
+}
+
+.menu_item_tags a{
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
 /***************************
   Navbar
 ***************************/

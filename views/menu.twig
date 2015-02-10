@@ -10,28 +10,36 @@
 
 <ul id="menu-filter">
 	<li><a href="#all">All</a>
-	{% for post in posts %}
-	<li><a rel="{{ post.get_field('menu_section')|lower }}" href="#{{ post.get_field('menu_section')|lower }}">{{ post.get_field('menu_section') }}</a></li>
+	{% for menu_section in menu_sections %}
+	<li><a rel="{{ menu_section.name|lower }}" href="#{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
 	{% endfor %}
 </ul>
 
 <div id="menu-wrapper">
 	<ul id="menu-list">
 		{% for post in posts %}
-		<li class="menu-item {{ post.get_field('menu_section')|lower }} all col-md-4">
+		<li class="menu-item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} all col-md-4">
 			<div class="menu_item_wrapper">
 				<div class="media">
+					{% if post.thumbnail %}
 					<div class="media-left">
 						<a href="{{ post.permalink }}">
-						<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
+							<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
 						</a>
 					</div>
+					{% endif %}
 					<div class="media-body">
 						<h3 class="media-heading">
-							<a href="{{ post.permalink }}">{{ post.title }}</a>
-							<span class="price_dots">{{ post.get_field('_restaurant_item_price') }}</span>
+							<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
+							<span class="price_dots"></span>
+							<span class="price">{{ post.get_field('_restaurant_item_price') }}</span>
 						</h3>
-						{{ post.excerpt }}
+						{{ post.content }}
+						{% for term in post.terms('restaurant_tag') %}
+						<div class="menu_item_tags">
+							<span class="menu_tag"><a href="{{term.link}}">{{term.name}}</a></span>
+						</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -42,11 +50,11 @@
 </div>
 
 <script>
-$(document).ready(function() {
+(function($) {
 
 	$('#menu-list').filterable();
 
-});
+})(jQuery);
 </script>
 
 {{ widget.after_widget }}

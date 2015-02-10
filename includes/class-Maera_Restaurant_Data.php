@@ -59,6 +59,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 
 			$context['slides']                    = Timber::get_posts( $slide_args );
 			$context['restaurant_items']          = Timber::get_posts( $restaurant_args );
+			$context['menu_sections']             = Timber::get_terms('restaurant_item_menu_section');
 			$context['sidebar']['section_1']      = Timber::get_widgets( 'section_1' );
 			$context['sidebar']['section_2']      = Timber::get_widgets( 'section_2' );
 			$context['sidebar']['section_3']      = Timber::get_widgets( 'section_3' );

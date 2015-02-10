@@ -72,8 +72,8 @@
 })(jQuery);
 
 
-$(document).ready(function(){
+(function($){
 
 	$('#menu-list').filterable();
 
-});
+})(jQuery);

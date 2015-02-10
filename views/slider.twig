@@ -47,13 +47,13 @@
 </div>
 
 <script>
-$(document).ready(function() {
+(function($) {
 	$('.carousel').carousel({
 		pause: {% if widget.pause %}"hover"{% else %}"none"{% endif %},
 		interval: {{ widget.interval }},
 		wrap: {% if widget.wrap %}{{ widget.wrap }}{% else %}0{% endif %},
 	});
-});
+})(jQuery);
 </script>
 
 {{ widget.after_widget }}

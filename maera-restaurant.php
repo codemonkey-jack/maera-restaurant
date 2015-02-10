@@ -86,7 +86,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Data.php');
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_PostTypes.php');
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Widget_Areas.php');
-			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Meta_Box.php');
+			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Taxonomies.php');
 
 			// Instantiate additional classes.
 			$this->customizer       = new Maera_Restaurant_Customizer();
@@ -95,10 +95,11 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			$this->data             = new Maera_Restaurant_Data();
 			$this->posttype         = new Maera_Restaurant_PostTypes();
 			$this->widgetareas      = new Maera_Restaurant_Widget_Areas();
-			$this->metabox          = new Maera_Restaurant_Meta_Box();
+			$this->taxonomies       = new Maera_Restaurant_Taxonomies();
 
 			// Add Actions
 			add_action( 'after_setup_theme', array( $this, 'required_plugins' ) );
+			add_action( 'do_meta_boxes', array( $this, 'slides_image_box') );
 
 			// Add Filters
 			// NULL
@@ -106,11 +107,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			// Theme Supports
 			add_theme_support( 'tonesque' );
 			add_theme_support( 'site-logo' );
-			add_theme_support( 'infinite-scroll', array(
-				'type'      => 'click',
-				'container' => 'content',
-				'footer'    => false,
-			) );
 
 		}
 
@@ -146,6 +142,22 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			);
 
 			$plugins = new Maera_Required_Plugins( $plugins );
+		}
+
+
+		/**
+		 * Move the featured image box from the side to the main area when editing slides.
+		 * @return [type] [description]
+		 */
+		function slides_image_box() {
+
+			$screen = get_current_screen();
+
+			if ( 'slide' == $screen->post_type ) {
+				remove_meta_box( 'postimagediv', 'slide', 'side' );
+				add_meta_box( 'postimagediv', __( 'Slide Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
+			}
+
 		}
 
 

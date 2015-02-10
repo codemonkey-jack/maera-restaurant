@@ -31,15 +31,7 @@ jQuery( document ).ready(function( $ ) {
 });
 
 
-// ***** DEBUG PURPOSES ***** //
-
-// Pause the carousel for design mockup.
-// $(document).ready(function() {
-// 	$('.carousel').carousel({
-// 		pause: true,
-// 		interval: false
-// 	});
-// });
+// ***** DEBUG ***** //
 
 // Leave SmoothScroll out for now.
 // jQuery( document ).ready(function( $ ) {
