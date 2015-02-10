@@ -11,24 +11,24 @@
 			show: { width: 'show', opacity: 'show' },
 			hide: { width: 'hide', opacity: 'hide' },
 			useTags: true,
-			tagSelector: '#portfolio-filter a',
+			tagSelector: '#menu-filter a',
 			selectedTagClass: 'current',
 			allTag: 'all'
 		}, settings);
-		
+
 		return $(this).each(function(){
-		
+
 			/* FILTER: select a tag and filter */
 			$(this).bind("filter", function( e, tagToShow ){
 				if(settings.useTags){
 					$(settings.tagSelector).removeClass(settings.selectedTagClass);
 					$(settings.tagSelector + '[href=' + tagToShow + ']').addClass(settings.selectedTagClass);
 				}
-				$(this).trigger("filterportfolio", [ tagToShow.substr(1) ]);
+				$(this).trigger("filtermenu", [ tagToShow.substr(1) ]);
 			});
-		
+
 			/* FILTERPORTFOLIO: pass in a class to show, all others will be hidden */
-			$(this).bind("filterportfolio", function( e, classToShow ){
+			$(this).bind("filtermenu", function( e, classToShow ){
 				if(classToShow == settings.allTag){
 					$(this).trigger("show");
 				}else{
@@ -39,17 +39,17 @@
 					location.hash = '#' + classToShow;
 				}
 			});
-			
+
 			/* SHOW: show a single class*/
 			$(this).bind("show", function( e, selectorToShow ){
 				$(this).children(selectorToShow).animate(settings.show, settings.animationSpeed);
 			});
-			
+
 			/* SHOW: hide a single class*/
 			$(this).bind("hide", function( e, selectorToHide ){
-				$(this).children(selectorToHide).animate(settings.hide, settings.animationSpeed);	
+				$(this).children(selectorToHide).animate(settings.hide, settings.animationSpeed);
 			});
-			
+
 			/* ============ Check URL Hash ====================*/
 			if(settings.useHash){
 				if(location.hash != '')
@@ -57,12 +57,12 @@
 				else
 					$(this).trigger("filter", [ '#' + settings.allTag ]);
 			}
-			
+
 			/* ============ Setup Tags ====================*/
 			if(settings.useTags){
 				$(settings.tagSelector).click(function(){
-					$('#portfolio-list').trigger("filter", [ $(this).attr('href') ]);
-					
+					$('#menu-list').trigger("filter", [ $(this).attr('href') ]);
+
 					$(settings.tagSelector).removeClass('current');
 					$(this).addClass('current');
 				});
@@ -73,7 +73,7 @@
 
 
 $(document).ready(function(){
-	
-	$('#portfolio-list').filterable();
+
+	$('#menu-list').filterable();
 
 });
