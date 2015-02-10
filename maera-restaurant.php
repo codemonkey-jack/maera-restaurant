@@ -95,7 +95,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			$this->data             = new Maera_Restaurant_Data();
 			$this->posttype         = new Maera_Restaurant_PostTypes();
 			$this->widgetareas      = new Maera_Restaurant_Widget_Areas();
-			$this->metabox          = new Maera_Restaurant_Widget_Box();
+			$this->metabox          = new Maera_Restaurant_Meta_Box();
 
 			// Add Actions
 			add_action( 'after_setup_theme', array( $this, 'required_plugins' ) );
