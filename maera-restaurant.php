@@ -141,6 +141,14 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				'slug' => 'restaurant',
 			);
 
+			if ( '1' == get_theme_mod( 'enable_opentable' , '0' ) ) {
+				$plugins[] = array(
+					'name' => 'Open Table Widget',
+					'file' => 'open-table-widget.php',
+					'slug' => 'open-table-widget',
+				);
+			}
+
 			$plugins = new Maera_Required_Plugins( $plugins );
 		}
 

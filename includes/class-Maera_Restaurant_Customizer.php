@@ -113,6 +113,20 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 */
 		function maera_res_general_settings( $controls ) {
 
+			$controls[] = array(
+				'type'     => 'radio',
+				'mode'     => 'buttonset',
+				'setting'  => 'enable_opentable',
+				'label'    => __( 'Enable OpenTable Support', 'maera-restaurant' ),
+				'section'  => 'maera_res_general',
+				'default'  => 1,
+				'priority' => 1,
+				'choices'  => array(
+					1 => __( 'On', 'maera-restaurant' ),
+					0 => __( 'Off', 'maera-restaurant' ),
+				),
+			);
+
 			return $controls;
 
 		}
