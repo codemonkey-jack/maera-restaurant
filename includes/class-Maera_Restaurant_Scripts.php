@@ -82,12 +82,15 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_register_script( 'smoothscroll', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/vendor/smooth-scroll.min.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'smoothscroll' );
 
-			// Filterable.js
-			wp_register_script( 'filterable', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/vendor/filterable.js', array('jquery'), time(), false );
-			wp_enqueue_script( 'filterable' );
+			// Isotope
+			wp_register_script( 'isotope', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/vendor/isotope.pkgd.min.js', array('jquery'), time(), false );
+			wp_enqueue_script( 'isotope' );
 
 			wp_register_script( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/app.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'maera-res' );
+
+
+
 
 		}
 

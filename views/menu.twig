@@ -10,59 +10,81 @@
 
 {% if widget.show_filters %}
 <ul id="menu-filter">
-	<li><a href="#all">All</a>
+	<li><a href="#" data-filter="*">All</a></li>
 	{% for menu_section in menu_sections %}
-	<li><a rel="{{ menu_section.name|lower }}" href="#{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
+	<li><a href="#" data-filter=".{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
 	{% endfor %}
 </ul>
 {% endif %}
 
-<div id="menu-wrapper">
-	<ul id="menu-list">
-		{% for post in posts %}
-		<li class="menu-item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} all col-md-4">
-			<div class="menu_item_wrapper">
-				<div class="media">
-					{% if post.thumbnail and widget.show_featured_images %}
-					<div class="media-left">
-						<a href="{{ post.permalink }}">
-							<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
-						</a>
-					</div>
-					{% endif %}
-					<div class="media-body">
-						<h3 class="media-heading">
-							<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
-							{% if widget.show_price %}
-							<span class="price_dots"></span>
-							<span class="price">{{ post.get_field('_restaurant_item_price') }}</span>
-							{% endif %}
-						</h3>
-						{{ post.content }}
-
-						{% if widget.show_tags %}
-							{% for term in post.terms('restaurant_tag') %}
-							<div class="menu_item_tags">
-								<span class="menu_tag"><a href="{{term.link}}">{{term.name}}</a></span>
-							</div>
-							{% endfor %}
-						{% endif %}
-					</div>
-				</div>
+<div id="menu-wrapper"class="js-isotope" data-isotope-options='{ "itemSelector": ".item" }'>
+	{% for post in posts %}
+	<div class="{% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} col-md-4 menu_item_wrapper item">
+		<div class="media">
+			{% if post.thumbnail and widget.show_featured_images %}
+			<div class="media-left">
+				<a href="{{ post.permalink }}">
+					<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
+				</a>
 			</div>
-		</li>
-		{% endfor %}
-	</ul>
-	{{ clearfix() }}
+			{% endif %}
+			<div class="media-body">
+				<h3 class="media-heading">
+					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
+					{% if widget.show_price %}
+					<span class="price_dots"></span>
+					<span class="price">{{ post.get_field('_restaurant_item_price') }}</span>
+					{% endif %}
+				</h3>
+				{{ post.content }}
+
+				{% if widget.show_tags %}
+					{% for term in post.terms('restaurant_tag') %}
+					<div class="menu_item_tags">
+						<span class="menu_tag"><a href="{{term.link}}">{{term.name}}</a></span>
+					</div>
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
+{{ clearfix() }}
+
 
 {% if widget.show_filters %}
 <script>
-(function($) {
 
-	$('#menu-list').filterable();
+jQuery(function ($) {
 
-})(jQuery);
+	var $container = $('#menu-wrapper');
+	$container.isotope({
+		itemSelector : '.item',
+  		layoutMode : 'masonry'
+	});
+
+	var $optionSets = $('#menu-filter'),
+	$optionLinks = $optionSets.find('a');
+
+	$optionLinks.click(function(){
+	var $this = $(this);
+
+	if ( $this.hasClass('selected') ) {
+	  return false;
+	}
+	var $optionSet = $this.parents('#menu-filter');
+	$optionSets.find('.selected').removeClass('selected');
+	$this.addClass('selected');
+
+	 var selector = $(this).attr('data-filter');
+	$container.isotope({ filter: selector });
+
+	return false;
+	});
+
+});
+
 </script>
 {% endif %}
 
