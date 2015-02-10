@@ -44,7 +44,7 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 			$labels = array(
 				'name'                       => _x( 'Menu Sections', 'Taxonomy General Name', 'maera-restaurant' ),
 				'singular_name'              => _x( 'Menu Section', 'Taxonomy Singular Name', 'maera-restaurant' ),
-				'menu_name'                  => __( 'Menu Section', 'maera-restaurant' ),
+				'menu_name'                  => __( 'Menu Sections', 'maera-restaurant' ),
 				'all_items'                  => __( 'All Menu Sections', 'maera-restaurant' ),
 				'parent_item'                => __( 'Parent Menu Sections', 'maera-restaurant' ),
 				'parent_item_colon'          => __( 'Parent Menu Section:', 'maera-restaurant' ),
