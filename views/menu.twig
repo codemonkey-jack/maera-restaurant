@@ -8,12 +8,14 @@
 	{{ widget.after_title }}
 {% endif %}
 
+{% if widget.show_filters %}
 <ul id="menu-filter">
 	<li><a href="#all">All</a>
 	{% for menu_section in menu_sections %}
 	<li><a rel="{{ menu_section.name|lower }}" href="#{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
 	{% endfor %}
 </ul>
+{% endif %}
 
 <div id="menu-wrapper">
 	<ul id="menu-list">
@@ -21,7 +23,7 @@
 		<li class="menu-item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} all col-md-4">
 			<div class="menu_item_wrapper">
 				<div class="media">
-					{% if post.thumbnail %}
+					{% if post.thumbnail and widget.show_featured_images %}
 					<div class="media-left">
 						<a href="{{ post.permalink }}">
 							<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
@@ -31,15 +33,20 @@
 					<div class="media-body">
 						<h3 class="media-heading">
 							<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
+							{% if widget.show_price %}
 							<span class="price_dots"></span>
 							<span class="price">{{ post.get_field('_restaurant_item_price') }}</span>
+							{% endif %}
 						</h3>
 						{{ post.content }}
-						{% for term in post.terms('restaurant_tag') %}
-						<div class="menu_item_tags">
-							<span class="menu_tag"><a href="{{term.link}}">{{term.name}}</a></span>
-						</div>
-						{% endfor %}
+
+						{% if widget.show_tags %}
+							{% for term in post.terms('restaurant_tag') %}
+							<div class="menu_item_tags">
+								<span class="menu_tag"><a href="{{term.link}}">{{term.name}}</a></span>
+							</div>
+							{% endfor %}
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -49,6 +56,7 @@
 	{{ clearfix() }}
 </div>
 
+{% if widget.show_filters %}
 <script>
 (function($) {
 
@@ -56,5 +64,6 @@
 
 })(jQuery);
 </script>
+{% endif %}
 
 {{ widget.after_widget }}

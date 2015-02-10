@@ -113,16 +113,16 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 
 			<table style="margin-top: 10px;">
 				<tr>
-					<td><?php _e( 'Number of slides to display','maera' ); ?></td>
+					<td><?php _e( 'Number of slides to display','maera-restaurant' ); ?></td>
 					<td><input id="<?php echo $this->get_field_id( 'per_page' ); ?>" name="<?php echo $this->get_field_name( 'per_page' ); ?>" value="<?php echo $instance['per_page']; ?>" type="number" /></td>
 				</tr>
 				<tr>
-					<td><?php _e( 'Offset','maera' ); ?></td>
+					<td><?php _e( 'Offset','maera-restaurant' ); ?></td>
 					<td><input id="<?php echo $this->get_field_id( 'per_page' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" value="<?php echo $instance['offset']; ?>" type="number" /></td>
 				</tr>
 
 				<tr>
-					<td><?php _e( 'Interval (ms)','maera' ); ?></td>
+					<td><?php _e( 'Interval (ms)','maera-restaurant' ); ?></td>
 					<td><input id="<?php echo $this->get_field_id( 'interval' ); ?>" name="<?php echo $this->get_field_name( 'interval' ); ?>" value="<?php echo $instance['interval']; ?>" type="number" /></td>
 				</tr>
 

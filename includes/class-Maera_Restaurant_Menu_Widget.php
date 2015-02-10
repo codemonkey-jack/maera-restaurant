@@ -49,15 +49,20 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 
 			$query_args = array(
 				'post_type'       => 'restaurant_item',
+				'posts_per_page'  => $instance['per_page'],
 				'tax_query'       => 'restaurant_tag',
 			);
 
 			$widget = array(
-				'title'           => apply_filters( 'widget_title', $instance['title'] ),
-				'before_widget'   => $before_widget,
-				'after_widget'    => $after_widget,
-				'before_title'    => $before_title,
-				'after_title'     => $after_title,
+				'title'                  => apply_filters( 'widget_title', $instance['title'] ),
+				'show_filters'           => $instance['show_filters'],
+				'show_price'             => $instance['show_price'],
+				'show_featured_images'   => $instance['show_featured_images'],
+				'show_tags'              => $instance['show_tags'],
+				'before_widget'          => $before_widget,
+				'after_widget'           => $after_widget,
+				'before_title'           => $before_title,
+				'after_title'            => $after_title,
 			);
 
 			$context              = Maera()->cache->get_context();
@@ -82,8 +87,13 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 		 */
 		function update( $new_instance, $old_instance ) {
 
-			$instance                    = $old_instance;
-			$instance['title']           = strip_tags( $new_instance['title'] );
+			$instance                           = $old_instance;
+			$instance['title']                  = strip_tags( $new_instance['title'] );
+			$instance['per_page']               = strip_tags( $new_instance['per_page'] );
+			$instance['show_filters']           = isset( $new_instance['show_filters'] );
+			$instance['show_price']             = isset( $new_instance['show_price'] );
+			$instance['show_featured_images']   = isset( $new_instance['show_featured_images'] );
+			$instance['show_tags']              = isset( $new_instance['show_tags'] );
 
 			return $instance;
 		}
@@ -96,7 +106,12 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 		 */
 		function form( $instance ) {
 			$defaults = array(
-				'title'            => 'Our Menu',
+				'title'                  => 'Our Menu',
+				'per_page'               => 9,
+				'show_filters'           => 1,
+				'show_price'             => 1,
+				'show_featured_images'   => 1,
+				'show_tags'              => 1,
 			);
 
 			$instance = wp_parse_args( ( array ) $instance, $defaults ); ?>
@@ -106,6 +121,38 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 
 			<table style="margin-top: 10px;">
 
+				<tr>
+					<td><?php _e( 'Number of menu items to display.','maera-restaurant' ); ?></td>
+					<td><input id="<?php echo $this->get_field_id( 'per_page' ); ?>" name="<?php echo $this->get_field_name( 'per_page' ); ?>" value="<?php echo $instance['per_page']; ?>" type="number" /></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_filters'] ) ? $instance['show_filters'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_filters' ); ?>" name="<?php echo $this->get_field_name( 'show_filters' ); ?>" />
+							<?php _e( 'Allow filtering by category?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_price'] ) ? $instance['show_price'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_price' ); ?>" name="<?php echo $this->get_field_name( 'show_price' ); ?>" />
+							<?php _e( 'Show Price?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_featured_images'] ) ? $instance['show_featured_images'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_featured_images' ); ?>" name="<?php echo $this->get_field_name( 'show_featured_images' ); ?>" />
+							<?php _e( 'Show featured images?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_tags'] ) ? $instance['show_tags'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_tags' ); ?>" name="<?php echo $this->get_field_name( 'show_tags' ); ?>" />
+							<?php _e( 'Show tags?','maera-restaurant' ); ?>
+					</td>
+				</tr>
 
 			</table>
 			<?php
