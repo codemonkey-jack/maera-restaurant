@@ -167,14 +167,28 @@ function maera_restaurant_licensing() {
 add_action( 'init', 'maera_restaurant_licensing' );
 
 
+/**
+ * Load and register widgets.
+ */
+include_once( __DIR__ . '/includes/class-Maera_Restaurant_Slider_Widget.php');
+include_once( __DIR__ . '/includes/class-Maera_Restaurant_Menu_Widget.php');
+
 
 /**
  * Register the slider widget.
+ * @return [type] [description]
  */
-
-include_once( __DIR__ . '/includes/class-Maera_Restaurant_Slider_Widget.php');
-
 function maera_res_slider_widgets() {
 	register_widget( 'Maera_Restaurant_Slider_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_slider_widgets' );
+
+
+/**
+ * Register the menu widget.
+ * @return [type] [description]
+ */
+function maera_res_menu_widgets() {
+	register_widget( 'Maera_Restaurant_Menu_Widget' );
+}
+add_action( 'widgets_init', 'maera_res_menu_widgets' );

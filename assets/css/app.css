@@ -69,7 +69,7 @@ body {
 
 
 /***************************
-  Slider
+  Slider Widget
 ***************************/
 .carousel-caption {
     right: 20%;
@@ -135,6 +135,56 @@ body {
     z-index: 5;
     display: inline-block;
 }
+
+
+
+/***************************
+  Menu Widget
+***************************/
+
+.widget_maera_res_menu_widget .widget-title{
+ font-size: 72px;
+}
+#menu-filter {
+    list-style-type: none;
+}
+
+#menu-filter li {
+    display: inline;
+    padding-right: 10px;
+}
+
+#menu-filter li a {
+    color: #777;
+    text-decoration: none;
+}
+
+#menu-filter li .current,
+#menu-filter li:hover {
+    color: #084a9a;
+}
+
+#menu-wrapper {
+    padding-bottom: 25px;
+}
+
+#menu-list {
+    list-style-type: none;
+
+}
+
+#menu-list .portfolio-item {
+    width: 400px;
+    float: left;
+    margin-right: 5px;
+}
+
+#menu-list .portfolio-item h3 a {
+    color: #084a9a;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 
 
 /***************************

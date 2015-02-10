@@ -64,7 +64,6 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			$context['sidebar']['section_3']      = Timber::get_widgets( 'section_3' );
 			$context['sidebar']['section_4']      = Timber::get_widgets( 'section_4' );
 			$context['sidebar']['section_5']      = Timber::get_widgets( 'section_5' );
-			$context['default_featured_image']    = TimberHelper::function_wrapper( 'res_default_featured_image' );
 
 			return $context;
 		}
@@ -183,7 +182,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 				'10' => array( 'label' => '10/12', 'classes' => 'col-md-10' ),
 				'11' => array( 'label' => '11/12', 'classes' => 'col-md-11' ),
 				'12' => array( 'label' => '12/12', 'classes' => 'col-md-12' ),
-				'13' => array( 'label' => 'Full Width', 'classes' => '.container-full' ),
+				'13' => array( 'label' => 'Full', 'classes' => '.container-full' ),
 			);
 
 			return $depths;

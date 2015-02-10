@@ -1,0 +1,52 @@
+{#<?php#}
+{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
+{{ widget.before_widget }}
+{% if widget.title %}
+	{{ widget.before_title }}
+	{{ widget.title }}
+	{{ widget.after_title }}
+{% endif %}
+
+<ul id="menu-filter">
+	<li><a href="#all">All</a>
+	{% for post in posts %}
+	<li><a rel="{{ post.get_field('menu_section')|lower }}" href="#{{ post.get_field('menu_section')|lower }}">{{ post.get_field('menu_section') }}</a></li>
+	{% endfor %}
+</ul>
+
+<div id="menu-wrapper">
+	<ul id="menu-list">
+		{% for post in posts %}
+		<li class="menu-item {{ post.get_field('menu_section')|lower }} all col-md-4">
+			<div class="menu_item_wrapper">
+				<div class="media">
+					<div class="media-left">
+						<a href="{{ post.permalink }}">
+						<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
+						</a>
+					</div>
+					<div class="media-body">
+						<h3 class="media-heading">
+							<a href="{{ post.permalink }}">{{ post.title }}</a>
+							<span class="price_dots">{{ post.get_field('_restaurant_item_price') }}</span>
+						</h3>
+						{{ post.excerpt }}
+					</div>
+				</div>
+			</div>
+		</li>
+		{% endfor %}
+	</ul>
+	{{ clearfix() }}
+</div>
+
+<script>
+$(document).ready(function() {
+
+	$('#menu-list').filterable();
+
+});
+</script>
+
+{{ widget.after_widget }}

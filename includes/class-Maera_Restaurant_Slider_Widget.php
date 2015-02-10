@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 
 	class Maera_Restaurant_Slider_Widget extends WP_Widget {
 
-
 		/**
 		 * Add the widget to the back end.
 		 * @todo TODO

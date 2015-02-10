@@ -10,7 +10,7 @@
 * @license       http://opensource.org/licenses/MIT MIT License
 * @version       Development: @MAERA_RES_VER@
 * @link          http://press.codes
-* @see           Maera_Restaurant_Widget_Areas(), Maera_Restaurant_Widget_Areas::method()
+* @see           Maera_Restaurant_Meta_Box(), Maera_Restaurant_Meta_Box::method()
 * @since         Class available since Release 1.0.0
 *
 */
@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Check if the class already exists.
-if ( ! class_exists( 'Maera_Restaurant_Widget_Box' ) ) {
+if ( ! class_exists( 'Maera_Restaurant_Meta_Box' ) ) {
 
-	class Maera_Restaurant_Widget_Box {
+	class Maera_Restaurant_Meta_Box {
 
 		/**
 		 * Class Constructor
