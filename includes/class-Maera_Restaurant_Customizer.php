@@ -6,7 +6,7 @@
 * @category      Plugin
 * @package       Maera Shell
 * @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch. Press.Codes, Maera
+* @copyright     2015 Brian C. Welch, Press.Codes, Maera
 * @license       http://opensource.org/licenses/MIT MIT License
 * @version       Development: @MAERA_RES_VER@
 * @link          http://press.codes
@@ -35,13 +35,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			// Add filters.
 			add_filter( 'kirki/controls', array( $this, 'maera_res_general_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_slider_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_about_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_restaurant_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_blog_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_events_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_testimonial_settings' ) );
-			add_filter( 'kirki/controls', array( $this, 'maera_res_social_settings' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_section_1' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_section_2' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_section_3' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_section_4' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_section_5' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_footer_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_styling_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_typography_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_navigation_settings' ) );
@@ -50,7 +49,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 
 		/**
-		 * Maera Restaurant Section
+		 * Maera Restaurant Kirki panels and sections.
 		 * @since 1.0.0
 		 * @param  [type] $wp_customize [description]
 		 * @return [type]               [description]
@@ -68,18 +67,18 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'maera_res_general'      => array( 'title' => __( 'General', 'maera-restaurant' ), 'priority' => 35, 'panel' => null ),
 
 				// Frontpage Sections
-				'maera_res_slider'       => array( 'title' => __( 'Slider', 'maera-restaurant' ), 'priority' => 40, 'panel' => 'maera_res_layout'  ),
-				'maera_res_about'        => array( 'title' => __( 'About', 'maera-restaurant' ), 'priority' => 45, 'panel' => 'maera_res_layout'  ),
-				'maera_res_restaurant'   => array( 'title' => __( 'Restaurant', 'maera-restaurant' ), 'priority' => 50, 'panel' => 'maera_res_layout'  ),
-				'maera_res_blog'         => array( 'title' => __( 'Blog', 'maera-restaurant' ), 'priority' => 55, 'panel' => 'maera_res_layout'  ),
-				'maera_res_events'       => array( 'title' => __( 'Events', 'maera-restaurant' ), 'priority' => 60, 'panel' => 'maera_res_layout'  ),
-				'maera_res_testimonials' => array( 'title' => __( 'Testimonials', 'maera-restaurant' ), 'priority' => 65, 'panel' => 'maera_res_layout'  ),
-				'maera_res_social'       => array( 'title' => __( 'Social', 'maera-restaurant' ), 'priority' => 70, 'panel' => 'maera_res_layout'  ),
+				'maera_res_section_1'    => array( 'title' => __( 'First Section', 'maera-restaurant' ), 'priority' => 40, 'panel' => 'maera_res_layout'  ),
+				'maera_res_section_2'    => array( 'title' => __( 'Second Section', 'maera-restaurant' ), 'priority' => 45, 'panel' => 'maera_res_layout'  ),
+				'maera_res_section_3'    => array( 'title' => __( 'Third Section', 'maera-restaurant' ), 'priority' => 50, 'panel' => 'maera_res_layout'  ),
+				'maera_res_section_4'    => array( 'title' => __( 'Fourth Section', 'maera-restaurant' ), 'priority' => 60, 'panel' => 'maera_res_layout'  ),
+				'maera_res_section_5'    => array( 'title' => __( 'Fifth Section', 'maera-restaurant' ), 'priority' => 65, 'panel' => 'maera_res_layout'  ),
+				'maera_res_footer'       => array( 'title' => __( 'Footer', 'maera-restaurant' ), 'priority' => 70, 'panel' => 'maera_res_layout'  ),
 
 				// Styling
 				'maera_res_colors'       => array( 'title' => __( 'Colors', 'maera-restaurant' ), 'priority' => 75, 'panel' => 'maera_res_styling' ),
-				'maera_res_typography'   => array( 'title' => __( 'Typography', 'maera-restaurant' ), 'priority' => 80, 'panel' => 'maera_res_styling' ),
-				'maera_res_navigation'   => array( 'title' => __( 'Navigation', 'maera-restaurant' ), 'priority' => 85, 'panel' => 'maera_res_styling' ),
+				'maera_res_backgrounds'  => array( 'title' => __( 'Backgrounds', 'maera-restaurant' ), 'priority' => 80, 'panel' => 'maera_res_styling' ),
+				'maera_res_typography'   => array( 'title' => __( 'Typography', 'maera-restaurant' ), 'priority' => 85, 'panel' => 'maera_res_styling' ),
+				// 'maera_res_navigation'   => array( 'title' => __( 'Navigation', 'maera-restaurant' ), 'priority' => 90, 'panel' => 'maera_res_styling' ),
 
 			);
 
@@ -114,25 +113,25 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 */
 		function maera_res_general_settings( $controls ) {
 
-			 return $controls;
+			return $controls;
 
 		}
 
 
 		/**
-		 * Maera Restaurant Slider Settings
+		 * Maera Restaurant First Section Settings
 		 * @since 1.0.0
 		 * @param  [type] $controls [description]
 		 * @return [type]           [description]
 		 */
-		function maera_res_slider_settings( $controls ) {
+		function maera_res_section_1( $controls ) {
 
 			$controls[] = array(
 				'type'     => 'radio',
 				'mode'     => 'buttonset',
-				'setting'  => 'show_slider_section',
-				'label'    => __( 'Show Slider', 'maera-restaurant' ),
-				'section'  => 'maera_res_slider',
+				'setting'  => 'show_first_section',
+				'label'    => __( 'Show First Section', 'maera-restaurant' ),
+				'section'  => 'maera_res_section_1',
 				'default'  => 1,
 				'priority' => 1,
 				'choices'  => array(
@@ -143,13 +142,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'slider_background',
-				'label'        => __( 'Slider Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the slider section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_slider',
+				'setting'      => 'section_1_background',
+				'label'        => __( 'First Section Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the first section.', 'maera-restaurant' ),
+				'section'      => 'maera_res_section_1',
 				'default'      => array(
 					'color'    => '#222222',
-					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/menu.png',
+					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_1_background.png',
 					'repeat'   => 'none',
 					'size'     => 'cover',
 					'attach'   => 'fixed',
@@ -157,10 +156,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority' => 2,
-				'output' => '#slider',
+				'output' => '#section_1',
 			);
 
-			 return $controls;
+			return $controls;
 
 		}
 
@@ -171,14 +170,14 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @param  [type] $controls [description]
 		 * @return [type]           [description]
 		 */
-		function maera_res_about_settings( $controls ) {
+		function maera_res_section_2( $controls ) {
 
 			$controls[] = array(
 				'type'     => 'radio',
 				'mode'     => 'buttonset',
-				'setting'  => 'show_about_section',
-				'label'    => __( 'Show About', 'maera-restaurant' ),
-				'section'  => 'maera_res_about',
+				'setting'  => 'show_second_section',
+				'label'    => __( 'Show Second Section', 'maera-restaurant' ),
+				'section'  => 'maera_res_section_2',
 				'default'  => 1,
 				'priority' => 1,
 				'choices'  => array(
@@ -189,10 +188,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'about_background',
-				'label'        => __( 'About Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the about section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_about',
+				'setting'      => 'section_2_background',
+				'label'        => __( 'Second Section Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the second section.', 'maera-restaurant' ),
+				'section'      => 'maera_res_section_2',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => null,
@@ -203,10 +202,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority' => 2,
-				'output' => '#about',
+				'output' => '#section_2',
 			);
 
-			 return $controls;
+			return $controls;
 
 		}
 
@@ -217,14 +216,14 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @param  [type] $controls [description]
 		 * @return [type]           [description]
 		 */
-		function maera_res_restaurant_settings( $controls ) {
+		function maera_res_section_3( $controls ) {
 
 			$controls[] = array(
 				'type'     => 'radio',
 				'mode'     => 'buttonset',
-				'setting'  => 'show_menu_section',
-				'label'    => __( 'Show Menu', 'maera-restaurant' ),
-				'section'  => 'maera_res_restaurant',
+				'setting'  => 'show_third_section',
+				'label'    => __( 'Show Third Section', 'maera-restaurant' ),
+				'section'  => 'maera_res_section_3',
 				'default'  => 1,
 				'priority' => 1,
 				'choices'  => array(
@@ -235,13 +234,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'menu_background',
-				'label'        => __( 'Menu Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the menu section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_restaurant',
+				'setting'      => 'section_3_background',
+				'label'        => __( 'Third Section Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the third section.', 'maera-restaurant' ),
+				'section'      => 'maera_res_section_3',
 				'default'      => array(
 					'color'    => '#ebe1d7',
-					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/menu.png',
+					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_3_background.jpg',
 					'repeat'   => 'none',
 					'size'     => 'cover',
 					'attach'   => 'fixed',
@@ -249,51 +248,20 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 85,
 				),
 				'priority' => 2,
-				'output' => '#menu',
+				'output' => '#section_3',
 			);
 
-			$controls[] = array(
-					'type'     => 'select',
-					'setting'  => 'currency',
-					'label'    => __( 'Select a currency to use for the restaurant.', 'maera_bs' ),
-					'section'  => 'maera_res_restaurant',
-					'default'  => 'United States dollar',
-					'priority' => 10,
-					'choices'  => null, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
-				);
+			// $controls[] = array(
+			// 		'type'     => 'select',
+			// 		'setting'  => 'currency',
+			// 		'label'    => __( 'Select a currency to use for the restaurant.', 'maera_bs' ),
+			// 		'section'  => 'maera_res_restaurant',
+			// 		'default'  => 'United States dollar',
+			// 		'priority' => 10,
+			// 		'choices'  => null, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
+			// );
 
-				return $controls;
-		}
-
-
-		/**
-		 * Maera Restaurant Blog Settings
-		 * @since 1.0.0
-		 * @param  [type] $controls [description]
-		 * @return [type]           [description]
-		 */
-		function maera_res_blog_settings( $controls ) {
-
-			$controls[] = array(
-				'type'         => 'background',
-				'setting'      => 'latest_posts_background',
-				'label'        => __( 'Latest Posts Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the latest posts section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_blog',
-				'default'      => array(
-					'color'    => '#ffffff',
-					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/recipes.jpg',
-					'repeat'   => 'none',
-					'size'     => 'cover',
-					'attach'   => 'fixed',
-					'position' => 'center-center',
-					'opacity'  => 100,
-				),
-				'priority' => 1,
-				'output' => '#latest-posts',
-			);
-
-			 return $controls;
+			return $controls;
 
 		}
 
@@ -304,14 +272,14 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @param  [type] $controls [description]
 		 * @return [type]           [description]
 		 */
-		function maera_res_events_settings( $controls ) {
+		function maera_res_section_4( $controls ) {
 
 			$controls[] = array(
 				'type'     => 'radio',
 				'mode'     => 'buttonset',
-				'setting'  => 'show_events_section',
-				'label'    => __( 'Show Events', 'maera-restaurant' ),
-				'section'  => 'maera_res_events',
+				'setting'  => 'show_fourth_section',
+				'label'    => __( 'Show Fourth Section', 'maera-restaurant' ),
+				'section'  => 'maera_res_section_4',
 				'default'  => 1,
 				'priority' => 1,
 				'choices'  => array(
@@ -322,10 +290,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'events_background',
-				'label'        => __( 'Events Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the events section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_events',
+				'setting'      => 'section_4_background',
+				'label'        => __( 'Fourth Section Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the fourth section.', 'maera-restaurant' ),
+				'section'      => 'maera_res_section_4',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => null,
@@ -336,7 +304,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority' => 2,
-				'output' => '#about',
+				'output' => '#section_4',
 			);
 
 			 return $controls;
@@ -350,14 +318,14 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @param  [type] $controls [description]
 		 * @return [type]           [description]
 		 */
-		function maera_res_testimonial_settings( $controls ) {
+		function maera_res_section_5( $controls ) {
 
 			$controls[] = array(
 				'type'     => 'radio',
 				'mode'     => 'buttonset',
-				'setting'  => 'show_testimonials_section',
-				'label'    => __( 'Show Testimonials', 'maera-restaurant' ),
-				'section'  => 'maera_res_testimonials',
+				'setting'  => 'show_fifth_section',
+				'label'    => __( 'Show Fifth Section', 'maera-restaurant' ),
+				'section'  => 'maera_res_section_5',
 				'default'  => 1,
 				'priority' => 1,
 				'choices'  => array(
@@ -368,13 +336,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'testimonials_posts_background',
-				'label'        => __( 'Testimonials Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the testimonials section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_testimonials',
+				'setting'      => 'section_5_background',
+				'label'        => __( 'Fifth Section Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the fifth section.', 'maera-restaurant' ),
+				'section'      => 'maera_res_section_5',
 				'default'      => array(
 					'color'    => '#ffffff',
-					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/testimonials.jpg',
+					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_5_background.jpg',
 					'repeat'   => 'none',
 					'size'     => 'cover',
 					'attach'   => 'fixed',
@@ -382,7 +350,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority' => 2,
-				'output' => '#testimonials',
+				'output' => '#section_5',
 			);
 
 			 return $controls;
@@ -396,16 +364,16 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @param  [type] $controls [description]
 		 * @return [type]           [description]
 		 */
-		function maera_res_social_settings( $controls ) {
+		function maera_res_footer_settings( $controls ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'social_background',
-				'label'        => __( 'Social Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the social section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_social',
+				'setting'      => 'footer_background',
+				'label'        => __( 'Footer Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the footer section.', 'maera-restaurant' ),
+				'section'      => 'maera_res_footer',
 				'default'      => array(
-					'color'    => '#ffffff',
+					'color'    => '#252525',
 					'image'    => null,
 					'repeat'   => 'none',
 					'size'     => 'cover',
@@ -413,8 +381,8 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'position' => 'center-center',
 					'opacity'  => 100,
 				),
-				'priority' => 2,
-				'output' => '#about',
+				'priority' => 1,
+				'output' => 'footer',
 			);
 
 			 return $controls;
@@ -456,6 +424,19 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					0 => __( 'Off', 'maera-restaurant' ),
 				),
 			);
+
+			 return $controls;
+
+		}
+
+
+		/**
+		 * Maera Restaurant Background Settings
+		 * @since 1.0.0
+		 * @param  [type] $controls [description]
+		 * @return [type]           [description]
+		 */
+		function maera_res_background_settings( $controls ) {
 
 			$controls[] = array(
 				'type'         => 'background',
@@ -502,13 +483,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'description'  => __( 'Set the background options for the main content sections.', 'maera-restaurant' ),
 				'section'      => 'maera_res_backgrounds',
 				'default'      => array(
-					'color'    => '#000000',
+					'color'    => '#fff',
 					'image'    => null,
 					'repeat'   => 'repeat',
 					'size'     => 'inherit',
 					'attach'   => 'inherit',
 					'position' => 'left-top',
-					'opacity'  => 75,
+					'opacity'  => 100,
 				),
 				'priority' => 10,
 				'output' => '#wrap-main-section',

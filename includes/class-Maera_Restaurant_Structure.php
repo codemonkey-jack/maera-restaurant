@@ -6,7 +6,7 @@
 * @category      Plugin
 * @package       Maera Shell
 * @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch. Press.Codes, Maera
+* @copyright     2015 Brian C. Welch, Press.Codes, Maera
 * @license       http://opensource.org/licenses/MIT MIT License
 * @version       Development: @MAERA_RES_VER@
 * @link          http://press.codes

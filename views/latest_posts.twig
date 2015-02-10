@@ -1,0 +1,21 @@
+{#<?php#}
+{% import 'grid_classes.html.twig' as grid %}
+{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
+<div class="container wrap main-section" id="wrap-main-section">
+	{% do action( 'maera/content/before', post.ID ) %}
+	<div class="content" id="content" itemprop="mainContentOfPage">
+		<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
+			<main class="{{ 'main'|apply_filters( 'maera/section_class/content' ) }}" role="main">
+				{% for post in posts %}
+					{% do action( 'maera/in_loop/begin' ) %}
+					{% include ['content-'~post.ID~'.twig', 'content-'~post.post_type~'.twig', 'content.twig'] %}
+					{% do action( 'maera/in_loop/end' ) %}
+				{% endfor %}
+			</main><!-- /.main -->
+			{% include 'sidebar.twig'|apply_filters('maera/sidebar_template') %}
+		</div>
+		{{ clearfix() }}
+	</div><!-- /#content -->
+	{% do action( 'maera/content/after' ) %}
+</div>

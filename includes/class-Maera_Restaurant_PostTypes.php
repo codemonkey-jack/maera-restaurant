@@ -6,7 +6,7 @@
 * @category      Plugin
 * @package       Maera Shell
 * @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch. Press.Codes, Maera
+* @copyright     2015 Brian C. Welch, Press.Codes, Maera
 * @license       http://opensource.org/licenses/MIT MIT License
 * @version       Development: @MAERA_RES_VER@
 * @link          http://press.codes
@@ -32,7 +32,6 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 
 			// Add actions.
 			add_action( 'init',  array( $this, 'maera_res_slides' ) );
-			add_action( 'do_meta_boxes', array( $this, 'slides_image_box') );
 
 			// Add filters.
 			add_filter( 'post_updated_messages',  array( $this, 'maera_res_slides_messages' ) );
@@ -127,22 +126,6 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 				10    => sprintf( __( 'Slide draft updated. <a target="_blank" href="%s">Preview slide</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
 			);
 			return $messages;
-		}
-
-
-		/**
-		 * Move the featured image box from the side to the main area when editing slides.
-		 * @return [type] [description]
-		 */
-		function slides_image_box() {
-
-			$screen = get_current_screen();
-
-			if ( 'slide' == $screen->post_type ) {
-				remove_meta_box( 'postimagediv', 'slide', 'side' );
-				add_meta_box( 'postimagediv', __( 'Slide Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
-			}
-
 		}
 
 		// End Methods

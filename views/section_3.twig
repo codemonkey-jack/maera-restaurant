@@ -1,0 +1,14 @@
+{#<?php#}
+<section id="section_3">
+
+	{% if sidebar.section_3 %}
+
+		{{ sidebar.section_3 }}
+
+	{% else %}
+
+		{% include 'latest_posts.twig' %}
+
+	{% endif %}
+
+</section>

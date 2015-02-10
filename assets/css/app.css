@@ -41,13 +41,13 @@ body {
 }
 
 #parallax-wrapper {
-    margin-bottom: 75px; /* Footer Height */
+/*    margin-bottom: 75px; /* Footer Height */*/
     width: 100%;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.75);
-    border-bottom: 1px solid #333333;
 }
-
-
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+}
 /***************************
   Sidebar
 ***************************/
@@ -71,13 +71,6 @@ body {
 /***************************
   Slider
 ***************************/
-#slider {
-    width: 100%;
-    margin: 0 auto;
-    height: 100%;
-    overflow: hidden;
-}
-
 .carousel-caption {
     right: 20%;
     left: 20%;
@@ -231,125 +224,52 @@ body {
 
 
 /***************************
-  About
+  First Section
 ***************************/
-#about {
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
-    padding-top: 88px;
-    padding-bottom: 100px;
-
-}
-.about-icon {
-    text-align: center;
-    padding: 25px;
-}
-
-.about-header h2 {
-    font-weight: normal;
-    font-size: 4em;
-    color: #000000;
-    margin-bottom: 23px;
-    text-align: center;
-}
-
-.about-footer {
-    text-align: center;
-}
-
-
-/***************************
-  Menu
-***************************/
-#menu {
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
-    border-bottom: 1px solid #aaa;
-}
-
-
-/***************************
-  Content
-***************************/
-#wrap-main-section {
-    padding: 25px;
-}
-
-.content-primary-wrapper {
-
-}
-
-#latest-posts {
-    height: auto;
-    background-position: 100% !important;
-}
-
-#latest-posts .frontpage_article {
-    float: left;
-    margin: 15px 0;
-    text-align: center;
-    overflow: hidden;
-}
-
-.frontpage_article .thumbnail {
-    position: relative;
-    overflow: hidden;
-}
-
-.frontpage_article .caption {
-    position:absolute;
-    top: 0;
-    right: 0;
-    background:rgba(0, 0, 0, 0.75);
+#section_1 {
     width: 100%;
     height: 100%;
-    padding: 2%;
-    display: none;
-    text-align: center;
-    color: #fff;
-    z-index:2;
-}
-
-.frontpage_article .caption h3 {
-    color: #fff;
-}
-
-#latest-posts .frontpage_article img {
-    width: 100%;
     margin: 0 auto;
 }
 
 
 /***************************
-  Events
+  Section Section
 ***************************/
-#events {
+#section_2 {
     width: 100%;
-    margin: 0 auto;
     height: auto;
+    margin: 0 auto;
 }
 
 
 /***************************
-  Testimonials
+  Third Section
 ***************************/
-#testimonials {
+#section_3 {
     width: 100%;
-    margin: 0 auto;
     height: auto;
-    background-position: 100% !important;
+    margin: 0 auto;
 }
 
 
 /***************************
-  Pre Footer
+  Fourth Section
 ***************************/
-#pre-footer{
+#section_4 {
     width: 100%;
-    margin: 0 auto;
     height: auto;
+    margin: 0 auto;
+}
+
+
+/***************************
+  Fifth Section
+***************************/
+#section_5 {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 
@@ -361,57 +281,8 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 75px;
     z-index: -1;
-    background-color:#252525;
 }
 
-footer .well {
-    background-color: #252525;
-    color: #818181;
-    word-wrap: break-word;
-    border-bottom: none;
-}
-
-footer .well h3{
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-family: 'Lato';
-}
-
-footer .well ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-footer .well ul li {
-    padding-bottom: 15px;
-}
-
-footer .well a {
-    color: #818181 !important;
-}
-
-footer .well a:hover {
-    color: #ffffff !important;
-}
-
-footer .well > .textwidget p {
-    line-height: 2.5em;
-}
-
-.footer_social_icon {
-    margin-right: 15px;
-}
-
-#footer-copyright {
-    text-align: center;
-    color: #fff;
-    margin-top: 25px;
-    text-transform: uppercase;
-    font-weight: 200;
-    font-size: 1.25em;
-}
 
 /* EOF */

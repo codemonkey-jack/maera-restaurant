@@ -1,0 +1,87 @@
+{#<?php#}
+{% import 'grid_classes.html.twig' as grid %}
+{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
+<div id="parallax-wrapper" class="wrap">
+
+	{# Begin First Section #}
+	{%  if function('is_front_page') == true and theme_mods.show_first_section == 1 %}
+
+		{% do action( 'maera/restaurant/before_section_1' ) %}
+
+    		{% include 'section_1.twig' %}
+
+		{% do action( 'maera/restaurant/after_section_1' ) %}
+
+		{{ clearfix() }}
+
+	{% endif %}
+	{# End First Section #}
+
+	{# Begin Navbar #}
+	{% do action( 'maera/restaurant/before_navbar' ) %}
+
+		{% include 'navbar.twig' %}
+
+	{% do action( 'maera/restaurant/after_navbar' ) %}
+
+	{{ clearfix() }}
+	{# End Navbar #}
+
+	{# Begin Second Section #}
+	{% if function('is_front_page') == true and theme_mods.show_second_section == 1 %}
+
+		{% do action( 'maera/restaurant/before_section_2' ) %}
+
+			{% include 'section_2.twig' %}
+
+		{% do action( 'maera/restaurant/after_section_2' ) %}
+
+		{{ clearfix() }}
+
+	{% endif %}
+	{# End Second Section #}
+
+	{# Begin Third Section #}
+	{% if function('is_front_page') == true and theme_mods.show_third_section == 1 %}
+
+		{% do action( 'maera/restaurant/before_section_3' ) %}
+
+			{% include 'section_3.twig' %}
+
+		{% do action( 'maera/restaurant/after_section_3' ) %}
+
+		{{ clearfix() }}
+
+	{% endif %}
+	{# End Third Section #}
+
+	{# Begin Fourth Section #}
+	{% if function('is_front_page') == true and theme_mods.show_fourth_section == 1 %}
+
+		{% do action( 'maera/restaurant/before_section_4' ) %}
+
+			{% include 'section_4.twig' %}
+
+		{% do action( 'maera/restaurant/after_section_4' ) %}
+
+		{{ clearfix() }}
+
+	{% endif %}
+	{# End Fourth Section #}
+
+	{# Begin Fifth Section #}
+	{% if function('is_front_page') == true and theme_mods.show_fifth_section == 1 %}
+
+		{% do action( 'maera/restaurant/before_section_5' ) %}
+
+			{% include 'section_5.twig' %}
+
+		{% do action( 'maera/restaurant/after_section_5' ) %}
+
+		{{ clearfix() }}
+
+	{% endif %}
+	{# End Fifth Section #}
+
+</div>

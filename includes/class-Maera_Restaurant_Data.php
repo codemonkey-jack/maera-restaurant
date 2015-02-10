@@ -6,7 +6,7 @@
 * @category      Plugin
 * @package       Maera Shell
 * @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch. Press.Codes, Maera
+* @copyright     2015 Brian C. Welch, Press.Codes, Maera
 * @license       http://opensource.org/licenses/MIT MIT License
 * @version       Development: @MAERA_RES_VER@
 * @link          http://press.codes
@@ -14,6 +14,9 @@
 * @since         Class available since Release 1.0.0
 *
 * Add any data methods needed to this class.
+* Also include any WordPress actions or filters that do not apply to other classes.
+* This file's purpose is to control how all data is handled.
+*
 */
 
 // Exit if accessed directly
@@ -32,10 +35,11 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		public function __construct() {
 
 			// Add actions.
-			add_action( 'default_featured_image', array( $this, 'res_default_featured_image' ) );
+			add_action( 'admin_head', array( $this, 'maera_res_live_rename_quotes' ) );
 
 			// Add filters.
 			add_filter( 'maera/timber/context', array( $this, 'maera_res_context' ) );
+			add_filter( 'esc_html', array( $this, 'maera_res_rename_quotes' ) );
 		}
 
 
@@ -44,36 +48,34 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		*/
 		function maera_res_context( $context ) {
 
-			$args = array(
+			$slide_args = array(
 				'post_type' => 'slide',
 			);
 
-			$context['default_featured_image'] = TimberHelper::function_wrapper( 'res_default_featured_image' );
-			$context['slides']                 = Timber::get_posts( $args );
+			$restaurant_args = array(
+				'post_type' => 'restaurant_item',
+				'tax_query' => 'restaurant_tag',
+			);
+
+			$context['slides']                    = Timber::get_posts( $slide_args );
+			$context['restaurant_items']          = Timber::get_posts( $restaurant_args );
+			$context['sidebar']['section_1']      = Timber::get_widgets( 'section_1' );
+			$context['sidebar']['section_2']      = Timber::get_widgets( 'section_2' );
+			$context['sidebar']['section_3']      = Timber::get_widgets( 'section_3' );
+			$context['sidebar']['section_4']      = Timber::get_widgets( 'section_4' );
+			$context['sidebar']['section_5']      = Timber::get_widgets( 'section_5' );
+			$context['default_featured_image']    = TimberHelper::function_wrapper( 'res_default_featured_image' );
 
 			return $context;
 		}
 
 
 		/**
-		 * Echo a default featured image for posts that do not have them.
-		 * @return [type] [description]
-		 */
-		public static function res_default_featured_image() {
-
-			$res_featured_image     = new TimberImage( trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/img/backgrounds/testimonials.jpg' );
-			$featured_image_resized = TimberImageHelper::resize( $res_featured_image, null, 300, 'center', true );
-
-			// echo esc_html( $res_featured_image );
-			echo esc_html( $featured_image_resized );
-
-		}
-
-		/**
 		 * Retrieive a list of currencies to use.
 		 * @param  [type] $currency_url [description]
 		 * @return [type]          [description]
 		 * @since  1.0.0
+		 * @todo   Broken.  Mustfix.
 		 */
 		public static function get_currencies() {
 
@@ -124,6 +126,67 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 
 			return $cats;
 
+		}
+
+
+		/**
+		 * Rename "Quotes" post type to "Testimonials"
+		 * @param  [type] $safe_text [description]
+		 * @return [type]            [description]
+		 */
+		function maera_res_rename_quotes( $type_text ) {
+			if ( 'Quote' == $type_text ){
+				return 'Testimonials';
+			}
+
+			return $type_text;
+		}
+
+
+		/**
+		 * Live rename "Quotes" post type to "Testimonials"
+		 * @return [type] [description]
+		 */
+		function maera_res_live_rename_quotes() {
+			global $current_screen;
+
+			if ( 'edit-post' == $current_screen->id ) { ?>
+				<script type="text/javascript">
+				jQuery('document').ready(function() {
+
+					jQuery("span.post-state-format").each(function() {
+						if ( jQuery(this).text() == "Quote" )
+							jQuery(this).text("Testimonial");
+					});
+
+				});
+				</script>
+		<?php }
+		}
+
+
+		/**
+		 * Specify widget widths classes.
+		 * @return [type] [description]
+		 */
+		public static function widget_widths() {
+			$depths = array(
+				'1'  => array( 'label' => '1/12', 'classes' => 'col-md-1' ),
+				'2'  => array( 'label' => '2/12', 'classes' => 'col-md-2' ),
+				'3'  => array( 'label' => '3/12', 'classes' => 'col-md-3' ),
+				'4'  => array( 'label' => '4/12', 'classes' => 'col-md-4' ),
+				'5'  => array( 'label' => '5/12', 'classes' => 'col-md-5' ),
+				'6'  => array( 'label' => '6/12', 'classes' => 'col-md-6' ),
+				'7'  => array( 'label' => '7/12', 'classes' => 'col-md-7' ),
+				'8'  => array( 'label' => '8/12', 'classes' => 'col-md-8' ),
+				'9'  => array( 'label' => '9/12', 'classes' => 'col-md-9' ),
+				'10' => array( 'label' => '10/12', 'classes' => 'col-md-10' ),
+				'11' => array( 'label' => '11/12', 'classes' => 'col-md-11' ),
+				'12' => array( 'label' => '12/12', 'classes' => 'col-md-12' ),
+				'13' => array( 'label' => 'Full Width', 'classes' => '.container-full' ),
+			);
+
+			return $depths;
 		}
 
 

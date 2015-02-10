@@ -50,7 +50,7 @@ add_filter( 'maera/shells/available', 'maera_include_restaurant_shell' );
 * @category      Plugin
 * @package       Maera Shell
 * @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch. Press.Codes, Maera
+* @copyright     2015 Brian C. Welch, Press.Codes, Maera
 * @license       http://opensource.org/licenses/MIT MIT License
 * @version       Development: @MAERA_RES_VER@
 * @link          http://press.codes
@@ -85,13 +85,17 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Structure.php');
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Data.php');
 			require_once( __DIR__ . '/includes/class-Maera_Restaurant_PostTypes.php');
+			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Widget_Areas.php');
+			require_once( __DIR__ . '/includes/class-Maera_Restaurant_Meta_Box.php');
 
 			// Instantiate additional classes.
-			$this->customizer    = new Maera_Restaurant_Customizer();
-			$this->scripts       = new Maera_Restaurant_Scripts();
-			$this->structure     = new Maera_Restaurant_Structure();
-			$this->data          = new Maera_Restaurant_Data();
-			$this->posttype      = new Maera_Restaurant_PostTypes();
+			$this->customizer       = new Maera_Restaurant_Customizer();
+			$this->scripts          = new Maera_Restaurant_Scripts();
+			$this->structure        = new Maera_Restaurant_Structure();
+			$this->data             = new Maera_Restaurant_Data();
+			$this->posttype         = new Maera_Restaurant_PostTypes();
+			$this->widgetareas      = new Maera_Restaurant_Widget_Areas();
+			$this->metabox          = new Maera_Restaurant_Widget_Box();
 
 			// Add Actions
 			add_action( 'after_setup_theme', array( $this, 'required_plugins' ) );
@@ -134,6 +138,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			if ( ! $plugins || empty( $plugins ) ) {
 				$plugins = array();
 			}
+
 			$plugins[] = array(
 				'name' => 'Restaurant',
 				'file' => 'restaurant.php',
@@ -160,3 +165,16 @@ function maera_restaurant_licensing() {
 
 }
 add_action( 'init', 'maera_restaurant_licensing' );
+
+
+
+/**
+ * Register the slider widget.
+ */
+
+include_once( __DIR__ . '/includes/class-Maera_Restaurant_Slider_Widget.php');
+
+function maera_res_slider_widgets() {
+	register_widget( 'Maera_Restaurant_Slider_Widget' );
+}
+add_action( 'widgets_init', 'maera_res_slider_widgets' );
