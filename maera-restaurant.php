@@ -149,6 +149,15 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				);
 			}
 
+			if ( '1' == get_theme_mod( 'enable_events' , '0' ) ) {
+				$plugins[] = array(
+					'name' => 'The Events Calendar',
+					'file' => 'the-events-calendar.php',
+					'slug' => 'the-events-calendar',
+				);
+			}
+
+
 			$plugins = new Maera_Required_Plugins( $plugins );
 		}
 

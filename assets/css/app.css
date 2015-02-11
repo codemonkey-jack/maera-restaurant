@@ -149,16 +149,12 @@ body {
     list-style-type: none;
     text-align: center;
     margin-bottom: 25px;
+
 }
 
 #menu-filter li {
     display: inline;
     padding-right: 10px;
-    -o-transition: .5s;
-    -ms-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s;
-    transition: .5s;
 }
 
 #menu-filter li a {
@@ -171,13 +167,14 @@ body {
 #menu-filter li .current,
 #menu-filter li:hover {
     color: #084a9a;
-    text-decoration: underline;
+    text-decoration: none;
 
 }
 
 #menu-filter .selected {
- border: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
 }
+
 
 #menu-wrapper {
     padding-bottom: 25px;
@@ -217,10 +214,7 @@ body {
 }
 
 .menu_item_tags {
-/*    position: absolute;
-    bottom: 20px;
-    left: 20px;
-*/    background: #e68b1f;
+    background: #e68b1f;
     padding: 4px 8px;
     border-top-right-radius: 6px;
     border-bottom-left-radius: 6px;
@@ -235,10 +229,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Start: Recommended Isotope styles */
-
-/**** Isotope Filtering ****/
-
 .isotope-item {
   z-index: 2;
 }
@@ -247,7 +237,6 @@ body {
   pointer-events: none;
   z-index: 1;
 }
-/**** Isotope CSS3 transitions ****/
 
 .isotope,
 .isotope .isotope-item {
@@ -274,8 +263,6 @@ body {
           transition-property:         transform, opacity;
 }
 
-/**** disabling Isotope CSS3 transitions ****/
-
 .isotope.no-transition,
 .isotope.no-transition .isotope-item,
 .isotope .isotope-item.no-transition {
@@ -285,12 +272,6 @@ body {
        -o-transition-duration: 0s;
           transition-duration: 0s;
 }
-
-/* End: Recommended Isotope styles */
-
-
-
-
 
 
 /***************************

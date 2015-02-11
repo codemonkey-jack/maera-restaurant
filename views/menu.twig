@@ -10,7 +10,7 @@
 
 {% if widget.show_filters %}
 <ul id="menu-filter">
-	<li><a href="#" data-filter="*">All</a></li>
+	<li><a href="#" data-filter="*" class="selected">All</a></li>
 	{% for menu_section in menu_sections %}
 	<li><a href="#" data-filter=".{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
 	{% endfor %}
