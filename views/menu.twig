@@ -1,6 +1,8 @@
 {#<?php#}
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
+{% set menu_link = widget.link_target %}
+
 {{ widget.before_widget }}
 {% if widget.title %}
 	{{ widget.before_title }}
@@ -86,6 +88,12 @@ jQuery(function ($) {
 });
 
 </script>
+{% endif %}
+
+{% if widget.show_menu_link %}
+<div class="menu_link_wrapper">
+	<a href="{{ widget.link_target }}" class="[maera_button_primary_medium]">{{ __('Full Menu', 'maera-restaurant') }}</a>
+</div>
 {% endif %}
 
 {{ widget.after_widget }}

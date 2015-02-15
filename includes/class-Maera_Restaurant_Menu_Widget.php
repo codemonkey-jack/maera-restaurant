@@ -59,6 +59,9 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 				'show_price'             => $instance['show_price'],
 				'show_featured_images'   => $instance['show_featured_images'],
 				'show_tags'              => $instance['show_tags'],
+				'show_menu_link'         => $instance['show_menu_link'],
+				'link_target'            => $instance['link_target'],
+				'link_name'              => $instance['link_name'],
 				'before_widget'          => $before_widget,
 				'after_widget'           => $after_widget,
 				'before_title'           => $before_title,
@@ -94,6 +97,9 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 			$instance['show_price']             = isset( $new_instance['show_price'] );
 			$instance['show_featured_images']   = isset( $new_instance['show_featured_images'] );
 			$instance['show_tags']              = isset( $new_instance['show_tags'] );
+			$instance['show_menu_link']         = isset( $new_instance['show_menu_link'] );
+			$instance['link_target']            = strip_tags( $new_instance['link_target'] );
+			$instance['link_name']              = strip_tags( $new_instance['link_name'] );
 
 			return $instance;
 		}
@@ -112,6 +118,8 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 				'show_price'             => 1,
 				'show_featured_images'   => 1,
 				'show_tags'              => 1,
+				'show_menu_link'         => 1,
+				'link_target'            => null,
 			);
 
 			$instance = wp_parse_args( ( array ) $instance, $defaults ); ?>
@@ -129,28 +137,56 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 				<tr>
 					<td colspan="2">
 						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_filters'] ) ? $instance['show_filters'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_filters' ); ?>" name="<?php echo $this->get_field_name( 'show_filters' ); ?>" />
-							<?php _e( 'Allow filtering by category?','maera-restaurant' ); ?>
+						<?php _e( 'Allow filtering by category?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 
 				<tr>
 					<td colspan="2">
 						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_price'] ) ? $instance['show_price'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_price' ); ?>" name="<?php echo $this->get_field_name( 'show_price' ); ?>" />
-							<?php _e( 'Show Price?','maera-restaurant' ); ?>
+						<?php _e( 'Show Price?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 
 				<tr>
 					<td colspan="2">
 						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_featured_images'] ) ? $instance['show_featured_images'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_featured_images' ); ?>" name="<?php echo $this->get_field_name( 'show_featured_images' ); ?>" />
-							<?php _e( 'Show featured images?','maera-restaurant' ); ?>
+						<?php _e( 'Show featured images?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 
 				<tr>
 					<td colspan="2">
 						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_tags'] ) ? $instance['show_tags'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_tags' ); ?>" name="<?php echo $this->get_field_name( 'show_tags' ); ?>" />
-							<?php _e( 'Show tags?','maera-restaurant' ); ?>
+						<?php _e( 'Show tags?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_menu_link'] ) ? $instance['show_menu_link'] : 0  ); ?> id="<?php echo $this->get_field_id( 'show_menu_link' ); ?>" name="<?php echo $this->get_field_name( 'show_menu_link' ); ?>" />
+						<?php _e( 'Show link to menu page?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="<?php echo $this->get_field_id( 'link_target' ); ?>"><?php _e( 'Menu Page:' ); ?></label>
+						<?php
+
+						$args = array(
+							'depth'                 => 0,
+							'child_of'              => 0,
+							'selected'              => $instance['link_target'],
+							'echo'                  => 1,
+							'name'                  => $this->get_field_name( 'link_target' ),
+							'id'                    => $this->get_field_id( 'link_target' ),
+							'show_option_none'      => null, // string
+							'show_option_no_change' => null, // string
+							'option_none_value'     => null, // string
+						);
+
+						wp_dropdown_pages( $args );
+						?>
 					</td>
 				</tr>
 

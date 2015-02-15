@@ -229,6 +229,10 @@ body {
     text-transform: uppercase;
 }
 
+.menu_link_wrapper {
+  text-align: center;
+}
+
 .isotope-item {
   z-index: 2;
 }
