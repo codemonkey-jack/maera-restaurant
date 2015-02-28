@@ -5,21 +5,11 @@
 Load any fonts that we need.
 Fonts can be found in the /assets/fonts/ folder.
 */
-@font-face {
-    font-family: 'IcoMoon';
-    font-style: normal;
-    font-weight: 400;
-    src: local('IcoMoon'), local('IcoMoon'), url(../fonts/IcoMoon-Free.ttf) format('truetype');
-}
 
 
 /***************************
   General
 ***************************/
-* {
-    border-radius: 1px !important;  /* Override for now */
-}
-
 a {
     -o-transition: .5s;
     -ms-transition: .5s;
@@ -27,11 +17,6 @@ a {
     -webkit-transition: .5s;
     transition: .5s;
 }
-
-a:hover {
-    text-decoration: none;
-}
-
 
 /***************************
   Body
@@ -41,13 +26,15 @@ body {
 }
 
 #parallax-wrapper {
-/*    margin-bottom: 75px; /* Footer Height */*/
     width: 100%;
 }
+
 .container-full {
     margin: 0 auto;
     width: 100%;
 }
+
+
 /***************************
   Sidebar
 ***************************/
@@ -71,6 +58,9 @@ body {
 /***************************
   Slider Widget
 ***************************/
+.widget_maera_res_slider_widget{
+  padding: 0;
+}
 .carousel-caption {
     right: 20%;
     left: 20%;
@@ -83,8 +73,6 @@ body {
 .carousel-caption h1{
     font-size: 3em;
     color: #fff;
-    border-top: 1px solid rgb(227,173,71);
-    border-bottom: 1px solid rgb(227,173,71);
     padding: 15px;
     line-height: 2em;
     margin-bottom: 15px;
@@ -98,7 +86,7 @@ body {
     -moz-transition-property: opacity;
     -o-transition-property: opacity;
     transition-property: opacity;
-    background: #000;
+    background: rgba(0,0,0,1);
 }
 .carousel .item img {
     margin: 0 auto;
@@ -107,23 +95,23 @@ body {
 }
 
 .carousel .active {
-  opacity: 1;
+    opacity: 1;
 }
 
 .carousel .active.left,
 .carousel .active.right {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
 }
 
 .carousel .next.left,
 .carousel .prev.right {
-  opacity: 1;
+    opacity: 1;
 }
 
 .carousel .carousel-control {
-  z-index: 2;
+    z-index: 2;
 }
 
 .carousel-control .glyphicon-chevron-left,
@@ -141,15 +129,10 @@ body {
 /***************************
   Menu Widget
 ***************************/
-.widget_maera_res_menu_widget .widget-title{
-    font-size: 72px;
-}
-
 #menu-filter {
     list-style-type: none;
     text-align: center;
     margin-bottom: 25px;
-
 }
 
 #menu-filter li {
@@ -168,13 +151,11 @@ body {
 #menu-filter li:hover {
     color: #084a9a;
     text-decoration: none;
-
 }
 
 #menu-filter .selected {
     border-bottom: 1px solid #aaa;
 }
-
 
 #menu-wrapper {
     padding-bottom: 25px;
@@ -182,13 +163,12 @@ body {
 
 #menu-list {
     list-style-type: none;
-
 }
 
 .menu_item_wrapper {
-  margin: 15px 0;
-  padding: 5px;
-  height: 125px;
+    margin: 15px 0;
+    padding: 5px;
+    height: 125px;
 }
 
 .dish_name {
@@ -216,8 +196,6 @@ body {
 .menu_item_tags {
     background: #e68b1f;
     padding: 4px 8px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
     z-index: 9;
     float: right;
     font-size: 10px;
@@ -230,25 +208,25 @@ body {
 }
 
 .menu_link_wrapper {
-  text-align: center;
+    text-align: center;
 }
 
 .isotope-item {
-  z-index: 2;
+    z-index: 2;
 }
 
 .isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .isotope,
 .isotope .isotope-item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+  -webkit-transition-duration: 0.75s;
+     -moz-transition-duration: 0.75s;
+      -ms-transition-duration: 0.75s;
+       -o-transition-duration: 0.75s;
+          transition-duration: 0.75s;
 }
 
 .isotope {
@@ -281,47 +259,8 @@ body {
 /***************************
   Navbar
 ***************************/
-.affix {
-    top: 0;
-}
-
-.bottom-nav {
-    position:absolute;
-    bottom:0;
-    left:0;
-    margin-bottom:0;
-}
-
-.hide-brand {
-    opacity: 0;
-    display: none;
-}
-
-.show-brand {
-    display: inline-block;
-    opacity: 1;
-}
-
-.navbar .navbar-collapse {
-    text-align: center;
-}
-
-.navbar.navbar-default {
-    width: 100%;
-    z-index: 999;
-    padding: 25px 0;
-    transition: all 0.3s ease;
-}
-
-.navbar.small-nav {
-    padding: 5px 0;
-}
-
-.navbar .navbar-nav {
-    display: inline-block;
-    float: none;
-    vertical-align: middle;
-    transition: all 0.3s ease;
+.navbar {
+    margin: 0 auto;
 }
 
 .navbar-brand {
@@ -331,36 +270,6 @@ body {
 .navbar-brand > img {
     max-height: 100%;
     display: block;
-}
-
-.navbar-default .navbar-nav > li > a {
-    display: block;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 1.5em;
-    font-style: italic;
-    margin-right: 12px;
-    color: #fff !important; /*Temp*/
-    text-decoration: none;
-}
-
-.navbar-default .navbar-nav > li > a:hover {
-    color: #e3ad47 !important; /*Temp*/
-}
-
-.navbar-default .navbar-nav > li > a:after {
-    content: "\e919";
-    font-family: 'IcoMoon';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 1;
-    text-decoration: none;
-    -webkit-font-smoothing: antialiased;
-    color: #e3ad47;
-    display: inline-block;
-    margin-left: 25px;
 }
 
 
@@ -379,7 +288,7 @@ body {
 ***************************/
 #section_2 {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -389,7 +298,7 @@ body {
 ***************************/
 #section_3 {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -399,7 +308,7 @@ body {
 ***************************/
 #section_4 {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -409,7 +318,7 @@ body {
 ***************************/
 #section_5 {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -418,11 +327,9 @@ body {
   Footer
 ***************************/
 footer {
-    position:fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    z-index: -1;
+    height: auto;
+    margin: 0 auto;
 }
 
 

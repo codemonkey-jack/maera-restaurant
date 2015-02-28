@@ -1,6 +1,6 @@
 var $j = jQuery.noConflict();
 $j(window).load(function () {
-	$j('section[data-type="background"]').each(function() {
+	$j('div[data-type="background"]').each(function() {
 		var $bgobj = $j(this);
 		$j(window).scroll(function() {
 			var yPos = -($j(window).scrollTop() / $bgobj.data('speed'));
