@@ -47,45 +47,43 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 		function scripts() {
 
 			// CSS
-
-			// Load Bootstrap from the CDN for now.
-			wp_register_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' );
+			// Load Bootstrap.
+			wp_register_style( 'bootstrap', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.min.css' );
 			wp_enqueue_style( 'bootstrap' );
 
-			// Ugly.  Change to an appropriate method using the compiler before release.
+			// Load Bootstrap (Theme) Gradients.
 			if ( 1 == get_theme_mod( 'gradients' , '0' ) ) {
-				wp_register_style( 'bootstrap-theme', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css' );
+				wp_register_style( 'bootstrap-theme', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap-theme.min.css' );
 				wp_enqueue_style( 'bootstrap-theme' );
 			}
 
-			// Load FontAwesome from the CDN for now.
-			wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+			// Load FontAwesome.
+			wp_register_style( 'fontawesome', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/font-awesome.min.css' );
 			wp_enqueue_style( 'fontawesome' );
 
+			// Load Animations
+			wp_register_style( 'animate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/animate.min.css' );
+			wp_enqueue_style( 'animate' );
+
+			// Load App CSS.
 			wp_register_style( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/app.css' );
 			wp_enqueue_style( 'maera-res' );
 
-			wp_register_style( 'animate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/vendor/animate.css' );
-			wp_enqueue_style( 'animate' );
 
 			// Javascript
-
-			// Load Bootstrap JS from the CDN for now.
-			wp_register_script( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js', array('jquery'), time(), false );
+			// Load Bootstrap.
+			wp_register_script( 'bootstrap', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/bootstrap.min.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'bootstrap' );
 
-			// Load jQuery UI from the CDN for now.
-			wp_register_script( 'jquery_ui', '//code.jquery.com/ui/1.11.2/jquery-ui.js', array('jquery'), time(), false );
+			// Load jQuery UI.
+			wp_register_script( 'jquery_ui', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/jquery-ui.min.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'jquery_ui' );
 
-			// May end up removing this
-			wp_register_script( 'smoothscroll', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/vendor/smooth-scroll.min.js', array('jquery'), time(), false );
-			wp_enqueue_script( 'smoothscroll' );
-
 			// Isotope
-			wp_register_script( 'isotope', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/vendor/isotope.pkgd.min.js', array('jquery'), time(), false );
+			wp_register_script( 'isotope', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/isotope.pkgd.min.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'isotope' );
 
+			// Load App JS
 			wp_register_script( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/app.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'maera-res' );
 
@@ -96,7 +94,7 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 		 */
 		function admin_scripts() {
 
-			return null;
+			// Add any additional scripts to the WordPress Admin area here.
 
 		}
 

@@ -34,7 +34,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				array(
 					'id'      => 'maera_res_width',
 					'label'   => __( 'Width', 'maera-restaurant' ),
-					'choices' => Maera_Restaurant_Data::widget_widths(),
+					'choices' => self::widget_widths(),
 					'default' => '12',
 				)
 			);
@@ -49,6 +49,32 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			add_filter( 'maera/widgets/before', array( $this, 'widget_before' ) );
 			add_filter( 'maera/widgets/after', array( $this, 'widget_after' ) );
 		}
+
+
+		/**
+		 * Specify widget widths classes.
+		 * @return [type] [description]
+		 */
+		private static function widget_widths() {
+			$depths = array(
+				'1'  => array( 'label' => '1/12', 'classes' => 'col-md-1' ),
+				'2'  => array( 'label' => '2/12', 'classes' => 'col-md-2' ),
+				'3'  => array( 'label' => '3/12', 'classes' => 'col-md-3' ),
+				'4'  => array( 'label' => '4/12', 'classes' => 'col-md-4' ),
+				'5'  => array( 'label' => '5/12', 'classes' => 'col-md-5' ),
+				'6'  => array( 'label' => '6/12', 'classes' => 'col-md-6' ),
+				'7'  => array( 'label' => '7/12', 'classes' => 'col-md-7' ),
+				'8'  => array( 'label' => '8/12', 'classes' => 'col-md-8' ),
+				'9'  => array( 'label' => '9/12', 'classes' => 'col-md-9' ),
+				'10' => array( 'label' => '10/12', 'classes' => 'col-md-10' ),
+				'11' => array( 'label' => '11/12', 'classes' => 'col-md-11' ),
+				'12' => array( 'label' => '12/12', 'classes' => 'col-md-12' ),
+				'13' => array( 'label' => 'Full', 'classes' => '.container-full' ),
+			);
+
+			return $depths;
+		}
+
 
 		/**
 		 * [maera_res_widgets_init description]

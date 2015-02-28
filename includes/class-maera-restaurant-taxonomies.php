@@ -38,7 +38,10 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 		}
 
 
-		// Register Custom Taxonomy
+		/**
+		 * Add menu section taxonomies to Restaurant.
+		 * @return [type] [description]
+		 */
 		function restaurant_item_menu_section_taxonomy() {
 
 			$labels = array(
@@ -70,7 +73,6 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 			register_taxonomy( 'restaurant_item_menu_section', array( 'restaurant_item' ), $args );
 
 		}
-
 
 		// End Methods
 	} // End Class

@@ -79,21 +79,29 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		 */
 		public static function get_currencies() {
 
-			$currencies_url = 'http://www.freecurrencyconverterapi.com/api/v3/currencies';
+			$api_url = 'http://www.freecurrencyconverterapi.com/api/v3/currencies';
 
-			$currencies = json_decode( file_get_contents( $currencies_url ), true );
+			$api_params = array();
 
-			$currencylist = array();
+			$response = wp_remote_get( add_query_arg( $api_params, $api_url ), array( 'timeout' => 15, 'sslverify' => false ) );
 
-			foreach ( $currencies['results'] as $currency ) {
-				$currencylist = array(
-					'id'      => $currency['id'],
-					'name'    => $currency['currencyName'],
-					'symbol'  => $currency['currencySymbol'],
-				);
+			if ( is_wp_error( $response ) ) {
+				return false;
 			}
 
-			print_r( $currencylist ); // Debug
+			$currency_array = json_decode( wp_remote_retrieve_body( $response ), true );
+
+			$currencies = $currency_array['results'];
+
+			foreach ( $currencies as $currency ) {
+
+				$name             = $currency['currencyName'];
+				$symbol           = $currency['currencySymbol'];
+				$id               = $currency['id'];
+			}
+
+			//return $currencies;
+			print_r( $currencies );
 		}
 
 
@@ -163,32 +171,6 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 				</script>
 		<?php }
 		}
-
-
-		/**
-		 * Specify widget widths classes.
-		 * @return [type] [description]
-		 */
-		public static function widget_widths() {
-			$depths = array(
-				'1'  => array( 'label' => '1/12', 'classes' => 'col-md-1' ),
-				'2'  => array( 'label' => '2/12', 'classes' => 'col-md-2' ),
-				'3'  => array( 'label' => '3/12', 'classes' => 'col-md-3' ),
-				'4'  => array( 'label' => '4/12', 'classes' => 'col-md-4' ),
-				'5'  => array( 'label' => '5/12', 'classes' => 'col-md-5' ),
-				'6'  => array( 'label' => '6/12', 'classes' => 'col-md-6' ),
-				'7'  => array( 'label' => '7/12', 'classes' => 'col-md-7' ),
-				'8'  => array( 'label' => '8/12', 'classes' => 'col-md-8' ),
-				'9'  => array( 'label' => '9/12', 'classes' => 'col-md-9' ),
-				'10' => array( 'label' => '10/12', 'classes' => 'col-md-10' ),
-				'11' => array( 'label' => '11/12', 'classes' => 'col-md-11' ),
-				'12' => array( 'label' => '12/12', 'classes' => 'col-md-12' ),
-				'13' => array( 'label' => 'Full', 'classes' => '.container-full' ),
-			);
-
-			return $depths;
-		}
-
 
 		// End Methods
 	} // End Class

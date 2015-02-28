@@ -164,7 +164,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'section'  => 'maera_res_restaurant',
 					'default'  => 'United States dollar',
 					'priority' => 10,
-					'choices'  => null, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
+					'choices'  => NULL, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
 			);
 
 			return $controls;
@@ -423,6 +423,16 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_styling_settings( $controls ) {
 
 			$controls[] = array(
+				'type'     => 'checkbox',
+				'mode'     => 'switch',
+				'setting'  => 'gradients',
+				'label'    => __( 'Enable Automatic Color Calculations', 'maera-restaurant' ),
+				'section'  => 'maera_res_colors',
+				'default'  => 0,
+				'priority' => 1,
+			);
+
+			$controls[] = array(
 				'type'     => 'color',
 				'setting'  => 'link_color',
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
@@ -436,17 +446,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			);
 
 			$controls[] = array(
-				'type'     => 'radio',
-				'mode'     => 'buttonset',
+				'type'     => 'checkbox',
+				'mode'     => 'switch',
 				'setting'  => 'gradients',
 				'label'    => __( 'Enable Gradients', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => 0,
 				'priority' => 2,
-				'choices'  => array(
-					1 => __( 'On', 'maera-restaurant' ),
-					0 => __( 'Off', 'maera-restaurant' ),
-				),
 			);
 
 			 return $controls;

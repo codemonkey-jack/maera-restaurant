@@ -82,7 +82,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			// Require or include any additional files that may be needed.
 			require_once( __DIR__ . '/includes/class-maera-restaurant-customizer.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-scripts.php');
-			require_once( __DIR__ . '/includes/class-maera-restaurant-structure.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-data.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-posttypes.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-widget-areas.php');
@@ -91,7 +90,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			// Instantiate additional classes.
 			$this->customizer       = new Maera_Restaurant_Customizer();
 			$this->scripts          = new Maera_Restaurant_Scripts();
-			$this->structure        = new Maera_Restaurant_Structure();
 			$this->data             = new Maera_Restaurant_Data();
 			$this->posttype         = new Maera_Restaurant_PostTypes();
 			$this->widgetareas      = new Maera_Restaurant_Widget_Areas();
@@ -176,7 +174,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 		}
 
-
 		// End Methods
 	}  // End Class
 }     // End If
@@ -196,7 +193,7 @@ add_action( 'init', 'maera_restaurant_licensing' );
 
 
 /**
- * Load and register widgets.
+ * Load Maera Restaurant widgets.
  */
 include_once( __DIR__ . '/includes/class-maera-restaurant-slider-widget.php');
 include_once( __DIR__ . '/includes/class-maera-restaurant-menu-widget.php');
