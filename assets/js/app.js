@@ -1,3 +1,17 @@
+var $j = jQuery.noConflict();
+$j(window).load(function () {
+	$j('section[data-type="background"]').each(function() {
+		var $bgobj = $j(this);
+		$j(window).scroll(function() {
+			var yPos = -($j(window).scrollTop() / $bgobj.data('speed'));
+			var coords = '50% ' + yPos + 'px';
+			$bgobj.css({
+				backgroundPosition : coords
+			});
+		});
+	});
+});
+
 // This checks to see if the window has scrolled below the first section.
 // If it has, it will change the menu class and affix it to the top.
 
