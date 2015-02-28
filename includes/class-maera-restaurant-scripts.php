@@ -89,9 +89,6 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_register_script( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/app.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'maera-res' );
 
-
-
-
 		}
 
 		/**
@@ -102,7 +99,6 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			return null;
 
 		}
-
 
 		// End Methods
 	}  // End Class
