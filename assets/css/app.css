@@ -34,6 +34,9 @@ body {
     width: 100%;
 }
 
+.navbar-default {
+  border-radius: 1px;
+}
 
 /***************************
   Sidebar

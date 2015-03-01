@@ -42,6 +42,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			add_filter( 'kirki/controls', array( $this, 'maera_res_section_5' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_footer_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_styling_settings' ) );
+			add_filter( 'kirki/controls', array( $this, 'maera_res_background_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_typography_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_navigation_settings' ) );
 
@@ -66,7 +67,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			$sections = array(
 				'maera_res_general'      => array( 'title' => __( 'General', 'maera-restaurant' ), 'priority' => 35, 'panel' => null ),
 
-				// Frontpage Sections
+				// Sections
 				'maera_res_section_1'    => array( 'title' => __( 'First Section', 'maera-restaurant' ), 'priority' => 40, 'panel' => 'maera_res_backgrounds'  ),
 				'maera_res_section_2'    => array( 'title' => __( 'Second Section', 'maera-restaurant' ), 'priority' => 45, 'panel' => 'maera_res_backgrounds'  ),
 				'maera_res_section_3'    => array( 'title' => __( 'Third Section', 'maera-restaurant' ), 'priority' => 50, 'panel' => 'maera_res_backgrounds'  ),
@@ -76,7 +77,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 				// Styling
 				'maera_res_colors'           => array( 'title' => __( 'Colors', 'maera-restaurant' ), 'priority' => 75, 'panel' => 'maera_res_styling' ),
-				'maera_res_all_backgrounds'  => array( 'title' => __( 'Backgrounds', 'maera-restaurant' ), 'priority' => 80, 'panel' => 'maera_res_backgrounds' ),
+				'maera_res_all_backgrounds'  => array( 'title' => __( 'General Backgrounds', 'maera-restaurant' ), 'priority' => 80, 'panel' => 'maera_res_backgrounds' ),
 				'maera_res_typography'       => array( 'title' => __( 'Typography', 'maera-restaurant' ), 'priority' => 85, 'panel' => 'maera_res_styling' ),
 
 			);
@@ -164,7 +165,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'section'  => 'maera_res_restaurant',
 					'default'  => 'United States dollar',
 					'priority' => 10,
-					'choices'  => NULL, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
+					'choices'  => null, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
 			);
 
 			return $controls;
@@ -425,7 +426,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			$controls[] = array(
 				'type'     => 'checkbox',
 				'mode'     => 'switch',
-				'setting'  => 'gradients',
+				'setting'  => 'color_calc',
 				'label'    => __( 'Enable Automatic Color Calculations', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => 0,
@@ -455,6 +456,19 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 2,
 			);
 
+			$controls[] = array(
+				'type'     => 'color',
+				'setting'  => 'navbar_color',
+				'label'    => __( 'Navbar Color', 'maera-restaurant' ),
+				'section'  => 'nav',
+				'default'  => '#333333',
+				'priority' => 50,
+				'output' => array(
+					'element'  => '.navbar-default',
+					'property' => 'background-color',
+				),
+			);
+
 			 return $controls;
 
 		}
@@ -467,25 +481,6 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @return [type]           [description]
 		 */
 		function maera_res_background_settings( $controls ) {
-
-			$controls[] = array(
-				'type'         => 'background',
-				'setting'      => 'html_background',
-				'label'        => __( 'HTML Background', 'maera-restaurant' ),
-				'description'  => __( 'Set the background options for the HTML container.', 'maera-restaurant' ),
-				'section'      => 'maera_res_all_backgrounds',
-				'default'      => array(
-					'color'    => '#ffffff',
-					'image'    => null,
-					'repeat'   => 'repeat',
-					'size'     => 'inherit',
-					'attach'   => 'inherit',
-					'position' => 'left-top',
-					'opacity'  => 100,
-				),
-				'priority' => 3,
-				'output' => 'html',
-			);
 
 			$controls[] = array(
 				'type'         => 'background',
@@ -521,7 +516,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'position' => 'left-top',
 					'opacity'  => 100,
 				),
-				'priority' => 10,
+				'priority' => 20,
 				'output' => '#wrap-main-section',
 			);
 
@@ -559,6 +554,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 2,
+				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
 					'element'  => '.navbar-default .navbar-nav > li >a',
 					'property' => 'color',
@@ -586,6 +582,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 2,
+				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
 					'element'  => 'h1,h2,h3,h4,h5,h6',
 					'property' => 'color',
@@ -613,6 +610,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 2,
+				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
 					'element'  => 'body',
 					'property' => 'color',

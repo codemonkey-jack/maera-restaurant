@@ -83,6 +83,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			require_once( __DIR__ . '/includes/class-maera-restaurant-customizer.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-scripts.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-data.php');
+			require_once( __DIR__ . '/includes/class-maera-restaurant-styles.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-posttypes.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-widget-areas.php');
 			require_once( __DIR__ . '/includes/class-maera-restaurant-taxonomies.php');
@@ -91,6 +92,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			$this->customizer       = new Maera_Restaurant_Customizer();
 			$this->scripts          = new Maera_Restaurant_Scripts();
 			$this->data             = new Maera_Restaurant_Data();
+			$this->styles           = new Maera_Restaurant_Styles();
 			$this->posttype         = new Maera_Restaurant_PostTypes();
 			$this->widgetareas      = new Maera_Restaurant_Widget_Areas();
 			$this->taxonomies       = new Maera_Restaurant_Taxonomies();
