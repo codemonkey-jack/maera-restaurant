@@ -1,0 +1,15 @@
+{#<?php#}
+{% from 'row_open.html.twig' import row_open as row_open %}
+{% from 'row_close.html.twig' import row_close as row_close %}
+{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
+{{ row_open( 'div', 'social-icons', '' ) }}
+
+<div class="col-md-3"><a href="{{ facebook_link }}" target="_blank" class="widget_social_icon">{{ facebook_icon }}</a></div>
+<div class="col-md-3"><a href="{{ twitter_link }}" target="_blank" class="widget_social_icon">{{ twitter_icon }}</a></div>
+<div class="col-md-3"><a href="{{ googleplus_link }}" target="_blank" class="widget_social_icon">{{ googleplus_icon }}</a></div>
+<div class="col-md-3"><a href="{{ youtube_link }}" target="_blank" class="widget_social_icon">{{ youtube_icon }}</a></div>
+
+{{ row_close( 'div', 'social-icons', '' ) }}
+
+{{ clearfix() }}

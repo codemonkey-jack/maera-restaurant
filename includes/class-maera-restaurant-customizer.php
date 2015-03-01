@@ -45,7 +45,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			add_filter( 'kirki/controls', array( $this, 'maera_res_background_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_typography_settings' ) );
 			add_filter( 'kirki/controls', array( $this, 'maera_res_navigation_settings' ) );
-
+			add_filter( 'kirki/controls', array( $this, 'maera_res_social_settings' ) );
 		}
 
 
@@ -61,24 +61,25 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			$panels = array(
 				'maera_res_layout'      => array( 'title' => __( 'Layout', 'maera-restaurant' ), 'description' => __( 'Set an array of layout options.', 'maera-restaurant' ), 'priority' => 25 ),
 				'maera_res_styling'     => array( 'title' => __( 'Styling', 'maera-restaurant' ), 'description' => __( 'Set an array of styling options.', 'maera-restaurant' ), 'priority' => 30 ),
-				'maera_res_backgrounds' => array( 'title' => __( 'Backgrounds', 'maera-restaurant' ), 'description' => __( 'Set an array of background options.', 'maera-restaurant' ), 'priority' => 30 ),
+				'maera_res_backgrounds' => array( 'title' => __( 'Backgrounds', 'maera-restaurant' ), 'description' => __( 'Set an array of background options.', 'maera-restaurant' ), 'priority' => 35 ),
 			);
 
 			$sections = array(
-				'maera_res_general'      => array( 'title' => __( 'General', 'maera-restaurant' ), 'priority' => 35, 'panel' => null ),
+				'maera_res_general'      => array( 'title' => __( 'General', 'maera-restaurant' ), 'priority' => 40, 'panel' => null ),
+				'maera_res_social'       => array( 'title' => __( 'Social', 'maera-restaurant' ), 'priority' => 45, 'panel' => null ),
 
 				// Sections
-				'maera_res_section_1'    => array( 'title' => __( 'First Section', 'maera-restaurant' ), 'priority' => 40, 'panel' => 'maera_res_backgrounds'  ),
-				'maera_res_section_2'    => array( 'title' => __( 'Second Section', 'maera-restaurant' ), 'priority' => 45, 'panel' => 'maera_res_backgrounds'  ),
-				'maera_res_section_3'    => array( 'title' => __( 'Third Section', 'maera-restaurant' ), 'priority' => 50, 'panel' => 'maera_res_backgrounds'  ),
-				'maera_res_section_4'    => array( 'title' => __( 'Fourth Section', 'maera-restaurant' ), 'priority' => 60, 'panel' => 'maera_res_backgrounds'  ),
-				'maera_res_section_5'    => array( 'title' => __( 'Fifth Section', 'maera-restaurant' ), 'priority' => 65, 'panel' => 'maera_res_backgrounds'  ),
-				'maera_res_footer'       => array( 'title' => __( 'Footer', 'maera-restaurant' ), 'priority' => 70, 'panel' => 'maera_res_backgrounds'  ),
+				'maera_res_section_1'    => array( 'title' => __( 'First Section', 'maera-restaurant' ), 'priority' => 50, 'panel' => 'maera_res_backgrounds'  ),
+				'maera_res_section_2'    => array( 'title' => __( 'Second Section', 'maera-restaurant' ), 'priority' => 55, 'panel' => 'maera_res_backgrounds'  ),
+				'maera_res_section_3'    => array( 'title' => __( 'Third Section', 'maera-restaurant' ), 'priority' => 60, 'panel' => 'maera_res_backgrounds'  ),
+				'maera_res_section_4'    => array( 'title' => __( 'Fourth Section', 'maera-restaurant' ), 'priority' => 65, 'panel' => 'maera_res_backgrounds'  ),
+				'maera_res_section_5'    => array( 'title' => __( 'Fifth Section', 'maera-restaurant' ), 'priority' => 70, 'panel' => 'maera_res_backgrounds'  ),
+				'maera_res_footer'       => array( 'title' => __( 'Footer', 'maera-restaurant' ), 'priority' => 75, 'panel' => 'maera_res_backgrounds'  ),
 
 				// Styling
-				'maera_res_colors'           => array( 'title' => __( 'Colors', 'maera-restaurant' ), 'priority' => 75, 'panel' => 'maera_res_styling' ),
-				'maera_res_all_backgrounds'  => array( 'title' => __( 'General Backgrounds', 'maera-restaurant' ), 'priority' => 80, 'panel' => 'maera_res_backgrounds' ),
-				'maera_res_typography'       => array( 'title' => __( 'Typography', 'maera-restaurant' ), 'priority' => 85, 'panel' => 'maera_res_styling' ),
+				'maera_res_colors'           => array( 'title' => __( 'Colors', 'maera-restaurant' ), 'priority' => 80, 'panel' => 'maera_res_styling' ),
+				'maera_res_general_backgrounds'  => array( 'title' => __( 'General Backgrounds', 'maera-restaurant' ), 'priority' => 85, 'panel' => 'maera_res_backgrounds' ),
+				'maera_res_typography'       => array( 'title' => __( 'Typography', 'maera-restaurant' ), 'priority' => 90, 'panel' => 'maera_res_styling' ),
 
 			);
 
@@ -506,7 +507,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'      => 'body_background',
 				'label'        => __( 'Body Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the body section.', 'maera-restaurant' ),
-				'section'      => 'maera_res_all_backgrounds',
+				'section'      => 'maera_res_general_backgrounds',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => null,
@@ -525,7 +526,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'      => 'content_background',
 				'label'        => __( 'Main Content Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the main content sections.', 'maera-restaurant' ),
-				'section'      => 'maera_res_all_backgrounds',
+				'section'      => 'maera_res_general_backgrounds',
 				'default'      => array(
 					'color'    => '#fff',
 					'image'    => null,
@@ -648,6 +649,54 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		 * @return [type]           [description]
 		 */
 		function maera_res_navigation_settings( $controls ) {
+
+			 return $controls;
+
+		}
+
+		/**
+		 * Maera Restaurant Social Settings
+		 * @since 1.0.0
+		 * @param  [type] $controls [description]
+		 * @return [type]           [description]
+		 */
+		function maera_res_social_settings( $controls ) {
+
+			$controls[] = array(
+				'type'     => 'text',
+				'setting'  => 'facebook_link',
+				'label'    => __( 'Facebook Link', 'maera-restaurant' ),
+				'section'  => 'maera_res_social',
+				'default'  => __( 'http://facebook.com/', 'maera-restaurant' ),
+				'priority' => 1,
+			);
+
+			$controls[] = array(
+				'type'     => 'text',
+				'setting'  => 'twitter_link',
+				'label'    => __( 'Twitter Link', 'maera-restaurant' ),
+				'section'  => 'maera_res_social',
+				'default'  => __( 'http://twitter.com/', 'maera-restaurant' ),
+				'priority' => 1,
+			);
+
+			$controls[] = array(
+				'type'     => 'text',
+				'setting'  => 'googleplus_link',
+				'label'    => __( 'Google+ Link', 'maera-restaurant' ),
+				'section'  => 'maera_res_social',
+				'default'  => __( 'http://plus.google.com/', 'maera-restaurant' ),
+				'priority' => 1,
+			);
+
+			$controls[] = array(
+				'type'     => 'text',
+				'setting'  => 'youtube_link',
+				'label'    => __( 'Youtube Link', 'maera-restaurant' ),
+				'section'  => 'maera_res_social',
+				'default'  => __( 'http://youtube.com/', 'maera-restaurant' ),
+				'priority' => 1,
+			);
 
 			 return $controls;
 

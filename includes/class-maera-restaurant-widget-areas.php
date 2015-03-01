@@ -68,8 +68,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'9'  => array( 'label' => '9/12', 'classes' => 'col-md-9' ),
 				'10' => array( 'label' => '10/12', 'classes' => 'col-md-10' ),
 				'11' => array( 'label' => '11/12', 'classes' => 'col-md-11' ),
-				'12' => array( 'label' => '12/12', 'classes' => 'col-md-12' ),
-				'13' => array( 'label' => 'Full', 'classes' => '.container-full' ),
+				'12' => array( 'label' => 'Full Width', 'classes' => 'col-md-12' ),
 			);
 
 			return $depths;

@@ -65,6 +65,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			$context['sidebar']['section_3']      = Timber::get_widgets( 'section_3' );
 			$context['sidebar']['section_4']      = Timber::get_widgets( 'section_4' );
 			$context['sidebar']['section_5']      = Timber::get_widgets( 'section_5' );
+			$context['sidebar']['footer']         = Timber::get_widgets( 'footer' );
 
 			return $context;
 		}

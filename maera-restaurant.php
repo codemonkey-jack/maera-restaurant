@@ -198,6 +198,7 @@ add_action( 'init', 'maera_restaurant_licensing' );
  * Load Maera Restaurant widgets.
  */
 include_once( __DIR__ . '/includes/class-maera-restaurant-slider-widget.php');
+include_once( __DIR__ . '/includes/class-maera-restaurant-social-widget.php');
 include_once( __DIR__ . '/includes/class-maera-restaurant-menu-widget.php');
 
 
@@ -209,6 +210,16 @@ function maera_res_slider_widgets() {
 	register_widget( 'Maera_Restaurant_Slider_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_slider_widgets' );
+
+
+/**
+ * Register the social widget.
+ * @return [type] [description]
+ */
+function maera_res_social_widgets() {
+	register_widget( 'Maera_Restaurant_Social_widget' );
+}
+add_action( 'widgets_init', 'maera_res_social_widgets' );
 
 
 /**
