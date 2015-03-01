@@ -90,7 +90,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'name'          => 'First Section',
 				'id'            => 'section_1',
 				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '<div></section>',
+				'after_widget'  => '</div></section>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			) );
@@ -99,7 +99,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'name'          => 'Second Section',
 				'id'            => 'section_2',
 				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '<div></section>',
+				'after_widget'  => '</div></section>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			) );
@@ -108,7 +108,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'name'          => 'Third Section',
 				'id'            => 'section_3',
 				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '<div></section>',
+				'after_widget'  => '</div></section>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			) );
@@ -117,7 +117,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'name'          => 'Fourth Section',
 				'id'            => 'section_4',
 				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '<div></section>',
+				'after_widget'  => '</div></section>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			) );
@@ -126,7 +126,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'name'          => 'Fifth Section',
 				'id'            => 'section_5',
 				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '<div></section>',
+				'after_widget'  => '</div></section>',
 				'before_title'  => '<h3 class="widget-title">',
 				'after_title'   => '</h3>',
 			) );

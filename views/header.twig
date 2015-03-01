@@ -1,2 +1,16 @@
 {#<?php#}
 {% include 'head.twig' %}
+
+<body class="{{ body_class }}" data-source="base.twig">
+
+	<a href="#content" class="sr-only skip-link screen-reader-text">{{ __( 'Skip to main content', 'maera-restaurant' ) }}</a>
+
+	{% do action( 'get_header' ) %}
+
+	{% do action( 'maera/header/before', post.ID ) %}
+
+	{% if function( 'is_front_page' ) == false %}
+		{% include 'navbar.twig' %}
+	{% endif %}
+
+	{% do action( 'maera/header/after', post.ID ) %}

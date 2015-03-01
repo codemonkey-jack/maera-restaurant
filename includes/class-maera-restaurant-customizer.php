@@ -114,12 +114,26 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_general_settings( $controls ) {
 
 			$controls[] = array(
+				'type'     => 'radio',
+				'mode'     => 'buttonset',
+				'setting'  => 'site_layout',
+				'label'    => __( 'Site Layout', 'maera-restaurant' ),
+				'section'  => 'maera_res_general',
+				'priority' => 1,
+				'default'  => 'wide',
+				'choices'  => array(
+					'wide'    => __( 'Wide', 'maera-restaurant' ),
+					'boxed'   => __( 'Boxed', 'maera-restaurant' ),
+				),
+			);
+
+			$controls[] = array(
 				'type'     => 'sortable',
 				'setting'  => 'front_page_sections',
 				'label'    => __( 'Front Page Sections', 'maera_mg' ),
 				'section'  => 'maera_res_general',
 				'default'  => serialize( array( 'navbar', 'section_1', 'section_2', 'section_3' ) ),
-				'priority' => 50,
+				'priority' => 2,
 				'choices'  => array(
 					'navbar'           => __( 'Navigation Menu', 'maera-restaurant' ),
 					'section_1'        => __( 'Section 1', 'maera-restaurant' ),
@@ -137,7 +151,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Enable Event Support', 'maera-restaurant' ),
 				'section'  => 'maera_res_general',
 				'default'  => 0,
-				'priority' => 1,
+				'priority' => 3,
 				'choices'  => array(
 					1 => __( 'On', 'maera-restaurant' ),
 					0 => __( 'Off', 'maera-restaurant' ),
@@ -151,7 +165,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Enable OpenTable Support', 'maera-restaurant' ),
 				'section'  => 'maera_res_general',
 				'default'  => 0,
-				'priority' => 2,
+				'priority' => 4,
 				'choices'  => array(
 					1 => __( 'On', 'maera-restaurant' ),
 					0 => __( 'Off', 'maera-restaurant' ),
@@ -164,7 +178,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'label'    => __( 'Select a currency to use for the restaurant.', 'maera_bs' ),
 					'section'  => 'maera_res_restaurant',
 					'default'  => 'United States dollar',
-					'priority' => 10,
+					'priority' => 5,
 					'choices'  => null, // Maera_Restaurant_Data::get_currencies(),  // Needs fixed.
 			);
 
@@ -438,8 +452,9 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'  => 'link_color',
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
-				'default'  => '#337ab7',
+				'default'  => '#ffc341',
 				'priority' => 1,
+				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
 					'element'  => 'a',
 					'property' => 'color',
@@ -447,13 +462,17 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			);
 
 			$controls[] = array(
-				'type'     => 'checkbox',
-				'mode'     => 'switch',
-				'setting'  => 'gradients',
-				'label'    => __( 'Enable Gradients', 'maera-restaurant' ),
+				'type'     => 'color',
+				'setting'  => 'link_hover_color',
+				'label'    => __( 'Link Hover Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
-				'default'  => 0,
-				'priority' => 2,
+				'default'  => '#ebcd91',
+				'priority' => 1,
+				'required' => array( 'color_calc' => 0 ),
+				'output' => array(
+					'element'  => 'a',
+					'property' => 'color',
+				),
 			);
 
 			$controls[] = array(

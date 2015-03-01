@@ -5,7 +5,7 @@
 {% set parts_serialized = theme.theme_mod('front_page_sections', function('serialize', ['navbar','section_1','section_2','section_3'] ) ) %}
 {% set parts = function('unserialize', parts_serialized) %}
 
-<div id="parallax-wrapper" class="wrap">
+<div id="parallax-wrapper" class="container wrap">
 
 	{% for part in parts %}
 

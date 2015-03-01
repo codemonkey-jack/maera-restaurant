@@ -179,7 +179,7 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 				$navbar_font_color       = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
 				$navbar_link_color       = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
-				$navbar_border_color     = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
+				$navbar_border_color     = '#' . $navbar_jet->getGrayscaleContrastingColor( 1 )->toHex();
 
 				//CSS Styles
 				$style = '';
