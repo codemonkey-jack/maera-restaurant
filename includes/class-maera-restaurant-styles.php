@@ -86,18 +86,17 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 				$body_jet        = new Jetpack_Color( $body_color );
 				$content_jet     = new Jetpack_Color( $content_color );
 
-
 				if ( $section1_src ) {
 					$section1_bg         = $section1_tone->color();
 					$section1_font       = $section1_tone->contrast();
 					$section1_link       = $section1_tone->contrast();
 					$section1_font_calc  = new Jetpack_Color( $section1_bg );
 					$section1_link_calc  = new Jetpack_Color( $section1_bg );
-					$section1_font_color = '#' . $section1_font_calc->getGrayscaleContrastingColor( 25 )->toHex();
-					$section1_link_color = '#' . $section1_link_calc->getGrayscaleContrastingColor( 25 )->toHex();
+					$section1_font_color = '#' . $section1_font_calc->getGrayscaleContrastingColor( 10 )->toHex();
+					$section1_link_color = '#' . $section1_link_calc->getGrayscaleContrastingColor( 10 )->toHex();
 				} else {
-					$section1_font_color = '#' . $section1_jet->getGrayscaleContrastingColor( 25 )->toHex();
-					$section1_link_color = '#' . $section1_jet->getGrayscaleContrastingColor( 25 )->toHex();
+					$section1_font_color = '#' . $section1_jet->getGrayscaleContrastingColor( 10 )->toHex();
+					$section1_link_color = '#' . $section1_jet->getGrayscaleContrastingColor( 10 )->toHex();
 				}
 
 				if ( $section2_src ) {
@@ -106,11 +105,11 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 					$section2_link       = $section2_tone->contrast();
 					$section2_font_calc  = new Jetpack_Color( $section2_bg );
 					$section2_link_calc  = new Jetpack_Color( $section2_bg );
-					$section2_font_color = '#' . $section2_font_calc->getGrayscaleContrastingColor( 25 )->toHex();
-					$section2_link_color = '#' . $section2_link_calc->getGrayscaleContrastingColor( 25 )->toHex();
+					$section2_font_color = '#' . $section2_font_calc->getGrayscaleContrastingColor( 10 )->toHex();
+					$section2_link_color = '#' . $section2_link_calc->getGrayscaleContrastingColor( 10 )->toHex();
 				} else {
-					$section2_font_color = '#' . $section2_jet->getGrayscaleContrastingColor( 25 )->toHex();
-					$section2_link_color = '#' . $section2_jet->getGrayscaleContrastingColor( 25 )->toHex();
+					$section2_font_color = '#' . $section2_jet->getGrayscaleContrastingColor( 10 )->toHex();
+					$section2_link_color = '#' . $section2_jet->getGrayscaleContrastingColor( 10 )->toHex();
 				}
 
 				if ( $section3_src ) {
@@ -119,11 +118,11 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 					$section3_link       = $section3_tone->contrast();
 					$section3_font_calc  = new Jetpack_Color( $section3_bg );
 					$section3_link_calc  = new Jetpack_Color( $section3_bg );
-					$section3_font_color = '#' . $section3_font_calc->getGrayscaleContrastingColor( 25 )->toHex();
-					$section3_link_color = '#' . $section3_link_calc->getGrayscaleContrastingColor( 25 )->toHex();
+					$section3_font_color = '#' . $section3_font_calc->getGrayscaleContrastingColor( 10 )->toHex();
+					$section3_link_color = '#' . $section3_link_calc->getGrayscaleContrastingColor( 10 )->toHex();
 				} else {
-					$section3_font_color = '#' . $section3_jet->getGrayscaleContrastingColor( 25 )->toHex();
-					$section3_link_color = '#' . $section3_jet->getGrayscaleContrastingColor( 25 )->toHex();
+					$section3_font_color = '#' . $section3_jet->getGrayscaleContrastingColor( 10 )->toHex();
+					$section3_link_color = '#' . $section3_jet->getGrayscaleContrastingColor( 10 )->toHex();
 				}
 
 				if ( $section4_src ) {
@@ -180,7 +179,7 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 				$navbar_font_color       = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
 				$navbar_link_color       = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
-				$navbar_border_color     = '#' . $navbar_jet->getGrayscaleContrastingColor( -10 )->toHex();
+				$navbar_border_color     = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
 
 				//CSS Styles
 				$style = '';
