@@ -46,15 +46,6 @@ body {
     padding-right: 15px;
 }
 
-.navbar-default {
-    border-radius: 1px;
-}
-
-.affix {
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-}
 /***************************
   Sidebar
 ***************************/
@@ -73,8 +64,18 @@ body {
 /***************************
   Social Icons
 ***************************/
-
-
+.widget_social_icon:hover > .fa-facebook {
+  color: #3B5998;
+}
+.widget_social_icon:hover > .fa-twitter {
+  color: #4099FF;
+}
+.widget_social_icon:hover > .fa-google-plus {
+  color: #d34836;
+}
+.widget_social_icon:hover > .fa-youtube {
+  color: #e52d27;
+}
 /***************************
   Slider Widget
 ***************************/
@@ -296,6 +297,15 @@ body {
   padding-top: 55px;
 }
 
+.navbar-default {
+    border-radius: 1px;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
 
 /***************************
   First Section
@@ -356,5 +366,9 @@ footer {
     margin: 0 auto;
 }
 
+footer.page-footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 
 /* EOF */

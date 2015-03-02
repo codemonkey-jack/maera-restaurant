@@ -197,9 +197,9 @@ add_action( 'init', 'maera_restaurant_licensing' );
 /**
  * Load Maera Restaurant widgets.
  */
-include_once( __DIR__ . '/includes/class-maera-restaurant-slider-widget.php');
-include_once( __DIR__ . '/includes/class-maera-restaurant-social-widget.php');
-include_once( __DIR__ . '/includes/class-maera-restaurant-menu-widget.php');
+include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-slider-widget.php');
+include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-social-widget.php');
+include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-menu-widget.php');
 
 
 /**
