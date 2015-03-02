@@ -16,7 +16,10 @@
 				{% block main %}{{ __( 'Sorry, no content.', 'maera-restaurant' ) }}{% endblock %}
 				{% do action( 'maera/main/after', post.ID ) %}
 
-				{% include 'sidebar.twig' %}
+				{% if 1 == theme.theme_mod('page_layout', 0 ) %}
+					{% include 'sidebar.twig' %}
+				{% endif %}
+
 			</div>
 			{{ clearfix() }}
 		</div>

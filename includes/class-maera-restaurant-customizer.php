@@ -132,12 +132,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			$controls[] = array(
 				'type'     => 'radio',
 				'mode'     => 'image',
-				'setting'  => 'layout',
+				'setting'  => 'page_layout',
 				'label'    => __( 'Page Layout', 'maera-restaurant' ),
 				'subtitle' => __( 'Select your main layout. If no widgets are present in the sidebar, it will not be displayed. ', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
 				'priority' => 2,
-				'default'  => 1,
+				'default'  => 0,
 				'choices'  => $this->layouts(),
 			);
 

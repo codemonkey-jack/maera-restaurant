@@ -35,10 +35,22 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 			// NULL
 
 			// Add filters.
-			// NULL
+			add_filter( 'maera/section_class/content', array( $this, 'page_layout' ) );
 
 		}
 
+
+		/**
+		 * Add and remove classes to the main content wrapper.
+		 */
+		function page_layout( $classes ) {
+			$page_layout = get_theme_mod( 'page_layout', 0 );
+			if ( 1 == $page_layout ) {
+				$classes = 'col-md-8';
+			}
+
+			return $classes;
+		}
 
 		// End Methods
 	}  // End Class
