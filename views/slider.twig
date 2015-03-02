@@ -10,8 +10,7 @@
 		{% for post in posts %}
 		{% if loop.first %}
 
-		<div class="item active">
-			<img src="{{ post.thumbnail.src }}" class="post-thumb" alt="{{ post.title }}"/>
+		<div class="item active {% if widget.parallax %}parallax{% endif %}" style="background:url({{ post.thumbnail.src }}) 50% 0px no-repeat fixed;">
 			<div class="container">
 				<div class="carousel-caption">
 					<h1>{{ post.title }}</h1>
@@ -22,8 +21,7 @@
 
 		{% else %}
 
-		<div class="item">
-			<img src="{{ post.thumbnail.src }}" class="post-thumb" alt="{{ post.title }}"/>
+		<div class="item {% if widget.parallax %}parallax{% endif %}" style="background:url({{ post.thumbnail.src }}) 50% 0px no-repeat fixed;">
 			<div class="container">
 				<div class="carousel-caption">
 					<h1>{{ post.title }}</h1>

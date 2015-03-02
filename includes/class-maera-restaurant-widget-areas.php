@@ -155,7 +155,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		 * @return [type] [description]
 		 */
 		function widget_title_before() {
-			return '<span class="widget-title">';
+			return '<h3 class="widget-title">';
 		}
 
 
@@ -164,7 +164,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		 * @return [type] [description]
 		 */
 		function widget_title_after() {
-			return '</span>';
+			return '</h3>';
 		}
 
 

@@ -246,10 +246,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'default'      => array(
 					'color'    => '#222222',
 					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_1_background.png',
-					'repeat'   => 'none',
-					'size'     => 'cover',
-					'attach'   => 'fixed',
-					'position' => 'center-center',
+					'repeat'   => 'repeat',
+					'size'     => 'inherit',
+					'attach'   => 'inherit',
+					'position' => 'left-top',
 					'opacity'  => 100,
 				),
 				'priority' => 2,
@@ -330,11 +330,11 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'default'      => array(
 					'color'    => '#ebe1d7',
 					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_3_background.jpg',
-					'repeat'   => 'none',
-					'size'     => 'cover',
-					'attach'   => 'fixed',
-					'position' => 'center-center',
-					'opacity'  => 85,
+					'repeat'   => 'repeat',
+					'size'     => 'inherit',
+					'attach'   => 'inherit',
+					'position' => 'left-top',
+					'opacity'  => 100,
 				),
 				'priority' => 2,
 				'output' => '#section_3',
@@ -414,10 +414,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_5_background.jpg',
-					'repeat'   => 'none',
-					'size'     => 'cover',
-					'attach'   => 'fixed',
-					'position' => 'center-center',
+					'repeat'   => 'repeat',
+					'size'     => 'inherit',
+					'attach'   => 'inherit',
+					'position' => 'left-top',
 					'opacity'  => 100,
 				),
 				'priority' => 2,
@@ -516,7 +516,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 1,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
-					'element'  => 'a',
+					'element'  => 'a:hover',
 					'property' => 'color',
 				),
 			);
@@ -573,7 +573,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'description'  => __( 'Set the background options for the main content sections.', 'maera-restaurant' ),
 				'section'      => 'maera_res_body_backgrounds',
 				'default'      => array(
-					'color'    => '#fff',
+					'color'    => '#ffffff',
 					'image'    => null,
 					'repeat'   => 'repeat',
 					'size'     => 'inherit',
@@ -582,7 +582,14 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority' => 20,
-				'output' => '#wrap-main-section',
+				'output' => array(
+					array(
+						'element'  => '#wrap-main-section',
+					),
+					array(
+						'element'  => '.maera_latest_posts',
+					),
+				),
 			);
 
 			 return $controls;

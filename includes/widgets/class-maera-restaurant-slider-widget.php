@@ -57,6 +57,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				'interval'        => $instance['interval'],
 				'pause'           => $instance['pause'],
 				'wrap'            => $instance['wrap'],
+				'parallax'        => $instance['parallax'],
 				'before_widget'   => $before_widget,
 				'after_widget'    => $after_widget,
 				'before_title'    => $before_title,
@@ -91,6 +92,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			$instance['interval']        = strip_tags( $new_instance['interval'] );
 			$instance['pause']           = isset( $new_instance['pause'] );
 			$instance['wrap']            = isset( $new_instance['wrap'] );
+			$instance['parallax']        = isset( $new_instance['parallax'] );
 
 			return $instance;
 		}
@@ -108,6 +110,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				'interval'         => 2500,
 				'pause'            => 'hover',
 				'wrap'             => 1,
+				'parallax'         => 1,
 			);
 			$instance = wp_parse_args( ( array ) $instance, $defaults ); ?>
 
@@ -137,6 +140,13 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 					<td colspan="2">
 						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['wrap'] ) ? $instance['wrap'] : 0  ); ?> id="<?php echo $this->get_field_id( 'wrap' ); ?>" name="<?php echo $this->get_field_name( 'wrap' ); ?>" />
 							<?php _e( 'Cycle slider continually?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['parallax'] ) ? $instance['parallax'] : 0  ); ?> id="<?php echo $this->get_field_id( 'parallax' ); ?>" name="<?php echo $this->get_field_name( 'parallax' ); ?>" />
+							<?php _e( 'Enable Parallax?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 

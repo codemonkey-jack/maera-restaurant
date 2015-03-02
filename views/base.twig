@@ -4,15 +4,17 @@
 
 {% do action( 'maera/wrap/before', post.ID ) %}
 
-{% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}<div id="wrap-main-section" class="container wrap main-section">{% endif %}
-{% if 'wide' == theme.theme_mod('site_layout', 'wide') %}<div id="wrap-main-section" class="container-fluid wrap main-section">{% endif %}
+{% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}<div id="wrap-main-section" class="container boxed wrap main-section">{% endif %}
+{% if 'wide' == theme.theme_mod('site_layout', 'wide') %}<div id="wrap-main-section" class="container-fluid wide wrap main-section">{% endif %}
 
 	{% do action( 'maera/content/before', post.ID ) %}
 
 	<div class="content" id="content" itemprop="mainContentOfPage">
 		<div class="{{ grid.row() }}">
+
 			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
 				{% do action( 'maera/main/before', post.ID ) %}
+				{{ function('breadcrumb_trail') }}
 				{% block main %}{{ __( 'Sorry, no content.', 'maera-restaurant' ) }}{% endblock %}
 				{% do action( 'maera/main/after', post.ID ) %}
 

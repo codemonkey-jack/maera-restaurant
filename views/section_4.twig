@@ -1,5 +1,5 @@
 {#<?php#}
-<div id="section_4" {% if theme.theme_mod('section_4_parallax') %} data-type="background" data-speed="5"{% endif %}>
+<div id="section_4" {% if theme.theme_mod('section_4_parallax') %}class="parallax" style="background: url('{{ theme.theme_mod('section_4_background_image') }}') no-repeat fixed;"{% endif %}>
 
 	{% if sidebar.section_4 %}
 

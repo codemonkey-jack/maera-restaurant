@@ -1,7 +1,7 @@
 {#<?php#}
 {% from 'clearfix.html.twig' import clearfix as clearfix %}
 
-{% set menu_link = widget.link_target %}
+{% set menu_link = function( 'get_page_link', 'widget.link_target' ) %}
 
 {{ widget.before_widget }}
 {% if widget.title %}
@@ -19,7 +19,7 @@
 </ul>
 {% endif %}
 
-<div id="menu-wrapper"class="js-isotope" data-isotope-options='{ "itemSelector": ".item" }'>
+<div id="menu-wrapper" class="js-isotope" data-isotope-options='{ "itemSelector": ".item" }'>
 	{% for post in posts %}
 	<div class="{% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} col-md-4 menu_item_wrapper item">
 		<div class="media">
@@ -35,7 +35,7 @@
 					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
 					{% if widget.show_price %}
 					<span class="price_dots"></span>
-					<span class="price">{{ post.get_field('_restaurant_item_price') }}</span>
+					<span class="price">{{ currency}}{{ post.get_field('_restaurant_item_price') }}</span>
 					{% endif %}
 				</h3>
 				{{ post.content }}
@@ -92,7 +92,7 @@ jQuery(function ($) {
 
 {% if widget.show_menu_link %}
 <div class="menu_link_wrapper">
-	<a href="{{ widget.link_target }}" class="[maera_button_primary_medium]">{{ __('Full Menu', 'maera-restaurant') }}</a>
+	<a href="{{ menu_link }}" class="[maera_button_primary_medium]">{{ __('Full Menu', 'maera-restaurant') }}</a>
 </div>
 {% endif %}
 
