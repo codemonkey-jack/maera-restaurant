@@ -11,10 +11,12 @@
 
 	<div class="content" id="content" itemprop="mainContentOfPage">
 		<div class="{{ grid.row() }}">
-			<div class="content-primary-wrapper">
+			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
 				{% do action( 'maera/main/before', post.ID ) %}
 				{% block main %}{{ __( 'Sorry, no content.', 'maera-restaurant' ) }}{% endblock %}
 				{% do action( 'maera/main/after', post.ID ) %}
+
+				{% include 'sidebar.twig' %}
 			</div>
 			{{ clearfix() }}
 		</div>

@@ -72,41 +72,6 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 
 
 		/**
-		 * Retrieive a list of currencies to use.
-		 * @param  [type] $currency_url [description]
-		 * @return [type]          [description]
-		 * @since  1.0.0
-		 * @todo   Broken.  Mustfix.
-		 */
-		public static function get_currencies() {
-
-			$api_url = 'http://www.freecurrencyconverterapi.com/api/v3/currencies';
-
-			$api_params = array();
-
-			$response = wp_remote_get( add_query_arg( $api_params, $api_url ), array( 'timeout' => 15, 'sslverify' => false ) );
-
-			if ( is_wp_error( $response ) ) {
-				return false;
-			}
-
-			$currency_array = json_decode( wp_remote_retrieve_body( $response ), true );
-
-			$currencies = $currency_array['results'];
-
-			foreach ( $currencies as $currency ) {
-
-				$name             = $currency['currencyName'];
-				$symbol           = $currency['currencySymbol'];
-				$id               = $currency['id'];
-			}
-
-			//return $currencies;
-			print_r( $currencies );
-		}
-
-
-		/**
 		 * Get the list of categories to return to the customizer.
 		 * @return [type] [description]
 		 * Original method by @arisath
