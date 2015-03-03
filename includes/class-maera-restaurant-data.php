@@ -70,6 +70,36 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			return $context;
 		}
 
+		/**
+		 * Return an array of all available currencies.
+		 * @return [type] [description]
+		 */
+		public static function get_currencies() {
+			// Get the list of fonts from our json file and convert to an array
+			$currencies = json_decode( file_get_contents( MAERA_RES_SHELL_URL . '/assets/json/currencies.json' ), true );
+			$currencytype = array();
+			foreach ( $currencies['results'] as $currency ) {
+				$currencytype[] = array(
+					'name'   => $currency['currencyName'],
+					'id'     => $currency['id'],
+					'symbol' => $currency['currencySymbol'],
+				);
+			}
+			return $currencytype;
+		}
+
+		/**
+		 * Package the currencies together for use in the customizer.
+		 * @return [type] [description]
+		 */
+		public static function get_currency_choices() {
+			$currencies   = self::get_currencies();
+			$choices = array();
+			foreach ( $currencies as $key => $currency ) {
+				$choices[ $key ] = $currency['name'];
+			}
+			return $choices;
+		}
 
 		/**
 		 * Get the list of categories to return to the customizer.

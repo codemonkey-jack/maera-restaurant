@@ -32,7 +32,7 @@
 					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
 					{% if widget.show_price %}
 					<span class="price_dots"></span>
-					<span class="price">{{ currency}}{{ post.get_field('_restaurant_item_price') }}</span>
+					<span class="price">{{ currency }} {{ post.get_field('_restaurant_item_price') }}</span>
 					{% endif %}
 				</h3>
 				{{ post.content }}
@@ -93,3 +93,4 @@ jQuery(function ($) {
 {% endif %}
 
 {{ widget.after_widget }}
+
