@@ -1,6 +1,6 @@
 {#<?php#}
 {% import 'grid_classes.html.twig' as grid %}
-{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
 
 {% set parts_serialized = theme.theme_mod('front_page_sections', function('serialize', ['navbar','section_1','section_2','section_3'] ) ) %}
 {% set parts = function('unserialize', parts_serialized) %}
@@ -14,7 +14,7 @@
 			{% do action( 'maera/restaurant/before_navbar' ) %}
 			{% include 'navbar.twig' %}
 			{% do action( 'maera/restaurant/after_navbar' ) %}
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		{% endif %}
 		{# End Navbar #}
 
@@ -23,7 +23,7 @@
 			{% do action( 'maera/restaurant/before_section_1' ) %}
 			{% include 'section_1.twig' %}
 			{% do action( 'maera/restaurant/after_section_1' ) %}
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		{% endif %}
 		{# End First Section #}
 
@@ -32,7 +32,7 @@
 			{% do action( 'maera/restaurant/before_section_2' ) %}
 			{% include 'section_2.twig' %}
 			{% do action( 'maera/restaurant/after_section_2' ) %}
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		{% endif %}
 		{# End Second Section #}
 
@@ -41,7 +41,7 @@
 			{% do action( 'maera/restaurant/before_section_3' ) %}
 			{% include 'section_3.twig' %}
 			{% do action( 'maera/restaurant/after_section_3' ) %}
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		{% endif %}
 		{# End Third Section #}
 
@@ -50,7 +50,7 @@
 			{% do action( 'maera/restaurant/before_section_4' ) %}
 			{% include 'section_4.twig' %}
 			{% do action( 'maera/restaurant/after_section_4' ) %}
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		{% endif %}
 		{# End Fourth Section #}
 
@@ -59,7 +59,7 @@
 			{% do action( 'maera/restaurant/before_section_5' ) %}
 			{% include 'section_5.twig' %}
 			{% do action( 'maera/restaurant/after_section_5' ) %}
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		{% endif %}
 		{# End Fifth Section #}
 

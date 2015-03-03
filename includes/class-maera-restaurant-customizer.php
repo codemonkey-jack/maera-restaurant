@@ -206,12 +206,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'section'  => 'maera_res_restaurant',
 					'default'  => '$ USD',
 					'priority' => 6,
-					'choices'  => array(
-						'$'    => __( '$ USD', 'maera-restaurant' ),
-						'€'    => __( '€ Euro', 'maera-restaurant' ),
-						'£'    => __( '£ Pound', 'maera-restaurant' ),
-						'¥'    => __( '¥ Yen', 'maera-restaurant' ),
-					),
+					'choices'  => Maera_Restaurant_Data::get_currency_choices(),
 			);
 
 			return $controls;
@@ -481,20 +476,6 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'brand_color',
-				'label'    => __( 'Primary Brand Color', 'maera-restaurant' ),
-				'section'  => 'maera_res_colors',
-				'default'  => '#ffc341',
-				'priority' => 1,
-				// 'required' => array( 'color_calc' => 0 ),
-				'output' => array(
-					'element'  => 'a',
-					'property' => 'color',
-				),
-			);
-
-			$controls[] = array(
-				'type'     => 'color',
 				'setting'  => 'link_color',
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
@@ -587,7 +568,34 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 						'element'  => '#wrap-main-section',
 					),
 					array(
-						'element'  => '.maera_latest_posts',
+						'element'  => '.class_name',
+					),
+				),
+			);
+
+
+			$controls[] = array(
+				'type'         => 'background',
+				'setting'      => 'posts_background',
+				'label'        => __( 'Recent Posts Background', 'maera-restaurant' ),
+				'description'  => __( 'Set the background options for the recent front page posts.', 'maera-restaurant' ),
+				'section'      => 'maera_res_body_backgrounds',
+				'default'      => array(
+					'color'    => '#ffffff',
+					'image'    => null,
+					'repeat'   => 'repeat',
+					'size'     => 'inherit',
+					'attach'   => 'inherit',
+					'position' => 'left-top',
+					'opacity'  => 100,
+				),
+				'priority' => 30,
+				'output' => array(
+					array(
+						'element'  => '.post-article .thumbnail',
+					),
+					array(
+						'element'  => '.caption p > .read-more',
 					),
 				),
 			);
@@ -855,7 +863,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 15,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
-					'element'  => 'body',
+					'element'  => 'body p',
 					'property' => 'color',
 				),
 			);

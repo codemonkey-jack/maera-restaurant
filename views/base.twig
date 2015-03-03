@@ -1,6 +1,6 @@
 {#<?php#}
 {% import 'grid_classes.html.twig' as grid %}
-{% from 'clearfix.html.twig' import clearfix as clearfix %}
+
 
 {% do action( 'maera/wrap/before', post.ID ) %}
 
@@ -23,7 +23,7 @@
 				{% endif %}
 
 			</div>
-			{{ clearfix() }}
+			<div class="clearfix"></div>
 		</div>
 	</div><!-- /#content -->
 	{% do action( 'maera/content/after' ) %}
@@ -31,8 +31,8 @@
 {% if 'wide' == theme.theme_mod('site_layout', 'wide') %}</div>{% endif %}
 {% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}</div>{% endif %}
 
-{{ clearfix() }}
+<div class="clearfix"></div>
 
 {% do action( 'maera/wrap/after', post.ID ) %}
 
-{{ clearfix() }}
+<div class="clearfix"></div>

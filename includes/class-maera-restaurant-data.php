@@ -75,7 +75,6 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		 * @return [type] [description]
 		 */
 		public static function get_currencies() {
-			// Get the list of fonts from our json file and convert to an array
 			$currencies = json_decode( file_get_contents( MAERA_RES_SHELL_URL . '/assets/json/currencies.json' ), true );
 			$currencytype = array();
 			foreach ( $currencies['results'] as $currency ) {

@@ -51,6 +51,10 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_register_style( 'bootstrap', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.min.css' );
 			wp_enqueue_style( 'bootstrap' );
 
+			//Load Bootstrap Theme (Slate).
+			wp_register_style( 'bootstrap-slate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.superhero.min.css' );
+			wp_enqueue_style( 'bootstrap-slate' );
+
 			// Load FontAwesome.
 			wp_register_style( 'fontawesome', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/font-awesome.min.css' );
 			wp_enqueue_style( 'fontawesome' );
