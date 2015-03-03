@@ -1,7 +1,4 @@
 {#<?php#}
-{% from 'clearfix.html.twig' import clearfix as clearfix %}
-
-{% set menu_link = function( 'get_page_link', 'widget.link_target' ) %}
 
 {{ widget.before_widget }}
 {% if widget.title %}
@@ -52,8 +49,7 @@
 	</div>
 	{% endfor %}
 </div>
-{{ clearfix() }}
-
+<div class="clearfix"></div>
 
 {% if widget.show_filters %}
 <script>
@@ -63,7 +59,7 @@ jQuery(function ($) {
 	var $container = $('#menu-wrapper');
 	$container.isotope({
 		itemSelector : '.item',
-  		layoutMode : 'masonry'
+		layoutMode : 'masonry'
 	});
 
 	var $optionSets = $('#menu-filter'),
@@ -92,7 +88,7 @@ jQuery(function ($) {
 
 {% if widget.show_menu_link %}
 <div class="menu_link_wrapper">
-	<a href="{{ menu_link }}" class="[maera_button_primary_medium]">{{ __('Full Menu', 'maera-restaurant') }}</a>
+	<a href="{{ function('get_page_link', widget.link_target) }}" class="[maera_button_primary_medium]">{{ __('Full Menu', 'maera-restaurant') }}</a>
 </div>
 {% endif %}
 
