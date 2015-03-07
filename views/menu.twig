@@ -40,7 +40,7 @@
 				{% if widget.show_tags %}
 					{% for term in post.terms('restaurant_tag') %}
 					<div class="menu_item_tags">
-						<span class="menu_tag"><a href="{{term.link}}">{{term.name}}</a></span>
+						<span class="menu_tag"><i class="fa fa-cutlery"></i> <a href="{{term.link}}">{{term.name}}</a></span>
 					</div>
 					{% endfor %}
 				{% endif %}
@@ -88,7 +88,7 @@ jQuery(function ($) {
 
 {% if widget.show_menu_link %}
 <div class="menu_link_wrapper">
-	<a href="{{ function('get_page_link', widget.link_target) }}" class="[maera_button_primary_medium]">{{ __('Full Menu', 'maera-restaurant') }}</a>
+	<a href="{{ function('get_page_link', widget.link_target) }}" class="[maera_button_primary_medium]"><h1>{{ __('Full Menu', 'maera-restaurant') }}</h1></a>
 </div>
 {% endif %}
 

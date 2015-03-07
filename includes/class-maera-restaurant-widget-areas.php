@@ -174,7 +174,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		 * @return [type]          [description]
 		 */
 		function widget_before( $content ) {
-			return $content . '<div class="widget-content">';
+			return $content . '<div class="widget-content panel-body">';
 		}
 
 

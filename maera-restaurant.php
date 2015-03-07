@@ -159,6 +159,14 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				);
 			}
 
+			if ( '1' == get_theme_mod( 'enable_breadcrumbs' , '1' ) ) {
+				$plugins[] = array(
+					'name' => 'Breadcrumb Trail',
+					'file' => 'breadcrumb-trail.php',
+					'slug' => 'breadcrumb-trail',
+				);
+			}
+
 			$plugins = new Maera_Required_Plugins( $plugins );
 		}
 

@@ -12,6 +12,7 @@
 				<div class="caption">
 					<h3>{{ post.title }}</h3>
 						<div class="entry-category">
+							<i class="fa fa-tags"></i>
 							{% for category in post.get_categories %}
 								<a href="{{ category.get_path }}" itemprop="articleSection">{{ category.name }}</a>
 							{% endfor %}
@@ -20,7 +21,6 @@
 							<time class="entry-date published" datetime="{{ post.date('c') }}">
 								<span itemprop="datePublished">{{ post.date }}</span>
 							</time>
-
 							<span class="byline">{{ __( 'By', 'maera' ) }}
 								<span class="author vcard"><a class="url fn n" href="{{ post.author.link }}">{{ post.author.name }}</a></span>
 							</span>

@@ -14,7 +14,9 @@
 
 			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
 				{% do action( 'maera/main/before', post.ID ) %}
-				{{ function('breadcrumb_trail') }}
+				{% if 1 == theme.theme_mod('enable_breadcrumbs', 1) %}
+					{{ function('breadcrumb_trail') }}
+				{% endif %}
 				{% block main %}{{ __( 'Sorry, no content.', 'maera-restaurant' ) }}{% endblock %}
 				{% do action( 'maera/main/after', post.ID ) %}
 

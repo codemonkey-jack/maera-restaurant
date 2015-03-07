@@ -158,6 +158,20 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				),
 			);
 
+			$controls[] = array(
+				'type'     => 'radio',
+				'mode'     => 'buttonset',
+				'setting'  => 'enable_breadcrumbs',
+				'label'    => __( 'Enable Breadcrumbs', 'maera-restaurant' ),
+				'section'  => 'maera_res_layout',
+				'default'  => 1,
+				'priority' => 4,
+				'choices'  => array(
+					1 => __( 'On', 'maera-restaurant' ),
+					0 => __( 'Off', 'maera-restaurant' ),
+				),
+			);
+
 			return $controls;
 
 		}
@@ -207,6 +221,15 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'default'  => '$ USD',
 					'priority' => 6,
 					'choices'  => Maera_Restaurant_Data::get_currency_choices(),
+			);
+
+			$controls[] = array(
+				'type'     => 'textarea',
+				'setting'  => 'copyright_text',
+				'label'    => __( 'Copyright Text', 'maera-restaurant' ),
+				'section'  => 'maera_res_restaurant',
+				'default'  => __( '&copy; 2015 - Maera Restaurant', 'maera-restaurant' ),
+				'priority' => 6,
 			);
 
 			return $controls;
@@ -479,7 +502,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'  => 'link_color',
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
-				'default'  => '#ffc341',
+				'default'  => '#244363',
 				'priority' => 1,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
@@ -493,7 +516,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'  => 'link_hover_color',
 				'label'    => __( 'Link Hover Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
-				'default'  => '#ebcd91',
+				'default'  => '#325d88',
 				'priority' => 1,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
@@ -572,7 +595,6 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					),
 				),
 			);
-
 
 			$controls[] = array(
 				'type'         => 'background',

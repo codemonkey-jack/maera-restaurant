@@ -1,25 +1,23 @@
 {#<?php#}
 <nav class="navbar navbar-default">
 
-  <div class="container-fluid">
+	<div class="container-fluid">
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {% include 'logo.twig' %}
-    </div>
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<i class="fa fa-bars"></i>
+			</button>
+			{% include 'logo.twig' %}
+		</div>
 
-    <div class="collapse navbar-collapse" id="navbar-collapse">
-      <ul class="nav navbar-nav">
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
 			{% for item in menu.primary.get_items %}
 
 				{% if item.get_children %}
 
-					<li class="dropdown {{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.get_path }}">{{ item.title }} <b class="caret"></b></a>
+					<li class="dropdown {{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a class="dropdown-toggle" data-toggle="dropdown" href="{{ item.get_path }}">{{ item.title }} <i class="fa fa-caret-down fa-fw"></i></a>
 						<ul class="dropdown-menu">
 							{% for child in item.get_children %}
 								<li class="{{ item.classes|join(' ') }}{% if 'current-menu-item' in item.classes %} active{% endif %}"><a href="{{ child.get_path }}">{{ child.title }}</a></li>
@@ -34,8 +32,8 @@
 				{% endif %}
 
 			{% endfor %}
-      </ul>
-    </div>
+			</ul>
+		</div>
 
-  </div>
+	</div>
 </nav>

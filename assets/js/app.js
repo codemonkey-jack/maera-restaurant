@@ -30,3 +30,9 @@ $j(document).ready(function() {
 	});
 
 });
+
+// Make input buttons look better.
+$j(document).ready(function() {
+    $j('input#submit').addClass('btn btn-primary');
+});
+

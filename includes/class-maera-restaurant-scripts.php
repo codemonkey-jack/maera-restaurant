@@ -52,7 +52,7 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_enqueue_style( 'bootstrap' );
 
 			//Load Bootstrap Theme (Slate).
-			wp_register_style( 'bootstrap-slate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.superhero.min.css' );
+			wp_register_style( 'bootstrap-slate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.sandstone.min.css' );
 			wp_enqueue_style( 'bootstrap-slate' );
 
 			// Load FontAwesome.

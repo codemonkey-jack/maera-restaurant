@@ -95,7 +95,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			$currencies   = self::get_currencies();
 			$choices = array();
 			foreach ( $currencies as $key => $currency ) {
-				$choices[ $key ] = $currency['name'];
+				$choices[ $key ] = $currency['symbol'];
 			}
 			return $choices;
 		}

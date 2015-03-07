@@ -37,7 +37,6 @@ code {
   word-wrap: break-word;
   color: #333;
   background-color: #eee;
-  font-weight: 300;
   font-size: 0.65em;
 }
 
@@ -47,7 +46,8 @@ pre {
 }
 
 img {
-  height: auto
+  max-width: 100%;
+  height: auto;
 }
 
 .wp-caption {
@@ -136,14 +136,15 @@ body {
 .navbar-brand > img {
   max-height: 100%;
   display: block;
+  height: 100%;
 }
 
 .nav-padding {
-  padding-top: 55px
+  padding-top: 60px;
 }
 
 .navbar-default {
-  border-radius: 1px
+  border-radius: 1px;
 }
 
 .affix {
@@ -153,7 +154,7 @@ body {
 }
 
 a.brand-logo h1 {
-  margin: 0
+  margin: 0;
 }
 
 ul.nav.navbar-nav.navbar-center {
@@ -169,6 +170,18 @@ ul.nav.navbar-nav.navbar-center li {
 .admin-bar .navbar-fixed-top {
   margin-top: 32px
 }
+
+
+
+.parallax-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.featured-image-header {
+  padding: 50px 25px 75px 25px;
+}
+
 
 /***************************
   First Section
@@ -346,15 +359,16 @@ footer.footer {
 }
 
 .carousel .carousel-control {
-  z-index: 2
+  z-index: 2;
+  width: 10%;
 }
 
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right,
+.carousel-control .fa-chevron-circle-left,
+.carousel-control .fa-chevron-circle-right,
 .carousel-control .icon-next,
 .carousel-control .icon-prev {
   position: absolute;
-  top: 50%;
+  top: 45%;
   z-index: 5;
   display: inline-block;
 }
@@ -402,9 +416,12 @@ footer.footer {
   list-style-type: none
 }
 
+.menu_item_wrapper {
+  margin-bottom: 40px;
+}
+
 .dish_name {
   display: table-cell;
-  font-weight: 600;
   width: 1%;
   white-space: nowrap;
   padding-right: 15px;
@@ -418,28 +435,41 @@ footer.footer {
 
 .price {
   display: table-cell;
-  font-weight: 600;
-  width: 1%;
   white-space: nowrap;
   padding-left: 14px;
 }
 
 .menu_item_tags {
-  background: #e68b1f;
+  background: #325d88;
   padding: 4px 8px;
   z-index: 9;
   float: right;
   font-size: 10px;
 }
 
+.menu_item_tags .fa {
+  color: #fff;
+}
+
 .menu_item_tags a {
   color: #fff;
-  font-weight: 600;
   text-transform: uppercase;
 }
 
 .menu_link_wrapper {
-  text-align: center
+  text-align: center;
+  width: 100%;
+}
+
+.menu_link_wrapper .btn {
+  width: 100%;
+  border-radius: 1px;
+}
+
+.menu_link_wrapper h1 {
+  color: #fff;
+  margin-top: 10px;
+
 }
 
 .isotope-item {
@@ -498,6 +528,7 @@ footer.footer {
 .thumbnail {
   position: relative;
   overflow: hidden;
+  border-radius: 1px;
 }
 
 .thumbnail img {
@@ -522,7 +553,6 @@ footer.footer {
   right: 0;
   padding: .2em .6em .3em;
   font-size: 0.75em;
-  font-weight: 300;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
@@ -540,7 +570,7 @@ footer.footer {
 
 .caption p > .read-more:hover {
   color: #ffffff;
-  background-color: #df691a;
+  background-color: #325d88;
   text-decoration: none;
 }
 
@@ -550,11 +580,13 @@ footer.footer {
   right: 4px;
   background: #333;
   padding: 4px 8px;
-  font-weight: 600;
   text-transform: uppercase;
   font-size: 0.75em;
   display: none;
   box-shadow: 0 0 1em 1px rgba(50,50,50,0.1);
+}
+.entry-category .fa {
+  color: #fff;
 }
 
 .entry-category a {
@@ -616,12 +648,18 @@ footer.footer {
   color: #fff
 }
 
+
 /***************************
   Input
 ***************************/
 .button,
 input[type="submit"] {
   width: auto
+}
+
+#comment,
+input[type="textarea"] {
+  width: 100%
 }
 
 textarea[rows="2"] {
@@ -666,6 +704,65 @@ textarea[rows="11"] {
 
 textarea[rows="12"] {
   height: 24em
+}
+
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
 }
 
 /* EOF */

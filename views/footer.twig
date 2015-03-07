@@ -3,9 +3,9 @@
 
 {% do action( 'maera/footer/before', post.ID ) %}
 
-<footer class="page-footer">
+<footer id="footer-wrap" class="footer {% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}container boxed{% endif %}">
 	{% do action( 'maera/footer/start', post.ID ) %}
-	<div id="footer-wrap" class="{{ grid.container() }} footer">
+	<div class="{{ grid.container() }} footer-content">
 
 		{% if sidebar.footer %}
 			<div class="row footer-content">
@@ -15,6 +15,9 @@
 
 	</div>
 	{% do action( 'maera/footer/end', post.ID ) %}
+	<div id="copyright-info" class="copyright">
+		<p>{{ theme.theme_mod('copyright_text', '&copy; 2015 - Maera Restaurant') }}</p>
+	</div>
 </footer>
 
 {% do action( 'maera/footer/after', post.ID ) %}
