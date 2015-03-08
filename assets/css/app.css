@@ -55,6 +55,15 @@ img {
   height: auto;
 }
 
+.label {
+  border-radius: 1px;
+}
+
+.media > .media-left,
+.media > .media-right {
+  width: 100%;
+}
+
 /***************************
   Body
 ***************************/
@@ -130,13 +139,13 @@ body {
 }
 
 .navbar-brand {
-  padding: 0
+  padding: 0;
 }
 
 .navbar-brand > img {
   max-height: 100%;
   display: block;
-  height: 100%;
+  height: auto;
 }
 
 .nav-padding {
@@ -440,11 +449,9 @@ footer.footer {
 }
 
 .menu_item_tags {
-  background: #325d88;
   padding: 4px 8px;
   z-index: 9;
   float: right;
-  font-size: 10px;
 }
 
 .menu_item_tags .fa {
@@ -469,7 +476,6 @@ footer.footer {
 .menu_link_wrapper h1 {
   color: #fff;
   margin-top: 10px;
-
 }
 
 .isotope-item {
@@ -707,11 +713,9 @@ textarea[rows="12"] {
 }
 
 
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
-
-/*==========  Mobile First Method  ==========*/
+/***************************
+  Bootstrap Media Queries
+***************************/
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width : 320px) {
@@ -737,8 +741,6 @@ textarea[rows="12"] {
 @media only screen and (min-width : 1200px) {
 
 }
-
-/*==========  Non-Mobile First Method  ==========*/
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {

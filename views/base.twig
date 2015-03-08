@@ -1,22 +1,23 @@
 {#<?php#}
 {% import 'grid_classes.html.twig' as grid %}
 
-
 {% do action( 'maera/wrap/before', post.ID ) %}
 
-{% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}<div id="wrap-main-section" class="container boxed wrap main-section">{% endif %}
-{% if 'wide' == theme.theme_mod('site_layout', 'wide') %}<div id="wrap-main-section" class="container-fluid wide wrap main-section">{% endif %}
+<div id="wrap-main-section" class="wrap {{ 'main-section'|apply_filters( 'maera/wrapper/class' ) }}">
 
 	{% do action( 'maera/content/before', post.ID ) %}
 
 	<div class="content" id="content" itemprop="mainContentOfPage">
+
 		<div class="{{ grid.row() }}">
 
 			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
-				{% do action( 'maera/main/before', post.ID ) %}
+
 				{% if 1 == theme.theme_mod('enable_breadcrumbs', 1) %}
 					{{ function('breadcrumb_trail') }}
 				{% endif %}
+
+				{% do action( 'maera/main/before', post.ID ) %}
 				{% block main %}{{ __( 'Sorry, no content.', 'maera-restaurant' ) }}{% endblock %}
 				{% do action( 'maera/main/after', post.ID ) %}
 
@@ -25,15 +26,16 @@
 				{% endif %}
 
 			</div>
+
 			<div class="clearfix"></div>
+
 		</div>
+
 	</div><!-- /#content -->
+
 	{% do action( 'maera/content/after' ) %}
 
-{% if 'wide' == theme.theme_mod('site_layout', 'wide') %}</div>{% endif %}
-{% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}</div>{% endif %}
-
-<div class="clearfix"></div>
+</div>
 
 {% do action( 'maera/wrap/after', post.ID ) %}
 

@@ -35,20 +35,37 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 			// NULL
 
 			// Add filters.
+			add_filter( 'maera/wrapper/class', array( $this, 'site_layout' ) );
 			add_filter( 'maera/section_class/content', array( $this, 'page_layout' ) );
 
 		}
 
 
 		/**
-		 * Add and remove classes to the main content wrapper.
+		 * Add and remove classes to the main wrapper.
+		 */
+		function site_layout( $classes ) {
+			$site_layout = get_theme_mod( 'site_layout', 'wide' );
+			if ( 'boxed' == $site_layout ) {
+				$classes = 'container boxed';
+			} else {
+				$classes = 'container-fluid wide';
+			}
+
+			return $classes;
+		}
+
+
+		/**
+		 * Add and remove classes to the content wrapper.
 		 */
 		function page_layout( $classes ) {
 			$page_layout = get_theme_mod( 'page_layout', 0 );
 			if ( 1 == $page_layout ) {
 				$classes = 'col-md-8';
+			} else {
+				$classes = 'col-md-12';
 			}
-
 			return $classes;
 		}
 

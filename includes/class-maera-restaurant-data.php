@@ -48,18 +48,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		*/
 		function maera_res_context( $context ) {
 
-			$slide_args = array(
-				'post_type' => 'slide',
-			);
-
-			$restaurant_args = array(
-				'post_type' => 'restaurant_item',
-				'tax_query' => 'restaurant_tag',
-			);
-
 			$context['currency']                  = get_theme_mod( 'currency', '&#36;' );
-			$context['slides']                    = Timber::get_posts( $slide_args );
-			$context['restaurant_items']          = Timber::get_posts( $restaurant_args );
 			$context['menu_sections']             = Timber::get_terms( 'restaurant_item_menu_section' );
 			$context['sidebar']['section_1']      = Timber::get_widgets( 'section_1' );
 			$context['sidebar']['section_2']      = Timber::get_widgets( 'section_2' );
@@ -78,33 +67,33 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		public static function get_currencies() {
 
 			$currencies = array(
-				'&#36;'  => __( 'US Dollars (&#36;)', 'maera-restaurant' ),
-				'&euro;'  => __( 'Euros (&euro;)', 'maera-restaurant' ),
-				'&pound;'  => __( 'Pounds Sterling (&pound;)', 'maera-restaurant' ),
-				'AUD'  => __( 'Australian Dollars (&#36;)', 'maera-restaurant' ),
-				'R&#36;'  => __( 'Brazilian Real (R&#36;)', 'maera-restaurant' ),
-				'CAD'  => __( 'Canadian Dollars (&#36;)', 'maera-restaurant' ),
-				'CZK'  => __( 'Czech Koruna', 'maera-restaurant' ),
-				'DKK'  => __( 'Danish Krone', 'maera-restaurant' ),
-				'HKD'  => __( 'Hong Kong Dollar (&#36;)', 'maera-restaurant' ),
-				'HUF'  => __( 'Hungarian Forint', 'maera-restaurant' ),
-				'&#8362;'  => __( 'Israeli Shekel (&#8362;)', 'maera-restaurant' ),
-				'&yen;'  => __( 'Japanese Yen (&yen;)', 'maera-restaurant' ),
-				'MYR'  => __( 'Malaysian Ringgits', 'maera-restaurant' ),
-				'MXN'  => __( 'Mexican Peso (&#36;)', 'maera-restaurant' ),
-				'NZD'  => __( 'New Zealand Dollar (&#36;)', 'maera-restaurant' ),
-				'NOK'  => __( 'Norwegian Krone', 'maera-restaurant' ),
-				'PHP'  => __( 'Philippine Pesos', 'maera-restaurant' ),
-				'PLN'  => __( 'Polish Zloty', 'maera-restaurant' ),
-				'SGD'  => __( 'Singapore Dollar (&#36;)', 'maera-restaurant' ),
-				'SEK'  => __( 'Swedish Krona', 'maera-restaurant' ),
-				'CHF'  => __( 'Swiss Franc', 'maera-restaurant' ),
-				'TWD'  => __( 'Taiwan New Dollars', 'maera-restaurant' ),
-				'&#3647;'  => __( 'Thai Baht (&#3647;)', 'maera-restaurant' ),
-				'&#8377;'  => __( 'Indian Rupee (&#8377;)', 'maera-restaurant' ),
-				'&#8378;'  => __( 'Turkish Lira (&#8378;)', 'maera-restaurant' ),
-				'&#65020;' => __( 'Iranian Rial (&#65020;)', 'maera-restaurant' ),
-				'RUB'  => __( 'Russian Rubles', 'maera-restaurant' )
+				'&#36;'     => __( 'US Dollars (&#36;)', 'maera-restaurant' ),
+				'&euro;'    => __( 'Euros (&euro;)', 'maera-restaurant' ),
+				'&pound;'   => __( 'Pounds Sterling (&pound;)', 'maera-restaurant' ),
+				'AUD'       => __( 'Australian Dollars (&#36;)', 'maera-restaurant' ),
+				'R&#36;'    => __( 'Brazilian Real (R&#36;)', 'maera-restaurant' ),
+				'CAD'       => __( 'Canadian Dollars (&#36;)', 'maera-restaurant' ),
+				'CZK'       => __( 'Czech Koruna', 'maera-restaurant' ),
+				'DKK'       => __( 'Danish Krone', 'maera-restaurant' ),
+				'HKD'       => __( 'Hong Kong Dollar (&#36;)', 'maera-restaurant' ),
+				'HUF'       => __( 'Hungarian Forint', 'maera-restaurant' ),
+				'&#8362;'   => __( 'Israeli Shekel (&#8362;)', 'maera-restaurant' ),
+				'&yen;'     => __( 'Japanese Yen (&yen;)', 'maera-restaurant' ),
+				'MYR'       => __( 'Malaysian Ringgits', 'maera-restaurant' ),
+				'MXN'       => __( 'Mexican Peso (&#36;)', 'maera-restaurant' ),
+				'NZD'       => __( 'New Zealand Dollar (&#36;)', 'maera-restaurant' ),
+				'NOK'       => __( 'Norwegian Krone', 'maera-restaurant' ),
+				'PHP'       => __( 'Philippine Pesos', 'maera-restaurant' ),
+				'PLN'       => __( 'Polish Zloty', 'maera-restaurant' ),
+				'SGD'       => __( 'Singapore Dollar (&#36;)', 'maera-restaurant' ),
+				'SEK'       => __( 'Swedish Krona', 'maera-restaurant' ),
+				'CHF'       => __( 'Swiss Franc', 'maera-restaurant' ),
+				'TWD'       => __( 'Taiwan New Dollars', 'maera-restaurant' ),
+				'&#3647;'   => __( 'Thai Baht (&#3647;)', 'maera-restaurant' ),
+				'&#8377;'   => __( 'Indian Rupee (&#8377;)', 'maera-restaurant' ),
+				'&#8378;'   => __( 'Turkish Lira (&#8378;)', 'maera-restaurant' ),
+				'&#65020;'  => __( 'Iranian Rial (&#65020;)', 'maera-restaurant' ),
+				'RUB'       => __( 'Russian Rubles', 'maera-restaurant' )
 				);
 
 			return $currencies;
@@ -121,14 +110,14 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			$cats['all'] = __( 'All Categories', 'maera-restaurant' );
 
 			$args = array(
-				'type'                     => 'post',
-				'orderby'                  => 'count',
-				'order'                    => 'ASC',
-				'hide_empty'               => 1,
-				'hierarchical'             => 0,
-				'number'                   => 20,
-				'taxonomy'                 => 'category',
-				'pad_counts'               => false,
+				'type'           => 'post',
+				'orderby'        => 'count',
+				'order'          => 'ASC',
+				'hide_empty'     => 1,
+				'hierarchical'   => 0,
+				'number'         => 20,
+				'taxonomy'       => 'category',
+				'pad_counts'     => false,
 			);
 
 			$categories = get_categories( $args );

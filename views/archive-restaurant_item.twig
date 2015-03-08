@@ -4,40 +4,33 @@
 {% block content %}
 
 <ul id="menu-filter">
-	<li><a href="#" data-filter="*" class="selected">All</a></li>
+	<li><a href="#" data-filter="*" class="selected">{{ __('All', 'maera-restaurant') }}</a></li>
 	{% for menu_section in menu_sections %}
 	<li><a href="#" data-filter=".{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
 	{% endfor %}
 </ul>
 
-<div id="menu-wrapper" class="js-isotope" data-isotope-options='{ "itemSelector": ".item" }'>
+<div id="menu-wrapper" class="list-group js-isotope" data-isotope-options='{ "itemSelector": ".item" }'>
 	{% for post in posts %}
-	<div class="{% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} col-md-6 menu_item_wrapper item">
-		<div class="media">
+	<div class="list-group-item active col-md-12 menu_item_wrapper item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %}">
+		<div class="row">
 			{% if post.thumbnail %}
-			<div class="media-left">
-				<a href="{{ post.permalink }}">
-					<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
+			<div class="col-md-4">
+				<a href="{{ post.permalink }}" class="thumbnail">
+					<img src="{{ post.get_thumbnail.get_src|resize(350, 350, 'center') }}" alt="{{ post.title }}">
 				</a>
 			</div>
 			{% endif %}
-			<div class="media-body">
-				<h3 class="media-heading">
-					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
-
-					<span class="price_dots"></span>
-					<span class="price">{{ currency }}{{ post.get_field('_restaurant_item_price') }}</span>
-
-				</h3>
-				{{ post.content }}
-
-
-					{% for term in post.terms('restaurant_tag') %}
+			<div class="{% if post.thumbnail %}col-md-8{% else %}col-md-12{% endif %}">
+				<h4 class="list-group-item-heading">
+					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span><span class="price_dots"></span><span class="price">{{ currency }}{{ post.get_field('_restaurant_item_price') }}</span>
+				</h4>
+				<p>{{ post.content }}</p>
+				{% for term in post.terms('restaurant_tag') %}
 					<div class="menu_item_tags">
-						<span class="menu_tag"><i class="fa fa-cutlery"></i> <a href="{{term.link}}">{{term.name}}</a></span>
+						<span class="label label-primary"><i class="fa fa-cutlery"></i> &nbsp; <a href="{{term.link}}">{{term.name}}</a></span>
 					</div>
-					{% endfor %}
-
+				{% endfor %}
 			</div>
 		</div>
 	</div>

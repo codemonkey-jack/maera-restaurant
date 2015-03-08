@@ -109,6 +109,15 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			// Theme Supports
 			add_theme_support( 'tonesque' );
 			add_theme_support( 'site-logo' );
+			add_theme_support( 'infinite-scroll', array(
+				'type'      => 'click',
+				'container' => 'infinite_scroll',
+				'footer'    => false,
+			) );
+
+			if ( '1' == get_theme_mod( 'enable_breadcrumbs' , '1' ) ) {
+				add_theme_support( 'breadcrumbs' );
+			}
 
 		}
 
@@ -156,14 +165,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 					'name' => 'The Events Calendar',
 					'file' => 'the-events-calendar.php',
 					'slug' => 'the-events-calendar',
-				);
-			}
-
-			if ( '1' == get_theme_mod( 'enable_breadcrumbs' , '1' ) ) {
-				$plugins[] = array(
-					'name' => 'Breadcrumb Trail',
-					'file' => 'breadcrumb-trail.php',
-					'slug' => 'breadcrumb-trail',
 				);
 			}
 
