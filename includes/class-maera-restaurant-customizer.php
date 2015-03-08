@@ -220,7 +220,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'section'  => 'maera_res_restaurant',
 					'default'  => '$ USD',
 					'priority' => 6,
-					'choices'  => Maera_Restaurant_Data::get_currency_choices(),
+					'choices'  => Maera_Restaurant_Data::get_currencies(),
 			);
 
 			$controls[] = array(

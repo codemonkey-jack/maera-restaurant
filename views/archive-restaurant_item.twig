@@ -1,26 +1,20 @@
 {#<?php#}
+{% extends "main.twig" %}
 
-{{ widget.before_widget }}
-{% if widget.title %}
-	{{ widget.before_title }}
-	{{ widget.title }}
-	{{ widget.after_title }}
-{% endif %}
+{% block content %}
 
-{% if widget.show_filters %}
 <ul id="menu-filter">
 	<li><a href="#" data-filter="*" class="selected">All</a></li>
 	{% for menu_section in menu_sections %}
 	<li><a href="#" data-filter=".{{ menu_section.name|lower }}">{{ menu_section.name }}</a></li>
 	{% endfor %}
 </ul>
-{% endif %}
 
 <div id="menu-wrapper" class="js-isotope" data-isotope-options='{ "itemSelector": ".item" }'>
 	{% for post in posts %}
-	<div class="{% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} col-md-4 menu_item_wrapper item">
+	<div class="{% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %} col-md-6 menu_item_wrapper item">
 		<div class="media">
-			{% if post.thumbnail and widget.show_featured_images %}
+			{% if post.thumbnail %}
 			<div class="media-left">
 				<a href="{{ post.permalink }}">
 					<img class="media-object" src="{{ post.get_thumbnail.get_src|resize(64, 64, 'center') }}" alt="{{ post.title }}" />
@@ -30,20 +24,20 @@
 			<div class="media-body">
 				<h3 class="media-heading">
 					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
-					{% if widget.show_price %}
+
 					<span class="price_dots"></span>
 					<span class="price">{{ currency }}{{ post.get_field('_restaurant_item_price') }}</span>
-					{% endif %}
+
 				</h3>
 				{{ post.content }}
 
-				{% if widget.show_tags %}
+
 					{% for term in post.terms('restaurant_tag') %}
 					<div class="menu_item_tags">
 						<span class="menu_tag"><i class="fa fa-cutlery"></i> <a href="{{term.link}}">{{term.name}}</a></span>
 					</div>
 					{% endfor %}
-				{% endif %}
+
 			</div>
 		</div>
 	</div>
@@ -51,9 +45,7 @@
 </div>
 <div class="clearfix"></div>
 
-{% if widget.show_filters %}
 <script>
-
 jQuery(function ($) {
 
 	var $container = $('#menu-wrapper');
@@ -82,15 +74,5 @@ jQuery(function ($) {
 	});
 
 });
-
 </script>
-{% endif %}
-
-{% if widget.show_menu_link %}
-<div class="menu_link_wrapper">
-	<a href="{{ function('get_page_link', widget.link_target) }}" class="[maera_button_primary_medium]"><h1>{{ __('Full Menu', 'maera-restaurant') }}</h1></a>
-</div>
-{% endif %}
-
-{{ widget.after_widget }}
-
+{% endblock %}

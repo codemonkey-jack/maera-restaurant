@@ -70,7 +70,6 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 			$context              = Maera()->cache->get_context();
 			$context['post']      = Timber::query_post();
 			$context['posts']     = Timber::get_posts( $query_args );
-			$context['currency']  = get_theme_mod( 'currency', '$' );
 			$context['widget']    = $widget;
 
 			Timber::render(
