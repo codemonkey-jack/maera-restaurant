@@ -58,6 +58,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				'pause'           => $instance['pause'],
 				'wrap'            => $instance['wrap'],
 				'parallax'        => $instance['parallax'],
+				'second_image'    => $instance['second_image'],
 				'before_widget'   => $before_widget,
 				'after_widget'    => $after_widget,
 				'before_title'    => $before_title,
@@ -93,6 +94,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			$instance['pause']           = isset( $new_instance['pause'] );
 			$instance['wrap']            = isset( $new_instance['wrap'] );
 			$instance['parallax']        = isset( $new_instance['parallax'] );
+			$instance['second_image']        = isset( $new_instance['second_image'] );
 
 			return $instance;
 		}
@@ -111,6 +113,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				'pause'            => 'hover',
 				'wrap'             => 1,
 				'parallax'         => 1,
+				'second_image'     => 1,
 			);
 			$instance = wp_parse_args( ( array ) $instance, $defaults ); ?>
 
@@ -147,6 +150,13 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 					<td colspan="2">
 						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['parallax'] ) ? $instance['parallax'] : 0  ); ?> id="<?php echo $this->get_field_id( 'parallax' ); ?>" name="<?php echo $this->get_field_name( 'parallax' ); ?>" />
 							<?php _e( 'Enable Parallax?','maera-restaurant' ); ?>
+					</td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['second_image'] ) ? $instance['second_image'] : 0  ); ?> id="<?php echo $this->get_field_id( 'second_image' ); ?>" name="<?php echo $this->get_field_name( 'second_image' ); ?>" />
+							<?php _e( 'Enable Overlay Image?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 

@@ -153,6 +153,15 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				'slug' => 'restaurant',
 			);
 
+			// Check to see if the user has ACF Pro installed, if not, require the free version.
+			if ( ! class_exists( 'acf_pro' ) ) {
+				$plugins[] = array(
+					'name' => 'Advanced Custom Fields',
+					'file' => 'acf.php',
+					'slug' => 'advanced-custom-fields',
+				);
+			}
+
 			$plugins = new Maera_Required_Plugins( $plugins );
 		}
 
@@ -167,7 +176,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 			if ( 'slide' == $screen->post_type ) {
 				remove_meta_box( 'postimagediv', 'slide', 'side' );
-				add_meta_box( 'postimagediv', __( 'Slide Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
+				add_meta_box( 'postimagediv', __( 'Slide - Background Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
 			}
 
 		}
@@ -226,3 +235,50 @@ function maera_res_menu_widgets() {
 	register_widget( 'Maera_Restaurant_Menu_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_menu_widgets' );
+
+
+/**
+ * Add the Slider secondary image to Advanced Custom Fields
+ * @todo : Add appropriate checks to see which version of ACF is installed and if there is any issues
+ * or differences with how images are added between the two, change the method to adapt.
+ */
+if ( function_exists( 'register_field_group' ) ){
+	register_field_group( array(
+		'id' => 'acf_slider-second-image-1',
+		'title' => 'Slider - Second Image',
+		'fields' => array(
+			array(
+				'key' => 'field_54ff77a3c04fb',
+				'label' => 'Slider - Second Image',
+				'name' => 'slider_-_second_image',
+				'type' => 'image',
+				'instructions' => 'Enter the secondary image for the slider.	This is the image that is displayed over the background.',
+				'required' => 1,
+				'save_format' => 'url',
+				'preview_size' => 'medium',
+				'library' => 'all',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'slide',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array(
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array(
+				0 => 'comments',
+				1 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
