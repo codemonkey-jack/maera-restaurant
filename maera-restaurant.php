@@ -107,6 +107,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			// NULL
 
 			// Theme Supports
+			add_theme_support( 'restaurant' );
 			add_theme_support( 'tonesque' );
 			add_theme_support( 'site-logo' );
 			add_theme_support( 'infinite-scroll', array(
