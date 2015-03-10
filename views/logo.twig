@@ -1,8 +1,8 @@
 {#<?php#}
-<a href="{{ site.url }}" class="site-name-logo navbar-brand">
-	{% if site_logo %}
-		<img id="brand-logo" src="{{ TimberImage(site_logo.id).src }}" alt="{{ site.name }}">
+<a class="navbar-brand" href="{{ site.url }}">
+{% if site_logo %}
+	<img id="brand-logo" src="{{ TimberImage(site_logo.id).src }}" alt="{{ site.name }}">
 	{% else %}
-		{{ site.name }}
+	{{ site.name }}
 	{% endif %}
 </a>

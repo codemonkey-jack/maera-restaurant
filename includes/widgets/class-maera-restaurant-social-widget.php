@@ -70,11 +70,6 @@ if ( ! class_exists( 'Maera_Restaurant_Social_widget' ) ) {
 			$context                    = Maera()->cache->get_context();
 			$context['widget']          = $widget;
 
-			$context['facebook_link']   = get_theme_mod( 'facebook_link','http://facebook.com/' );
-			$context['twitter_link']    = get_theme_mod( 'twitter_link','http://twitter.com/' );
-			$context['googleplus_link'] = get_theme_mod( 'googleplus_link','http://plus.google.com/' );
-			$context['youtube_link']    = get_theme_mod( 'youtube_link','http://youtube.com' );
-
 			$context['facebook_icon']   = '<i class="fa fa-facebook fa-'.$instance['icon_size'].'"></i>';
 			$context['twitter_icon']    = '<i class="fa fa-twitter fa-'.$instance['icon_size'].'"></i>';
 			$context['googleplus_icon'] = '<i class="fa fa-google-plus fa-'.$instance['icon_size'].'"></i>';

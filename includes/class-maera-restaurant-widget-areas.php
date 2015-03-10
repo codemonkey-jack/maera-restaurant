@@ -82,60 +82,60 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		function maera_res_widgets_init() {
 
 			$class        = apply_filters( 'maera/widgets/class', '' );
-			$before_title = apply_filters( 'maera/widgets/title/before', '<h3 class="widget-title">' );
+			$before_title = apply_filters( 'maera/widgets/title/before', '<h3 class="title">' );
 			$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
 
 			register_sidebar( array(
 				'name'          => 'First Section',
 				'id'            => 'section_1',
-				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '</div></section>',
-				'before_title'  => '<h3 class="widget-title">',
+				'before_widget' => '<div id="%1$s" class="%2$s no-margin">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',
 			) );
 
 			register_sidebar( array(
 				'name'          => 'Second Section',
 				'id'            => 'section_2',
-				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '</div></section>',
-				'before_title'  => '<h3 class="widget-title">',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',
 			) );
 
 			register_sidebar( array(
 				'name'          => 'Third Section',
 				'id'            => 'section_3',
-				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '</div></section>',
-				'before_title'  => '<h3 class="widget-title">',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',
 			) );
 
 			register_sidebar( array(
 				'name'          => 'Fourth Section',
 				'id'            => 'section_4',
-				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '</div></section>',
-				'before_title'  => '<h3 class="widget-title">',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',
 			) );
 
 			register_sidebar( array(
 				'name'          => 'Fifth Section',
 				'id'            => 'section_5',
-				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '</div></section>',
-				'before_title'  => '<h3 class="widget-title">',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',
 			) );
 
 			register_sidebar( array(
 				'name'          => 'Footer',
 				'id'            => 'footer',
-				'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-content">',
-				'after_widget'  => '<div></section>',
-				'before_title'  => '<h3 class="widget-title">',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',
 			) );
 		}
@@ -155,7 +155,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		 * @return [type] [description]
 		 */
 		function widget_title_before() {
-			return '<h3 class="widget-title">';
+			return '<h3 class="title">';
 		}
 
 
@@ -174,7 +174,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		 * @return [type]          [description]
 		 */
 		function widget_before( $content ) {
-			return $content . '<div class="widget-content panel-body">';
+			return $content . '<div class="content panel-body">';
 		}
 
 

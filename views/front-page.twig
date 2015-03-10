@@ -1,68 +1,44 @@
 {#<?php#}
 {% import 'grid_classes.html.twig' as grid %}
 
-
 {% set parts_serialized = theme.theme_mod('front_page_sections', function('serialize', ['navbar','section_1','section_2','section_3'] ) ) %}
 {% set parts = function('unserialize', parts_serialized) %}
 
-<div id="parallax-wrapper" class="container wrap">
+{% for part in parts %}
 
-	{% for part in parts %}
+{% if part == 'section_1' %}
+	{% do action( 'maera/restaurant/before_section_1' ) %}
+	{% include 'section_1.twig' %}
+	{% do action( 'maera/restaurant/after_section_1' ) %}
+	<div class="clearfix"></div>
+{% endif %}
 
-		{# Begin Navbar #}
-		{% if part == 'navbar' %}
-			{% do action( 'maera/restaurant/before_navbar' ) %}
-			{% include 'navbar.twig' %}
-			{% do action( 'maera/restaurant/after_navbar' ) %}
-			<div class="clearfix"></div>
-		{% endif %}
-		{# End Navbar #}
+{% if part == 'section_2' %}
+	{% do action( 'maera/restaurant/before_section_2' ) %}
+	{% include 'section_2.twig' %}
+	{% do action( 'maera/restaurant/after_section_2' ) %}
+	<div class="clearfix"></div>
+{% endif %}
 
-		{# Begin First Section #}
-		{% if part == 'section_1' %}
-			{% do action( 'maera/restaurant/before_section_1' ) %}
-			{% include 'section_1.twig' %}
-			{% do action( 'maera/restaurant/after_section_1' ) %}
-			<div class="clearfix"></div>
-		{% endif %}
-		{# End First Section #}
+{% if part == 'section_3' %}
+	{% do action( 'maera/restaurant/before_section_3' ) %}
+	{% include 'section_3.twig' %}
+	{% do action( 'maera/restaurant/after_section_3' ) %}
+	<div class="clearfix"></div>
+{% endif %}
 
-		{# Begin Second Section #}
-		{% if part == 'section_2' %}
-			{% do action( 'maera/restaurant/before_section_2' ) %}
-			{% include 'section_2.twig' %}
-			{% do action( 'maera/restaurant/after_section_2' ) %}
-			<div class="clearfix"></div>
-		{% endif %}
-		{# End Second Section #}
+{% if part == 'section_4' %}
+	{% do action( 'maera/restaurant/before_section_4' ) %}
+	{% include 'section_4.twig' %}
+	{% do action( 'maera/restaurant/after_section_4' ) %}
+	<div class="clearfix"></div>
+{% endif %}
 
-		{# Begin Third Section #}
-		{% if part == 'section_3' %}
-			{% do action( 'maera/restaurant/before_section_3' ) %}
-			{% include 'section_3.twig' %}
-			{% do action( 'maera/restaurant/after_section_3' ) %}
-			<div class="clearfix"></div>
-		{% endif %}
-		{# End Third Section #}
+{% if part == 'section_5' %}
+	{% do action( 'maera/restaurant/before_section_5' ) %}
+	{% include 'section_5.twig' %}
+	{% do action( 'maera/restaurant/after_section_5' ) %}
+	<div class="clearfix"></div>
+{% endif %}
 
-		{# Begin Fourth Section #}
-		{% if part == 'section_4' %}
-			{% do action( 'maera/restaurant/before_section_4' ) %}
-			{% include 'section_4.twig' %}
-			{% do action( 'maera/restaurant/after_section_4' ) %}
-			<div class="clearfix"></div>
-		{% endif %}
-		{# End Fourth Section #}
-
-		{# Begin Fifth Section #}
-		{% if part == 'section_5' %}
-			{% do action( 'maera/restaurant/before_section_5' ) %}
-			{% include 'section_5.twig' %}
-			{% do action( 'maera/restaurant/after_section_5' ) %}
-			<div class="clearfix"></div>
-		{% endif %}
-		{# End Fifth Section #}
-
-	{% endfor %}
-
-</div>
+{% endfor %}

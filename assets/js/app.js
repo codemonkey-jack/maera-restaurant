@@ -1,39 +1,43 @@
-var $j = jQuery.noConflict();
+jQuery(function($) {'use strict',
 
-// Navbar
-$j(document).ready(function () {
-	var nav = $j('.navbar');
-	var origOffsetY = nav.offset().top;
+	// Initiate WOW JS
+	new WOW().init();
 
-	function scroll() {
-		if ($j(window).scrollTop() >= origOffsetY) {
-			$j('.navbar').addClass('affix');
-			$j('#wrap-main-section').addClass('nav-padding');
-		} else {
-			$j('.navbar').removeClass('affix');
-			$j('#wrap-main-section').removeClass('nav-padding');
+	// Accordian
+	$('.accordion-toggle').on('click', function(){
+		$(this).closest('.panel-group').children().each(function(){
+		$(this).find('>.panel-heading').removeClass('active');
+		 });
+
+	 	$(this).closest('.panel-heading').toggleClass('active');
+	});
+
+	// Goto top
+	$('.gototop').click(function(event) {
+		event.preventDefault();
+		$('html, body').animate({
+			scrollTop: $("body").offset().top
+		}, 500);
+	});
+
+	// Parallax
+	$(document).ready(function() {
+		var origheight = $(".parallax").height();
+		var height = $(window).height();
+		if (height = origheight) {
+			$(".parallax").height(height);
 		}
-	}
-	document.onscroll = scroll;
-});
+		$(window).scroll(function(){
+			var x = $(this).scrollTop();
+			$('.parallax').css('background-position','center -'+parseInt(x/10)+'px');
+		});
 
-// Parallax
-$j(document).ready(function() {
-	var origheight = $j(".parallax").height();
-	var height = $j(window).height();
-	if (height = origheight) {
-		$j(".parallax").height(height);
-	}
-	$j(window).scroll(function(){
-		var x = $j(this).scrollTop();
-		$j('.parallax').css('background-position','center -'+parseInt(x/20)+'px');
+	});
+
+	// Make input buttons look better.
+	$(document).ready(function() {
+		$('input#submit').addClass('btn btn-primary');
+		$('input.search-submit').addClass('btn btn-primary');
 	});
 
 });
-
-// Make input buttons look better.
-$j(document).ready(function() {
-    $j('input#submit').addClass('btn btn-primary');
-    $j('input.search-submit').addClass('btn btn-primary');
-});
-

@@ -51,9 +51,9 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_register_style( 'bootstrap', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.min.css' );
 			wp_enqueue_style( 'bootstrap' );
 
-			//Load Bootstrap Theme (Slate).
-			wp_register_style( 'bootstrap-slate', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/bootstrap.sandstone.min.css' );
-			wp_enqueue_style( 'bootstrap-slate' );
+			//Load Responsive.
+			wp_register_style( 'responsive', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/responsive.css' );
+			wp_enqueue_style( 'responsive' );
 
 			// Load FontAwesome.
 			wp_register_style( 'fontawesome', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/css/font-awesome.min.css' );
@@ -81,8 +81,12 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_enqueue_script( 'isotope' );
 
 			// Load App JS
-			wp_register_script( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/app.js', array('jquery'), time(), false );
+			wp_register_script( 'maera-res', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/app.js', array('bootstrap'), time(), false );
 			wp_enqueue_script( 'maera-res' );
+
+			// Load WoW JS
+			wp_register_script( 'wow', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/wow.min.js', array('jquery'), time(), false );
+			wp_enqueue_script( 'wow' );
 
 		}
 

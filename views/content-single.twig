@@ -1,14 +1,13 @@
-
-<article {{ function( 'post_class' ) }} id="post-{{post.ID}}" itemscope itemtype="http://schema.org/Article">
-	{% if post.thumbnail %}
-	<div class="parallax-container featured-image-header parallax" style="background:url({{ post.get_thumbnail.get_src }}) no-repeat fixed;"></div>
-	{% endif %}
-	<div class="content-header">
-		{% include ['content-single-entry-'~post.ID~'-header.twig', 'content-single-entry-'~post.post_type~'-header.twig', 'content-single-entry-header.twig'] %}
+<article {{ function( 'post_class', 'blog' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
+	<div class="blog-item">
+		<div class="row">
+		{% block content %}
+			{% do action( 'maera/single/top', post.ID ) %}
+			{% include ['content-single-entry-'~post.ID~'-header.twig', 'content-single-entry-'~post.post_type~'-header.twig', 'content-single-entry-header.twig'] %}
+			{% include ['content-single-entry-'~post.ID~'-meta.twig', 'content-single-entry-'~post.post_type~'-meta.twig', 'content-single-entry-meta.twig'] %}
+			{% include ['content-single-entry-'~post.ID~'-content.twig', 'content-single-entry-'~post.post_type~'-content.twig', 'content-single-entry-content.twig'] %}
+			{% include ['content-single-entry-'~post.ID~'-footer.twig', 'content-single-entry-'~post.post_type~'-footer.twig', 'content-single-entry-footer.twig'] %}
+		{% endblock %}
+		</div>
 	</div>
-    {% do action( 'maera/single/top', post.ID ) %}
-
-    {% include ['content-single-entry-'~post.ID~'-meta.twig', 'content-single-entry-'~post.post_type~'-meta.twig', 'content-single-entry-meta.twig'] %}
-    {% include ['content-single-entry-'~post.ID~'-content.twig', 'content-single-entry-'~post.post_type~'-content.twig', 'content-single-entry-content.twig'] %}
-    {% include ['content-single-entry-'~post.ID~'-footer.twig', 'content-single-entry-'~post.post_type~'-footer.twig', 'content-single-entry-footer.twig'] %}
 </article>

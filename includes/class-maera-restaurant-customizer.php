@@ -111,20 +111,6 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'radio',
-				'mode'     => 'buttonset',
-				'setting'  => 'site_layout',
-				'label'    => __( 'Site Layout', 'maera-restaurant' ),
-				'section'  => 'maera_res_layout',
-				'priority' => 1,
-				'default'  => 'wide',
-				'choices'  => array(
-					'wide'    => __( 'Wide', 'maera-restaurant' ),
-					'boxed'   => __( 'Boxed', 'maera-restaurant' ),
-				),
-			);
-
-			$controls[] = array(
-				'type'     => 'radio',
 				'mode'     => 'image',
 				'setting'  => 'page_layout',
 				'label'    => __( 'Page Layout', 'maera-restaurant' ),
@@ -138,17 +124,16 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			$controls[] = array(
 				'type'     => 'sortable',
 				'setting'  => 'front_page_sections',
-				'label'    => __( 'Front Page Sections', 'maera_mg' ),
+				'label'    => __( 'Front Page Sections', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
-				'default'  => serialize( array( 'navbar', 'section_1', 'section_2', 'section_3' ) ),
+				'default'  => serialize( array( 'section_1', 'section_2', 'section_3' ) ),
 				'priority' => 3,
 				'choices'  => array(
-					'navbar'           => __( 'Navigation Menu', 'maera-restaurant' ),
-					'section_1'        => __( 'Section 1', 'maera-restaurant' ),
-					'section_2'        => __( 'Section 2', 'maera-restaurant' ),
-					'section_3'        => __( 'Section 3', 'maera-restaurant' ),
-					'section_4'        => __( 'Section 4', 'maera-restaurant' ),
-					'section_5'        => __( 'Section 5', 'maera-restaurant' ),
+					'section_1'   => __( 'Section 1', 'maera-restaurant' ),
+					'section_2'   => __( 'Section 2', 'maera-restaurant' ),
+					'section_3'   => __( 'Section 3', 'maera-restaurant' ),
+					'section_4'   => __( 'Section 4', 'maera-restaurant' ),
+					'section_5'   => __( 'Section 5', 'maera-restaurant' ),
 				),
 			);
 
@@ -187,6 +172,38 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'default'  => '$ USD',
 				'priority' => 1,
 				'choices'  => Maera_Restaurant_Data::get_currencies(),
+			);
+
+			$controls[] = array(
+				'type'     => 'radio',
+				'mode'     => 'buttonset',
+				'setting'  => 'enable_contact_bar',
+				'label'    => __( 'Enable Contact Bar', 'maera-restaurant' ),
+				'section'  => 'maera_res_restaurant',
+				'default'  => 1,
+				'priority' => 2,
+				'choices'  => array(
+					1 => __( 'On', 'maera-restaurant' ),
+					0 => __( 'Off', 'maera-restaurant' ),
+				),
+			);
+
+			$controls[] = array(
+				'type'     => 'text',
+				'setting'  => 'phone_number',
+				'label'    => __( 'Restaurant Phone Number', 'maera-restauran' ),
+				'section'  => 'maera_res_restaurant',
+				'default'  => __( '+555-867-5309', 'maera-restauran' ),
+				'priority' => 3,
+			);
+
+			$controls[] = array(
+				'type'     => 'textarea',
+				'setting'  => 'recent_lead_text',
+				'label'    => __( 'From the Kitchen text', 'maera-restauran' ),
+				'section'  => 'maera_res_restaurant',
+				'default'  => __( 'Ut enim ad minim veniam.', 'maera-restauran' ),
+				'priority' => 3,
 			);
 
 			return $controls;
@@ -303,8 +320,8 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'description'  => __( 'Set the background options for the third section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_section_3',
 				'default'      => array(
-					'color'    => '#ebe1d7',
-					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_3_background.jpg',
+					'color'    => '#efefef',
+					'image'    => null,
 					'repeat'   => 'repeat',
 					'size'     => 'inherit',
 					'attach'   => 'inherit',
@@ -437,11 +454,11 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Recent Posts Background Color', 'maera-restaurant' ),
 				'description'  => __( 'Set the background color for the front page posts.', 'maera-restaurant' ),
 				'section'  => 'maera_res_body',
-				'default'  => '#333333',
+				'default'  => '#ffffff',
 				'priority' => 10,
 				'output' => array(
-					'element'  => '.post-article .thumbnail',
-					'property' => 'background-color',
+					'element'  => '.recent-post-wrap .overlay',
+					'property' => 'background',
 				),
 			);
 
@@ -500,7 +517,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority' => 1,
-				'output' => 'footer',
+				'output' => '#footer',
 			);
 
 			$controls[] = array(
@@ -526,13 +543,64 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_styling_settings( $controls ) {
 
 			$controls[] = array(
+				'type'     => 'color',
+				'setting'  => 'brand_color',
+				'label'    => __( 'Primary Brand Color', 'maera-restaurant' ),
+				'section'  => 'maera_res_colors',
+				'default'  => '#244363',
+				'priority' => 1,
+				'output' => array(
+					array(
+						'element'  => '.btn-primary',
+						'property' => 'background',
+					),
+					array(
+						'element'  => 'ul.social-share li a:hover',
+						'property' => 'background',
+					),
+					array(
+						'element'  => '.navbar-default .navbar-nav > li > a:hover',
+						'property' => 'background-color',
+					),
+					array(
+						'element'  => '.navbar-default .navbar-nav .dropdown-menu > li:hover > a, .navbar-default .navbar-nav .dropdown-menu > li:focus > a, .navbar-default .navbar-nav .dropdown-menu > li.active > a',
+						'property' => 'background-color',
+					),
+					array(
+						'element'  => '.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus',
+						'property' => 'background-color',
+					),
+					array(
+						'element'  => '#main-slider .prev, #main-slider .next',
+						'property' => 'background-color',
+					),
+					array(
+						'element'  => '#publish_date',
+						'property' => 'background',
+					),
+					array(
+						'element'  => '.read-more',
+						'property' => 'background',
+					),
+					array(
+						'element'  => '#bottom',
+						'property' => 'border-color',
+					),
+					array(
+						'element'  => '.tagcloud a:hover ',
+						'property' => 'background',
+					),
+				)
+			);
+
+			$controls[] = array(
 				'type'     => 'checkbox',
 				'mode'     => 'switch',
 				'setting'  => 'color_calc',
 				'label'    => __( 'Enable Automatic Color Calculations', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => 0,
-				'priority' => 1,
+				'priority' => 2,
 			);
 
 			$controls[] = array(
@@ -541,7 +609,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#244363',
-				'priority' => 2,
+				'priority' => 3,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
 					'element'  => 'a',
@@ -555,7 +623,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Link Hover Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#325d88',
-				'priority' => 3,
+				'priority' => 4,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(
 					'element'  => 'a:hover',
@@ -569,7 +637,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Navbar Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#333333',
-				'priority' => 4,
+				'priority' => 5,
 				'output' => array(
 					'element'  => '.navbar-default',
 					'property' => 'background-color',
@@ -608,7 +676,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'  => 'navbar_font_color',
 				'label'    => __( 'Navbar Font Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
-				'default'  => '#333333',
+				'default'  => '#eee',
 				'priority' => 2,
 				'required' => array( 'color_calc' => 0 ),
 				'output' => array(

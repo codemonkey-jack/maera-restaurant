@@ -1,25 +1,27 @@
-{#<?php#}
-{% import 'grid_classes.html.twig' as grid %}
-
 {% do action( 'maera/footer/before', post.ID ) %}
-
-<footer id="footer-wrap" class="footer {% if 'boxed' == theme.theme_mod('site_layout', 'wide') %}container boxed{% endif %}">
+<div id="bottom" class="footer-wrapper">
+	<div class="container wow center fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+		<div class="row">
+			{% if sidebar.footer %}
+			{{ sidebar.footer }}
+			{% endif %}
+		</div>
+	</div>
 	{% do action( 'maera/footer/start', post.ID ) %}
-	<div class="{{ grid.container() }} footer-content">
-
-		{% if sidebar.footer %}
-			<div class="row footer-content">
-				{{ sidebar.footer }}
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10">
+					<p>{{ theme.theme_mod('copyright_text', '&copy; 2015 - Maera Restaurant') }}</p>
+				</div>
+				<div class="col-sm-2 pull-right">
+					<a href="#" class="btn btn-primary gototop" role="button"><i class="fa fa-arrow-up"></i> {{ __('Back To Top', 'maera-restaurant') }}</a>
+				</div>
 			</div>
-		{% endif %}
-
-	</div>
+		</div>
+	</footer>
 	{% do action( 'maera/footer/end', post.ID ) %}
-	<div id="copyright-info" class="copyright">
-		<p>{{ theme.theme_mod('copyright_text', '&copy; 2015 - Maera Restaurant') }}</p>
-	</div>
-</footer>
-
+</div>
 {% do action( 'maera/footer/after', post.ID ) %}
 
 {{ function( 'wp_footer' ) }}

@@ -1,0 +1,3 @@
+{% if post.thumbnail %}
+	<img class="featured-image img-responsive img-blog" src="{{ post.thumbnail.src|resize(1280, 400, 'center') }}" srcset="{{ post.thumbnail.src|resize(1280, 400, 'center')|retina(1) }} 1x, {{ post.thumbnail.src|resize(1280, 400, 'center')|retina(2) }} 2x" alt="{{ post.title }}">
+{% endif %}

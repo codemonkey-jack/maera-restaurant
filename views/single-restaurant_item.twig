@@ -1,17 +1,17 @@
+{#<?php#}
 {% extends "main.twig" %}
-
 {% block content %}
-<article {{ function( 'post_class' ) }} id="post-{{post.ID}}" itemscope itemtype="http://schema.org/Article">
-	{% if post.thumbnail %}
-	<div class="parallax-container restaurant-image-header parallax" style="background:url({{ post.get_thumbnail.get_src }}) no-repeat fixed 50% 0;"></div>
-	{% endif %}
-	<div class="content-header">
-		{% include ['content-single-entry-'~post.ID~'-header.twig', 'content-single-entry-'~post.post_type~'-header.twig', 'content-single-entry-header.twig'] %}
-	</div>
-    {% do action( 'maera/single/top', post.ID ) %}
 
-    {% include ['content-single-entry-'~post.ID~'-meta.twig', 'content-single-entry-'~post.post_type~'-meta.twig', 'content-single-entry-meta.twig'] %}
-    {% include ['content-single-entry-'~post.ID~'-content.twig', 'content-single-entry-'~post.post_type~'-content.twig', 'content-single-entry-content.twig'] %}
-    {% include ['content-single-entry-'~post.ID~'-footer.twig', 'content-single-entry-'~post.post_type~'-footer.twig', 'content-single-entry-footer.twig'] %}
+<article {{ function( 'post_class', 'blog' ) }} id="post-{{ post.ID }}" itemscope itemtype="http://schema.org/Article">
+	<div class="blog-item">
+		<div class="row">
+			{% do action( 'maera/single/top', post.ID ) %}
+			{% include 'single-restaurant-header.twig' %}
+			{% include 'single-restaurant-meta.twig' %}
+			{% include 'single-restaurant-content.twig' %}
+			{% include 'single-restaurant-footer.twig' %}
+		</div>
+	</div>
 </article>
+
 {% endblock %}

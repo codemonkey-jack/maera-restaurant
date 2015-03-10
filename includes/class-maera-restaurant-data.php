@@ -49,6 +49,11 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		function maera_res_context( $context ) {
 
 			$context['currency']                  = get_theme_mod( 'currency', '&#36;' );
+			$context['facebook_link']             = get_theme_mod( 'facebook_link','http://facebook.com/' );
+			$context['twitter_link']              = get_theme_mod( 'twitter_link','http://twitter.com/' );
+			$context['googleplus_link']           = get_theme_mod( 'googleplus_link','http://plus.google.com/' );
+			$context['youtube_link']              = get_theme_mod( 'youtube_link','http://youtube.com' );
+
 			$context['menu_sections']             = Timber::get_terms( 'restaurant_item_menu_section' );
 			$context['sidebar']['section_1']      = Timber::get_widgets( 'section_1' );
 			$context['sidebar']['section_2']      = Timber::get_widgets( 'section_2' );

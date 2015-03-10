@@ -1,12 +1,13 @@
-{#<?php#}
 <section id="comments" class="comments">
-	<h3 class="h2">{{ __( 'Comments', 'maera' ) }}</h3>
-	<div class="responses">
+	<div id="contact-page">
+		<div class="responses">
 		{% for cmt in post.get_comments() %}
 			{% include [post.post_type~'-comment.twig', 'comment.twig'] with {comment:cmt} %}
 		{% endfor %}
-	</div>
-	<div class="respond">
+		</div>
+		<div class="message_heading">
+			<h4>{{ post.comment_count }} {{ __( 'Comments', 'maera' ) }}</h4>
+		</div>
 		{{ comment_form }}
 	</div>
 </section>

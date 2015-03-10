@@ -1,49 +1,44 @@
 {#<?php#}
-
-<div id="post-list" class="list row {{ shell.clearfix }}">
-	{% for post in posts %}
-		<div class="post-article col-sm-6 col-md-3">
-			<div class="thumbnail">
-				{% if post.thumbnail %}
-					<div class="hover-image">
-						<img class="img-responsive" src="{{ post.get_thumbnail.get_src|resize(300,300) }}" alt="{{ post.title }}">
-					</div>
-				{% endif %}
-				<div class="caption">
-					<h3>{{ post.title }}</h3>
-						<div class="entry-category">
+<div class="container">
+	<div class="center wow fadeInDown">
+		<h2>{{ __( 'From The Kitchen', 'maera-restaurant' ) }}</h2>
+		<p class="lead">{{ theme.theme_mod('recent_lead_text', 'Ut enim ad minim veniam.') }}</p>
+	</div>
+	<div class="row">
+		{% for post in posts %}
+		<div class="col-xs-12 col-sm-4 col-md-3 post_article">
+			<div class="recent-post-wrap">
+				<img class="img-responsive" src="{{ post.get_thumbnail.get_src|resize(500,500) }}" alt="{{ post.title }}">
+				<div class="overlay">
+					<div class="recent-post-inner">
+						<h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+						<div class="meta-wrapper">
+							<time class="entry-date published" datetime="{{ post.date('c') }}">
+								<span itemprop="datePublished">{{ post.date }}</span>
+							</time>
+							<span class="byline">{{ __( 'By', 'maera-restaurant' ) }}
+								<span class="author vcard"><a class="url fn n" href="{{ post.author.link }}">{{ post.author.name }}</a></span>
+							</span>
+						</div>
+						<p>{{post.get_preview(15)}}</p>
+						<div class="post-categories">
 							<i class="fa fa-tags"></i>
 							{% for category in post.get_categories %}
 								<a href="{{ category.get_path }}" itemprop="articleSection">{{ category.name }}</a>
 							{% endfor %}
 						</div>
-						<div class="entry-meta">
-							<time class="entry-date published" datetime="{{ post.date('c') }}">
-								<span itemprop="datePublished">{{ post.date }}</span>
-							</time>
-							<span class="byline">{{ __( 'By', 'maera' ) }}
-								<span class="author vcard"><a class="url fn n" href="{{ post.author.link }}">{{ post.author.name }}</a></span>
-							</span>
-						</div>
-					<p>{{post.get_preview(15)}}</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	{% endfor %}
-</div>
+		{% endfor %}
+	</div><!--/.row-->
+</div><!--/.container-->
 <script>
 jQuery(function ($) {
 	$('.post-list').isotope({
-	  itemSelector : '.post_article'
+		itemSelector : '.post_article'
 	});
-	$('.thumbnail').hover(
-		function(){
-			$(this).find('.entry-category').fadeIn(500); //.fadeIn(250)
-		},
-		function(){
-			$(this).find('.entry-category').fadeOut(500); //.fadeOut(205)
-		}
-	);
 });
 </script>
 

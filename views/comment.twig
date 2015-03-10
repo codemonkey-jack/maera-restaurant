@@ -1,5 +1,11 @@
-{#<?php#}
-<div class="blog-comment panel{{ comment.comment_type }}" id="blog-comment-{{ comment.ID }}" itemprop="comment">
-	<h5 class="comment-author">{{ comment.author.name }}</h5>
-	<div class="comment-content panel-body">{{ comment.comment_content|wpautop }}</div>
+<div id="blog-comment-{{ comment.ID }}" class="media comment_section {{ comment.comment_type }}" itemprop="comment" comment-order-{{loop.index}}>
+	<div class="pull-left post_comments">
+		<a href="#"><img src="{{comment.avatar(36)}}" class="img-circle" alt="{{ comment.author.name }}" /></a>
+	</div>
+	<div class="media-body post_reply_comments">
+		<h3 class="comment-author">{{ comment.author.name }}</h3>
+		<h4>{{comment.date}}</h4>
+		<div class="comment-content">{{ comment.comment_content|wpautop }}</div>
+	</div>
 </div>
+

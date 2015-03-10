@@ -1,16 +1,12 @@
 {#<?php#}
 {% include 'head.twig' %}
 
-<body class="{{ body_class }}" data-source="base.twig">
+<body class="homepage">
+	<header id="header">
 
-	<a href="#content" class="sr-only skip-link screen-reader-text">{{ __( 'Skip to main content', 'maera-restaurant' ) }}</a>
-
-	{% do action( 'get_header' ) %}
-
-	{% do action( 'maera/header/before', post.ID ) %}
-
-	{% if function( 'is_front_page' ) == false %}
-		{% include 'navbar.twig' %}
+	{% if theme.theme_mod('enable_contact_bar', 1) %}
+	{% include 'contact-bar.twig' %}
 	{% endif %}
 
-	{% do action( 'maera/header/after', post.ID ) %}
+	{% include 'navbar.twig' %}
+	</header><!--/header-->

@@ -5,53 +5,70 @@
 	{{ widget.title }}
 	{{ widget.after_title }}
 {% endif %}
-<div id="carousel" class="carousel slide" data-ride="carousel">
-	<div class="carousel-inner" role="listbox">
-		{% for post in posts %}
-		{% if loop.first %}
-
-		<div class="item active {% if widget.parallax %}parallax{% endif %}" style="background:url({{ post.thumbnail.src }}) 50% 0px no-repeat fixed;">
-			<div class="container">
-				<div class="carousel-caption">
-					<h1>{{ post.title }}</h1>
-					<p>{{ post.post_excerpt }}</p>
+<div id="main-slider">
+	<div id="carousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			{% for post in posts %}
+			{% if loop.first %}
+			<div class="item active {% if widget.parallax %}parallax{% endif %}" style="background-image: url({{ post.thumbnail.src }});">
+				<div class="container">
+					<div class="row slide-margin">
+						<div class="col-sm-6">
+							<div class="carousel-content">
+								<h1 class="animation animated-item-1">{{ post.title }}</h1>
+								<h4 class="animation animated-item-2">{{ post.post_excerpt }}</h4>
+							</div>
+						</div>
+						<div class="col-sm-6 hidden-xs animation animated-item-4">
+							<div class="slider-img">
+								<img src="{{ post.thumbnail.src }}" class="img-responsive" alt="{{ post.title }}">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-
-		{% else %}
-
-		<div class="item {% if widget.parallax %}parallax{% endif %}" style="background:url({{ post.thumbnail.src }}) 50% 0px no-repeat fixed;">
-			<div class="container">
-				<div class="carousel-caption">
-					<h1>{{ post.title }}</h1>
-					<p>{{ post.post_excerpt }}</p>
+			{% else %}
+			<div class="item {% if widget.parallax %}parallax{% endif %}" style="background-image: url({{ post.thumbnail.src }});">
+				<div class="container">
+					<div class="row slide-margin">
+						<div class="col-sm-6">
+							<div class="carousel-content">
+								<h1 class="animation animated-item-1">{{ post.title }}</h1>
+								<h4 class="animation animated-item-2">{{ post.post_excerpt }}</h4>
+							</div>
+						</div>
+						<div class="col-sm-6 hidden-xs animation animated-item-4">
+							<div class="slider-img">
+								<img src="{{ post.thumbnail.src }}" class="img-responsive" alt="{{ post.title }}">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			{% endif %}
+			{% endfor %}
 		</div>
-
-		{% endif %}
-
-		{% endfor %}
 	</div>
-		<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span>
-			<span class="sr-only">{{ __('Previous', 'maera-restaurant') }}</span>
-		</a>
-		<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-			 <span class="glyphicon glyphicon-chevron-right"></span>
-			<span class="sr-only">{{ __('Next', 'maera-restaurant') }}</span>
-		</a>
+	<a class="prev hidden-xs" href="#carousel" role="button" data-slide="prev">
+		<i class="fa fa-chevron-left"></i>
+		<span class="sr-only">{{ __('Previous', 'maera-restaurant') }}</span>
+	</a>
+	<a class="next hidden-xs" href="#carousel" role="button" data-slide="next">
+		<i class="fa fa-chevron-right"></i>
+		<span class="sr-only">{{ __('Next', 'maera-restaurant') }}</span>
+	</a>
 </div>
 
+
 <script>
-(function($) {
-	$('.carousel').carousel({
+jQuery(function ($) {
+	$('#main-slider.carousel').carousel({
 		pause: {% if widget.pause %}"hover"{% else %}"none"{% endif %},
 		interval: {{ widget.interval }},
-		wrap: {% if widget.wrap %}{{ widget.wrap }}{% else %}0{% endif %},
+		wrap: {{ widget.wrap }},
 	});
-})(jQuery);
+});
 </script>
 
 {{ widget.after_widget }}
+

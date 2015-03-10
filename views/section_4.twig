@@ -1,10 +1,10 @@
 {#<?php#}
-<div id="section_4" {% if theme.theme_mod('section_4_parallax') %}class="parallax container-fluid" style="background: url('{{ theme.theme_mod('section_4_background_image') }}') no-repeat fixed 50% 0;"{% endif %}>
+{% set parallax = theme.theme_mod('section_4_parallax') %}
 
-	{% if sidebar.section_4 %}
+<section id="section_4" class=" {% if parallax %}parallax{% endif %}">
 
-		{{ sidebar.section_4 }}
+{% if sidebar.section_4 %}
+	{{ sidebar.section_4 }}
+{% endif %}
 
-	{% endif %}
-
-</div>
+</section>

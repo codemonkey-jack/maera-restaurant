@@ -1,14 +1,12 @@
 {#<?php#}
-<div id="section_3" {% if theme.theme_mod('section_3_parallax') %}class="parallax container-fluid" style="background: url('{{ theme.theme_mod('section_3_background_image') }}') no-repeat fixed 50% 0;"{% endif %}>
+{% set parallax = theme.theme_mod('section_3_parallax') %}
 
-	{% if sidebar.section_3 and function('is_active_sidebar','section_3') == true %}
+<section id="section_3" class=" {% if parallax %}parallax{% endif %}">
 
-		{{ sidebar.section_3 }}
+{% if sidebar.section_3 and function('is_active_sidebar','section_3') == true %}
+	{{ sidebar.section_3 }}
+{% else %}
+	{% include 'front-page-posts.twig' %}
+{% endif %}
 
-		{% else %}
-
-		{% include 'front-page-posts.twig' %}
-
-	{% endif %}
-
-</div>
+</section>

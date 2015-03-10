@@ -1,0 +1,12 @@
+<div class="col-xs-12 col-sm-10 blog-content">
+	<h2>{{ post.title }}</h2>
+	{% do action( 'maera/single/pre_content', post.ID ) %}
+	{{ post.content }}
+	{% do action( 'maera/single/after_content', post.ID ) %}
+	<div class="post-tags">
+		<strong>{{ __( 'Tags', 'maera-restaurant' ) }}</strong>
+		{% for term in post.terms('restaurant_tag') %}
+			<a href="{{term.link}}" itemprop="articleSection">{{term.name}}</a>,
+		{% endfor %}
+	</div>
+</div>
