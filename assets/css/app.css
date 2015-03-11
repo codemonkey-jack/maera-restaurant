@@ -259,27 +259,18 @@ ul.social-share li a:hover {
 
 input.search-form {
   background: transparent;
-  border: 0 none;
-  width: 60px;
+  border: 1px solid #444;
+  width: 180px;
   padding: 0 10px;
   color: #FFF;
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -ms-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
 }
 
 input.search-form::-webkit-input-placeholder {
-  color: transparent
+  color: #aaa;
 }
 
 input.search-form:hover::-webkit-input-placeholder {
   color: #fff
-}
-
-input.search-form:hover {
-  width: 180px
 }
 
 /***************************
