@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		{% for post in posts %}
-		<div class="col-xs-12 col-sm-4 col-md-3 post_article">
+		<div class="col-xs-12 col-sm-4 col-md-3 post_article no-margin">
 			<div class="recent-post-wrap">
 				<img class="img-responsive" src="{{ post.get_thumbnail.get_src|resize(500,500) }}" alt="{{ post.title }}">
 				<div class="overlay">
