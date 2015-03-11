@@ -18,7 +18,7 @@
 
 <div id="menu-wrapper" class="menus row">
 	{% for post in posts %}
-	<div class="col-md-{{menu_item_class}} active item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %}">
+	<div class="col-md-{{menu_item_class}} active item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }} {% endfor %}">
 		<div class="menu-wrap">
 			{% if post.thumbnail %}
 			<a href="{{ post.permalink }}">

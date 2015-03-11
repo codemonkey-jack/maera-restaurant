@@ -21,7 +21,7 @@
 	{% endif %}
 	<div id="menu-wrapper" class="menus row">
 		{% for post in posts %}
-		<div class="col-md-6 col-sm-12 active item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }}{% endfor %}">
+		<div class="col-md-6 col-sm-12 active item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }} {% endfor %}">
 			<div class="menu-wrap">
 				{% if post.thumbnail and widget.show_featured_images %}
 				<a href="{{ post.permalink }}">
