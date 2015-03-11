@@ -137,7 +137,7 @@ a:focus {
   background-position: 50% 0;
   background-attachment: fixed !important;
 }
-.top-bar a {
+.contact-bar a {
   color: #fff;
 }
 
@@ -199,42 +199,40 @@ a:focus {
 /***************************
   Contact Bar
 ***************************/
-#header .search {
+.search {
   display: inline-block
 }
 
-.navbar > .container .navbar-brand {
-  margin-left: 0
-}
-
-.top-bar {
+.contact-bar {
   padding: 10px 0;
   background: #191919;
   border-bottom: 1px solid #222;
   line-height: 28px;
+  height: 48px;
 }
 
-.top-number {
+.contact-number {
   color: #fff
 }
 
-.top-number p {
+.contact-number p {
   margin: 0
 }
 
 .social {
-  text-align: right
+  text-align: right;
 }
 
 .social-share {
-  display: inline-block;
   list-style: none;
-  padding: 0;
-  margin: 0;
+}
+
+#bottom .social-share {
+  margin-top: -4px !important;
 }
 
 ul.social-share li {
-  display: inline-block
+  display: inline-block !important;
 }
 
 ul.social-share li a {
@@ -283,6 +281,10 @@ input.search-form:hover::-webkit-input-placeholder {
 
 .navbar-brand > img {
   height: 100%;
+}
+
+.navbar > .container .navbar-brand {
+  margin-left: 0
 }
 
 .navbar {

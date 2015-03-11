@@ -4,7 +4,7 @@
 <body class="homepage">
 	<header id="header">
 
-	{% if theme.theme_mod('enable_contact_bar', 1) %}
+	{% if theme.theme_mod('enable_contact_bar', 1) and theme.theme_mod('contact_bar_position', 1) == 1 %}
 	{% include 'contact-bar.twig' %}
 	{% endif %}
 

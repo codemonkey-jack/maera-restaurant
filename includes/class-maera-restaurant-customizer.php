@@ -126,7 +126,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'  => 'front_page_sections',
 				'label'    => __( 'Front Page Sections', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
-				'default'  => serialize( array( 'section_1', 'section_2', 'section_3' ) ),
+				'default'  => serialize( array( 'section_1', 'section_2', 'section_3', 'contact_bar' ) ),
 				'priority' => 3,
 				'choices'  => array(
 					'section_1'   => __( 'Section 1', 'maera-restaurant' ),
@@ -189,21 +189,36 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			);
 
 			$controls[] = array(
+				'type'     => 'radio',
+				'mode'     => 'buttonset',
+				'setting'  => 'contact_bar_position',
+				'label'    => __( 'Contact Bar Position', 'maera-restaurant' ),
+				'section'  => 'maera_res_restaurant',
+				'default'  => 1,
+				'priority' => 3,
+				'required' => array( 'enable_contact_bar' => 1 ),
+				'choices'  => array(
+					1 => __( 'Top', 'maera-restaurant' ),
+					0 => __( 'Bottom', 'maera-restaurant' ),
+				),
+			);
+
+			$controls[] = array(
 				'type'     => 'text',
 				'setting'  => 'phone_number',
-				'label'    => __( 'Restaurant Phone Number', 'maera-restauran' ),
+				'label'    => __( 'Restaurant Phone Number', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
-				'default'  => __( '+555-867-5309', 'maera-restauran' ),
-				'priority' => 3,
+				'default'  => __( '+555-867-5309', 'maera-restaurant' ),
+				'priority' => 4,
 			);
 
 			$controls[] = array(
 				'type'     => 'textarea',
 				'setting'  => 'recent_lead_text',
-				'label'    => __( 'From the Kitchen text', 'maera-restauran' ),
+				'label'    => __( 'From the Kitchen text', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
-				'default'  => __( 'Ut enim ad minim veniam.', 'maera-restauran' ),
-				'priority' => 3,
+				'default'  => __( 'Ut enim ad minim veniam.', 'maera-restaurant' ),
+				'priority' => 5,
 			);
 
 			return $controls;
