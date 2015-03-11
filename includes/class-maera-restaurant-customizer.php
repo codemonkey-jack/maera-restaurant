@@ -925,7 +925,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'step' => .25,
 				),
 				'output' => array(
-					'element'  => 'p',
+					'element'  => 'body p',
 					'property' => 'font-size',
 					'units'    => 'em',
 				),
