@@ -68,7 +68,8 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'9'  => array( 'label' => '9/12', 'classes' => 'col-md-9' ),
 				'10' => array( 'label' => '10/12', 'classes' => 'col-md-10' ),
 				'11' => array( 'label' => '11/12', 'classes' => 'col-md-11' ),
-				'12' => array( 'label' => 'Full Width', 'classes' => 'col-md-12' ),
+				'12' => array( 'label' => '12/12', 'classes' => 'col-md-12' ),
+				'full' => array( 'label' => 'Full Width', 'classes' => 'container-full' ),
 			);
 
 			return $depths;
@@ -88,7 +89,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			register_sidebar( array(
 				'name'          => 'First Section',
 				'id'            => 'section_1',
-				'before_widget' => '<div id="%1$s" class="%2$s no-margin">',
+				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="title">',
 				'after_title'   => '</h3>',

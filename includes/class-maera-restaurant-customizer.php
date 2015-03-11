@@ -571,7 +571,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 						'property' => 'background-color',
 					),
 					array(
-						'element'  => '#main-slider .prev, #main-slider .next',
+						'element'  => '.prev, .next',
 						'property' => 'background-color',
 					),
 					array(

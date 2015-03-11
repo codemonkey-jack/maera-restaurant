@@ -15,10 +15,6 @@ body {
   word-wrap: break-word;
 }
 
-body > section {
-    padding: 70px 0
-}
-
 a {
   -webkit-transition: color .5s, background-color .5s;
   -moz-transition: color .5s, background-color .5s;
@@ -146,8 +142,15 @@ a:focus {
   color: #fff;
 }
 
-.content-wrapper {
-/*  margin-top: 35px;*/
+.no-margin {
+  margin: 0;
+  padding: 0;
+}
+.container-full {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /***************************
@@ -418,74 +421,33 @@ input.search-form:hover {
 /***************************
   Slider Widget
 ***************************/
-#main-slider {
-  position: relative;
-}
-
-.no-margin {
-  margin: 0;
-  padding: 0;
-}
-
-#main-slider .carousel .carousel-content {
+.carousel .carousel-content {
   margin-top: 100px
 }
 
-#main-slider .carousel .slide-margin {
+.carousel .slide-margin {
   margin-top: 140px
 }
 
-#main-slider .carousel h2 {
-  color: #fff
-}
-
-#main-slider .carousel .btn-slide {
-  padding: 8px 20px;
-  background: #c52d2f;
-  color: #fff;
-  border-radius: 4px;
-  margin-top: 25px;
-  display: inline-block;
-}
-
-#main-slider .carousel .slider-img {
+.carousel .slider-img {
   text-align: right;
   position: absolute;
 }
 
-#main-slider .carousel .item {
-  left: 0 !important;
-  opacity: 0;
-  top: 0;
-  position: absolute;
-  width: 100%;
-  display: block !important;
+.carousel .item {
   height: 730px;
-  -webkit-transition: opacity ease-in-out .5s;
-  -moz-transition: opacity ease-in-out .5s;
-  -o-transition: opacity ease-in-out .5s;
-  transition: opacity ease-in-out .5s;
+  opacity: 0;
+  transition-property: opacity;
 }
 
-#main-slider .carousel .item:first-child {
-  top: auto;
-  position: relative;
-}
-
-#main-slider .carousel .item.active {
+.carousel .item.active {
   opacity: 1;
-  -webkit-transition: opacity ease-in-out .5s;
-  -moz-transition: opacity ease-in-out .5s;
-  -o-transition: opacity ease-in-out .5s;
-  transition: opacity ease-in-out .5s;
-  z-index: 1;
 }
 
-#main-slider .prev,
-#main-slider .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
-  background-color: #c52d2f;
   color: #fff;
   display: inline-block;
   margin-top: -25px;
@@ -498,61 +460,20 @@ input.search-form:hover {
   z-index: 5;
 }
 
-#main-slider .prev:hover,
-#main-slider .next:hover {
+.prev:hover,
+.next:hover {
   background-color: #333
 }
 
-#main-slider .prev {
+.prev {
   left: 10px
 }
 
-#main-slider .next {
+.next {
   right: 10px
 }
 
-#main-slider .carousel-indicators li {
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  margin: 0 15px 0 0;
-  position: relative;
-}
-
-#main-slider .carousel-indicators li:after {
-  position: absolute;
-  content: "";
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  background: rgba(0, 0, 0, 0);
-  border: 1px solid #FFF;
-  left: -3px;
-  top: -3px;
-}
-
-#main-slider .carousel-indicators .active {
-  width: 20px;
-  height: 20px;
-  background-color: #c52d2f;
-  margin: 0 15px 0 0;
-  border: 1px solid #c52d2f;
-  position: relative;
-}
-
-#main-slider .carousel-indicators .active:after {
-  position: absolute;
-  content: "";
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  background: #c52d2f;
-  border: 1px solid #c52d2f;
-  left: -3px;
-  top: -3px;
-}
-
-#main-slider .active .animation.animated-item-1 {
+.carousel .active .animation.animated-item-1 {
   -webkit-animation: fadeInUp .5s linear .5s both;
   -moz-animation: fadeInUp .5s linear .5s both;
   -o-animation: fadeInUp .5s linear .5s both;
@@ -560,7 +481,7 @@ input.search-form:hover {
   animation: fadeInUp .5s linear .5s both;
 }
 
-#main-slider .active .animation.animated-item-2 {
+.carousel .active .animation.animated-item-2 {
   -webkit-animation: fadeInUp .5s linear 600ms both;
   -moz-animation: fadeInUp .5s linear 600ms both;
   -o-animation: fadeInUp .5s linear 600ms both;
@@ -568,7 +489,7 @@ input.search-form:hover {
   animation: fadeInUp .5s linear 600ms both;
 }
 
-#main-slider .active .animation.animated-item-3 {
+.carousel .active .animation.animated-item-3 {
   -webkit-animation: fadeInUp .5s linear 900ms both;
   -moz-animation: fadeInUp .5s linear 900ms both;
   -o-animation: fadeInUp .5s linear 900ms both;
@@ -576,7 +497,7 @@ input.search-form:hover {
   animation: fadeInUp .5s linear 900ms both;
 }
 
-#main-slider .active .animation.animated-item-4 {
+.carousel .active .animation.animated-item-4 {
   -webkit-animation: fadeInUp .5s linear 1200ms both;
   -moz-animation: fadeInUp .5s linear 1200ms both;
   -o-animation: fadeInUp .5s linear 1200ms both;
@@ -593,7 +514,7 @@ input.search-form:hover {
   padding-bottom: 40px;
 }
 
-.features {
+.menus {
   padding: 0
 }
 
