@@ -587,7 +587,11 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 						'property' => 'border-color',
 					),
 					array(
-						'element'  => '.tagcloud a:hover ',
+						'element'  => '.tagcloud a:hover',
+						'property' => 'background',
+					),
+					array(
+						'element'  => 'ul.pagination > li.active > a, ul.pagination > li:hover > a',
 						'property' => 'background',
 					),
 				)

@@ -445,8 +445,8 @@ input.search-form:hover::-webkit-input-placeholder {
   opacity: 1;
 }
 
-.prev,
-.next {
+.carousel .prev,
+.carousel .next {
   position: absolute;
   top: 50%;
   color: #fff;
@@ -461,16 +461,16 @@ input.search-form:hover::-webkit-input-placeholder {
   z-index: 5;
 }
 
-.prev:hover,
-.next:hover {
+.carousel .prev:hover,
+.carousel .next:hover {
   background-color: #333
 }
 
-.prev {
+.carousel .prev {
   left: 10px
 }
 
-.next {
+.carousel .next {
   right: 10px
 }
 
@@ -1060,8 +1060,6 @@ ul.pagination > li > a i {
 
 ul.pagination > li.active > a,
 ul.pagination > li:hover > a {
-  background-color: #c52d2f !important;
-  border-color: #c52d2f !important;
   color: #fff;
 }
 
