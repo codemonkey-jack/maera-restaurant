@@ -126,7 +126,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'setting'  => 'front_page_sections',
 				'label'    => __( 'Front Page Sections', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
-				'default'  => serialize( array( 'section_1', 'section_2', 'section_3', 'contact_bar' ) ),
+				'default'  => serialize( array( 'section_1', 'section_2', 'section_3') ),
 				'priority' => 3,
 				'choices'  => array(
 					'section_1'   => __( 'Section 1', 'maera-restaurant' ),
