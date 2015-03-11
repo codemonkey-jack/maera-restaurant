@@ -1,9 +1,0 @@
-<div class="col-xs-12 col-sm-10 blog-content">
-	<h2><a href="{{ post.link }}">{{ post.title }}</a></h2>
-	{% do action( 'maera/single/pre_content', post.ID ) %}
-	{{ post.content }}
-	{% do action( 'maera/single/after_content', post.ID ) %}
-	<div class="post-tags">
-		<strong>{{ __( 'Tags', 'maera-restaurant' ) }}</strong>{% for category in post.get_categories %}<a href="{{ category.get_path }}" itemprop="articleSection">{{ category.name }}</a>, {% endfor %}
-	</div>
-</div>

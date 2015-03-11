@@ -1,7 +1,0 @@
-<div class="col-xs-12 col-sm-2 text-center">
-	<div class="entry-meta">
-		<span id="publish_date"><time class="entry-date published" datetime="{{ post.date('c') }}">{{ post.date }}</time></span>
-		<span class="author vcard"><i class="fa fa-user"></i> <a href="{{ post.author.link }}">{{ post.author.name }}</a></span>
-		{% if post.comments %}<span><i class="fa fa-comment"></i> <a href="{{ post.link }}#comments">{{ post.comment_count }} {{ __( 'comments', 'maera' ) }}</a></span>{% endif %}
-	</div>
-</div>
