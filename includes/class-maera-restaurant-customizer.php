@@ -110,8 +110,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_layout_settings( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'radio',
-				'mode'     => 'image',
+				'type'     => 'radio-image',
 				'setting'  => 'page_layout',
 				'label'    => __( 'Page Layout', 'maera-restaurant' ),
 				'subtitle' => __( 'Select your main layout. If no widgets are present in the sidebar, it will not be displayed. ', 'maera-restaurant' ),
@@ -125,6 +124,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'type'     => 'sortable',
 				'setting'  => 'front_page_sections',
 				'label'    => __( 'Front Page Sections', 'maera-restaurant' ),
+				'subtitle' => __( 'You may drag and reorder the sections as desired.', 'maera-resstaurant' ),
 				'section'  => 'maera_res_layout',
 				'default'  => serialize( array( 'section_1', 'section_2', 'section_3') ),
 				'priority' => 3,
@@ -135,11 +135,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'section_4'   => __( 'Section 4', 'maera-restaurant' ),
 					'section_5'   => __( 'Section 5', 'maera-restaurant' ),
 				),
+				'help'     => __( 'Click the "eye" to enable or disable the section from being displayed.', 'maera-restaurant' ),
+
 			);
 
 			$controls[] = array(
-				'type'     => 'radio',
-				'mode'     => 'buttonset',
+				'type'     => 'toggle',
 				'setting'  => 'enable_breadcrumbs',
 				'label'    => __( 'Enable Breadcrumbs', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
@@ -165,23 +166,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_restaurant_settings( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'select',
-				'setting'  => 'currency',
-				'label'    => __( 'Select a currency to use for the restaurant.', 'maera-restaurant' ),
-				'section'  => 'maera_res_restaurant',
-				'default'  => '$ USD',
-				'priority' => 1,
-				'choices'  => Maera_Restaurant_Data::get_currencies(),
-			);
-
-			$controls[] = array(
-				'type'     => 'radio',
-				'mode'     => 'buttonset',
+				'type'     => 'toggle',
 				'setting'  => 'enable_contact_bar',
 				'label'    => __( 'Enable Contact Bar', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => 1,
-				'priority' => 2,
+				'priority' => 1,
 				'choices'  => array(
 					1 => __( 'On', 'maera-restaurant' ),
 					0 => __( 'Off', 'maera-restaurant' ),
@@ -189,18 +179,28 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			);
 
 			$controls[] = array(
-				'type'     => 'radio',
-				'mode'     => 'buttonset',
+				'type'     => 'radio-buttonset',
 				'setting'  => 'contact_bar_position',
 				'label'    => __( 'Contact Bar Position', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => 1,
-				'priority' => 3,
+				'priority' => 2,
 				'required' => array( 'enable_contact_bar' => 1 ),
 				'choices'  => array(
 					1 => __( 'Top', 'maera-restaurant' ),
 					0 => __( 'Bottom', 'maera-restaurant' ),
 				),
+			);
+
+			$controls[] = array(
+				'type'     => 'select',
+				'setting'  => 'currency',
+				'label'    => __( 'Select a currency to use for the restaurant.', 'maera-restaurant' ),
+				'section'  => 'maera_res_restaurant',
+				'default'  => '$ USD',
+				'priority' => 3,
+				'choices'  => Maera_Restaurant_Data::get_currencies(),
+				'help'     => __( 'This currency will used throughout the Restaurant for menu items.', 'maera-restaurant' ),
 			);
 
 			$controls[] = array(
@@ -235,13 +235,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_section_1( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'checkbox',
+				'type'     => 'toggle',
 				'setting'  => 'section_1_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_1',
 				'default'  => 0,
 				'priority' => 1,
-				'mode' => 'toggle',
+				'help'     => __( 'Enabling Parallax will override the background position.', 'maera-restaurant' ),
 			);
 
 			$controls[] = array(
@@ -277,13 +277,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_section_2( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'checkbox',
+				'type'     => 'toggle',
 				'setting'  => 'section_2_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_2',
 				'default'  => 0,
 				'priority' => 1,
-				'mode' => 'toggle',
+				'help'     => __( 'Enabling Parallax will override the background position.', 'maera-restaurant' ),
 			);
 
 			$controls[] = array(
@@ -319,13 +319,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_section_3( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'checkbox',
+				'type'     => 'toggle',
 				'setting'  => 'section_3_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_3',
 				'default'  => 0,
 				'priority' => 1,
-				'mode' => 'toggle',
+				'help'     => __( 'Enabling Parallax will override the background position.', 'maera-restaurant' ),
 			);
 
 			$controls[] = array(
@@ -361,13 +361,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_section_4( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'checkbox',
+				'type'     => 'toggle',
 				'setting'  => 'section_4_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_4',
 				'default'  => 0,
 				'priority' => 1,
-				'mode' => 'toggle',
+				'help'     => __( 'Enabling Parallax will override the background position.', 'maera-restaurant' ),
 			);
 
 			$controls[] = array(
@@ -403,13 +403,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_section_5( $controls ) {
 
 			$controls[] = array(
-				'type'     => 'checkbox',
+				'type'     => 'toggle',
 				'setting'  => 'section_5_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_5',
 				'default'  => 0,
 				'priority' => 1,
-				'mode' => 'toggle',
+				'help'     => __( 'Enabling Parallax will override the background position.', 'maera-restaurant' ),
 			);
 
 			$controls[] = array(
@@ -558,12 +558,21 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 		function maera_res_styling_settings( $controls ) {
 
 			$controls[] = array(
+				'type'     => 'toggle',
+				'setting'  => 'color_calc',
+				'label'    => __( 'Enable Automatic Color Calculations', 'maera-restaurant' ),
+				'section'  => 'maera_res_colors',
+				'default'  => 0,
+				'priority' => 1,
+			);
+
+			$controls[] = array(
 				'type'     => 'color',
 				'setting'  => 'brand_color',
 				'label'    => __( 'Primary Brand Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#244363',
-				'priority' => 1,
+				'priority' => 2,
 				'output' => array(
 					array(
 						'element'  => '.btn-primary',
@@ -610,16 +619,6 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 						'property' => 'background',
 					),
 				)
-			);
-
-			$controls[] = array(
-				'type'     => 'checkbox',
-				'mode'     => 'switch',
-				'setting'  => 'color_calc',
-				'label'    => __( 'Enable Automatic Color Calculations', 'maera-restaurant' ),
-				'section'  => 'maera_res_colors',
-				'default'  => 0,
-				'priority' => 2,
 			);
 
 			$controls[] = array(
