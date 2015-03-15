@@ -104,9 +104,10 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			add_action( 'do_meta_boxes', array( $this, 'slides_image_box') );
 
 			// Add Filters
-			// NULL
+			add_filter( 'kirki/config', array( $this, 'customizer_config' ) );
 
 			// Theme Supports
+			add_theme_support( 'kirki' );
 			add_theme_support( 'restaurant' );
 			add_theme_support( 'tonesque' );
 			add_theme_support( 'site-logo' );
@@ -135,6 +136,24 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 			return self::$instance;
 
+		}
+
+		/**
+		 * Customize Kirki
+		 * @return [type] [description]
+		 */
+		function customizer_config() {
+			$args = array(
+				'stylesheet_id' => 'maera-restaurant',
+				'color_active'  => '#415a72',
+				'color_light'   => '#658bb0',
+				'color_select'  => '#244363',
+				'color_accent'  => '#d16262',
+				'color_back'    => '#222',
+				'logo_image'    => MAERA_RES_SHELL_URL . '/assets/img/maera_restaurant_logo.png',
+				'description'   => '<p>The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.</p>',
+			);
+			return $args;
 		}
 
 
