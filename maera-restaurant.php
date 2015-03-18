@@ -148,7 +148,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		 */
 		function customizer_config() {
 			$args = array(
-				'stylesheet_id' => 'maera-restaurant',
+				'stylesheet_id' => 'maera-res',
 				'color_active'  => '#415a72',
 				'color_light'   => '#658bb0',
 				'color_select'  => '#244363',
