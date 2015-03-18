@@ -33,8 +33,8 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 		function __construct() {
 			parent::__construct(
 				'maera_res_menu_widget',
-				__( 'Maera Restaurant - Menu', 'maera' ),
-				array( 'description' => __( 'Maera Restaurant menu widget.', 'maera' ) )
+				__( 'Maera Restaurant - Menu', 'maera-restaurant' ),
+				array( 'description' => __( 'Maera Restaurant menu widget.', 'maera-restaurant' ) )
 			);
 		}
 
@@ -54,7 +54,6 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 
 			$widget = array(
 				'title'                  => apply_filters( 'widget_title', $instance['title'] ),
-				'show_filters'           => $instance['show_filters'],
 				'show_price'             => $instance['show_price'],
 				'show_featured_images'   => $instance['show_featured_images'],
 				'show_tags'              => $instance['show_tags'],
@@ -90,7 +89,6 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 			$instance                           = $old_instance;
 			$instance['title']                  = strip_tags( $new_instance['title'] );
 			$instance['per_page']               = strip_tags( $new_instance['per_page'] );
-			$instance['show_filters']           = isset( $new_instance['show_filters'] );
 			$instance['show_price']             = isset( $new_instance['show_price'] );
 			$instance['show_featured_images']   = isset( $new_instance['show_featured_images'] );
 			$instance['show_tags']              = isset( $new_instance['show_tags'] );
@@ -109,7 +107,6 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 			$defaults = array(
 				'title'                  => 'Our Menu',
 				'per_page'               => 9,
-				'show_filters'           => 1,
 				'show_price'             => 1,
 				'show_featured_images'   => 1,
 				'show_tags'              => 1,
@@ -125,12 +122,6 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 				<tr>
 					<td><?php _e( 'Number of menu items to display.','maera-restaurant' ); ?></td>
 					<td><input id="<?php echo $this->get_field_id( 'per_page' ); ?>" name="<?php echo $this->get_field_name( 'per_page' ); ?>" value="<?php echo $instance['per_page']; ?>" type="number" /></td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['show_filters'] ) ? $instance['show_filters'] : 0 ); ?> id="<?php echo $this->get_field_id( 'show_filters' ); ?>" name="<?php echo $this->get_field_name( 'show_filters' ); ?>" />
-						<?php _e( 'Allow filtering by category?','maera-restaurant' ); ?>
-					</td>
 				</tr>
 				<tr>
 					<td colspan="2">

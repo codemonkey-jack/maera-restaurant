@@ -66,9 +66,12 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		private static $instance;
 		public $customizer;
 		public $scripts;
-		public $settings;
 		public $structure;
-
+		public $data;
+		public $styles;
+		public $posttype;
+		public $widgetareas;
+		public $taxonomies;
 
 		/**
 		 * Main class constructor
@@ -137,6 +140,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			return self::$instance;
 
 		}
+
 
 		/**
 		 * Customize Kirki
@@ -258,8 +262,6 @@ add_action( 'widgets_init', 'maera_res_menu_widgets' );
 
 /**
  * Add the Slider secondary image to Advanced Custom Fields
- * @todo : Add appropriate checks to see which version of ACF is installed and if there is any issues
- * or differences with how images are added between the two, change the method to adapt.
  */
 if ( function_exists( 'register_field_group' ) ){
 	register_field_group( array(
@@ -300,4 +302,3 @@ if ( function_exists( 'register_field_group' ) ){
 		'menu_order' => 0,
 	));
 }
-

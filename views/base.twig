@@ -8,7 +8,7 @@
 	{% do action( 'maera/content/before', post.ID ) %}
 	<div class="content" id="content" itemprop="mainContentOfPage">
 		<div class="{{ grid.row() }} bg">
-			<div class="content-primary-wrapper {{ 'main'|apply_filters( 'maera/section_class/wrapper' ) }}">
+			<div class="content-primary-wrapper main">
 				{% if 1 == theme.theme_mod('enable_breadcrumbs', 1) %}
 					{{ function('breadcrumb_trail') }}
 				{% endif %}
@@ -19,9 +19,8 @@
 					{% include 'sidebar.twig' %}
 				{% endif %}
 			</div>
-			<div class="clearfix"></div>
 		</div>
-	</div><!-- /#content -->
+	</div>
 	{% do action( 'maera/content/after' ) %}
 </div>
 <div class="clearfix"></div>

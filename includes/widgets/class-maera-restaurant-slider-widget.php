@@ -38,7 +38,6 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			);
 		}
 
-
 		/**
 		 * Render the slider widget.
 		 * @todo TODO
@@ -98,7 +97,6 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 
 			return $instance;
 		}
-
 
 		/**
 		 * Render the widget form controls.
@@ -163,7 +161,6 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			</table>
 			<?php
 		}
-
 
 		// End Methods
 	} // End Class

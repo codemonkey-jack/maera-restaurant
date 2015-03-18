@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 
 	class Maera_Restaurant_Structure {
 
-
 		/**
 		 * Class Constructor
 		 */
@@ -35,29 +34,15 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 			// NULL
 
 			// Add filters.
-			add_filter( 'maera/wrapper/class', array( $this, 'site_layout' ) );
 			add_filter( 'maera/section_class/content', array( $this, 'page_layout' ) );
+			add_filter( 'maera/restaurant/menu_class', array( $this, 'menu_layout' ) );
 
 		}
 
-
 		/**
-		 * Add and remove classes to the main wrapper.
-		 */
-		function site_layout( $classes ) {
-			$site_layout = get_theme_mod( 'site_layout', 'wide' );
-			if ( 'boxed' == $site_layout ) {
-				$classes = 'container boxed';
-			} else {
-				$classes = 'container-fluid wide';
-			}
-
-			return $classes;
-		}
-
-
-		/**
-		 * Add and remove classes to the content wrapper.
+		 * Change the page class based on layout selected.
+		 * @param  [type] $classes [description]
+		 * @return [type]          [description]
 		 */
 		function page_layout( $classes ) {
 			$page_layout = get_theme_mod( 'page_layout', 0 );
@@ -65,6 +50,22 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 				$classes = 'col-md-8';
 			} else {
 				$classes = 'col-md-12';
+			}
+			return $classes;
+		}
+
+		/**
+		 * Change the item classes on the menu page based on page layout.
+		 * If the layout doesn't have a sidebar, change the items to 2x1; else 1x1.
+		 * @param  [type] $classes [description]
+		 * @return [type]          [description]
+		 */
+		function menu_layout( $classes ) {
+			$page_layout = get_theme_mod( 'page_layout', 0 );
+			if ( 1 == $page_layout ) {
+				$classes = 'col-md-12';
+			} else {
+				$classes = 'col-md-6';
 			}
 			return $classes;
 		}

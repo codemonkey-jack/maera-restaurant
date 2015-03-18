@@ -3,32 +3,29 @@
 {{ widget.before_widget }}
 
 <div class="container">
-{% if widget.title %}
-	{{ widget.before_title }}
-	{{ widget.title }}
-	{{ widget.after_title }}
-{% endif %}
-	{% if widget.show_filters %}
-	<div id="filters" class="center">
-		<button class="btn btn-primary selected" data-filter="*">{{ __('All', 'maera-restaurant') }}</button>
-		{% for menu_section in menu_sections %}
-		<button class="btn btn-primary" data-filter=".{{ menu_section.name|lower }}">{{ menu_section.name }}</button>
-		{% endfor %}
-		{% if widget.show_menu_link %}
-		<a href="/menu/" class="btn btn-success">{{ __('Full Menu', 'maera-restaurant') }}</a>
-		{% endif %}
-	</div>
+	<div class="center">
+	{% if widget.title %}
+		{{ widget.before_title }}
+		{{ widget.title }}
+		{{ widget.after_title }}
 	{% endif %}
+	</div>
 	<div id="menu-wrapper" class="menus row">
 		{% for post in posts %}
-		<div class="col-md-6 col-sm-12 active item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }} {% endfor %}">
+		<div class="col-md-6 col-sm-12 item {% for term in post.terms('restaurant_item_menu_section') %}{{ term.name|lower }} {% endfor %}">
 			<div class="menu-wrap">
 				{% if post.thumbnail and widget.show_featured_images %}
 				<a href="{{ post.permalink }}">
 					<img class="img-circle" src="{{ post.get_thumbnail.get_src|resize(100, 100, 'center') }}" alt="{{ post.title }}" />
 				</a>
 				{% endif %}
-				<h3><span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span><span class="price_dots"></span><span class="price">{{ currency }}{{ post.get_field('_restaurant_item_price') }}</span></h3>
+				<h3>
+					<span class="dish_name"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
+					{% if widget.show_price %}
+					<span class="price_dots"></span>
+					<span class="price">{{ currency }}{{ post.get_field('_restaurant_item_price') }}</span>
+					{% endif %}
+				</h3>
 				{{ post.content }}
 			</div>
 			{% if widget.show_tags %}
@@ -41,24 +38,21 @@
 		</div>
 		{% endfor %}
 	</div>
+	{% if widget.show_menu_link %}
+	<div class="center">
+		<a href="{{ function('rp_restaurant_menu_base') }}/" class="btn btn-primary">{{ __('Full Menu', 'maera-restaurant') }}</a>
+	</div>
+	{% endif %}
 </div>
 
-{% if widget.show_filters %}
 <script>
 jQuery(function ($) {
 	var $container = $('#menu-wrapper');
 	$container.isotope({
 		itemSelector : '.item',
-		layoutMode : 'masonry'
-	});
-
-	$('#filters').on( 'click', 'button', function() {
-		var selector = $(this).attr('data-filter');
-		$container.isotope({ filter: selector });
-		return false;
+		layoutMode : '{{ theme.theme_mod('isotope_layout', 'masonry') }}'
 	});
 });
 </script>
-{% endif %}
 
 {{ widget.after_widget }}

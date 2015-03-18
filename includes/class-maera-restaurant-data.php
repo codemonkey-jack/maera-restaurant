@@ -29,6 +29,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 
 	class Maera_Restaurant_Data {
 
+
 		/**
 		 * Class Constructor
 		 */
@@ -44,26 +45,42 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 
 
 		/**
-		* Modify Timber global context
-		*/
+		 * Modify the Timber global context
+		 * @param  [type] $context [description]
+		 * @return [type]          [description]
+		 */
 		function maera_res_context( $context ) {
 
-			$context['currency']                  = get_theme_mod( 'currency', '&#36;' );
-			$context['facebook_link']             = get_theme_mod( 'facebook_link','http://facebook.com/' );
-			$context['twitter_link']              = get_theme_mod( 'twitter_link','http://twitter.com/' );
-			$context['googleplus_link']           = get_theme_mod( 'googleplus_link','http://plus.google.com/' );
-			$context['youtube_link']              = get_theme_mod( 'youtube_link','http://youtube.com' );
+			$context['currency']               = get_theme_mod( 'currency', '&#36;' );
+			$context['facebook_link']          = get_theme_mod( 'facebook_link', 'http://facebook.com/' );
+			$context['twitter_link']           = get_theme_mod( 'twitter_link', 'http://twitter.com/' );
+			$context['googleplus_link']        = get_theme_mod( 'googleplus_link', 'http://plus.google.com/' );
+			$context['youtube_link']           = get_theme_mod( 'youtube_link', 'http://youtube.com' );
 
-			$context['menu_sections']             = Timber::get_terms( 'restaurant_item_menu_section' );
-			$context['sidebar']['section_1']      = Timber::get_widgets( 'section_1' );
-			$context['sidebar']['section_2']      = Timber::get_widgets( 'section_2' );
-			$context['sidebar']['section_3']      = Timber::get_widgets( 'section_3' );
-			$context['sidebar']['section_4']      = Timber::get_widgets( 'section_4' );
-			$context['sidebar']['section_5']      = Timber::get_widgets( 'section_5' );
-			$context['sidebar']['footer']         = Timber::get_widgets( 'footer' );
+			$context['menu_sections']          = Timber::get_terms( 'restaurant_item_menu_section' );
+			$context['sidebar']['section_1']   = Timber::get_widgets( 'section_1' );
+			$context['sidebar']['section_2']   = Timber::get_widgets( 'section_2' );
+			$context['sidebar']['section_3']   = Timber::get_widgets( 'section_3' );
+			$context['sidebar']['section_4']   = Timber::get_widgets( 'section_4' );
+			$context['sidebar']['section_5']   = Timber::get_widgets( 'section_5' );
+			$context['sidebar']['footer']      = Timber::get_widgets( 'footer' );
+
+			if ( is_post_type_archive( 'restaurant_item' ) && rp_is_restaurant() ) {
+				$query_args = array(
+					'post_type'      => 'restaurant_item',
+					'posts_per_page' => -1,  // We want to display every single menu item and let the user categorically filter them.
+					'order'          => get_theme_mod( 'restaurant_order', 'ASC' ),
+					'order_by'       => get_theme_mod( 'restaurant_order_by', 'ID' ),
+				);
+
+				$context['menu_item']    = Timber::query_post();
+				$context['menu_items']   = Timber::get_posts( $query_args );
+
+			}
 
 			return $context;
 		}
+
 
 		/**
 		 * Return an array of all available currencies.
@@ -102,37 +119,6 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 				);
 
 			return $currencies;
-		}
-
-		/**
-		 * Get the list of categories to return to the customizer.
-		 * @return [type] [description]
-		 * Original method by @arisath
-		 */
-		public function get_categories() {
-
-			$cats = array();
-			$cats['all'] = __( 'All Categories', 'maera-restaurant' );
-
-			$args = array(
-				'type'           => 'post',
-				'orderby'        => 'count',
-				'order'          => 'ASC',
-				'hide_empty'     => 1,
-				'hierarchical'   => 0,
-				'number'         => 20,
-				'taxonomy'       => 'category',
-				'pad_counts'     => false,
-			);
-
-			$categories = get_categories( $args );
-
-			foreach ( $categories as $category ) {
-				$cats[ $category->term_id ] = $category->name;
-			}
-
-			return $cats;
-
 		}
 
 

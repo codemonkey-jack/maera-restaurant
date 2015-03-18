@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 
 	class Maera_Restaurant_Scripts {
 
+
 		/**
 		 * Class Constructor
 		 */
@@ -32,7 +33,7 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 
 			// Add Actions
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 100 );
-			add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 100 );
+			// add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 100 );  // Uncomment to load scripts in the admin area.
 
 			// Add Filters
 			// NULL
@@ -88,7 +89,43 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			wp_register_script( 'wow', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/wow.min.js', array('jquery'), time(), false );
 			wp_enqueue_script( 'wow' );
 
+			// Isotope Layouts / Conditionals
+			$isotope_layout = get_theme_mod( 'isotope_layout', 'masonry' );
+
+			switch ( $isotope_layout ) {
+
+				case 'masonryHorizontal':
+					wp_register_script( 'masonry-horizontal', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/isotope/masonry-horizontal.js', array('jquery'), time(), false );
+					wp_enqueue_script( 'masonry-horizontal' );
+					break;
+
+				case 'fitColumns':
+					wp_register_script( 'isotope-fitcolumns', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/isotope/fit-columns.js', array('jquery'), time(), false );
+					wp_enqueue_script( 'isotope-fitcolumns' );
+					break;
+
+				case 'cellsByRow':
+					wp_register_script( 'isotope-cellsbyrow', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/isotope/cells-by-row.js', array('jquery'), time(), false );
+					wp_enqueue_script( 'isotope-cellsbyrow' );
+					break;
+
+				case 'cellsByColumn':
+					wp_register_script( 'isotope-cellsbycolumn', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/isotope/cells-by-column.js', array('jquery'), time(), false );
+					wp_enqueue_script( 'isotope-cellsbycolumn' );
+					break;
+
+				case 'horizontal':
+					wp_register_script( 'isotope-horizontal', trailingslashit( MAERA_RES_SHELL_URL ) . 'assets/js/isotope/horizontal.js', array('jquery'), time(), false );
+					wp_enqueue_script( 'isotope-horizontal' );
+					break;
+
+				default:
+					return null;
+
+			}
+
 		}
+
 
 		/**
 		 * Add admin area scripts.

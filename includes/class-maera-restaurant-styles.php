@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 	class Maera_Restaurant_Styles {
 
-
 		/**
 		 * Class Constructor
 		 */
@@ -38,7 +37,6 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 			// NULL
 
 		}
-
 
 		/**
 		 * Inline CSS
