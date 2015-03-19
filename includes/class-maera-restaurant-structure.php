@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 
 	class Maera_Restaurant_Structure {
 
+
 		/**
 		 * Class Constructor
 		 */
@@ -36,8 +37,8 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 			// Add filters.
 			add_filter( 'maera/section_class/content', array( $this, 'page_layout' ) );
 			add_filter( 'maera/restaurant/menu_class', array( $this, 'menu_layout' ) );
-
 		}
+
 
 		/**
 		 * Change the page class based on layout selected.
@@ -53,6 +54,7 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 			}
 			return $classes;
 		}
+
 
 		/**
 		 * Change the item classes on the menu page based on page layout.

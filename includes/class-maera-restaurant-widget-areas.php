@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 
 	class Maera_Restaurant_Widget_Areas {
 
+
 		/**
 		 * Class Constructor
 		 */

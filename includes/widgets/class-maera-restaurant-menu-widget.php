@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 
 	class Maera_Restaurant_Menu_Widget extends WP_Widget {
 
+
 		/**
 		 * Add the widget to the back end.
 		 * @todo TODO
@@ -75,7 +76,7 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 				Maera()->cache->cache_duration()
 			);
 
-			wp_reset_query();
+			wp_reset_postdata();
 		}
 
 

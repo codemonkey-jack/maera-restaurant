@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Social_widget' ) ) {
 
 	class Maera_Restaurant_Social_widget extends WP_Widget {
 
+
 		/**
 		 * Add the widget to the back end.
 		 * @todo TODO
@@ -39,6 +40,7 @@ if ( ! class_exists( 'Maera_Restaurant_Social_widget' ) ) {
 			);
 
 		}
+
 
 		/**
 		 * Render the social widget.
@@ -106,7 +108,7 @@ if ( ! class_exists( 'Maera_Restaurant_Social_widget' ) ) {
 				'icon_size'              => 'lg',
 			);
 
-			$instance  = wp_parse_args( ( array ) $instance, $defaults );
+			$instance  = wp_parse_args( (array) $instance, $defaults );
 			$title     = $instance['title'];
 			$icon_size = $instance['icon_size'];
 			?>
@@ -130,7 +132,6 @@ if ( ! class_exists( 'Maera_Restaurant_Social_widget' ) ) {
 			</table>
 			<?php
 		}
-
 
 		// End Methods
 	}  // End Class

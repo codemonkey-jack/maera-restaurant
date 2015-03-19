@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 
 	class Maera_Restaurant_Taxonomies {
 
+
 		/**
 		 * Class Constructor
 		 */
@@ -71,7 +72,6 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 				'show_tagcloud'              => false,
 			);
 			register_taxonomy( 'restaurant_item_menu_section', array( 'restaurant_item' ), $args );
-
 		}
 
 		// End Methods

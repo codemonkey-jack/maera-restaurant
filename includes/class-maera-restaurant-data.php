@@ -68,7 +68,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			if ( is_post_type_archive( 'restaurant_item' ) && rp_is_restaurant() ) {
 				$query_args = array(
 					'post_type'      => 'restaurant_item',
-					'posts_per_page' => -1,  // We want to display every single menu item and let the user categorically filter them.
+					'posts_per_page' => 999,  // We want to display every single menu item and let the user categorically filter them.
 					'order'          => get_theme_mod( 'restaurant_order', 'ASC' ),
 					'order_by'       => get_theme_mod( 'restaurant_order_by', 'ID' ),
 				);

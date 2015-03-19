@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 
 	class Maera_Restaurant_PostTypes {
 
+
 		/**
 		 * Class Constructor
 		 */
@@ -36,6 +37,7 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 			// Add filters.
 			add_filter( 'post_updated_messages',  array( $this, 'maera_res_slides_messages' ) );
 		}
+
 
 		/**
 		 * Add Slides custom post type
@@ -56,9 +58,9 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 				'not_found_in_trash' => __( 'No slides found in trash.' ),
 				'parent_item_colon'  => '',
 				'menu_name'          => 'Slides',
-		  	);
+			);
 
-		 	$args = array(
+			$args = array(
 				'labels'             => $postlabels,
 				'public'             => true,
 				'publicly_queryable' => true,
@@ -72,7 +74,7 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 				'menu_position'      => null,
 				'menu_icon'          => 'dashicons-format-gallery',
 				'supports'           => array( 'title', 'thumbnail', 'excerpt', 'comments', 'post-formats' ),
-		  	);
+			);
 
 			register_post_type( 'slide',$args );
 
@@ -91,7 +93,7 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 			);
 
 			// Custom Taxonomy Tags
-			register_taxonomy('tagslide',array('slide'),
+			register_taxonomy( 'tagslide', array( 'slide' ),
 				array(
 					'hierarchical'   => true,
 					'labels'         => $taxlabels,
@@ -117,12 +119,12 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 				2     => __( 'Custom field updated.' ),
 				3     => __( 'Custom field deleted.' ),
 				4     => __( 'Slide updated.' ),
-				5     => isset( $_GET[ 'revision' ] ) ? sprintf( __( 'Slide restored to revision from %s' ), wp_post_revision_title( ( int ) $_GET[ 'revision' ], false ) ) : false, // input var okay
+				5     => isset( $_GET[ 'revision' ] ) ? sprintf( __( 'Slide restored to revision from %s' ), wp_post_revision_title( (int) $_GET[ 'revision' ], false ) ) : false, // input var okay
 				6     => sprintf( __( 'Slide published. <a href="%s">View slide</a>' ), esc_url( get_permalink( $post_ID ) ) ),
 				7     => __( 'Slide saved.' ),
 				8     => sprintf( __( 'Slide submitted. <a target="_blank" href="%s">Preview slide</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
 				9     => sprintf( __( 'Slide scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview slide</a>' ),
-			  	date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+				date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
 				10    => sprintf( __( 'Slide draft updated. <a target="_blank" href="%s">Preview slide</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
 			);
 			return $messages;

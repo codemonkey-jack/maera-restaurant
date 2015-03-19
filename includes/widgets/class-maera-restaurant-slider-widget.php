@@ -25,6 +25,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 
 	class Maera_Restaurant_Slider_Widget extends WP_Widget {
 
+
 		/**
 		 * Add the widget to the back end.
 		 * @todo TODO
@@ -37,6 +38,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				array( 'description' => __( 'Maera slider widget.', 'maera' ) )
 			);
 		}
+
 
 		/**
 		 * Render the slider widget.
@@ -75,7 +77,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				Maera()->cache->cache_duration()
 			);
 
-			wp_reset_query();
+			wp_reset_postdata();
 		}
 
 
@@ -93,10 +95,11 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			$instance['pause']           = isset( $new_instance['pause'] );
 			$instance['wrap']            = isset( $new_instance['wrap'] );
 			$instance['parallax']        = isset( $new_instance['parallax'] );
-			$instance['second_image']        = isset( $new_instance['second_image'] );
+			$instance['second_image']    = isset( $new_instance['second_image'] );
 
 			return $instance;
 		}
+
 
 		/**
 		 * Render the widget form controls.
@@ -113,7 +116,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 				'parallax'         => 1,
 				'second_image'     => 1,
 			);
-			$instance = wp_parse_args( ( array ) $instance, $defaults ); ?>
+			$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 			<table style="margin-top: 10px;">
 				<tr>
@@ -132,28 +135,28 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 
 				<tr>
 					<td colspan="2">
-						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['pause'] ) ? $instance['pause'] : 0  ); ?> id="<?php echo $this->get_field_id( 'pause' ); ?>" name="<?php echo $this->get_field_name( 'pause' ); ?>" />
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['pause'] ) ? $instance['pause'] : 0 ); ?> id="<?php echo $this->get_field_id( 'pause' ); ?>" name="<?php echo $this->get_field_name( 'pause' ); ?>" />
 						<?php _e( 'Pause on hover?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 
 				<tr>
 					<td colspan="2">
-						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['wrap'] ) ? $instance['wrap'] : 0  ); ?> id="<?php echo $this->get_field_id( 'wrap' ); ?>" name="<?php echo $this->get_field_name( 'wrap' ); ?>" />
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['wrap'] ) ? $instance['wrap'] : 0 ); ?> id="<?php echo $this->get_field_id( 'wrap' ); ?>" name="<?php echo $this->get_field_name( 'wrap' ); ?>" />
 							<?php _e( 'Cycle slider continually?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 
 				<tr>
 					<td colspan="2">
-						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['parallax'] ) ? $instance['parallax'] : 0  ); ?> id="<?php echo $this->get_field_id( 'parallax' ); ?>" name="<?php echo $this->get_field_name( 'parallax' ); ?>" />
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['parallax'] ) ? $instance['parallax'] : 0 ); ?> id="<?php echo $this->get_field_id( 'parallax' ); ?>" name="<?php echo $this->get_field_name( 'parallax' ); ?>" />
 							<?php _e( 'Enable Parallax?','maera-restaurant' ); ?>
 					</td>
 				</tr>
 
 				<tr>
 					<td colspan="2">
-						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['second_image'] ) ? $instance['second_image'] : 0  ); ?> id="<?php echo $this->get_field_id( 'second_image' ); ?>" name="<?php echo $this->get_field_name( 'second_image' ); ?>" />
+						<input class="checkbox" type="checkbox" <?php checked( isset( $instance['second_image'] ) ? $instance['second_image'] : 0 ); ?> id="<?php echo $this->get_field_id( 'second_image' ); ?>" name="<?php echo $this->get_field_name( 'second_image' ); ?>" />
 							<?php _e( 'Enable Overlay Image?','maera-restaurant' ); ?>
 					</td>
 				</tr>

@@ -3,7 +3,7 @@
  * Plugin Name:       Maera Restaurant Shell
  * Plugin URI:        https://press.codes
  * Description:       Restaurant shell for the Maera theme.
- * Version:           1.0.0-dev
+ * Version:           0.1.0
  * Author:            Brian C. Welch
  * Author URI:        http://briancwelch.com
  * Requires at least: 4.0
@@ -21,8 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+
 // Define Globals
-define( 'MAERA_RES_VER', '1.0' );
+define( 'MAERA_RES_VER', '0.1.0' );
 define( 'MAERA_RES_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_RES_SHELL_PATH', dirname( __FILE__ ) );
 
@@ -39,7 +40,6 @@ function maera_include_restaurant_shell( $shells ) {
 	);
 
 	return $shells;
-
 }
 add_filter( 'maera/shells/available', 'maera_include_restaurant_shell' );
 
@@ -74,7 +74,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		public $taxonomies;
 
 		/**
-		 * Main class constructor
+		 * Main Class Constructor
 		 */
 		public function __construct() {
 
@@ -104,7 +104,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 			// Add Actions
 			add_action( 'after_setup_theme', array( $this, 'required_plugins' ) );
-			add_action( 'do_meta_boxes', array( $this, 'slides_image_box') );
+			add_action( 'do_meta_boxes', array( $this, 'slides_image_box' ) );
 
 			// Add Filters
 			add_filter( 'kirki/config', array( $this, 'customizer_config' ) );
@@ -114,16 +114,10 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			add_theme_support( 'restaurant' );
 			add_theme_support( 'tonesque' );
 			add_theme_support( 'site-logo' );
-			add_theme_support( 'infinite-scroll', array(
-				'type'      => 'click',
-				'container' => 'infinite_scroll',
-				'footer'    => false,
-			) );
 
 			if ( '1' == get_theme_mod( 'enable_breadcrumbs' , '1' ) ) {
 				add_theme_support( 'breadcrumbs' );
 			}
-
 		}
 
 
@@ -138,7 +132,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			}
 
 			return self::$instance;
-
 		}
 
 
@@ -162,9 +155,11 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 
 		/**
-		* Build the array of required plugins.
-		* You can use the 'maera/required_plugins' filter to add or remove plugins.
-		*/
+		 * Build the array of required plugins
+		 * You can use the 'maera/required_plugins' filter to add or remove plugins.
+		 * @param  array  $plugins [description]
+		 * @return [type]          [description]
+		 */
 		function required_plugins( $plugins = array() ) {
 			if ( ! $plugins || empty( $plugins ) ) {
 				$plugins = array();
@@ -201,16 +196,16 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				remove_meta_box( 'postimagediv', 'slide', 'side' );
 				add_meta_box( 'postimagediv', __( 'Slide - Background Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
 			}
-
 		}
 
 		// End Methods
-	}  // End Class
-}     // End If
+	} // End Class
+} // End if
 
 
 /**
- * Licensing handler
+ * Licensing handler.
+ * @return [type] [description]
  */
 function maera_restaurant_licensing() {
 
