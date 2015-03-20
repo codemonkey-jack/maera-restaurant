@@ -114,7 +114,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'select',
-				'setting'  => 'currency',
+				'settings' => 'currency',
 				'label'    => __( 'Restaurant Currency.', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => '$ USD',
@@ -125,7 +125,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'text',
-				'setting'  => 'phone_number',
+				'settings' => 'phone_number',
 				'label'    => __( 'Restaurant Phone Number', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => __( '+555-867-5309', 'maera-restaurant' ),
@@ -134,7 +134,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'select',
-				'setting'  => 'restaurant_order_by',
+				'settings' => 'restaurant_order_by',
 				'label'    => __( 'Menu Page Ordering.', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => 'ID',
@@ -156,7 +156,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'select',
-				'setting'  => 'restaurant_order',
+				'settings' => 'restaurant_order',
 				'label'    => __( 'Restaurant Menu sorting order.', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => 'ID',
@@ -168,15 +168,15 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			);
 
 			$controls[] = array(
-				'type'     => 'select',
-				'setting'  => 'isotope_layout',
-				'label'    => __( 'Menu Page Layout.', 'maera-restaurant' ),
+				'type'        => 'select',
+				'settings'    => 'isotope_layout',
+				'label'       => __( 'Menu Page Layout.', 'maera-restaurant' ),
 				'description' => __( 'Examples may be <a href="http://isotope.metafizzy.co/layout-modes.html" target="_blank">found here</a>. ', 'maera-restaurant' ),
-				'section'  => 'maera_res_restaurant',
-				'default'  => 'ID',
-				'priority' => 4,
-				'help'     => __( 'Select the Isotope layout mode for how the restaurant menu is displayed.', 'maera-restaurant' ),
-				'choices'  => array(
+				'section'     => 'maera_res_restaurant',
+				'default'     => 'ID',
+				'priority'    => 4,
+				'help'        => __( 'Select the Isotope layout mode for how the restaurant menu is displayed.', 'maera-restaurant' ),
+				'choices'     => array(
 					'masonry'           => __( 'Masonry', 'maera-restaurant' ),
 					'masonryHorizontal' => __( 'Masonry - Horizontal', 'maera-restaurant' ),
 					'fitRows'           => __( 'Fit Rows', 'maera-restaurant' ),
@@ -190,7 +190,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'textarea',
-				'setting'  => 'recent_lead_text',
+				'settings' => 'recent_lead_text',
 				'label'    => __( 'From the Kitchen text', 'maera-restaurant' ),
 				'section'  => 'maera_res_restaurant',
 				'default'  => __( 'Ut enim ad minim veniam.', 'maera-restaurant' ),
@@ -211,7 +211,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'radio-image',
-				'setting'  => 'page_layout',
+				'settings' => 'page_layout',
 				'label'    => __( 'Page Layout', 'maera-restaurant' ),
 				'subtitle' => __( 'Select your main layout. If no widgets are present in the sidebar, it will not be displayed. ', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
@@ -222,7 +222,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'sortable',
-				'setting'  => 'front_page_sections',
+				'settings' => 'front_page_sections',
 				'label'    => __( 'Front Page Sections', 'maera-restaurant' ),
 				'subtitle' => __( 'You may drag and reorder the sections as desired.', 'maera-resstaurant' ),
 				'section'  => 'maera_res_layout',
@@ -240,7 +240,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'enable_contact_bar',
+				'settings' => 'enable_contact_bar',
 				'label'    => __( 'Enable Contact Bar', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
 				'default'  => 1,
@@ -253,7 +253,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'radio-buttonset',
-				'setting'  => 'contact_bar_position',
+				'settings' => 'contact_bar_position',
 				'label'    => __( 'Contact Bar Position', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
 				'default'  => 1,
@@ -267,7 +267,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'enable_breadcrumbs',
+				'settings' => 'enable_breadcrumbs',
 				'label'    => __( 'Enable Breadcrumbs', 'maera-restaurant' ),
 				'section'  => 'maera_res_layout',
 				'default'  => 1,
@@ -292,7 +292,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'color_calc',
+				'settings' => 'color_calc',
 				'label'    => __( 'Enable Automatic Color Calculations', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => 0,
@@ -301,12 +301,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'brand_color',
+				'settings' => 'brand_color',
 				'label'    => __( 'Primary Brand Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#244363',
 				'priority' => 2,
-				'output' => array(
+				'output'   => array(
 					array(
 						'element'  => '.btn-primary',
 						'property' => 'background',
@@ -356,13 +356,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'link_color',
+				'settings' => 'link_color',
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#244363',
 				'priority' => 3,
 				'required' => array( 'color_calc' => 0 ),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'a',
 					'property' => 'color',
 				),
@@ -370,13 +370,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'link_hover_color',
+				'settings' => 'link_hover_color',
 				'label'    => __( 'Link Hover Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#325d88',
 				'priority' => 4,
 				'required' => array( 'color_calc' => 0 ),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'a:hover',
 					'property' => 'color',
 				),
@@ -384,12 +384,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'navbar_color',
+				'settings' => 'navbar_color',
 				'label'    => __( 'Navbar Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#333333',
 				'priority' => 5,
-				'output' => array(
+				'output'   => array(
 					'element'  => '.navbar-default',
 					'property' => 'background-color',
 				),
@@ -409,13 +409,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'select',
-				'setting'  => 'navbar_font',
+				'settings' => 'navbar_font',
 				'label'    => __( 'Navbar Font', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 'Open Sans',
 				'priority' => 1,
 				'choices'  => Kirki_Fonts::get_font_choices(),
-				'output' => array(
+				'output'   => array(
 					'element'  => '.navbar',
 					'property' => 'font-family',
 				),
@@ -423,13 +423,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'navbar_font_color',
+				'settings' => 'navbar_font_color',
 				'label'    => __( 'Navbar Font Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => '#eee',
 				'priority' => 2,
 				'required' => array( 'color_calc' => 0 ),
-				'output' => array(
+				'output'   => array(
 					'element'  => '.navbar-default .navbar-nav > li > a',
 					'property' => 'color',
 				),
@@ -437,7 +437,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'navbar_font_size',
+				'settings' => 'navbar_font_size',
 				'label'    => __( 'Navbar Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 1.5,
@@ -447,7 +447,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => '.navbar-default .navbar-nav > li > a',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -456,7 +456,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'navbar_font_weight',
+				'settings' => 'navbar_font_weight',
 				'label'    => __( 'Navbar Font Weight', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 300,
@@ -466,7 +466,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 900,
 					'step' => 100,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => '.navbar-default .navbar-nav > li > a',
 					'property' => 'font-weight',
 					'units'    => null,
@@ -475,13 +475,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'select',
-				'setting'  => 'headers_font',
+				'settings' => 'headers_font',
 				'label'    => __( 'Headers Font', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 'Open Sans',
 				'priority' => 5,
 				'choices'  => Kirki_Fonts::get_font_choices(),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h1,h2,h3,h4,h5,h6',
 					'property' => 'font-family',
 				),
@@ -489,13 +489,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'headers_font_color',
+				'settings' => 'headers_font_color',
 				'label'    => __( 'Headers Font Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 6,
 				'required' => array( 'color_calc' => 0 ),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h1,h2,h3,h4,h5,h6',
 					'property' => 'color',
 				),
@@ -503,7 +503,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'h1_font_size',
+				'settings' => 'h1_font_size',
 				'label'    => __( 'H1 Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 3,
@@ -513,7 +513,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h1',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -522,7 +522,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'h2_font_size',
+				'settings' => 'h2_font_size',
 				'label'    => __( 'H2 Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 2,
@@ -532,7 +532,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h2',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -541,7 +541,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'h3_font_size',
+				'settings' => 'h3_font_size',
 				'label'    => __( 'H3 Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 1.75,
@@ -551,7 +551,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h3',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -560,7 +560,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'h4_font_size',
+				'settings' => 'h4_font_size',
 				'label'    => __( 'H4 Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 1.5,
@@ -570,7 +570,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h4',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -579,7 +579,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'h5_font_size',
+				'settings' => 'h5_font_size',
 				'label'    => __( 'H5 Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 1,
@@ -589,7 +589,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h5',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -598,7 +598,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'h6_font_size',
+				'settings' => 'h6_font_size',
 				'label'    => __( 'H6 Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => .75,
@@ -608,7 +608,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h6',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -617,7 +617,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'header_font_weight',
+				'settings' => 'header_font_weight',
 				'label'    => __( 'Headers Font Weight', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 600,
@@ -627,7 +627,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 900,
 					'step' => 100,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'h1,h2,h3,h4,h5,h6',
 					'property' => 'font-weight',
 					'units'    => null,
@@ -636,13 +636,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'select',
-				'setting'  => 'content_font',
+				'settings' => 'content_font',
 				'label'    => __( 'Content Font', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 'Open Sans',
 				'priority' => 14,
 				'choices'  => Kirki_Fonts::get_font_choices(),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'body',
 					'property' => 'font-family',
 				),
@@ -650,13 +650,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'color',
-				'setting'  => 'content_font_color',
+				'settings' => 'content_font_color',
 				'label'    => __( 'Content Font Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 15,
 				'required' => array( 'color_calc' => 0 ),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'body p',
 					'property' => 'color',
 				),
@@ -664,7 +664,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'content_font_size',
+				'settings' => 'content_font_size',
 				'label'    => __( 'Content Font Size (em)', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 1.5,
@@ -674,7 +674,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 10,
 					'step' => .25,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'body p',
 					'property' => 'font-size',
 					'units'    => 'em',
@@ -683,7 +683,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'slider',
-				'setting'  => 'content_font_weight',
+				'settings' => 'content_font_weight',
 				'label'    => __( 'Content Font Weight', 'maera-restaurant' ),
 				'section'  => 'maera_res_typography',
 				'default'  => 300,
@@ -693,7 +693,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'max'  => 900,
 					'step' => 100,
 				),
-				'output' => array(
+				'output'   => array(
 					'element'  => 'p',
 					'property' => 'font-weight',
 					'units'    => null,
@@ -714,7 +714,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'section_1_parallax',
+				'settings' => 'section_1_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_1',
 				'default'  => 0,
@@ -724,12 +724,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'section_1_background',
+				'settings'     => 'section_1_background',
 				'label'        => __( 'First Section Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the first section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_section_1',
-				'priority' => 2,
-				'output' => '#section_1',
+				'priority'     => 2,
+				'output'       => '#section_1',
 				'default'      => array(
 					'color'    => '#222222',
 					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_1_background.png',
@@ -755,7 +755,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'section_2_parallax',
+				'settings' => 'section_2_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_2',
 				'default'  => 0,
@@ -765,12 +765,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'section_2_background',
+				'settings'     => 'section_2_background',
 				'label'        => __( 'Second Section Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the second section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_section_2',
-				'priority' => 2,
-				'output' => '#section_2',
+				'priority'     => 2,
+				'output'       => '#section_2',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => null,
@@ -796,7 +796,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'section_3_parallax',
+				'settings' => 'section_3_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_3',
 				'default'  => 0,
@@ -806,12 +806,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'section_3_background',
+				'settings'     => 'section_3_background',
 				'label'        => __( 'Third Section Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the third section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_section_3',
-				'priority' => 2,
-				'output' => '#section_3',
+				'priority'     => 2,
+				'output'       => '#section_3',
 				'default'      => array(
 					'color'    => '#efefef',
 					'image'    => null,
@@ -837,7 +837,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'section_4_parallax',
+				'settings' => 'section_4_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_4',
 				'default'  => 0,
@@ -847,12 +847,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'section_4_background',
+				'settings'     => 'section_4_background',
 				'label'        => __( 'Fourth Section Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the fourth section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_section_4',
-				'priority' => 2,
-				'output' => '#section_4',
+				'priority'     => 2,
+				'output'       => '#section_4',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => null,
@@ -878,7 +878,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'setting'  => 'section_5_parallax',
+				'settings' => 'section_5_parallax',
 				'label'    => __( 'Enable Parallax', 'maera-restaurant' ),
 				'section'  => 'maera_res_section_5',
 				'default'  => 0,
@@ -888,12 +888,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'section_5_background',
+				'settings'     => 'section_5_background',
 				'label'        => __( 'Fifth Section Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the fifth section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_section_5',
-				'priority' => 2,
-				'output' => '#section_5',
+				'priority'     => 2,
+				'output'       => '#section_5',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => MAERA_RES_SHELL_URL . '/assets/img/backgrounds/section_5_background.jpg',
@@ -919,12 +919,12 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'body_background',
+				'settings'     => 'body_background',
 				'label'        => __( 'Body Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the body section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_body',
-				'priority' => 1,
-				'output' => 'body',
+				'priority'     => 1,
+				'output'       => 'body',
 				'default'      => array(
 					'color'    => '#ffffff',
 					'image'    => null,
@@ -937,14 +937,14 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 			);
 
 			$controls[] = array(
-				'type'     => 'color',
-				'setting'  => 'posts_background',
-				'label'    => __( 'Recent Posts Background Color', 'maera-restaurant' ),
+				'type'         => 'color',
+				'settings'     => 'posts_background',
+				'label'        => __( 'Recent Posts Background Color', 'maera-restaurant' ),
 				'description'  => __( 'Set the background color for the front page posts.', 'maera-restaurant' ),
-				'section'  => 'maera_res_body',
-				'default'  => '#ffffff',
-				'priority' => 10,
-				'output' => array(
+				'section'      => 'maera_res_body',
+				'default'      => '#ffffff',
+				'priority'     => 10,
+				'output'       => array(
 					'element'  => '.recent-post-wrap .overlay',
 					'property' => 'background',
 				),
@@ -952,7 +952,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'content_background',
+				'settings'     => 'content_background',
 				'label'        => __( 'Main Content Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the main content sections.', 'maera-restaurant' ),
 				'section'      => 'maera_res_body',
@@ -965,8 +965,8 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'position' => 'left-top',
 					'opacity'  => 100,
 				),
-				'priority' => 15,
-				'output' => array(
+				'priority'     => 15,
+				'output'       => array(
 					array(
 						'element'  => '#wrap-main-section',
 					),
@@ -990,7 +990,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'         => 'background',
-				'setting'      => 'footer_background',
+				'settings'     => 'footer_background',
 				'label'        => __( 'Footer Background', 'maera-restaurant' ),
 				'description'  => __( 'Set the background options for the footer section.', 'maera-restaurant' ),
 				'section'      => 'maera_res_footer',
@@ -1003,13 +1003,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'position' => 'center-center',
 					'opacity'  => 100,
 				),
-				'priority' => 1,
-				'output' => '#footer',
+				'priority'     => 1,
+				'output'       => '#footer',
 			);
 
 			$controls[] = array(
 				'type'     => 'textarea',
-				'setting'  => 'copyright_text',
+				'settings' => 'copyright_text',
 				'label'    => __( 'Copyright Text', 'maera-restaurant' ),
 				'section'  => 'maera_res_footer',
 				'default'  => __( '&copy; 2015 - Maera Restaurant', 'maera-restaurant' ),
@@ -1030,7 +1030,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'text',
-				'setting'  => 'facebook_link',
+				'settings' => 'facebook_link',
 				'label'    => __( 'Facebook Link', 'maera-restaurant' ),
 				'section'  => 'maera_res_social',
 				'default'  => __( 'http://facebook.com/', 'maera-restaurant' ),
@@ -1039,7 +1039,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'text',
-				'setting'  => 'twitter_link',
+				'settings' => 'twitter_link',
 				'label'    => __( 'Twitter Link', 'maera-restaurant' ),
 				'section'  => 'maera_res_social',
 				'default'  => __( 'http://twitter.com/', 'maera-restaurant' ),
@@ -1048,7 +1048,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'text',
-				'setting'  => 'googleplus_link',
+				'settings' => 'googleplus_link',
 				'label'    => __( 'Google+ Link', 'maera-restaurant' ),
 				'section'  => 'maera_res_social',
 				'default'  => __( 'http://plus.google.com/', 'maera-restaurant' ),
@@ -1057,7 +1057,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'text',
-				'setting'  => 'youtube_link',
+				'settings' => 'youtube_link',
 				'label'    => __( 'Youtube Link', 'maera-restaurant' ),
 				'section'  => 'maera_res_social',
 				'default'  => __( 'http://youtube.com/', 'maera-restaurant' ),

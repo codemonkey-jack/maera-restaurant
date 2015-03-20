@@ -172,8 +172,8 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 					$content_font_color  = '#' . $content_font_calc->getGrayscaleContrastingColor( 10 )->toHex();
 					$content_link_color  = '#' . $content_link_calc->getGrayscaleContrastingColor( 10 )->toHex();
 				} else {
-					$content_font_color   = '#' . $content_jet->getGrayscaleContrastingColor( 10 )->toHex();
-					$content_link_color   = '#' . $content_jet->getGrayscaleContrastingColor( 10 )->toHex();
+					$content_font_color  = '#' . $content_jet->getGrayscaleContrastingColor( 10 )->toHex();
+					$content_link_color  = '#' . $content_jet->getGrayscaleContrastingColor( 10 )->toHex();
 				}
 
 				$navbar_font_color       = '#' . $navbar_jet->getGrayscaleContrastingColor( 10 )->toHex();
@@ -251,7 +251,7 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 				$style .= 'color: '. $content_link_color .';';
 				$style .= '}';
 
-				wp_add_inline_style( 'maera', $style );
+				wp_add_inline_style( 'maera-res', $style );
 			}
 		}
 

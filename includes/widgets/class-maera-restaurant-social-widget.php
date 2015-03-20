@@ -52,7 +52,6 @@ if ( ! class_exists( 'Maera_Restaurant_Social_widget' ) ) {
 			extract( $args );
 
 			$title = apply_filters( 'widget_title', $instance['title'] );
-			// $icon_size = empty( $instance['icon_size'] ) ? '' : $instance['icon_size'];
 
 			_e( $args['before_widget'] );
 
