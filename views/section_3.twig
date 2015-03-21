@@ -3,10 +3,8 @@
 
 <section id="section_3" class="{% if parallax %}parallax{% endif %}">
 
-{% if sidebar.section_3 and function('is_active_sidebar','section_3') == true %}
+{% if sidebar.section_3 %}
 	{{ sidebar.section_3 }}
-{% else %}
-	{% include 'front-page-posts.twig' %}
 {% endif %}
 
 </section>

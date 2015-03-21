@@ -14,21 +14,21 @@
 
 <div id="carousel" class="carousel slide" data-ride="carousel">
 	<div class="carousel-inner">
-		{% for post in posts %}
+		{% for slide in slides %}
 		{% if loop.first %}
-		<div class="item active {% if widget.parallax %}parallax{% endif %}" style="background-image: url({{ post.thumbnail.src }});">
+		<div class="item active {% if widget.parallax %}parallax{% endif %}" style="background-image: url({{ slide.thumbnail.src }});">
 			<div class="container">
 				<div class="row slide-margin">
 					<div class="col-sm-{{ slider_content_class }}">
 						<div class="carousel-content">
-							<h1 class="animation animated-item-1">{{ post.title }}</h1>
-							<h4 class="animation animated-item-2">{{ post.post_excerpt }}</h4>
+							<h1 class="animation animated-item-1">{{ slide.title }}</h1>
+							<h4 class="animation animated-item-2">{{ slide.post_excerpt }}</h4>
 						</div>
 					</div>
 					{% if widget.second_image %}
 					<div class="col-sm-6 hidden-xs animation animated-item-4">
 						<div class="slider-img">
-							<img src="{{ TimberImage( post.get_field( 'slider_-_second_image' )).src }}" class="img-responsive" alt="{{ post.title }}">
+							<img src="{{ TimberImage( slide.get_field( 'slider_-_second_image' )).src }}" class="img-responsive" alt="{{ slide.title }}">
 						</div>
 					</div>
 					{% endif %}
@@ -36,19 +36,19 @@
 			</div>
 		</div>
 		{% else %}
-		<div class="item {% if widget.parallax %}parallax{% endif %}" style="background-image: url({{ post.thumbnail.src }});">
+		<div class="item {% if widget.parallax %}parallax{% endif %}" style="background-image: url({{ slide.thumbnail.src }});">
 			<div class="container">
 				<div class="row slide-margin">
 					<div class="col-sm-{{ slider_content_class }}">
 						<div class="carousel-content">
-							<h1 class="animation animated-item-1">{{ post.title }}</h1>
-							<h4 class="animation animated-item-2">{{ post.post_excerpt }}</h4>
+							<h1 class="animation animated-item-1">{{ slide.title }}</h1>
+							<h4 class="animation animated-item-2">{{ slide.post_excerpt }}</h4>
 						</div>
 					</div>
 					{% if widget.second_image %}
 					<div class="col-sm-6 hidden-xs animation animated-item-4">
 						<div class="slider-img">
-							<img src="{{ TimberImage( post.get_field( 'slider_-_second_image' )).src }}" class="img-responsive" alt="{{ post.title }}">
+							<img src="{{ TimberImage( slide.get_field( 'slider_-_second_image' )).src }}" class="img-responsive" alt="{{ slide.title }}">
 						</div>
 					</div>
 					{% endif %}
@@ -79,3 +79,5 @@ jQuery(function ($) {
 </script>
 
 {{ widget.after_widget }}
+
+<div class="clearfix"></div>

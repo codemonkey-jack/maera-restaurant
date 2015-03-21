@@ -46,6 +46,7 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 		 * @since 1.0.0
 		 */
 		function widget( $args, $instance ) {
+
 			extract( $args );
 
 			$query_args = array(
@@ -65,10 +66,10 @@ if ( ! class_exists( 'Maera_Restaurant_Menu_Widget' ) ) {
 				'after_title'            => $after_title,
 			);
 
-			$context              = Maera()->cache->get_context();
-			$context['post']      = Timber::query_post();
-			$context['posts']     = Timber::get_posts( $query_args );
-			$context['widget']    = $widget;
+			$context                 = Maera()->cache->get_context();
+			$context['menu_item']    = Timber::query_post();
+			$context['menu_items']   = Timber::get_posts( $query_args );
+			$context['widget']       = $widget;
 
 			Timber::render(
 				'menu.twig',
