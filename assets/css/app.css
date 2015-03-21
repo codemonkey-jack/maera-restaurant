@@ -103,7 +103,7 @@ a:focus {
 }
 
 .parallax {
-  background-position: 50% 0 !important;
+  background-position: 50% 0;
   background-attachment: fixed !important;
 }
 .contact-bar a {
