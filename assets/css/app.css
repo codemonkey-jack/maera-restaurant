@@ -39,7 +39,7 @@ pre {
 
 hr {
   border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 img {
@@ -60,7 +60,7 @@ a:focus {
 
 .dropdown-menu {
   margin-top: -1px;
-  min-width: 180px;
+  min-width: 200px;
 }
 
 .center h2 {
@@ -103,11 +103,11 @@ a:focus {
 }
 
 .parallax {
-  background-position: 50% 0;
+  background-position: 50% 0 !important;
   background-attachment: fixed !important;
 }
 .contact-bar a {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .no-margin {
@@ -124,30 +124,49 @@ a:focus {
 
 .facebook:hover {
   background-color: #0182c4 !important;
-  color: #fff !important;
+  color: #f5f5f5 !important;
 }
 
 .twitter:hover {
   background-color: #3fc1fe !important;
-  color: #fff !important;
+  color: #f5f5f5 !important;
 }
 
 .google-plus:hover {
   background-color: #d34836 !important;
-  color: #fff !important;
+  color: #f5f5f5 !important;
 }
 
 .youtube:hover {
   background-color: #cd201f !important;
-  color: #fff !important;
+  color: #f5f5f5 !important;
 }
+.recent-posts {
+	padding-bottom: 75px;
+}
+
+.label-primary {
+	-webkit-transition: color .5s, background-color .5s;
+	-moz-transition: color .5s, background-color .5s;
+	-o-transition: color .5s, background-color .5s;
+	transition: color .5s, background-color .5s;
+}
+
+.label-primary a:hover {
+	color: #f5f5f5;
+}
+
+.label-primary:hover {
+	background-color: #333;
+}
+
 
 /***************************
   Buttons
 ***************************/
 .btn {
   padding: 8px 20px;
-  color: #fff;
+  color: #f5f5f5;
   border-radius: 4px;
   border: none;
   margin-top: 10px;
@@ -155,7 +174,7 @@ a:focus {
 
 .btn-primary {
   padding: 8px 20px;
-  color: #fff;
+  color: #f5f5f5;
   border-radius: 4px;
   border: none;
   margin-top: 10px;
@@ -176,14 +195,15 @@ a:focus {
 }
 
 .btn-transparent {
-  border: 3px solid #fff;
+  border: 3px solid #f5f5f5;
   background: transparent;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .btn-transparent:hover {
   border-color: rgba(255, 255, 255, 0.5)
 }
+
 
 /***************************
   Contact Bar
@@ -201,7 +221,7 @@ a:focus {
 }
 
 .contact-number {
-  color: #fff
+  color: #f5f5f5
 }
 
 .contact-number p {
@@ -226,7 +246,7 @@ ul.social-share li {
 
 ul.social-share li a {
   display: inline-block;
-  color: #fff;
+  color: #f5f5f5;
   background: #404040;
   width: 25px;
   height: 25px;
@@ -236,11 +256,11 @@ ul.social-share li a {
 }
 
 ul.social-share li a:hover {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .search i {
-  color: #fff
+  color: #f5f5f5
 }
 
 input.search-form {
@@ -248,7 +268,7 @@ input.search-form {
   border: 1px solid #444;
   width: 180px;
   padding: 0 10px;
-  color: #FFF;
+  color: #f5f5f5;
 }
 
 input.search-form::-webkit-input-placeholder {
@@ -256,8 +276,9 @@ input.search-form::-webkit-input-placeholder {
 }
 
 input.search-form:hover::-webkit-input-placeholder {
-  color: #fff
+  color: #f5f5f5
 }
+
 
 /***************************
   Navbar
@@ -278,7 +299,7 @@ input.search-form:hover::-webkit-input-placeholder {
 .navbar {
   border-radius: 0;
   margin-bottom: 0;
-  background: #151515;
+  background: #222222;
   padding: 15px 0;
   padding-bottom: 0;
 }
@@ -296,13 +317,13 @@ input.search-form:hover::-webkit-input-placeholder {
   padding: 5px 12px;
   margin: 0;
   border-radius: 3px;
-  color: #fff;
+  color: #f5f5f5;
   line-height: 24px;
   display: inline-block;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .navbar-default {
@@ -311,7 +332,7 @@ input.search-form:hover::-webkit-input-placeholder {
 
 .navbar-default .navbar-brand {
   line-height: 50px;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .navbar-default .navbar-nav > .active > a,
@@ -320,14 +341,14 @@ input.search-form:hover::-webkit-input-placeholder {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .navbar-default .navbar-nav .dropdown-menu {
   background-color: rgba(0,0,0,.85);
-  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
   border: 0;
   padding: 0;
   margin-top: 0;
@@ -342,14 +363,15 @@ input.search-form:hover::-webkit-input-placeholder {
 }
 
 .navbar-default .navbar-nav .dropdown-menu > li > a {
-  padding: 8px 15px;
-  color: #fff;
+  padding: 8px;
+  color: #f5f5f5;
+  line-height: 1.25em;
 }
 
 .navbar-default .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-default .navbar-nav .dropdown-menu > li:focus > a,
 .navbar-default .navbar-nav .dropdown-menu > li.active > a {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .navbar-default .navbar-nav .dropdown-menu > li:last-child > a {
@@ -366,6 +388,7 @@ input.search-form:hover::-webkit-input-placeholder {
   padding-bottom: 0;
 }
 
+
 /***************************
   First Section
 ***************************/
@@ -373,6 +396,7 @@ input.search-form:hover::-webkit-input-placeholder {
   width: 100%;
   margin: 0 auto;
 }
+
 
 /***************************
   Section Section
@@ -382,6 +406,7 @@ input.search-form:hover::-webkit-input-placeholder {
   margin: 0 auto;
 }
 
+
 /***************************
   Third Section
 ***************************/
@@ -389,6 +414,7 @@ input.search-form:hover::-webkit-input-placeholder {
   width: 100%;
   margin: 0 auto;
 }
+
 
 /***************************
   Fourth Section
@@ -398,6 +424,7 @@ input.search-form:hover::-webkit-input-placeholder {
   margin: 0 auto;
 }
 
+
 /***************************
   Fifth Section
 ***************************/
@@ -405,6 +432,7 @@ input.search-form:hover::-webkit-input-placeholder {
   width: 100%;
   margin: 0 auto;
 }
+
 
 /***************************
   Slider Widget
@@ -436,7 +464,7 @@ input.search-form:hover::-webkit-input-placeholder {
 .carousel .next {
   position: absolute;
   top: 50%;
-  color: #fff;
+  color: #f5f5f5;
   display: inline-block;
   margin-top: -25px;
   height: 40px;
@@ -525,8 +553,8 @@ input.search-form:hover::-webkit-input-placeholder {
   border-radius: 100%;
   line-height: 110px;
   text-align: center;
-  background: #ffffff;
-  border: 3px solid #ffffff;
+  background: #f5f5f5fff;
+  border: 3px solid #f5f5f5fff;
   box-shadow: inset 0 0 0 5px #f2f2f2;
   -webkit-box-shadow: inset 0 0 0 5px #f2f2f2;
   -webkit-transition: .5s;
@@ -564,13 +592,14 @@ input.search-form:hover::-webkit-input-placeholder {
 }
 
 .menu_item_tags .fa {
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .menu_item_tags a {
-  color: #fff;
+  color: #f5f5f5;
   text-transform: uppercase;
 }
+
 
 /***************************
   Recent Front Page Posts
@@ -639,13 +668,14 @@ input.search-form:hover::-webkit-input-placeholder {
   padding: 4px 8px;
   margin-top: 15px;
   text-transform: uppercase;
-  color: #fff;
+  color: #f5f5f5;
   text-align: center;
   border-radius: 4px;
 }
 
 .read-more:hover {
-  color: #fff;
+  color: #f5f5f5;
+  background-color: #333333;
 }
 
 .recent-post-wrap .overlay .preview {
@@ -656,12 +686,13 @@ input.search-form:hover::-webkit-input-placeholder {
   border-radius: 0;
   background: transparent;
   text-align: center;
-  color: #fff;
+  color: #f5f5f5;
 }
 
 .recent-post-wrap:hover .overlay {
   opacity: 1
 }
+
 
 /***************************
   Panels
@@ -697,6 +728,7 @@ input.search-form:hover::-webkit-input-placeholder {
   background: #1f1f20
 }
 
+
 /***************************
   Testimonials
 ***************************/
@@ -721,13 +753,14 @@ input.search-form:hover::-webkit-input-placeholder {
   height: 9px;
   top: 50%;
   margin-top: -5px;
-  background: #FFF;
+  background: #f5f5f5;
   -webkit-transform: rotate(45deg);
   border: 1px solid #e7e7e7;
   right: -5px;
   border-left: 0 none;
   border-bottom: 0 none;
 }
+
 
 /***************************
   Blog Page
@@ -794,7 +827,7 @@ input.search-form:hover::-webkit-input-placeholder {
 
 .badge {
   border-radius: 5px;
-  color: #fff;
+  color: #f5f5f5;
   padding: 8px;
   position: relative;
   left: 60px;
@@ -870,7 +903,6 @@ input.search-form:hover::-webkit-input-placeholder {
 }
 
 .blog .blog-item .entry-meta > span {
-  border-top: 1px solid #fff;
   display: block;
   overflow: hidden;
   padding: 5px;
@@ -879,7 +911,7 @@ input.search-form:hover::-webkit-input-placeholder {
 
 #publish_date {
   border-bottom: 5px solid #4e4e4e;
-  color: #fff;
+  color: #f5f5f5;
   padding: 5px;
   text-align: center;
 }
@@ -904,6 +936,7 @@ ul.pagination > li > a i {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 
 /***************************
   Single Page
@@ -941,7 +974,7 @@ ul.pagination > li > a i {
 .post_reply ul li a i {
   border: 1px solid #DDDDDD;
   border-radius: 39px;
-  color: #FFFFFF;
+  color: #f5f5f5FFF;
   height: 30px;
   margin-right: 3px;
   padding-top: 7px;
@@ -1087,6 +1120,7 @@ ul.pagination > li > a i {
   transition: none;
 }
 
+
 /***************************
   Tag Cloud
 ***************************/
@@ -1107,8 +1141,9 @@ ul.pagination > li > a i {
 }
 
 .tagcloud a:hover {
-  color: #fff;
+  color: #f5f5f5;
 }
+
 
 /***************************
   Breadcrumbs
@@ -1132,7 +1167,7 @@ ul.pagination > li > a i {
 }
 
 .breadcrumbs > .active {
-  color: #fff
+  color: #f5f5f5
 }
 
 
@@ -1172,11 +1207,15 @@ ul.pagination > li > a i {
 #footer {
   padding-top: 30px;
   padding-bottom: 30px;
-  color: #fff;
+  color: #f5f5f5;
+}
+
+#footer p {
+	color: #f5f5f5;
 }
 
 #footer a {
-  color: #fff
+  color: #f5f5f5
 }
 
 #footer ul {
@@ -1190,36 +1229,37 @@ ul.pagination > li > a i {
   margin-left: 15px;
 }
 
+
 /***************************
   Animations
 ***************************/
 @-webkit-keyframes scaleIn {
   0% {
-    opacity: 0;
-    -webkit-transform: scale();
-    transform: scale();
+	opacity: 0;
+	-webkit-transform: scale();
+	transform: scale();
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
   }
 }
 
 @keyframes scaleIn {
   0% {
-    opacity: 0;
-    -webkit-transform: scale();
-    -ms-transform: scale();
-    transform: scale();
+	opacity: 0;
+	-webkit-transform: scale();
+	-ms-transform: scale();
+	transform: scale();
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
+	opacity: 1;
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
   }
 }
 

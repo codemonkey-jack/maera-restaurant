@@ -46,6 +46,7 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 		 * @since 1.0.0
 		 */
 		function widget( $args, $instance ) {
+
 			extract( $args );
 
 			$query_args = array(
@@ -67,8 +68,8 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			);
 
 			$context              = Maera()->cache->get_context();
-			$context['post']      = Timber::query_post();
-			$context['posts']     = Timber::get_posts( $query_args );
+			$context['slide']     = Timber::query_post();
+			$context['slides']    = Timber::get_posts( $query_args );
 			$context['widget']    = $widget;
 
 			Timber::render(

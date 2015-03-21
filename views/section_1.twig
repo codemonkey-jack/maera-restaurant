@@ -3,8 +3,10 @@
 
 <section id="section_1" class="{% if parallax %}parallax{% endif %}">
 
-{% if sidebar.section_1 %}
+{% if sidebar.section_1 and function('is_active_sidebar','section_1') == true %}
 	{{ sidebar.section_1 }}
+{% else %}
+	{% include 'widget-extended-posts.twig' %}
 {% endif %}
 
 </section>

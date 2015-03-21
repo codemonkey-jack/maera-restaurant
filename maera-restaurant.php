@@ -140,13 +140,16 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		 * @return [type] [description]
 		 */
 		function customizer_config() {
+
+			$colors = Maera_Restaurant_Styles::palette_colors();
+
 			$args = array(
 				'stylesheet_id' => 'maera-res',
-				'color_active'  => '#415a72',
-				'color_light'   => '#658bb0',
-				'color_select'  => '#244363',
-				'color_accent'  => '#d16262',
-				'color_back'    => '#222',
+				'color_light'   => $colors[0],
+				'color_select'  => $colors[1],
+				'color_active'  => $colors[2],
+				'color_accent'  => $colors[3],
+				'color_back'    => $colors[4],
 				'logo_image'    => MAERA_RES_SHELL_URL . '/assets/img/maera_restaurant_logo.png',
 				'description'   => '<p>The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.</p>',
 			);
@@ -212,7 +215,6 @@ function maera_restaurant_licensing() {
 	if ( is_admin() && class_exists( 'Maera_Updater' ) ) {
 		$maera_res_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Restaurant Shell', MAERA_RES_VER, '@briancwelch' );
 	}
-
 }
 add_action( 'init', 'maera_restaurant_licensing' );
 
@@ -221,7 +223,6 @@ add_action( 'init', 'maera_restaurant_licensing' );
  * Load Maera Restaurant widgets.
  */
 include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-slider-widget.php');
-include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-social-widget.php');
 include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-menu-widget.php');
 
 
@@ -230,19 +231,10 @@ include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-menu-widget.ph
  * @return [type] [description]
  */
 function maera_res_slider_widgets() {
+
 	register_widget( 'Maera_Restaurant_Slider_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_slider_widgets' );
-
-
-/**
- * Register the social widget.
- * @return [type] [description]
- */
-function maera_res_social_widgets() {
-	register_widget( 'Maera_Restaurant_Social_widget' );
-}
-add_action( 'widgets_init', 'maera_res_social_widgets' );
 
 
 /**
@@ -250,13 +242,14 @@ add_action( 'widgets_init', 'maera_res_social_widgets' );
  * @return [type] [description]
  */
 function maera_res_menu_widgets() {
+
 	register_widget( 'Maera_Restaurant_Menu_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_menu_widgets' );
 
 
 /**
- * Add the Slider secondary image to Advanced Custom Fields
+ * Add the secondary slider image to Advanced Custom Fields
  */
 if ( function_exists( 'register_field_group' ) ){
 	register_field_group( array(

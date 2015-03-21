@@ -1,17 +1,28 @@
 {#<?php#}
-<div class="container">
+{{ widget.before_widget }}
+<div class="container recent-posts">
 	<div class="center wow fadeInDown">
-		<h2>{{ __( 'From The Kitchen', 'maera-restaurant' ) }}</h2>
+		{% if widget.title %}
+			{{ widget.before_title }}
+			{{ widget.title }}
+			{{ widget.after_title }}
+			{% else %}
+			<h2>{{ __( 'From The Kitchen', 'maera-restaurant' ) }}</h2>
+		{% endif %}
 		<p class="lead">{{ theme.theme_mod('recent_lead_text', 'Ut enim ad minim veniam.') }}</p>
 	</div>
 	<div class="row">
 		{% for post in posts %}
-		<div class="col-xs-12 col-sm-4 col-md-3 post_article no-margin">
+		<div class="col-xs-12 col-sm-4 col-md-3 post_article no-margin" itemscope itemtype="http://schema.org/Article">
 			<div class="recent-post-wrap">
 				<img class="img-responsive" src="{{ post.get_thumbnail.get_src|resize(500,500) }}" alt="{{ post.title }}">
 				<div class="overlay">
 					<div class="recent-post-inner">
-						<h3><a href="{{ post.permalink }}">{{ post.title }}</a></h3>
+						{% if widget.post_title_size %}
+						<{{ widget.post_title_size }} itemprop="name"><a href="{{ post.link }}">{{ post.title }}</a></{{widget.post_title_size}}>
+						{% else %}
+						<h3 itemprop="name"><a href="{{ post.link }}">{{ post.title }}</a></h3>
+						{% endif %}
 						<div class="meta-wrapper">
 							<time class="entry-date published" datetime="{{ post.date('c') }}">
 								<span itemprop="datePublished">{{ post.date }}</span>
@@ -34,5 +45,6 @@
 		{% endfor %}
 	</div>
 </div>
+{{ widget.after_widget }}
 
 <div class="clearfix"></div>

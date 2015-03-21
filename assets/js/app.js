@@ -3,13 +3,13 @@ jQuery(function($) {'use strict',
 	// Initiate WOW JS
 	new WOW().init();
 
-	// Accordian
+	// Accordion
 	$('.accordion-toggle').on('click', function(){
 		$(this).closest('.panel-group').children().each(function(){
 		$(this).find('>.panel-heading').removeClass('active');
 		 });
 
-	 	$(this).closest('.panel-heading').toggleClass('active');
+		 $(this).closest('.panel-heading').toggleClass('active');
 	});
 
 	// Goto top
