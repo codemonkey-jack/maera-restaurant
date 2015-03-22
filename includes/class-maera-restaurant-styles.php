@@ -316,7 +316,7 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 				$set_link_color   = get_theme_mod( 'link_color', '#325d88' );
 				$set_hover_color  = get_theme_mod( 'link_hover_color', '#244363' );
 				$set_navbar_color = get_theme_mod( 'navbar_color', '#333333' );
-				$set_footer_color = get_theme_mod( 'link_color', '#333333' );
+				$set_footer_color = get_theme_mod( 'footer_background', '#333333' );
 
 				set_theme_mod( 'brand_color', $set_brand_color );
 				set_theme_mod( 'link_color', $set_link_color );
@@ -326,11 +326,11 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 			} else {
 
-				set_theme_mod( 'brand_color', $content_primary );
-				set_theme_mod( 'link_color', $content_links );
-				set_theme_mod( 'link_hover_color', $content_light );
-				set_theme_mod( 'navbar_color', $content_dark );
-				set_theme_mod( 'footer_background', $content_dark );
+				set_theme_mod( 'brand_color', '#' . $content_primary );
+				set_theme_mod( 'link_color', '#' . $content_links );
+				set_theme_mod( 'link_hover_color', '#' . $content_light );
+				set_theme_mod( 'navbar_color', '#' . $content_dark );
+				set_theme_mod( 'footer_background', '#' . $content_dark );
 			}
 
 			$style = '';
