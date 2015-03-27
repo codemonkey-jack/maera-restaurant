@@ -1,0 +1,1136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maera Restaurant Shell v0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-03-27 14:28:19+0000\n"
+"Last-Translator: Brian C. Welch <contact@briancwelch.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: includes/class-maera-restaurant-customizer.php:62
+#@ maera-restaurant
+msgid "Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:62
+#@ maera-restaurant
+msgid "Set an array of background options."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:66
+#@ maera-restaurant
+msgid "Restaurant"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:67
+#@ maera-restaurant
+msgid "Layout"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:68
+#@ maera-restaurant
+msgid "Colors"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:69
+#@ maera-restaurant
+msgid "Typography"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:70
+#@ maera-restaurant
+msgid "First Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:71
+#@ maera-restaurant
+msgid "Second Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:72
+#@ maera-restaurant
+msgid "Third Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:73
+#@ maera-restaurant
+msgid "Fourth Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:74
+#@ maera-restaurant
+msgid "Fifth Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:75
+#@ maera-restaurant
+msgid "Content Areas"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:76
+#@ maera-restaurant
+msgid "Footer"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:77
+#@ maera-restaurant
+msgid "Social"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:117
+#@ maera-restaurant
+msgid "Restaurant Currency."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:122
+#@ maera-restaurant
+msgid "This currency will be used throughout the Restaurant for menu items."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:128
+#@ maera-restaurant
+msgid "Restaurant Phone Number"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:130
+#@ maera-restaurant
+msgid "+555-867-5309"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:137
+#@ maera-restaurant
+msgid "Menu Page Ordering."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:141
+#@ maera-restaurant
+msgid "You can use this to select how the restaurant menu items are ordered."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:143
+#@ maera-restaurant
+msgid "None"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:144
+#@ maera-restaurant
+msgid "By ID"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:145
+#@ maera-restaurant
+msgid "By Author"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:146
+#@ maera-restaurant
+msgid "By Title"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:147
+#@ maera-restaurant
+msgid "By Date"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:148
+#@ maera-restaurant
+msgid "By Last Modified Date"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:149
+#@ maera-restaurant
+msgid "By Parent"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:150
+#@ maera-restaurant
+msgid "Random"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:151
+#@ maera-restaurant
+msgid "By Comment Count"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:152
+#@ maera-restaurant
+msgid "By Menu Page Order"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:159
+#@ maera-restaurant
+msgid "Restaurant Menu sorting order."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:164
+#@ maera-restaurant
+msgid "Ascending"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:165
+#@ maera-restaurant
+msgid "Descending"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:172
+#@ maera-restaurant
+msgid "Menu Page Layout."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:173
+#@ maera-restaurant
+msgid "Examples may be <a href=\"http://isotope.metafizzy.co/layout-modes.html\" target=\"_blank\">found here</a>. "
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:177
+#@ maera-restaurant
+msgid "Select the Isotope layout mode for how the restaurant menu is displayed."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:179
+#@ maera-restaurant
+msgid "Masonry"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:180
+#@ maera-restaurant
+msgid "Masonry - Horizontal"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:181
+#@ maera-restaurant
+msgid "Fit Rows"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:182
+#@ maera-restaurant
+msgid "Fit Columns"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:183
+#@ maera-restaurant
+msgid "Cells - By Row"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:184
+#@ maera-restaurant
+msgid "Cells - By Column"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:185
+#@ maera-restaurant
+msgid "Vertical"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:186
+#@ maera-restaurant
+msgid "Horizontal"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:193
+#@ maera-restaurant
+msgid "Recent Posts Sub-text"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:195
+#@ maera-restaurant
+msgid "Our chef cooks up something wonderful."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:214
+#@ maera-restaurant
+msgid "Page Layout"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:215
+#@ maera-restaurant
+msgid "Select your main layout. If no widgets are present in the sidebar, it will not be displayed. "
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:225
+#@ maera-restaurant
+msgid "Front Page Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:226
+#@ maera-resstaurant
+msgid "You may drag and reorder the sections as desired."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:230
+#@ maera-restaurant
+msgid "Click the \"eye\" to toggle the section from being displayed."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:232
+#@ maera-restaurant
+msgid "Section 1"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:233
+#@ maera-restaurant
+msgid "Section 2"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:234
+#@ maera-restaurant
+msgid "Section 3"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:235
+#@ maera-restaurant
+msgid "Section 4"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:236
+#@ maera-restaurant
+msgid "Section 5"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:243
+#@ maera-restaurant
+msgid "Enable Contact Bar"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:248
+#: includes/class-maera-restaurant-customizer.php:275
+#@ maera-restaurant
+msgid "On"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:249
+#: includes/class-maera-restaurant-customizer.php:276
+#@ maera-restaurant
+msgid "Off"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:256
+#@ maera-restaurant
+msgid "Contact Bar Position"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:262
+#@ maera-restaurant
+msgid "Top"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:263
+#@ maera-restaurant
+msgid "Bottom"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:270
+#@ maera-restaurant
+msgid "Enable Breadcrumbs"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:295
+#@ maera-restaurant
+msgid "Automatic Color Calculations"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:296
+#@ maera-restaurant
+msgid "Enabling automatic color calculations will allow you to select from a range of color palettes to use.  After enabling this option, refresh the customizer page."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:305
+#@ maera-restaurant
+msgid "Color Palette"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:306
+#@ maera-restaurant
+msgid "Select a pre-defined color palette to use."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:307
+#@ maera-restaurant
+msgid "Selecting a pre-defined color palette will automatically handle most of the colors and styling of the site."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:318
+#@ maera-restaurant
+msgid "Invert Palettes"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:328
+#@ maera-restaurant
+msgid "Primary Brand Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:384
+#@ maera-restaurant
+msgid "Link Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:398
+#@ maera-restaurant
+msgid "Link Hover Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:412
+#@ maera-restaurant
+msgid "Navbar Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:438
+#@ maera-restaurant
+msgid "Content Font"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:452
+#@ maera-restaurant
+msgid "Font subsets"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:453
+#@ maera-restaurant
+msgid "The subsets used from Google's API."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:467
+#@ maera-restaurant
+msgid "Content Font Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:481
+#@ maera-restaurant
+msgid "Content Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:500
+#@ maera-restaurant
+msgid "Content Font Weight"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:518
+#@ maera-restaurant
+msgid "Navbar Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:544
+#@ maera-restaurant
+msgid "Navbar Font Weight"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:562
+#@ maera-restaurant
+msgid "Header Fonts"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:576
+#@ maera-restaurant
+msgid "Header Font Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:590
+#@ maera-restaurant
+msgid "H1 Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:609
+#@ maera-restaurant
+msgid "H2 Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:628
+#@ maera-restaurant
+msgid "H3 Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:647
+#@ maera-restaurant
+msgid "H4 Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:666
+#@ maera-restaurant
+msgid "H5 Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:685
+#@ maera-restaurant
+msgid "H6 Font Size (px)"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:704
+#@ maera-restaurant
+msgid "Headers Font Weight"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:734
+#: includes/class-maera-restaurant-customizer.php:775
+#: includes/class-maera-restaurant-customizer.php:816
+#: includes/class-maera-restaurant-customizer.php:857
+#: includes/class-maera-restaurant-customizer.php:898
+#@ maera-restaurant
+msgid "Enable Parallax"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:738
+#: includes/class-maera-restaurant-customizer.php:779
+#: includes/class-maera-restaurant-customizer.php:820
+#: includes/class-maera-restaurant-customizer.php:861
+#: includes/class-maera-restaurant-customizer.php:902
+#@ maera-restaurant
+msgid "Enabling Parallax will override the background position."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:744
+#@ maera-restaurant
+msgid "First Section Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:745
+#@ maera-restaurant
+msgid "Set the background options for the first section."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:785
+#@ maera-restaurant
+msgid "Second Section Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:786
+#@ maera-restaurant
+msgid "Set the background options for the second section."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:826
+#@ maera-restaurant
+msgid "Third Section Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:827
+#@ maera-restaurant
+msgid "Set the background options for the third section."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:867
+#@ maera-restaurant
+msgid "Fourth Section Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:868
+#@ maera-restaurant
+msgid "Set the background options for the fourth section."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:908
+#@ maera-restaurant
+msgid "Fifth Section Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:909
+#@ maera-restaurant
+msgid "Set the background options for the fifth section."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:939
+#@ maera-restaurant
+msgid "Body Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:940
+#@ maera-restaurant
+msgid "Set the background options for the body section."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:958
+#@ maera-restaurant
+msgid "Recent Posts Background Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:959
+#@ maera-restaurant
+msgid "Set the background color for the recent posts."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:972
+#@ maera-restaurant
+msgid "Main Content Background"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:973
+#@ maera-restaurant
+msgid "Set the background options for the main content sections."
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1007
+#@ maera-restaurant
+msgid "Footer Background Color"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1021
+#@ maera-restaurant
+msgid "Copyright Text"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1023
+#@ maera-restaurant
+msgid "&copy; 2015 - Maera Restaurant"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1042
+#@ maera-restaurant
+msgid "Facebook Link"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1044
+#@ maera-restaurant
+msgid "http://facebook.com/"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1051
+#@ maera-restaurant
+msgid "Twitter Link"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1053
+#@ maera-restaurant
+msgid "http://twitter.com/"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1060
+#@ maera-restaurant
+msgid "Google+ Link"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1062
+#@ maera-restaurant
+msgid "http://plus.google.com/"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1069
+#@ maera-restaurant
+msgid "Youtube Link"
+msgstr ""
+
+#: includes/class-maera-restaurant-customizer.php:1071
+#@ maera-restaurant
+msgid "http://youtube.com/"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:92
+#@ maera-restaurant
+msgid "US Dollars (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:93
+#@ maera-restaurant
+msgid "Euros (&euro;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:94
+#@ maera-restaurant
+msgid "Pounds Sterling (&pound;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:95
+#@ maera-restaurant
+msgid "Australian Dollars (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:96
+#@ maera-restaurant
+msgid "Brazilian Real (R&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:97
+#@ maera-restaurant
+msgid "Canadian Dollars (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:98
+#@ maera-restaurant
+msgid "Czech Koruna"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:99
+#@ maera-restaurant
+msgid "Danish Krone"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:100
+#@ maera-restaurant
+msgid "Hong Kong Dollar (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:101
+#@ maera-restaurant
+msgid "Hungarian Forint"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:102
+#@ maera-restaurant
+msgid "Israeli Shekel (&#8362;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:103
+#@ maera-restaurant
+msgid "Japanese Yen (&yen;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:104
+#@ maera-restaurant
+msgid "Malaysian Ringgits"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:105
+#@ maera-restaurant
+msgid "Mexican Peso (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:106
+#@ maera-restaurant
+msgid "New Zealand Dollar (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:107
+#@ maera-restaurant
+msgid "Norwegian Krone"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:108
+#@ maera-restaurant
+msgid "Philippine Pesos"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:109
+#@ maera-restaurant
+msgid "Polish Zloty"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:110
+#@ maera-restaurant
+msgid "Singapore Dollar (&#36;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:111
+#@ maera-restaurant
+msgid "Swedish Krona"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:112
+#@ maera-restaurant
+msgid "Swiss Franc"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:113
+#@ maera-restaurant
+msgid "Taiwan New Dollars"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:114
+#@ maera-restaurant
+msgid "Thai Baht (&#3647;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:115
+#@ maera-restaurant
+msgid "Indian Rupee (&#8377;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:116
+#@ maera-restaurant
+msgid "Turkish Lira (&#8378;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:117
+#@ maera-restaurant
+msgid "Iranian Rial (&#65020;)"
+msgstr ""
+
+#: includes/class-maera-restaurant-data.php:118
+#@ maera-restaurant
+msgid "Russian Rubles"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:49
+#@ default
+msgctxt "post type general name"
+msgid "Slides"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:50
+#@ default
+msgctxt "post type singular name"
+msgid "Slide"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:51
+#@ default
+msgctxt "slide"
+msgid "Add New Slide"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:52
+#@ default
+msgid "Add New Slide"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:53
+#@ default
+msgid "Edit Slide"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:54
+#@ default
+msgid "New Slide"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:55
+#@ default
+msgid "View Slide"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:56
+#@ default
+msgid "Search Slides"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:57
+#@ default
+msgid "No slides found"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:58
+#@ default
+msgid "No slides found in trash."
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:83
+#@ default
+msgctxt "taxonomy general name"
+msgid "Tags"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:84
+#@ default
+msgctxt "taxonomy singular name"
+msgid "Tag"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:85
+#@ default
+msgid "Search Types"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:86
+#@ default
+msgid "All Tags"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:87
+#@ default
+msgid "Parent Tag"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:88
+#@ default
+msgid "Parent Tag:"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:89
+#@ default
+msgid "Edit Tags"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:90
+#@ default
+msgid "Update Tag"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:91
+#@ default
+msgid "Add New Tag"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:92
+#@ default
+msgid "New Tag Name"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:118
+#, php-format
+#@ default
+msgid "Slide updated. <a href=\"%s\">View slide</a>"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:119
+#@ default
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:120
+#@ default
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:121
+#@ default
+msgid "Slide updated."
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:122
+#, php-format
+#@ default
+msgid "Slide restored to revision from %s"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:123
+#, php-format
+#@ default
+msgid "Slide published. <a href=\"%s\">View slide</a>"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:124
+#@ default
+msgid "Slide saved."
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:125
+#, php-format
+#@ default
+msgid "Slide submitted. <a target=\"_blank\" href=\"%s\">Preview slide</a>"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:126
+#, php-format
+#@ default
+msgid "Slide scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview slide</a>"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:127
+#@ default
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: includes/class-maera-restaurant-posttypes.php:128
+#, php-format
+#@ default
+msgid "Slide draft updated. <a target=\"_blank\" href=\"%s\">Preview slide</a>"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:49
+#@ maera-restaurant
+msgctxt "Taxonomy General Name"
+msgid "Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:50
+#@ maera-restaurant
+msgctxt "Taxonomy Singular Name"
+msgid "Menu Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:51
+#@ maera-restaurant
+msgid "Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:52
+#@ maera-restaurant
+msgid "All Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:53
+#@ maera-restaurant
+msgid "Parent Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:54
+#@ maera-restaurant
+msgid "Parent Menu Section:"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:55
+#@ maera-restaurant
+msgid "New Menu Section Name"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:56
+#@ maera-restaurant
+msgid "Add New Menu Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:57
+#@ maera-restaurant
+msgid "Edit Menu Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:58
+#@ maera-restaurant
+msgid "Update Menu Section"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:59
+#@ maera-restaurant
+msgid "Separate Menu Sections with commas"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:60
+#@ maera-restaurant
+msgid "Search Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:61
+#@ maera-restaurant
+msgid "Add or remove Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:62
+#@ maera-restaurant
+msgid "Choose from the most used Menu Sections"
+msgstr ""
+
+#: includes/class-maera-restaurant-taxonomies.php:63
+#@ maera-restaurant
+msgid "Menu Section Not Found"
+msgstr ""
+
+#: includes/class-maera-restaurant-widget-areas.php:37
+#@ maera-restaurant
+msgid "Width"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:37
+#@ maera-restaurant
+msgid "Maera Restaurant - Menu"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:38
+#@ maera-restaurant
+msgid "Maera Restaurant menu widget."
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:120
+#@ maera
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:125
+#@ maera-restaurant
+msgid "Number of menu items to display."
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:131
+#@ maera-restaurant
+msgid "Show Price?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:137
+#@ maera-restaurant
+msgid "Show featured images?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:143
+#@ maera-restaurant
+msgid "Show tags?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-menu-widget.php:149
+#@ maera-restaurant
+msgid "Show link to menu page?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:37
+#@ maera
+msgid "Maera Restaurant - Slider"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:38
+#@ maera
+msgid "Maera slider widget."
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:124
+#@ maera-restaurant
+msgid "Number of slides to display"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:128
+#@ maera-restaurant
+msgid "Offset"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:133
+#@ maera-restaurant
+msgid "Interval (ms)"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:140
+#@ maera-restaurant
+msgid "Pause on hover?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:147
+#@ maera-restaurant
+msgid "Cycle slider continually?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:154
+#@ maera-restaurant
+msgid "Enable Parallax?"
+msgstr ""
+
+#: includes/widgets/class-maera-restaurant-slider-widget.php:161
+#@ maera-restaurant
+msgid "Enable Overlay Image?"
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: maera-restaurant.php:0
+#@ maera-restaurant
+msgid "Maera Restaurant Shell"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: maera-restaurant.php:0
+#@ maera-restaurant
+msgid "https://press.codes"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: maera-restaurant.php:0
+#@ maera-restaurant
+msgid "Restaurant shell for the Maera theme."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: maera-restaurant.php:0
+#@ maera-restaurant
+msgid "Brian C. Welch"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: maera-restaurant.php:0
+#@ maera-restaurant
+msgid "http://briancwelch.com"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: maera-restaurant.php:0
+#@ maera-restaurant
+msgid "0.1.0"
+msgstr ""
+
+#: maera-restaurant.php:215
+#@ default
+msgid "Slide - Background Image"
+msgstr ""
+

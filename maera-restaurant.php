@@ -45,6 +45,21 @@ add_filter( 'maera/shells/available', 'maera_include_restaurant_shell' );
 
 
 /**
+ * Plugin textdomains
+ */
+function maera_restaurant_texdomain() {
+	$lang_dir    = get_template_directory() . '/languages';
+	$custom_path = WP_LANG_DIR . '/maera-' . get_locale() . '.mo';
+	if ( file_exists( $custom_path ) ) {
+		load_plugin_textdomain( 'maera-restaurant', $custom_path );
+	} else {
+		load_plugin_textdomain( 'maera-restaurant', false, $lang_dir );
+	}
+}
+add_action( 'plugins_loaded', 'maera_restaurant_texdomain' );
+
+
+/**
 * Maera Restaurant Main Class
 *
 * @category      Plugin
@@ -213,7 +228,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 function maera_restaurant_licensing() {
 
 	if ( is_admin() && class_exists( 'Maera_Updater' ) ) {
-		$maera_res_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Restaurant Shell', MAERA_RES_VER, '@briancwelch' );
+		$maera_res_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Restaurant Shell', MAERA_RES_VER, '@brianwelch' );
 	}
 }
 add_action( 'init', 'maera_restaurant_licensing' );
