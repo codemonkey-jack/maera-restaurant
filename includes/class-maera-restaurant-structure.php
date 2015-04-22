@@ -1,19 +1,19 @@
 <?php
 
 /**
-* Maera Restaurant Structure Class
-*
-* @category      Plugin
-* @package       Maera Shell
-* @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch, Press.Codes, Maera
-* @license       http://opensource.org/licenses/MIT MIT License
-* @version       Development: @MAERA_RES_VER@
-* @link          http://press.codes
-* @see           Maera_Restaurant_Structure(), Maera_Restaurant_Structure::method()
-* @since         Class available since Release 1.0.0
-*
-*/
+ * Maera Restaurant Structure Class
+ *
+ * @category      Plugin
+ * @package       Maera Shell
+ * @author        Brian C. Welch <contact@briancwelch.com>
+ * @copyright     2015 Brian C. Welch, Press.Codes, Maera
+ * @license       http://opensource.org/licenses/MIT MIT License
+ * @version       Development: @MAERA_RES_VER@
+ * @link          http://press.codes
+ * @see           Maera_Restaurant_Structure(), Maera_Restaurant_Structure::method()
+ * @since         Class available since Release 1.0.0
+ *
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 
 	class Maera_Restaurant_Structure {
-
 
 		/**
 		 * Class Constructor
@@ -37,8 +36,8 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 			// Add filters.
 			add_filter( 'maera/section_class/content', array( $this, 'page_layout' ) );
 			add_filter( 'maera/restaurant/menu_class', array( $this, 'menu_layout' ) );
-		}
 
+		}
 
 		/**
 		 * Change the page class based on layout selected.
@@ -46,13 +45,7 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 		 * @return [type]          [description]
 		 */
 		function page_layout( $classes ) {
-			$page_layout = get_theme_mod( 'page_layout', 0 );
-			if ( 1 == $page_layout ) {
-				$classes = 'col-md-8';
-			} else {
-				$classes = 'col-md-12';
-			}
-			return $classes;
+			return ( 1 == get_theme_mod( 'page_layout', 0 ) ) ? 'col-md-8' : 'col-md-12';
 		}
 
 
@@ -63,15 +56,9 @@ if ( ! class_exists( 'Maera_Restaurant_Structure' ) ) {
 		 * @return [type]          [description]
 		 */
 		function menu_layout( $classes ) {
-			$page_layout = get_theme_mod( 'page_layout', 0 );
-			if ( 1 == $page_layout ) {
-				$classes = 'col-md-12';
-			} else {
-				$classes = 'col-md-6';
-			}
-			return $classes;
+			return ( 1 == get_theme_mod( 'page_layout', 0 ) )  ? 'col-md-12' : 'col-md-6';
 		}
 
-		// End Methods
-	}  // End Class
-}     // End If
+	} // End Class
+
+} // End If
