@@ -1,19 +1,19 @@
 <?php
 
 /**
-* Maera Restaurant Styles Class
-*
-* @category      Plugin
-* @package       Maera Shell
-* @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch, Press.Codes, Maera
-* @license       http://opensource.org/licenses/MIT MIT License
-* @version       Development: @MAERA_RES_VER@
-* @link          http://press.codes
-* @see           Maera_Restaurant_Styles(), Maera_Restaurant_Styles::method()
-* @since         Class available since Release 1.0.0
-*
-*/
+ * Maera Restaurant Styles Class
+ *
+ * @category      Plugin
+ * @package       Maera Shell
+ * @author        Brian C. Welch <contact@briancwelch.com>
+ * @copyright     2015 Brian C. Welch, Press.Codes, Maera
+ * @license       http://opensource.org/licenses/MIT MIT License
+ * @version       Development: @MAERA_RES_VER@
+ * @link          http://press.codes
+ * @see           Maera_Restaurant_Styles(), Maera_Restaurant_Styles::method()
+ * @since         Class available since Release 1.0.0
+ *
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,8 +37,8 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 			// Add filters.
 			// NULL
-		}
 
+		}
 
 		/**
 		 * Set the color palettes to use for the color calculations and shell options.
@@ -47,105 +47,32 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		public static function color_palettes() {
 
 			if ( 0 == get_theme_mod( 'invert_palettes', 0 ) ) {
+
 				$palettes = array(
-					'red' => array(
-						'#F5F5F5',
-						'#F9BAAF',
-						'#FB9D8C',
-						'#FD8069',
-						'#FF6347',
-						'#333333',
-					),
-					'orange' => array(
-						'#F5F5F5',
-						'#F9CDAF',
-						'#FBB98D',
-						'#FDA56A',
-						'#FF9148',
-						'#333333',
-					),
-					'yellow' => array(
-						'#F5F5F5',
-						'#F9E6AF',
-						'#FBDF8D',
-						'#FDD86A',
-						'#FFD148',
-						'#333333',
-					),
-					'green' => array(
-						'#F5F5F5',
-						'#C9F7C4',
-						'#B3F9AC',
-						'#9DFA94',
-						'#88FC7C',
-						'#333333',
-					),
-					'blue' => array(
-						'#F5F5F5',
-						'#D9E3F6',
-						'#CCDAF7',
-						'#BED1F8',
-						'#B1C9F9',
-						'#333333',
-					),
-					'violet' => array(
-						'#F5F5F5',
-						'#E5E0F6',
-						'#DED6F6',
-						'#D6CCF7',
-						'#CFC2F8',
-						'#333333',
-					)
+					'red'    => array( '#F5F5F5', '#F9BAAF', '#FB9D8C', '#FD8069', '#FF6347', '#333333' ),
+					'orange' => array( '#F5F5F5', '#F9CDAF', '#FBB98D', '#FDA56A', '#FF9148', '#333333' ),
+					'yellow' => array( '#F5F5F5', '#F9E6AF', '#FBDF8D', '#FDD86A', '#FFD148', '#333333' ),
+					'green'  => array( '#F5F5F5', '#C9F7C4', '#B3F9AC', '#9DFA94', '#88FC7C', '#333333' ),
+					'blue'   => array( '#F5F5F5', '#D9E3F6', '#CCDAF7', '#BED1F8', '#B1C9F9', '#333333' ),
+					'violet' => array( '#F5F5F5', '#E5E0F6', '#DED6F6', '#D6CCF7', '#CFC2F8', '#333333' )
 				);
+
 			} else {
+
 				// Array indexes still match non inverted names.
 				$palettes = array(
-					'red' => array(
-						'#00B7AF',
-						'#058088',
-						'#085C67',
-						'#093848',
-						'#DDDDDD',
-					),
-					'orange' => array(
-						'#0076BA',
-						'#005B98',
-						'#00448D',
-						'#001E5E',
-						'#DDDDDD',
-					),
-					'yellow' => array(
-						'#182A9C',
-						'#03077E',
-						'#01044E',
-						'#000131',
-						'#DDDDDD',
-					),
-					'green' => array(
-						'#C47979',
-						'#864265',
-						'#572457',
-						'#300F61',
-						'#DDDDDD',
-					),
-					'blue' => array(
-						'#8C5D42',
-						'#794B30',
-						'#603D29',
-						'#472F21',
-						'#DDDDDD',
-					),
-					'violet' => array(
-						'#667047',
-						'#3E4C2B',
-						'#1B2205',
-						'#101A05',
-						'#DDDDDD',
-					)
+					'red'    => array( '#00B7AF', '#058088', '#085C67', '#093848', '#DDDDDD' ),
+					'orange' => array( '#0076BA', '#005B98', '#00448D', '#001E5E', '#DDDDDD' ),
+					'yellow' => array( '#182A9C', '#03077E', '#01044E', '#000131', '#DDDDDD' ),
+					'green'  => array( '#C47979', '#864265', '#572457', '#300F61', '#DDDDDD' ),
+					'blue'   => array( '#8C5D42', '#794B30', '#603D29', '#472F21', '#DDDDDD' ),
+					'violet' => array( '#667047', '#3E4C2B', '#1B2205', '#101A05', '#DDDDDD' )
 				);
+
 			}
 
 			return $palettes;
+
 		}
 
 
@@ -154,11 +81,13 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		 * @return [type] [description]
 		 */
 		public static function palette_colors() {
-			$palettes = Maera_Restaurant_Styles::color_palettes();
+
+			$palettes = self::color_palettes();
 			$setting  = get_theme_mod( 'color_palette', 'blue' );
-			$colors   = $palettes[ $setting ];
+			$colors   = $palettes[$setting];
 
 			return $colors;
+
 		}
 
 
@@ -166,7 +95,7 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		 * Color calculations.
 		 * @return [type] [description]
 		 */
-		function color_calculations() {
+		public function color_calculations() {
 
 			$colors = $this->palette_colors();
 
@@ -341,67 +270,25 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 			$style = '';
 
-			$style .= 'body a{';
-			$style .= 'color: #'. $content_links .';';
-			$style .= '}';
-
-			$style .= 'body a:hover{';
-			$style .= 'color: #'. $content_primary .';';
-			$style .= '}';
-
-			$style .= 'body, body h1, body h2, body h3, body h4, body h5, body h6, body p{';
-			$style .= 'color: '. $body_font_color .';';
-			$style .= '}';
-
-			$style .= '#wrap-main-section h1, #wrap-main-section h2, #wrap-main-section h3, #wrap-main-section h4, #wrap-main-section h5, #wrap-main-section h6, #wrap-main-section p{';
-			$style .= 'color: '. $content_font_color .';';
-			$style .= '}';
-
-			$style .= '.label-primary{';
-			$style .= 'background-color: #'. $content_primary .';';
-			$style .= '}';
-
-			$style .= '.navbar-default{';
-			$style .= 'background-color: #'. $content_dark .';';
-			$style .= '}';
-
-			$style .= '.navbar-default .navbar-nav > li > a {';
-			$style .= 'color: #'. $dark_font .';';
-			$style .= '}';
-
-			$style .= '#section_1 h1, #section_1 h2, #section_1 h3, #section_1 h4, #section_1 h5, #section_1 h6, #section_1 p{';
-			$style .= 'color: '. $section1_font_color .';';
-			$style .= '}';
-
-			$style .= '#section_2 h1, #section_2 h2, #section_2 h3, #section_2 h4, #section_2 h5, #section_2 h6, #section_2 p{';
-			$style .= 'color: '. $section2_font_color .';';
-			$style .= '}';
-
-			$style .= '#section_3 h1, #section_3 h2, #section_3 h3, #section_3 h4, #section_3 h5, #section_3 h6, #section_3 p{';
-			$style .= 'color: '. $section3_font_color .';';
-			$style .= '}';
-
-			$style .= '#section_4 h1, #section_4 h2, #section_4 h3, #section_4 h4, #section_4 h5, #section_4 h6, #section_4 p{';
-			$style .= 'color: '. $section4_font_color .';';
-			$style .= '}';
-
-			$style .= '#section_5 h1, #section_5 h2, #section_5 h3, #section_5 h4, #section_5 h5, #section_5 h6, #section_5 p{';
-			$style .= 'color: '. $section5_font_color .';';
-			$style .= '}';
-
-			$style .= '#footer{';
-			$style .= 'background-color: #'. $content_dark .';';
-			$style .= 'color: #'. $dark_font .'';
-			$style .= '}';
-
-			$style .= '#footer p{';
-			$style .= 'color: #'. $dark_font .'';
-			$style .= '}';
+			$style .= 'body a{color:#' . str_replace( '#', '', $content_links ) . ';}';
+			$style .= 'body a:hover{color:#' . str_replace( '#', '', $content_primary ) . ';}';
+			$style .= 'body, body h1, body h2, body h3, body h4, body h5, body h6, body p{color:' . $body_font_color . ';}';
+			$style .= '#wrap-main-section h1, #wrap-main-section h2, #wrap-main-section h3, #wrap-main-section h4, #wrap-main-section h5, #wrap-main-section h6, #wrap-main-section p{color:' . $content_font_color . ';}';
+			$style .= '.label-primary{background-color:#' . str_replace( '#', '', $content_primary ) . ';}';
+			$style .= '.navbar-default{background-color:#' . str_replace( '#', '', $content_dark ) . ';}';
+			$style .= '.navbar-default .navbar-nav > li > a {color:#' . str_replace( '#', '', $dark_font ) . ';}';
+			$style .= '#section_1 h1, #section_1 h2, #section_1 h3, #section_1 h4, #section_1 h5, #section_1 h6, #section_1 p{color:' . $section1_font_color . ';}';
+			$style .= '#section_2 h1, #section_2 h2, #section_2 h3, #section_2 h4, #section_2 h5, #section_2 h6, #section_2 p{color:' . $section2_font_color . ';}';
+			$style .= '#section_3 h1, #section_3 h2, #section_3 h3, #section_3 h4, #section_3 h5, #section_3 h6, #section_3 p{color:' . $section3_font_color . ';}';
+			$style .= '#section_4 h1, #section_4 h2, #section_4 h3, #section_4 h4, #section_4 h5, #section_4 h6, #section_4 p{color:' . $section4_font_color . ';}';
+			$style .= '#section_5 h1, #section_5 h2, #section_5 h3, #section_5 h4, #section_5 h5, #section_5 h6, #section_5 p{color:' . $section5_font_color . ';}';
+			$style .= '#footer{background-color:#' . str_replace( '#', '', $content_dark ) . ';color:#' . str_replace( '#', '', $dark_font ) . '}';
+			$style .= '#footer p{color:#' . str_replace( '#', '', $dark_font ) . '}';
 
 			wp_add_inline_style( 'maera-res', $style );
 
 		}
 
-		// End Methods
-	}  // End Class
-}     // End If
+	} // End Class
+
+} // End If

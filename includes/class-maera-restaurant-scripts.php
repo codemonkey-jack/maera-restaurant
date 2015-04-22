@@ -1,19 +1,19 @@
 <?php
 
 /**
-* Maera Restaurant Scripts Class
-*
-* @category      Plugin
-* @package       Maera Shell
-* @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch, Press.Codes, Maera
-* @license       http://opensource.org/licenses/MIT MIT License
-* @version       Development: @MAERA_RES_VER@
-* @link          http://press.codes
-* @see           Maera_Restaurant_Scripts(), Maera_Restaurant_Scripts::method()
-* @since         Class available since Release 1.0.0
-*
-*/
+ * Maera Restaurant Scripts Class
+ *
+ * @category      Plugin
+ * @package       Maera Shell
+ * @author        Brian C. Welch <contact@briancwelch.com>
+ * @copyright     2015 Brian C. Welch, Press.Codes, Maera
+ * @license       http://opensource.org/licenses/MIT MIT License
+ * @version       Development: @MAERA_RES_VER@
+ * @link          http://press.codes
+ * @see           Maera_Restaurant_Scripts(), Maera_Restaurant_Scripts::method()
+ * @since         Class available since Release 1.0.0
+ *
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 
 	class Maera_Restaurant_Scripts {
-
 
 		/**
 		 * Class Constructor
@@ -39,7 +38,6 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			// NULL
 
 		}
-
 
 		/**
 		 * Add any necessary scripts and stylesheets.
@@ -121,9 +119,10 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 
 				default:
 					return null;
-			}
-		}
 
+			}
+
+		}
 
 		/**
 		 * Add Admin area scripts.
@@ -133,6 +132,6 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 			// Add any additional scripts to the WordPress Admin area here.
 		}
 
-		// End Methods
-	}  // End Class
-}     // End If
+	} // End Class
+
+} // End If

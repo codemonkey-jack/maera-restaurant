@@ -1,19 +1,19 @@
 <?php
 
 /**
-* Maera Restaurant Post Types Class
-*
-* @category      Plugin
-* @package       Maera Shell
-* @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch, Press.Codes, Maera
-* @license       http://opensource.org/licenses/MIT MIT License
-* @version       Development: @MAERA_RES_VER@
-* @link          http://press.codes
-* @see           Maera_Restaurant_PostTypes(), Maera_Restaurant_PostTypes::method()
-* @since         Class available since Release 1.0.0
-*
-*/
+ * Maera Restaurant Post Types Class
+ *
+ * @category      Plugin
+ * @package       Maera Shell
+ * @author        Brian C. Welch <contact@briancwelch.com>
+ * @copyright     2015 Brian C. Welch, Press.Codes, Maera
+ * @license       http://opensource.org/licenses/MIT MIT License
+ * @version       Development: @MAERA_RES_VER@
+ * @link          http://press.codes
+ * @see           Maera_Restaurant_PostTypes(), Maera_Restaurant_PostTypes::method()
+ * @since         Class available since Release 1.0.0
+ *
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 
 	class Maera_Restaurant_PostTypes {
 
-
 		/**
 		 * Class Constructor
 		 */
@@ -33,11 +32,10 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 
 			// Add actions.
 			add_action( 'init',  array( $this, 'maera_res_slides' ) );
-
 			// Add filters.
 			add_filter( 'post_updated_messages',  array( $this, 'maera_res_slides_messages' ) );
-		}
 
+		}
 
 		/**
 		 * Add Slides custom post type
@@ -46,18 +44,18 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 		function maera_res_slides() {
 
 			$postlabels = array(
-				'name'               => _x( 'Slides', 'post type general name' ),
-				'singular_name'      => _x( 'Slide', 'post type singular name' ),
-				'add_new'            => _x( 'Add New Slide', 'slide' ),
-				'add_new_item'       => __( 'Add New Slide' ),
-				'edit_item'          => __( 'Edit Slide' ),
-				'new_item'           => __( 'New Slide' ),
-				'view_item'          => __( 'View Slide' ),
-				'search_items'       => __( 'Search Slides' ),
-				'not_found'          => __( 'No slides found' ),
-				'not_found_in_trash' => __( 'No slides found in trash.' ),
+				'name'               => _x( 'Slides', 'post type general name', 'maera-restaurant' ),
+				'singular_name'      => _x( 'Slide', 'post type singular name', 'maera-restaurant' ),
+				'add_new'            => _x( 'Add New Slide', 'slide', 'maera-restaurant' ),
+				'add_new_item'       => __( 'Add New Slide', 'maera-restaurant' ),
+				'edit_item'          => __( 'Edit Slide', 'maera-restaurant' ),
+				'new_item'           => __( 'New Slide', 'maera-restaurant' ),
+				'view_item'          => __( 'View Slide', 'maera-restaurant' ),
+				'search_items'       => __( 'Search Slides', 'maera-restaurant' ),
+				'not_found'          => __( 'No slides found', 'maera-restaurant' ),
+				'not_found_in_trash' => __( 'No slides found in trash.', 'maera-restaurant' ),
 				'parent_item_colon'  => '',
-				'menu_name'          => 'Slides',
+				'menu_name'          => __( 'Slides', 'maera-restaurant' ),
 			);
 
 			$args = array(
@@ -76,31 +74,30 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 				'supports'           => array( 'title', 'thumbnail', 'excerpt', 'comments', 'post-formats' ),
 			);
 
-			register_post_type( 'slide',$args );
+			register_post_type( 'slide', $args );
 
 			// Taxonomy Labels
 			$taxlabels = array(
-				'name'               => _x( 'Tags', 'taxonomy general name' ),
-				'singular_name'      => _x( 'Tag', 'taxonomy singular name' ),
-				'search_items'       => __( 'Search Types' ),
-				'all_items'          => __( 'All Tags' ),
-				'parent_item'        => __( 'Parent Tag' ),
-				'parent_item_colon'  => __( 'Parent Tag:' ),
-				'edit_item'          => __( 'Edit Tags' ),
-				'update_item'        => __( 'Update Tag' ),
-				'add_new_item'       => __( 'Add New Tag' ),
-				'new_item_name'      => __( 'New Tag Name' ),
+				'name'               => _x( 'Tags', 'taxonomy general name', 'maera-restaurant' ),
+				'singular_name'      => _x( 'Tag', 'taxonomy singular name', 'maera-restaurant' ),
+				'search_items'       => __( 'Search Types', 'maera-restaurant' ),
+				'all_items'          => __( 'All Tags', 'maera-restaurant' ),
+				'parent_item'        => __( 'Parent Tag', 'maera-restaurant' ),
+				'parent_item_colon'  => __( 'Parent Tag:', 'maera-restaurant' ),
+				'edit_item'          => __( 'Edit Tags', 'maera-restaurant' ),
+				'update_item'        => __( 'Update Tag', 'maera-restaurant' ),
+				'add_new_item'       => __( 'Add New Tag', 'maera-restaurant' ),
+				'new_item_name'      => __( 'New Tag Name', 'maera-restaurant' ),
 			);
 
 			// Custom Taxonomy Tags
-			register_taxonomy( 'tagslide', array( 'slide' ),
-				array(
-					'hierarchical'   => true,
-					'labels'         => $taxlabels,
-					'show_ui'        => true,
-					'query_var'      => true,
-					'rewrite'        => array( 'slug' => 'tag-slide' ),
-				));
+			register_taxonomy( 'tagslide', array( 'slide' ), array(
+				'hierarchical'   => true,
+				'labels'         => $taxlabels,
+				'show_ui'        => true,
+				'query_var'      => true,
+				'rewrite'        => array( 'slug' => 'tag-slide' ),
+			) );
 		}
 
 
@@ -114,22 +111,23 @@ if ( ! class_exists( 'Maera_Restaurant_PostTypes' ) ) {
 			global $post, $post_ID;
 
 			$messages['slide'] = array(
-				0     => '', // Unused. Messages start at index 1.
-				1     => sprintf( __( 'Slide updated. <a href="%s">View slide</a>' ), esc_url( get_permalink( $post_ID ) ) ),
-				2     => __( 'Custom field updated.' ),
-				3     => __( 'Custom field deleted.' ),
-				4     => __( 'Slide updated.' ),
-				5     => isset( $_GET[ 'revision' ] ) ? sprintf( __( 'Slide restored to revision from %s' ), wp_post_revision_title( (int) $_GET[ 'revision' ], false ) ) : false, // input var okay
-				6     => sprintf( __( 'Slide published. <a href="%s">View slide</a>' ), esc_url( get_permalink( $post_ID ) ) ),
-				7     => __( 'Slide saved.' ),
-				8     => sprintf( __( 'Slide submitted. <a target="_blank" href="%s">Preview slide</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
-				9     => sprintf( __( 'Slide scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview slide</a>' ),
-				date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
-				10    => sprintf( __( 'Slide draft updated. <a target="_blank" href="%s">Preview slide</a>' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+				0  => '', // Unused. Messages start at index 1.
+				1  => sprintf( __( 'Slide updated. <a href="%s">View slide</a>', 'maera-restaurant' ), esc_url( get_permalink( $post_ID ) ) ),
+				2  => __( 'Custom field updated.', 'maera-restaurant' ),
+				3  => __( 'Custom field deleted.', 'maera-restaurant' ),
+				4  => __( 'Slide updated.', 'maera-restaurant' ),
+				5  => isset( $_GET[ 'revision' ] ) ? sprintf( __( 'Slide restored to revision from %s', 'maera-restaurant' ), wp_post_revision_title( (int) $_GET[ 'revision' ], false ) ) : false, // input var okay
+				6  => sprintf( __( 'Slide published. <a href="%s">View slide</a>', 'maera-restaurant' ), esc_url( get_permalink( $post_ID ) ) ),
+				7  => __( 'Slide saved.', 'maera-restaurant' ),
+				8  => sprintf( __( 'Slide submitted. <a target="_blank" href="%s">Preview slide</a>', 'maera-restaurant' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
+				9  => sprintf( __( 'Slide scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview slide</a>', 'maera-restaurant' ), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink( $post_ID ) ) ),
+				10 => sprintf( __( 'Slide draft updated. <a target="_blank" href="%s">Preview slide</a>', 'maera-restaurant' ), esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) ) ),
 			);
+
 			return $messages;
+
 		}
 
-		// End Methods
 	} // End Class
+
 } // End if

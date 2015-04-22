@@ -1,23 +1,23 @@
 <?php
 
 /**
-* Maera Restaurant Data Class
-*
-* @category      Plugin
-* @package       Maera Shell
-* @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch, Press.Codes, Maera
-* @license       http://opensource.org/licenses/MIT MIT License
-* @version       Development: @MAERA_RES_VER@
-* @link          http://press.codes
-* @see           Maera_Restaurant_Data(), Maera_Restaurant_Data::method()
-* @since         Class available since Release 1.0.0
-*
-* Add any data methods needed to this class.
-* Also include any WordPress actions or filters that do not apply to other classes.
-* This file's purpose is to control how all data is handled.
-*
-*/
+ * Maera Restaurant Data Class
+ *
+ * @category      Plugin
+ * @package       Maera Shell
+ * @author        Brian C. Welch <contact@briancwelch.com>
+ * @copyright     2015 Brian C. Welch, Press.Codes, Maera
+ * @license       http://opensource.org/licenses/MIT MIT License
+ * @version       Development: @MAERA_RES_VER@
+ * @link          http://press.codes
+ * @see           Maera_Restaurant_Data(), Maera_Restaurant_Data::method()
+ * @since         Class available since Release 1.0.0
+ *
+ * Add any data methods needed to this class.
+ * Also include any WordPress actions or filters that do not apply to other classes.
+ * This file's purpose is to control how all data is handled.
+ *
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +28,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 
 	class Maera_Restaurant_Data {
-
 
 		/**
 		 * Class Constructor
@@ -41,8 +40,8 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			// Add filters.
 			add_filter( 'maera/timber/context', array( $this, 'maera_res_context' ) );
 			add_filter( 'esc_html', array( $this, 'maera_res_rename_quotes' ) );
-		}
 
+		}
 
 		/**
 		 * Modify the Timber global context
@@ -66,6 +65,7 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			$context['sidebar']['footer']      = Timber::get_widgets( 'footer' );
 
 			if ( is_post_type_archive( 'restaurant_item' ) && rp_is_restaurant() ) {
+
 				$query_args = array(
 					'post_type'      => 'restaurant_item',
 					'posts_per_page' => 999,  // We want to display every single menu item and let the user categorically filter them.
@@ -73,12 +73,13 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 					'order_by'       => get_theme_mod( 'restaurant_order_by', 'ID' ),
 				);
 
-				$context['menu_item']    = Timber::query_post();
-				$context['menu_items']   = Timber::get_posts( $query_args );
+				$context['menu_item']  = Timber::query_post();
+				$context['menu_items'] = Timber::get_posts( $query_args );
 
 			}
 
 			return $context;
+
 		}
 
 
@@ -121,18 +122,13 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 			return $currencies;
 		}
 
-
 		/**
 		 * Rename "Quotes" post type to "Testimonials"
 		 * @param  [type] $safe_text [description]
 		 * @return [type]            [description]
 		 */
 		function maera_res_rename_quotes( $type_text ) {
-			if ( 'Quote' == $type_text ){
-				return 'Testimonials';
-			}
-
-			return $type_text;
+			return ( 'Quote' == $type_text ) ? 'Testimonials' : $type_text;
 		}
 
 
@@ -141,22 +137,21 @@ if ( ! class_exists( 'Maera_Restaurant_Data' ) ) {
 		 * @return [type] [description]
 		 */
 		function maera_res_live_rename_quotes() {
+
 			global $current_screen;
 
-			if ( 'edit-post' == $current_screen->id ) { ?>
+			if ( 'edit-post' == $current_screen->id ) : ?>
 				<script type="text/javascript">
 				jQuery('document').ready(function() {
-
 					jQuery("span.post-state-format").each(function() {
 						if ( jQuery(this).text() == "Quote" )
 							jQuery(this).text("Testimonial");
 					});
-
 				});
 				</script>
-		<?php }
+			<?php endif;
 		}
 
-		// End Methods
 	} // End Class
+
 } // End if

@@ -1,19 +1,19 @@
 <?php
 
 /**
-* Maera Restaurant Taxonomies
-*
-* @category      Plugin
-* @package       Maera Shell
-* @author        Brian C. Welch <contact@briancwelch.com>
-* @copyright     2015 Brian C. Welch, Press.Codes, Maera
-* @license       http://opensource.org/licenses/MIT MIT License
-* @version       Development: @MAERA_RES_VER@
-* @link          http://press.codes
-* @see           Maera_Restaurant_Taxonomies(), Maera_Restaurant_Taxonomies::method()
-* @since         Class available since Release 1.0.0
-*
-*/
+ * Maera Restaurant Taxonomies
+ *
+ * @category      Plugin
+ * @package       Maera Shell
+ * @author        Brian C. Welch <contact@briancwelch.com>
+ * @copyright     2015 Brian C. Welch, Press.Codes, Maera
+ * @license       http://opensource.org/licenses/MIT MIT License
+ * @version       Development: @MAERA_RES_VER@
+ * @link          http://press.codes
+ * @see           Maera_Restaurant_Taxonomies(), Maera_Restaurant_Taxonomies::method()
+ * @since         Class available since Release 1.0.0
+ *
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 
 	class Maera_Restaurant_Taxonomies {
 
-
 		/**
 		 * Class Constructor
 		 */
@@ -36,8 +35,8 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 
 			// Add Filters
 			// NULL
-		}
 
+		}
 
 		/**
 		 * Add menu section taxonomies to Restaurant.
@@ -63,17 +62,18 @@ if ( ! class_exists( 'Maera_Restaurant_Taxonomies' ) ) {
 				'not_found'                  => __( 'Menu Section Not Found', 'maera-restaurant' ),
 			);
 			$args = array(
-				'labels'                     => $labels,
-				'hierarchical'               => true,
-				'public'                     => true,
-				'show_ui'                    => true,
-				'show_admin_column'          => true,
-				'show_in_nav_menus'          => true,
-				'show_tagcloud'              => false,
+				'labels'            => $labels,
+				'hierarchical'      => true,
+				'public'            => true,
+				'show_ui'           => true,
+				'show_admin_column' => true,
+				'show_in_nav_menus' => true,
+				'show_tagcloud'     => false,
 			);
 			register_taxonomy( 'restaurant_item_menu_section', array( 'restaurant_item' ), $args );
+
 		}
 
-		// End Methods
 	} // End Class
+
 } // End if

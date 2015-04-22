@@ -25,7 +25,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 
 	class Maera_Restaurant_Widget_Areas {
 
-
 		/**
 		 * Class Constructor
 		 */
@@ -49,14 +48,15 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			add_filter( 'maera/widgets/title/after', array( $this, 'widget_title_after' ) );
 			add_filter( 'maera/widgets/before', array( $this, 'widget_before' ) );
 			add_filter( 'maera/widgets/after', array( $this, 'widget_after' ) );
-		}
 
+		}
 
 		/**
 		 * Specify widget widths classes.
 		 * @return [type] [description]
 		 */
 		private static function widget_widths() {
+
 			$depths = array(
 				'1'  => array( 'label' => '1/12', 'classes' => 'col-md-1' ),
 				'2'  => array( 'label' => '2/12', 'classes' => 'col-md-2' ),
@@ -74,8 +74,8 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			);
 
 			return $depths;
-		}
 
+		}
 
 		/**
 		 * [maera_res_widgets_init description]
@@ -88,7 +88,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			$after_title  = apply_filters( 'maera/widgets/title/after', '</h3>' );
 
 			register_sidebar( array(
-				'name'          => 'First Section',
+				'name'          => __( 'First Section', 'maera-restaurant' ),
 				'id'            => 'section_1',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			) );
 
 			register_sidebar( array(
-				'name'          => 'Second Section',
+				'name'          => __( 'Second Section', 'maera-restaurant' ),
 				'id'            => 'section_2',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
@@ -106,7 +106,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			) );
 
 			register_sidebar( array(
-				'name'          => 'Third Section',
+				'name'          => __( 'Third Section', 'maera-restaurant' ),
 				'id'            => 'section_3',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
@@ -115,7 +115,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			) );
 
 			register_sidebar( array(
-				'name'          => 'Fourth Section',
+				'name'          => __( 'Fourth Section', 'maera-restaurant' ),
 				'id'            => 'section_4',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
@@ -124,7 +124,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			) );
 
 			register_sidebar( array(
-				'name'          => 'Fifth Section',
+				'name'          => __( 'Fifth Section', 'maera-restaurant' ),
 				'id'            => 'section_5',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
@@ -133,7 +133,7 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			) );
 
 			register_sidebar( array(
-				'name'          => 'Footer',
+				'name'          => __( 'Footer', 'maera-restaurant' ),
 				'id'            => 'footer',
 				'before_widget' => '<div id="%1$s" class="%2$s">',
 				'after_widget'  => '</div>',
@@ -141,7 +141,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 				'after_title'   => '</h2>',
 			) );
 		}
-
 
 		/**
 		 * [widget_class description]
@@ -151,7 +150,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			return 'panel';
 		}
 
-
 		/**
 		 * [widget_title_before description]
 		 * @return [type] [description]
@@ -160,7 +158,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			return '<h2 class="title">';
 		}
 
-
 		/**
 		 * [widget_title_after description]
 		 * @return [type] [description]
@@ -168,7 +165,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 		function widget_title_after() {
 			return '</h2>';
 		}
-
 
 		/**
 		 * [widget_before description]
@@ -179,7 +175,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			return $content . '<div class="content panel-body">';
 		}
 
-
 		/**
 		 * [widget_after description]
 		 * @return [type] [description]
@@ -188,6 +183,6 @@ if ( ! class_exists( 'Maera_Restaurant_Widget_Areas' ) ) {
 			return '</div></section>';
 		}
 
-		// End Methods
 	} // End Class
+
 } // End if

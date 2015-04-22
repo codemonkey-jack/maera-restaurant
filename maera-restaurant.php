@@ -166,7 +166,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				'color_accent'  => $colors[3],
 				'color_back'    => $colors[4],
 				'logo_image'    => MAERA_RES_SHELL_URL . '/assets/img/maera_restaurant_logo.png',
-				'description'   => '<p>The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.</p>',
+				'description'   => '<p>' . __( 'The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.', 'maera-restaurant' ) . '</p>',
 			);
 			return $args;
 		}
@@ -214,10 +214,11 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				remove_meta_box( 'postimagediv', 'slide', 'side' );
 				add_meta_box( 'postimagediv', __( 'Slide - Background Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
 			}
+
 		}
 
-		// End Methods
 	} // End Class
+
 } // End if
 
 
@@ -246,7 +247,6 @@ include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-menu-widget.ph
  * @return [type] [description]
  */
 function maera_res_slider_widgets() {
-
 	register_widget( 'Maera_Restaurant_Slider_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_slider_widgets' );
@@ -257,7 +257,6 @@ add_action( 'widgets_init', 'maera_res_slider_widgets' );
  * @return [type] [description]
  */
 function maera_res_menu_widgets() {
-
 	register_widget( 'Maera_Restaurant_Menu_Widget' );
 }
 add_action( 'widgets_init', 'maera_res_menu_widgets' );
@@ -268,35 +267,35 @@ add_action( 'widgets_init', 'maera_res_menu_widgets' );
  */
 if ( function_exists( 'register_field_group' ) ){
 	register_field_group( array(
-		'id' => 'acf_slider-second-image-1',
-		'title' => 'Slider - Second Image',
+		'id'     => 'acf_slider-second-image-1',
+		'title'  => 'Slider - Second Image',
 		'fields' => array(
 			array(
-				'key' => 'field_54ff77a3c04fb',
-				'label' => 'Slider - Second Image',
-				'name' => 'slider_-_second_image',
-				'type' => 'image',
+				'key'          => 'field_54ff77a3c04fb',
+				'label'        => 'Slider - Second Image',
+				'name'         => 'slider_-_second_image',
+				'type'         => 'image',
 				'instructions' => 'Enter the secondary image for the slider.	This is the image that is displayed over the background.',
-				'required' => 1,
-				'save_format' => 'url',
+				'required'     => 1,
+				'save_format'  => 'url',
 				'preview_size' => 'medium',
-				'library' => 'all',
+				'library'      => 'all',
 			),
 		),
 		'location' => array(
 			array(
 				array(
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'slide',
+					'value'    => 'slide',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
 			),
 		),
 		'options' => array(
-			'position' => 'normal',
-			'layout' => 'default',
+			'position'       => 'normal',
+			'layout'         => 'default',
 			'hide_on_screen' => array(
 				0 => 'comments',
 				1 => 'send-trackbacks',

@@ -166,6 +166,6 @@ if ( ! class_exists( 'Maera_Restaurant_Slider_Widget' ) ) {
 			<?php
 		}
 
-		// End Methods
 	} // End Class
+
 } // End if
