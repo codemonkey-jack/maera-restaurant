@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Maera Restaurant - Documentation</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="javascripts/all.js" type="text/javascript"></script>
+
+      <script>
+        $(function() {
+          setupLanguages(["shell","twig","php"]);
+        });
+      </script>
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="twig">twig</a>
+              <a href="#" data-language-name="php">php</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://press.codes/downloads/maera-restaurant-shell/'>Download the Restaurant Shell</a></li>
+            <li><a href='http://press.codes' target='_blank'>Visit Press.Codes</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the Maera Restuarant documentation.  We will help you understand how the shell works, what plugins will be required,
+how to build your front page, and how to use the restaurant functionality.</p>
+
+<h1 id="shell-logic">Shell Logic</h1>
+
+<p>Maera Restaurant uses five, front-page, widgetized sections that allow you to build in your content how you see fit.  What makes
+this exceptional, is that when coupled with the Maera widget class, you can specify how much area is used by your widgets.  You can then build in content as you like.   We have included a fallback to include the latest posts on the front page in case you haven&rsquo;t added any widgets yet.</p>
+
+<p>Maera Restaurant comes with two brand new widgets; the new slider widget, built using Timber/Twig, and with its own custom post type, and also the menu widget.  This is not to be confused with navigation menus, but rather food menu (items).</p>
+
+<aside class="notice">Maera Restaurant also uses the standard Maera actions and filters for injecting and handling content, and how data is displayed.  You can read more about them <a href="https://github.com/presscodes/maera/wiki" target="_blank">here</a>, or inside your theme&rsquo;s documentation under Appearance > Theme Options, and selecting the &ldquo;Documentation&rdquo; tab.</aside>
+
+<aside class="warning">This documentation is considered incomplete until the project is more mature, and is subject to change</aside>
+
+          <h1 id="restaurant">Restaurant</h1>
+
+<h2 id="restaurant-plugin">Restaurant Plugin</h2>
+
+<p>The Maera Restaurant Shell requires the WordPress <a href="https://wordpress.org/plugins/restaurant/">Restaurant plugin</a> by <a href="https://profiles.wordpress.org/greenshady/">Justin Tadlock</a>.  Using this as the core, we can quickly and easily extend it to allow for an array of extra functionality which is included in the Maera Restaurant shell. By default, you can specify menu item tags, such as if an item is gluten free, a chef&rsquo;s special, etc.  With Maera Restaurant, we have added in additional fields which allow you to specify the menu item section, such as Dessert, Main Courses, or Appetizers.</p>
+
+<h3 id="how-to-use-the-restaurant-plugin">How to use the Restaurant Plugin</h3>
+<pre><code class="highlight shell">Restaurant &gt; Add Menu Item
+</code></pre>
+
+<ol>
+<li><p>Create a new menu item  using the standard WordPress post interface.
+<img alt="Add Menu Item" src="images/add-menu-item.png" /></p></li>
+<li><p>Enter a title for your menu item, as well as a description.  Since food item descriptions tend to run on the shoter side, it is probably wholly uneccessary to use the post excerpt.  However, you may do so if you desire.  Also, if your description runs long, Maera Restaurant will handle the excerpt for you automatically.</p></li>
+<li><p>Enter a price, menu section (required/recommended), menu tags (if desired), and an image to use for the image, (if desired/recommended).</p></li>
+</ol>
+
+<p><img alt="Add Menu Item" src="images/add-menu-item-info.png" /></p>
+
+<p>Once you have entered the information, save your post and it will then be ready for display in the restaurant menu.</p>
+
+          <h1 id="food-menu-widget">Food Menu Widget</h1>
+
+<h2 id="options-and-use">Options and Use</h2>
+
+<p>The Maera Restaurant - Menu widget will display your restaurant&rsquo;s menu wherever you desire.  We have kept the options simple and straightforward.  To use the widget add the Maera Restaurant - Menu widget using the standard WordPress widget interface.</p>
+
+<ol>
+<li><p>Enter a title for your menu.</p></li>
+<li><p>Select how many menu items to display in the widget.</p></li>
+<li><p>Specify whether or not to allow the user to filter items, show price, images, menu tags, and a link to the full menu page.</p></li>
+<li><p>Specify the width of the widget.  The width of the widget uses Bootstrap 3 logic, with a custom full-width option.</p></li>
+</ol>
+
+<p><img alt="Add Slide" src="images/menu-widget.png" /></p>
+
+<p>For example, if you would like the widget to take up 1/3 of the space it is in, set the widget width to 4/12.  If you would like the widget to take up half the space it is in, set the widget width to 6/12.  If you would like the widget to take up the full space it is in, set it to 12/12.  Additionally, if you would like the widget to stretch past its boundaries and take up the full window width, specify Full Width.</p>
+
+<p>Save your options and your menu is now on display.</p>
+
+          <h1 id="slider-widget">Slider Widget</h1>
+
+<p>The Maera Slider widget will allow you to add as many slides as you like, and place them wherever desired.  The slider uses its own custom post type coupled with Advanced Custom Fields to allow for multiple images and text within the slider.</p>
+
+<p>The slider also uses CSS3 animations, which keeps the codebase much lighter.</p>
+
+<h2 id="how-to-use-the-slider-widget">How to use the slider Widget</h2>
+<pre><code class="highlight shell">Slides &gt; Add New Slide
+</code></pre>
+
+<ol>
+<li><p>Create a new slider post using the standard WordPress post interface.
+<img alt="Add Slide" src="images/add-slide.png" /></p></li>
+<li><p>Add an image to use for the background of the slider.</p></li>
+<li><p>Add a second image to use for the overlay.  If you do not select an image to use, the slider title and text will span the full width instead.</p></li>
+<li><p>Add a title for the slide to use for the main text, and add an excerpt to use for the secondary text of the slider.</p></li>
+<li><p>Add the slider widget using the standard WordPress widget interface.</p></li>
+<li><p>Set the options for the slider widget such as how many slides to display, whether or not to offset, the interval at which the slides cycle, pause on mouse hover, continuous cycle, parallax, or enabling/disabling the overlay image.</p></li>
+</ol>
+
+<p><img alt="Add Slide" src="images/slider-widget.png" /></p>
+
+          <h1 id="front-page-sections">Front Page Sections</h1>
+
+<h2 id="how-to-use">How To Use</h2>
+
+<p>The front page is laid out with 5 different sections in which you can build your content.  Each section is a widgetized area that supports action filters for injecting content both before and after the content.
+This allows developers to greatly expand the front page content.</p>
+<pre><code class="highlight plaintext">    {% do action( 'maera/restaurant/before_section_1' ) %}
+    {% include 'section_1.twig' %}
+    {% do action( 'maera/restaurant/after_section_1' ) %}
+</code></pre>
+<pre><code class="highlight php"><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">my_custom_action</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">include_once</span><span class="p">(</span> <span class="nb">dirname</span><span class="p">(</span> <span class="k">__FILE__</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'/includes/my-file.php'</span> <span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'maera/restaurant/before_section_1'</span><span class="p">,</span> <span class="s1">'my_custom_action'</span> <span class="p">);</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+
+          <h1 id="customization">Customization</h1>
+
+<aside class="notice">Customization is done throught the standard WordPress customizer, which is of course extended by <a href="http://kirki.org/" target="_blank">Kirki</a></aside>
+
+<p>To customize Maera - Restaurant, just visit Appearance &gt; Customize in the WordPress admin area.
+<img alt="Add Menu Item" src="images/customizer.png" /></p>
+
+<h2 id="restaurant-customization">Restaurant Customization</h2>
+
+<p>We have added a few options that will let you change the currency type, contact information, as well as the recent blog posts text, which could help restaurants better define their branding.</p>
+
+<p><img alt="Add Menu Item" src="images/customizer-restaurant.png" /></p>
+
+<h2 id="layout-customization">Layout Customization</h2>
+
+<p>You can select between a wide layout, a layout to include a sidebar.  The front page sections are toggleable, (on/off), and can be rearranged above or below each other.  To enable a section, click the &ldquo;Eye&rdquo; on the left of the section to enable, then use the handles on the right to move the sections around as you please.  Your changes are reflected immediately in the customizer window.</p>
+
+<p>You can also enable or disable breadcrumbs should you desire.</p>
+
+<p><img alt="Add Menu Item" src="images/customizer-layout.png" /></p>
+
+<h2 id="color-customization">Color Customization</h2>
+
+<p>You can select a few colors to use throughout the site, such as the primary brand color, link color (static and over), as well as the color of the navigation bar. We also included custom color calculations which can handle some of the color for you.  When enabling automatic color calculations, any text and links are automatically generated to be a contrasting color of what the background color of the section is set to be.</p>
+
+<p>Say, for example, you set Section 1 to have a dark background color (covered later), and have automatic color calculations enabled, the text displayed in section 1 will be of a contrastinc color, such as white/off-white.  Link colors will also adapt.  The same applies for any color set on the navigation menu.</p>
+
+<p><img alt="Add Menu Item" src="images/customizer-colors.png" /></p>
+
+<p>If you enable automatic color calculations, some other color options will be disabled.</p>
+
+<h2 id="typography-customization">Typography Customization</h2>
+
+<p>The typography options allow you to set the body, header (H1, H2, H3, etc) and content font, colors, size and weights. The fonts available are from Google Fonts, and will be provided in a list for you to choose.  If you need to use a brand specific font, you will need to add them to your CSS.</p>
+
+<p><img alt="Add Menu Item" src="images/customizer-typography.png" /></p>
+
+<h2 id="section-customization">Section Customization</h2>
+
+<p>Using the Section customization options, you can create a beautiful parallax site, or even a site with very distinctive sections.  You can specify a background for each section, and whether or not that parallax for the section is enabled. When enabling parallax, the background of the section is automatically specified, so you don&rsquo;t have to worry about proper positioning.  Just upload a high quality image that is decently sized, enable Parallax and you&rsquo;re set.  You can even combine this semi-transparent PNG&rsquo;s and background colors, allowing for more granular parllax control.</p>
+
+<p><img alt="Add Menu Item" src="images/customizer-sections.png" /></p>
+
+<h2 id="social-customization">Social Customization</h2>
+
+<p>You can specify your Facebook, Twitter, Google+ and YouTube account links, and they will be displayed in the contact bar, and/or the Maera Restaurant - Social Widget,</p>
+
+<p><img alt="Add Menu Item" src="images/customizer-social.png" /></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="twig">twig</a>
+                <a href="#" data-language-name="php">php</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
