@@ -259,7 +259,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_layout',
 				'default'  => 1,
 				'priority' => 4,
-				'required' => array( 'enable_contact_bar' => 1 ),
+				'required' => array(
+					array(
+						'setting'  => 'enable_contact_bar',
+						'operator' => '==',
+						'value'    => 1
+					),
+				),
 				'choices'  => array(
 					1 => __( 'Top', 'maera-restaurant' ),
 					0 => __( 'Bottom', 'maera-restaurant' ),
@@ -310,7 +316,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'     => 'maera_res_colors',
 				'default'     => 'blue',
 				'priority'    => 2,
-				'required'    => array( 'color_calc' => 1 ),
+				'required'    => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 1
+					),
+				),
 				'choices'     => Maera_Restaurant_Styles::color_palettes(),
 			);
 
@@ -321,7 +333,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_colors',
 				'default'  => 0,
 				'priority' => 3,
-				'required' => array( 'color_calc' => 1 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 1
+					),
+				),
 			);
 
 			$controls[] = array(
@@ -331,7 +349,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_colors',
 				'default'  => '#73A2BD',
 				'priority' => 4,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					array(
 						'element'  => '.btn-primary',
@@ -387,7 +411,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_colors',
 				'default'  => '#73A2BD',
 				'priority' => 5,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					'element'  => 'body a',
 					'property' => 'color',
@@ -401,7 +431,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_colors',
 				'default'  => '#86B4CF',
 				'priority' => 6,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					'element'  => 'a:hover',
 					'property' => 'color',
@@ -415,7 +451,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_colors',
 				'default'  => '#222222',
 				'priority' => 7,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					'element'  => '.navbar-default',
 					'property' => 'background-color',
@@ -471,7 +513,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 3,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					'element'  => 'body p',
 					'property' => 'color',
@@ -580,7 +628,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_typography',
 				'default'  => '#333333',
 				'priority' => 9,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					'element'  => 'h1,h2,h3,h4,h5,h6',
 					'property' => 'color',
@@ -1017,7 +1071,13 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'section'  => 'maera_res_footer',
 				'default'  => '#333333',
 				'priority' => 7,
-				'required' => array( 'color_calc' => 0 ),
+				'required' => array(
+					array(
+						'setting'  => 'color_calc',
+						'operator' => '==',
+						'value'    => 0
+					),
+				),
 				'output'   => array(
 					'element'  => '#footer',
 					'property' => 'background-color',
