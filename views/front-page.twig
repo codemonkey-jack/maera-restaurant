@@ -3,7 +3,7 @@
 {% import 'grid_classes.html.twig' as grid %}
 
 {% set parts_serialized = theme.theme_mod('front_page_sections', function('serialize', ['section_1','section_2','section_3'] ) ) %}
-{% set parts = function('unserialize', parts_serialized) %}
+{% set parts = function('maybe_unserialize', parts_serialized) %}
 
 {% for part in parts %}
 
