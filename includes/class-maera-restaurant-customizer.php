@@ -172,7 +172,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'type'        => 'select',
 				'settings'    => 'isotope_layout',
 				'label'       => __( 'Menu Page Layout.', 'maera-restaurant' ),
-				'description' => __( 'Examples may be <a href="http://isotope.metafizzy.co/layout-modes.html" target="_blank">found here</a>. ', 'maera-restaurant' ),
+				'description' => __( 'Examples may be found here: http://isotope.metafizzy.co/layout-modes.html ', 'maera-restaurant' ),
 				'section'     => 'maera_res_restaurant',
 				'default'     => 'ID',
 				'priority'    => 4,

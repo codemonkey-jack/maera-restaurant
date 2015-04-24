@@ -164,9 +164,9 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 				'color_light'   => $colors[0],
 				'color_select'  => $colors[1],
 				'color_accent'  => $colors[3],
-				'color_back'    => $colors[4],
+				'color_back'    => $colors[5],
 				'logo_image'    => MAERA_RES_SHELL_URL . '/assets/img/maera_restaurant_logo.png',
-				'description'   => '<p>' . __( 'The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.', 'maera-restaurant' ) . '</p>',
+				'description'   => __( 'The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.', 'maera-restaurant' ),
 			);
 			return $args;
 		}
