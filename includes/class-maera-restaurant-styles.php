@@ -31,8 +31,8 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		function __construct() {
 
 			// Add actions.
-			if ( 1 == get_theme_mod( 'color_calc', 0 ) ) {
-				add_action( 'wp_enqueue_scripts', array( $this, 'color_calculations' ), 101 );
+			if ( 1 == get_theme_mod( 'color_pal', 0 ) ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'color_calculations' ), 999 );
 			}
 
 			// Add filters.
@@ -46,27 +46,48 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		 */
 		public static function color_palettes() {
 
-			if ( 0 == get_theme_mod( 'invert_palettes', 0 ) ) {
+			if ( 1 == get_theme_mod( 'invert_palettes', 0 ) ) {
 
 				$palettes = array(
-					'red'    => array( '#F5F5F5', '#F9BAAF', '#FB9D8C', '#FD8069', '#FF6347', '#333333' ),
-					'orange' => array( '#F5F5F5', '#F9CDAF', '#FBB98D', '#FDA56A', '#FF9148', '#333333' ),
-					'yellow' => array( '#F5F5F5', '#F9E6AF', '#FBDF8D', '#FDD86A', '#FFD148', '#333333' ),
-					'green'  => array( '#F5F5F5', '#C9F7C4', '#B3F9AC', '#9DFA94', '#88FC7C', '#333333' ),
-					'blue'   => array( '#F5F5F5', '#D9E3F6', '#CCDAF7', '#BED1F8', '#B1C9F9', '#333333' ),
-					'violet' => array( '#F5F5F5', '#E5E0F6', '#DED6F6', '#D6CCF7', '#CFC2F8', '#333333' )
+					1 => array( '#333333', '#009CB8', '#027F96', '#046273', '#064550', '#F5F5F5' ),
+					2 => array( '#333333', '#006EB7', '#025A95', '#044672', '#063250', '#F5F5F5' ),
+					3 => array( '#333333', '#002EB7', '#022795', '#042072', '#061950', '#F5F5F5' ),
+					4 => array( '#333333', '#770383', '#62056B', '#4C0653', '#36083B', '#F5F5F5' ),
+					5 => array( '#333333', '#4E3606', '#412E07', '#332508', '#261C09', '#F5F5F5' ),
+					6 => array( '#333333', '#303D07', '#293308', '#212909', '#1A1F09', '#F5F5F5' ),
+				);
+
+			} elseif ( 1 == get_theme_mod( 'reverse_palettes', 0 ) && 1 == get_theme_mod( 'invert_palettes', 0 ) ) {
+
+				$palettes = array(
+					1 => array( '#F5F5F5', '#064550', '#046273', '#027F96', '#009CB8', '#333333' ),
+					2 => array( '#F5F5F5', '#063250', '#044672', '#025A95', '#006EB7', '#333333' ),
+					3 => array( '#F5F5F5', '#061950', '#042072', '#022795', '#002EB7', '#333333' ),
+					4 => array( '#F5F5F5', '#36083B', '#4C0653', '#62056B', '#770383', '#333333' ),
+					5 => array( '#F5F5F5', '#261C09', '#332508', '#412E07', '#4E3606', '#333333' ),
+					6 => array( '#F5F5F5', '#1A1F09', '#212909', '#293308', '#303D07', '#333333' ),
+				);
+
+			} elseif ( 1 == get_theme_mod( 'reverse_palettes', 0 ) ) {
+
+				$palettes = array(
+					1 => array( '#333333', '#FF6347', '#FD8069', '#FB9D8C', '#F9BAAF', '#F5F5F5' ),
+					2 => array( '#333333', '#FF9148', '#FDA56A', '#FBB98D', '#F9CDAF', '#F5F5F5' ),
+					3 => array( '#333333', '#FFD148', '#FDD86A', '#FBDF8D', '#F9E6AF', '#F5F5F5' ),
+					4 => array( '#333333', '#88FC7C', '#B3F9AC', '#B3F9AC', '#C9F7C4', '#F5F5F5' ),
+					5 => array( '#333333', '#B1C9F9', '#BED1F8', '#CCDAF7', '#D9E3F6', '#F5F5F5' ),
+					6 => array( '#333333', '#CFC2F8', '#D6CCF7', '#DED6F6', '#E5E0F6', '#F5F5F5' ),
 				);
 
 			} else {
 
-				// Array indexes still match non inverted names.
 				$palettes = array(
-					'red'    => array( '#00B7AF', '#058088', '#085C67', '#093848', '#DDDDDD' ),
-					'orange' => array( '#0076BA', '#005B98', '#00448D', '#001E5E', '#DDDDDD' ),
-					'yellow' => array( '#182A9C', '#03077E', '#01044E', '#000131', '#DDDDDD' ),
-					'green'  => array( '#C47979', '#864265', '#572457', '#300F61', '#DDDDDD' ),
-					'blue'   => array( '#8C5D42', '#794B30', '#603D29', '#472F21', '#DDDDDD' ),
-					'violet' => array( '#667047', '#3E4C2B', '#1B2205', '#101A05', '#DDDDDD' )
+					1 => array( '#F5F5F5', '#F9BAAF', '#FB9D8C', '#FD8069', '#FF6347', '#333333' ),
+					2 => array( '#F5F5F5', '#F9CDAF', '#FBB98D', '#FDA56A', '#FF9148', '#333333' ),
+					3 => array( '#F5F5F5', '#F9E6AF', '#FBDF8D', '#FDD86A', '#FFD148', '#333333' ),
+					4 => array( '#F5F5F5', '#C9F7C4', '#B3F9AC', '#9DFA94', '#88FC7C', '#333333' ),
+					5 => array( '#F5F5F5', '#D9E3F6', '#CCDAF7', '#BED1F8', '#B1C9F9', '#333333' ),
+					6 => array( '#F5F5F5', '#E5E0F6', '#DED6F6', '#D6CCF7', '#CFC2F8', '#333333' ),
 				);
 
 			}
@@ -83,8 +104,8 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		public static function palette_colors() {
 
 			$palettes = self::color_palettes();
-			$setting  = get_theme_mod( 'color_palette', 'blue' );
-			$colors   = $palettes[$setting];
+			$setting  = get_theme_mod( 'color_palette', 1 );
+			$colors   = $palettes[ $setting ];
 
 			return $colors;
 
@@ -92,198 +113,25 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 
 
 		/**
-		 * Color calculations.
-		 * @return [type] [description]
+		 * Color palette calculations
+		 * @method color_calculations
+		 * @since  0.1.0
 		 */
 		public function color_calculations() {
 
 			$colors = $this->palette_colors();
 
-			// Create a Jetpack Color instance for each color in the palette.
-			$color1_jet      = new Jetpack_Color( $colors[0] ); // Lightest
-			$color2_jet      = new Jetpack_Color( $colors[1] ); // Shadows
-			$color3_jet      = new Jetpack_Color( $colors[2] ); // Links
-			$color4_jet      = new Jetpack_Color( $colors[3] ); // Primary Brand Color
-			$color5_jet      = new Jetpack_Color( $colors[4] ); // Darkest
-
-			$content_light   = $color1_jet->getReadableContrastingColor( 15 )->toHex();
-			$content_shadow  = $color2_jet->getReadableContrastingColor( 15 )->toHex();
-			$content_links   = $color3_jet->getReadableContrastingColor( 15 )->toHex();
-			$content_primary = $color4_jet->getReadableContrastingColor( 15 )->toHex();
-			$content_dark    = $color5_jet->getReadableContrastingColor( 15 )->toHex();
-
-			$light_font      = $color1_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			$dark_font       = $color5_jet->getGrayscaleContrastingColor( 15 )->toHex();
-
-			// Set variables for Tonesque
-			$section1_src    = get_theme_mod( 'section_1_background_image', '' );
-			$section2_src    = get_theme_mod( 'section_2_background_image', '' );
-			$section3_src    = get_theme_mod( 'section_3_background_image', '' );
-			$section4_src    = get_theme_mod( 'section_4_background_image', '' );
-			$section5_src    = get_theme_mod( 'section_5_background_image', '' );
-			$body_src        = get_theme_mod( 'body_background_image', '' );
-			$content_src     = get_theme_mod( 'content_background_image', '' );
-
-			// Set variables for Jetpack Color
-			$navbar_color    = get_theme_mod( 'navbar_color', '#ffffff' );
-			$section1_color  = get_theme_mod( 'section_1_background_color', '#ffffff' );
-			$section2_color  = get_theme_mod( 'section_2_background_color', '#ffffff' );
-			$section3_color  = get_theme_mod( 'section_3_background_color', '#ffffff' );
-			$section4_color  = get_theme_mod( 'section_4_background_color', '#ffffff' );
-			$section5_color  = get_theme_mod( 'section_5_background_color', '#ffffff' );
-			$body_color      = get_theme_mod( 'body_background_color', '#ffffff' );
-			$content_color   = get_theme_mod( 'content_background_color', '#ffffff' );
-
-			// Create a Tonesque instance for each section background
-			$section1_tone   = new Tonesque( $section1_src );
-			$section2_tone   = new Tonesque( $section2_src );
-			$section3_tone   = new Tonesque( $section3_src );
-			$section4_tone   = new Tonesque( $section4_src );
-			$section5_tone   = new Tonesque( $section5_src );
-			$body_tone       = new Tonesque( $body_src );
-			$content_tone    = new Tonesque( $content_src );
-
-			// Create a Jetpack Color instance for each section background that does not have a background image set.
-			$navbar_jet      = new Jetpack_Color( $navbar_color );
-			$section1_jet    = new Jetpack_Color( $section1_color );
-			$section2_jet    = new Jetpack_Color( $section2_color );
-			$section3_jet    = new Jetpack_Color( $section3_color );
-			$section4_jet    = new Jetpack_Color( $section4_color );
-			$section5_jet    = new Jetpack_Color( $section5_color );
-			$body_jet        = new Jetpack_Color( $body_color );
-			$content_jet     = new Jetpack_Color( $content_color );
-
-			if ( $section1_src ) {
-				$section1_bg         = $section1_tone->color();
-				$section1_font       = $section1_tone->contrast();
-				$section1_link       = $section1_tone->contrast();
-				$section1_font_calc  = new Jetpack_Color( $section1_bg );
-				$section1_link_calc  = new Jetpack_Color( $section1_bg );
-				$section1_font_color = '#' . $section1_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$section1_link_color = '#' . $section1_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$section1_font_color = '#' . $section1_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$section1_link_color = '#' . $section1_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-			if ( $section2_src ) {
-				$section2_bg         = $section2_tone->color();
-				$section2_font       = $section2_tone->contrast();
-				$section2_link       = $section2_tone->contrast();
-				$section2_font_calc  = new Jetpack_Color( $section2_bg );
-				$section2_link_calc  = new Jetpack_Color( $section2_bg );
-				$section2_font_color = '#' . $section2_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$section2_link_color = '#' . $section2_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$section2_font_color = '#' . $section2_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$section2_link_color = '#' . $section2_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-			if ( $section3_src ) {
-				$section3_bg         = $section3_tone->color();
-				$section3_font       = $section3_tone->contrast();
-				$section3_link       = $section3_tone->contrast();
-				$section3_font_calc  = new Jetpack_Color( $section3_bg );
-				$section3_link_calc  = new Jetpack_Color( $section3_bg );
-				$section3_font_color = '#' . $section3_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$section3_link_color = '#' . $section3_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$section3_font_color = '#' . $section3_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$section3_link_color = '#' . $section3_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-			if ( $section4_src ) {
-				$section4_bg         = $section4_tone->color();
-				$section4_font       = $section4_tone->contrast();
-				$section4_link       = $section4_tone->contrast();
-				$section4_font_calc  = new Jetpack_Color( $section4_bg );
-				$section4_link_calc  = new Jetpack_Color( $section4_bg );
-				$section4_font_color = '#' . $section4_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$section4_link_color = '#' . $section4_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$section4_font_color = '#' . $section4_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$section4_link_color = '#' . $section4_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-			if ( $section5_src ) {
-				$section5_bg         = $section5_tone->color();
-				$section5_font       = $section5_tone->contrast();
-				$section5_link       = $section5_tone->contrast();
-				$section5_font_calc  = new Jetpack_Color( $section5_bg );
-				$section5_link_calc  = new Jetpack_Color( $section5_bg );
-				$section5_font_color = '#' . $section5_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$section5_link_color = '#' . $section5_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$section5_font_color = '#' . $section5_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$section5_link_color = '#' . $section5_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-			if ( $body_src ) {
-				$body_bg             = $body_tone->color();
-				$body_font           = $body_tone->contrast();
-				$body_link           = $body_tone->contrast();
-				$body_font_calc      = new Jetpack_Color( $body_bg );
-				$body_link_calc      = new Jetpack_Color( $body_bg );
-				$body_font_color     = '#' . $body_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$body_link_color     = '#' . $body_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$body_font_color     = '#' . $body_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$body_link_color     = '#' . $body_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-			if ( $content_src ) {
-				$content_bg          = $content_tone->color();
-				$content_font        = $content_tone->contrast();
-				$content_link        = $content_tone->contrast();
-				$content_font_calc   = new Jetpack_Color( $content_bg );
-				$content_link_calc   = new Jetpack_Color( $content_bg );
-				$content_font_color  = '#' . $content_font_calc->getGrayscaleContrastingColor( 15 )->toHex();
-				$content_link_color  = '#' . $content_link_calc->getGrayscaleContrastingColor( 15 )->toHex();
-			} else {
-				$content_font_color  = '#' . $content_jet->getGrayscaleContrastingColor( 15 )->toHex();
-				$content_link_color  = '#' . $content_jet->getGrayscaleContrastingColor( 15 )->toHex();
-			}
-
-
-			if ( 0 == get_theme_mod( 'color_calc', 0 ) ) {
-
-				$set_brand_color  = get_theme_mod( 'brand_color', '#244363' );
-				$set_link_color   = get_theme_mod( 'link_color', '#325d88' );
-				$set_hover_color  = get_theme_mod( 'link_hover_color', '#244363' );
-				$set_navbar_color = get_theme_mod( 'navbar_color', '#333333' );
-				$set_footer_color = get_theme_mod( 'footer_background', '#333333' );
-
-				set_theme_mod( 'brand_color', $set_brand_color );
-				set_theme_mod( 'link_color', $set_link_color );
-				set_theme_mod( 'link_hover_color', $set_hover_color );
-				set_theme_mod( 'navbar_color', $set_navbar_color );
-				set_theme_mod( 'footer_background', $set_footer_color );
-
-			} else {
-
-				set_theme_mod( 'brand_color', '#' . $content_primary );
-				set_theme_mod( 'link_color', '#' . $content_links );
-				set_theme_mod( 'link_hover_color', '#' . $content_light );
-				set_theme_mod( 'navbar_color', '#' . $content_dark );
-				set_theme_mod( 'footer_background', '#' . $content_dark );
-			}
-
 			$style = '';
 
-			$style .= 'body a{color:#' . str_replace( '#', '', $content_links ) . ';}';
-			$style .= 'body a:hover{color:#' . str_replace( '#', '', $content_primary ) . ';}';
-			$style .= 'body, body h1, body h2, body h3, body h4, body h5, body h6, body p{color:' . $body_font_color . ';}';
-			$style .= '#wrap-main-section h1, #wrap-main-section h2, #wrap-main-section h3, #wrap-main-section h4, #wrap-main-section h5, #wrap-main-section h6, #wrap-main-section p{color:' . $content_font_color . ';}';
-			$style .= '.label-primary{background-color:#' . str_replace( '#', '', $content_primary ) . ';}';
-			$style .= '.navbar-default{background-color:#' . str_replace( '#', '', $content_dark ) . ';}';
-			$style .= '.navbar-default .navbar-nav > li > a {color:#' . str_replace( '#', '', $dark_font ) . ';}';
-			$style .= '#section_1 h1, #section_1 h2, #section_1 h3, #section_1 h4, #section_1 h5, #section_1 h6, #section_1 p{color:' . $section1_font_color . ';}';
-			$style .= '#section_2 h1, #section_2 h2, #section_2 h3, #section_2 h4, #section_2 h5, #section_2 h6, #section_2 p{color:' . $section2_font_color . ';}';
-			$style .= '#section_3 h1, #section_3 h2, #section_3 h3, #section_3 h4, #section_3 h5, #section_3 h6, #section_3 p{color:' . $section3_font_color . ';}';
-			$style .= '#section_4 h1, #section_4 h2, #section_4 h3, #section_4 h4, #section_4 h5, #section_4 h6, #section_4 p{color:' . $section4_font_color . ';}';
-			$style .= '#section_5 h1, #section_5 h2, #section_5 h3, #section_5 h4, #section_5 h5, #section_5 h6, #section_5 p{color:' . $section5_font_color . ';}';
-			$style .= '#footer{background-color:#' . str_replace( '#', '', $content_dark ) . ';color:#' . str_replace( '#', '', $dark_font ) . '}';
-			$style .= '#footer p{color:#' . str_replace( '#', '', $dark_font ) . '}';
+			$style .= 'body a{color:#' . str_replace( '#', '', $colors[4] ) . ';}';
+			$style .= 'body a:hover{color:#' . str_replace( '#', '', $colors[3] ) . ';}';
+			$style .= 'body, body h1, body h2, body h3, body h4, body h5, body h6, body p{color:' . $colors[5] . ';}';
+			$style .= '#wrap-main-section h1, #wrap-main-section h2, #wrap-main-section h3, #wrap-main-section h4, #wrap-main-section h5, #wrap-main-section h6, #wrap-main-section p{color:' . $colors[0] . ';}';
+			$style .= '.label-primary{background-color:#' . str_replace( '#', '', $colors[4] ) . ';}';
+			$style .= '.navbar-default{background-color:#' . str_replace( '#', '', $colors[5] ) . ';}';
+			$style .= '.navbar-default .navbar-nav > li > a {color:#' . str_replace( '#', '', $colors[0] ) . ';}';
+			$style .= '#footer{background-color:#' . str_replace( '#', '', $colors[5] ) . ';color:#' . str_replace( '#', '', $colors[0] ) . '}';
+			$style .= '#footer p{color:#' . str_replace( '#', '',$colors[0] ) . '}';
 
 			wp_add_inline_style( 'maera-res', $style );
 

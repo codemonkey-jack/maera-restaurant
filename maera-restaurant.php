@@ -154,21 +154,18 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		 * Customize Kirki
 		 * @return [type] [description]
 		 */
-		function customizer_config() {
+		function customizer_config( $config ) {
 
 			$colors = Maera_Restaurant_Styles::palette_colors();
 
-			$args = array(
-				'stylesheet_id' => 'maera-res',
-				'color_active'  => $colors[2],
-				'color_light'   => $colors[0],
-				'color_select'  => $colors[1],
-				'color_accent'  => $colors[3],
-				'color_back'    => $colors[5],
-				'logo_image'    => MAERA_RES_SHELL_URL . '/assets/img/maera_restaurant_logo.png',
-				'description'   => __( 'The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.', 'maera-restaurant' ),
-			);
-			return $args;
+			$config['logo_image']   = MAERA_RES_SHELL_URL . '/assets/img/maera_restaurant_logo.png';
+			$config['description']  = __( 'The Maera restaurant shell allows you to easily create restaurant sites with ease and includes a wealth of customization options.', 'maera-restaurant' );
+			$config['color_accent'] = $colors[4];
+			$config['color_back']   = $colors[5];
+			$config['width']        = '20%';
+
+			return $config;
+
 		}
 
 

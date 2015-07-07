@@ -299,9 +299,9 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 
 			$controls[] = array(
 				'type'     => 'toggle',
-				'settings' => 'color_calc',
-				'label'    => __( 'Automatic Color Calculations', 'maera-restaurant' ),
-				'help'     => __( 'Enabling automatic color calculations will allow you to select from a range of color palettes to use.  After enabling this option, refresh the customizer page.', 'maera-restaurant' ),
+				'settings' => 'color_pal',
+				'label'    => __( 'Color Palettes', 'maera-restaurant' ),
+				'help'     => __( 'Enabling will allow you to select from a range of color palettes to use.', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => 0,
 				'priority' => 1,
@@ -314,11 +314,11 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'description' => __( 'Select a pre-defined color palette to use.', 'maera-restaurant' ),
 				'help'        => __( 'Selecting a pre-defined color palette will automatically handle most of the colors and styling of the site.', 'maera-restaurant' ),
 				'section'     => 'maera_res_colors',
-				'default'     => 'blue',
+				'default'     => 1,
 				'priority'    => 2,
 				'required'    => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 1
 					),
@@ -335,7 +335,23 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 3,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
+						'operator' => '==',
+						'value'    => 1
+					),
+				),
+			);
+
+			$controls[] = array(
+				'type'     => 'toggle',
+				'settings' => 'reverse_palettes',
+				'label'    => __( 'Reverse Palettes', 'maera-restaurant' ),
+				'section'  => 'maera_res_colors',
+				'default'  => 0,
+				'priority' => 4,
+				'required' => array(
+					array(
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 1
 					),
@@ -348,10 +364,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Primary Brand Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#73A2BD',
-				'priority' => 4,
+				'priority' => 5,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
@@ -410,10 +426,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Link Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#73A2BD',
-				'priority' => 5,
+				'priority' => 6,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
@@ -430,10 +446,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Link Hover Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#86B4CF',
-				'priority' => 6,
+				'priority' => 7,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
@@ -450,10 +466,10 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'label'    => __( 'Navbar Color', 'maera-restaurant' ),
 				'section'  => 'maera_res_colors',
 				'default'  => '#222222',
-				'priority' => 7,
+				'priority' => 8,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
@@ -515,7 +531,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 3,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
@@ -630,7 +646,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 9,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
@@ -1073,7 +1089,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'priority' => 7,
 				'required' => array(
 					array(
-						'setting'  => 'color_calc',
+						'setting'  => 'color_pal',
 						'operator' => '==',
 						'value'    => 0
 					),
