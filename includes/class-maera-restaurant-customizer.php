@@ -375,7 +375,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 				'output'   => array(
 					array(
 						'element'  => '.btn-primary',
-						'property' => 'background',
+						'property' => 'background-color',
 					),
 					array(
 						'element'  => 'ul.social-share li a:hover',

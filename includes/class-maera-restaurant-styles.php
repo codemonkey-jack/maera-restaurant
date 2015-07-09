@@ -31,9 +31,7 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		function __construct() {
 
 			// Add actions.
-			if ( 1 == get_theme_mod( 'color_pal', 0 ) ) {
-				add_action( 'wp_enqueue_scripts', array( $this, 'color_calculations' ), 999 );
-			}
+			// NULL
 
 			// Add filters.
 			// NULL
@@ -119,21 +117,23 @@ if ( ! class_exists( 'Maera_Restaurant_Styles' ) ) {
 		 */
 		public function color_calculations() {
 
-			$colors = $this->palette_colors();
+			if ( 1 == get_theme_mod( 'color_pal', 0 ) ) {
 
-			$style = '';
+				$colors = $this->palette_colors();
 
-			$style .= 'body a{color:#' . str_replace( '#', '', $colors[4] ) . ';}';
-			$style .= 'body a:hover{color:#' . str_replace( '#', '', $colors[3] ) . ';}';
-			$style .= 'body, body h1, body h2, body h3, body h4, body h5, body h6, body p{color:' . $colors[5] . ';}';
-			$style .= '#wrap-main-section h1, #wrap-main-section h2, #wrap-main-section h3, #wrap-main-section h4, #wrap-main-section h5, #wrap-main-section h6, #wrap-main-section p{color:' . $colors[0] . ';}';
-			$style .= '.label-primary{background-color:#' . str_replace( '#', '', $colors[4] ) . ';}';
-			$style .= '.navbar-default{background-color:#' . str_replace( '#', '', $colors[5] ) . ';}';
-			$style .= '.navbar-default .navbar-nav > li > a {color:#' . str_replace( '#', '', $colors[0] ) . ';}';
-			$style .= '#footer{background-color:#' . str_replace( '#', '', $colors[5] ) . ';color:#' . str_replace( '#', '', $colors[0] ) . '}';
-			$style .= '#footer p{color:#' . str_replace( '#', '',$colors[0] ) . '}';
+				$brand_color       = $colors[4];
+				$link_color        = $colors[4];
+				$link_hover_color  = $colors[3];
+				$navbar_color      = $colors[5];
+				$footer_color      = $colors[5];
 
-			wp_add_inline_style( 'maera-res', $style );
+				set_theme_mod( 'brand_color', $brand_color );
+				set_theme_mod( 'link_color', $link_color );
+				set_theme_mod( 'link_hover_color', $link_hover_color );
+				set_theme_mod( 'navbar_color', $navbar_color );
+				set_theme_mod( 'footer_background', $footer_color );
+
+			}
 
 		}
 

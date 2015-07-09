@@ -31,7 +31,7 @@ if ( ! class_exists( 'Maera_Restaurant_Scripts' ) ) {
 		function __construct() {
 
 			// Add Actions
-			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 101 );
 			// add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ), 100 );  // Uncomment to load scripts in the admin area.
 
 			// Add Filters
