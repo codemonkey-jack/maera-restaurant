@@ -12,17 +12,15 @@
  *
  * Text Domain:       maera-restaurant
  * Domain Path:       /languages/
- *
  */
 
-
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 
-// Define Globals
+// Define Globals.
 define( 'MAERA_RES_VER', '0.1.0' );
 define( 'MAERA_RES_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_RES_SHELL_PATH', dirname( __FILE__ ) );
@@ -30,6 +28,8 @@ define( 'MAERA_RES_SHELL_PATH', dirname( __FILE__ ) );
 
 /**
  * Include the restaurant shell in the list of available shells.
+ * @param  [type] $shells [description].
+ * @return [type]         [description]
  */
 function maera_include_restaurant_shell( $shells ) {
 
@@ -71,21 +71,59 @@ add_action( 'plugins_loaded', 'maera_restaurant_texdomain' );
 * @link          http://press.codes
 * @see           Maera_Restaurant(), Maera_Restaurant::method()
 * @since         Class available since Release 1.0.0
-*
 */
 
 if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
+	/**
+	 * Main Maera Restaurant class.
+	 */
 	class Maera_Restaurant {
 
+		/**
+		 * [$instance description]
+		 * @var [type]
+		 */
 		private static $instance;
+		/**
+		 * [$customizer description]
+		 * @var [type]
+		 */
 		public $customizer;
+		/**
+		 * [$scripts description]
+		 * @var [type]
+		 */
 		public $scripts;
+		/**
+		 * [$structure description]
+		 * @var [type]
+		 */
 		public $structure;
+		/**
+		 * [$data description]
+		 * @var [type]
+		 */
 		public $data;
+		/**
+		 * [$styles description]
+		 * @var [type]
+		 */
 		public $styles;
+		/**
+		 * [$posttype description]
+		 * @var [type]
+		 */
 		public $posttype;
+		/**
+		 * [$widgetareas description]
+		 * @var [type]
+		 */
 		public $widgetareas;
+		/**
+		 * [$taxonomies description]
+		 * @var [type]
+		 */
 		public $taxonomies;
 
 		/**
@@ -117,20 +155,20 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 			$this->widgetareas      = new Maera_Restaurant_Widget_Areas();
 			$this->taxonomies       = new Maera_Restaurant_Taxonomies();
 
-			// Add Actions
+			// Add Actions.
 			add_action( 'after_setup_theme', array( $this, 'required_plugins' ) );
 			add_action( 'do_meta_boxes', array( $this, 'slides_image_box' ) );
 
-			// Add Filters
+			// Add Filters.
 			add_filter( 'kirki/config', array( $this, 'customizer_config' ) );
 
-			// Theme Supports
+			// Theme Supports.
 			add_theme_support( 'kirki' );
 			add_theme_support( 'restaurant' );
 			add_theme_support( 'tonesque' );
 			add_theme_support( 'site-logo' );
 
-			if ( '1' == get_theme_mod( 'enable_breadcrumbs' , '1' ) ) {
+			if ( '1' === get_theme_mod( 'enable_breadcrumbs' , '1' ) ) {
 				add_theme_support( 'breadcrumbs' );
 			}
 		}
@@ -142,7 +180,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		 */
 		public static function get_instance() {
 
-			if ( null == self::$instance ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self;
 			}
 
@@ -151,7 +189,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 
 		/**
-		 * Customize Kirki
+		 * Customize Kirki.
 		 * @return [type] [description]
 		 */
 		function customizer_config( $config ) {
@@ -172,8 +210,7 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		/**
 		 * Build the array of required plugins
 		 * You can use the 'maera/required_plugins' filter to add or remove plugins.
-		 * @param  array  $plugins [description]
-		 * @return [type]          [description]
+		 * @param array $plugins [description].
 		 */
 		function required_plugins( $plugins = array() ) {
 			if ( ! $plugins || empty( $plugins ) ) {
@@ -201,13 +238,12 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 		/**
 		 * Move the featured image box from the side to the main area when editing slides.
-		 * @return [type] [description]
 		 */
 		function slides_image_box() {
 
 			$screen = get_current_screen();
 
-			if ( 'slide' == $screen->post_type ) {
+			if ( 'slide' === $screen->post_type ) {
 				remove_meta_box( 'postimagediv', 'slide', 'side' );
 				add_meta_box( 'postimagediv', __( 'Slide - Background Image' ), 'post_thumbnail_meta_box', 'slide', 'normal', 'high' );
 			}
@@ -215,13 +251,11 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 		}
 
 	} // End Class
-
 } // End if
 
 
 /**
  * Licensing handler.
- * @return [type] [description]
  */
 function maera_restaurant_licensing() {
 
@@ -241,7 +275,6 @@ include_once( __DIR__ . '/includes/widgets/class-maera-restaurant-menu-widget.ph
 
 /**
  * Register the slider widget.
- * @return [type] [description]
  */
 function maera_res_slider_widgets() {
 	register_widget( 'Maera_Restaurant_Slider_Widget' );
@@ -251,7 +284,6 @@ add_action( 'widgets_init', 'maera_res_slider_widgets' );
 
 /**
  * Register the menu widget.
- * @return [type] [description]
  */
 function maera_res_menu_widgets() {
 	register_widget( 'Maera_Restaurant_Menu_Widget' );
@@ -262,7 +294,7 @@ add_action( 'widgets_init', 'maera_res_menu_widgets' );
 /**
  * Add the secondary slider image to Advanced Custom Fields
  */
-if ( function_exists( 'register_field_group' ) ){
+if ( function_exists( 'register_field_group' ) ) {
 	register_field_group( array(
 		'id'     => 'acf_slider-second-image-1',
 		'title'  => 'Slider - Second Image',

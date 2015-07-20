@@ -1060,11 +1060,7 @@ if ( ! class_exists( 'Maera_Restaurant_Customizer' ) ) {
 					'opacity'  => 100,
 				),
 				'priority'     => 16,
-				'output'       => array(
-					array(
-						'element'  => '#wrap-main-section',
-					),
-				),
+				'output'       => '#wrap-main-section',
 			);
 
 			 return $controls;
