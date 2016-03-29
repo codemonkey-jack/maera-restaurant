@@ -1,11 +1,12 @@
 <?php
 /**
  * Plugin Name:       Maera Restaurant Shell
- * Plugin URI:        https://press.codes
+ * Plugin URI:        https://wpsatchel.com
  * Description:       Restaurant shell for the Maera theme.
- * Version:           0.1.0
- * Author:            Brian C. Welch
- * Author URI:        http://briancwelch.com
+ * Version:           1.0.0
+ * Author:            WPSatchel
+ * Contributers:	  Brian C. Welch
+ * Author URI:        https://wpsatchel.com
  * Requires at least: 4.0
  * Tested up to:      4.0
  * License:           MIT
@@ -21,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 // Define Globals.
-define( 'MAERA_RES_VER', '0.1.0' );
+define( 'MAERA_RES_VER', '1.0.0' );
 define( 'MAERA_RES_SHELL_URL', plugins_url( '', __FILE__ ) );
 define( 'MAERA_RES_SHELL_PATH', dirname( __FILE__ ) );
 
