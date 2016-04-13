@@ -8,7 +8,7 @@
  * Contributers:	  Brian C. Welch
  * Author URI:        https://wpsatchel.com
  * Requires at least: 4.0
- * Tested up to:      4.0
+ * Tested up to:      4.5
  * License:           MIT
  *
  * Text Domain:       maera-restaurant
@@ -253,18 +253,6 @@ if ( ! class_exists( 'Maera_Restaurant' ) ) {
 
 	} // End Class
 } // End if
-
-
-/**
- * Licensing handler.
- */
-function maera_restaurant_licensing() {
-
-	if ( is_admin() && class_exists( 'Maera_Updater' ) ) {
-		$maera_res_license = new Maera_Updater( 'plugin', __FILE__, 'Maera Restaurant Shell', MAERA_RES_VER, '@brianwelch' );
-	}
-}
-add_action( 'init', 'maera_restaurant_licensing' );
 
 
 /**
